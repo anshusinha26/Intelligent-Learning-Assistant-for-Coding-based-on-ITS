@@ -1,4 +1,4 @@
-# Intelligent Learning Assistant for Coding
+# Intelligent Learning Assistant for Coding based on ITS
 
 **Study Project - AI/ML Course**  
 **Student:** Anshu Sinha (2034EBCS191)  
