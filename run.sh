@@ -5,6 +5,9 @@ echo "Intelligent Coding Assistant"
 echo "=================================="
 echo ""
 
+HOST="${HOST:-0.0.0.0}"
+PORT="${PORT:-8000}"
+
 # Check if database exists
 if [ ! -f "data/coding_assistant.db" ]; then
     echo "📦 Database not found. Initializing with sample data..."
@@ -13,8 +16,8 @@ if [ ! -f "data/coding_assistant.db" ]; then
 fi
 
 echo "🚀 Starting FastAPI server..."
-echo "📍 API: http://localhost:8000"
-echo "📍 Docs: http://localhost:8000/docs"
+echo "📍 API: http://localhost:${PORT}"
+echo "📍 Docs: http://localhost:${PORT}/docs"
 echo "📍 Frontend: Open frontend/index.html in your browser"
 echo ""
 echo "Demo credentials:"
@@ -22,4 +25,4 @@ echo "  Email: demo@example.com"
 echo "  Password: demo123"
 echo ""
 
-python -m src.main
+HOST="${HOST}" PORT="${PORT}" python -m src.main
