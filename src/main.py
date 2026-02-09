@@ -6,7 +6,7 @@ Implements all API endpoints per Phase 2 requirements
 from fastapi import FastAPI, HTTPException, Depends, Header
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, Response
 from typing import Optional, List
 import os
 import sys
@@ -324,6 +324,11 @@ async def complete_revision(schedule_id: int, current_user: dict = Depends(get_c
 async def root():
     """Health check endpoint"""
     return {"status": "healthy", "message": "Intelligent Coding Assistant API"}
+
+@app.get("/favicon.ico")
+async def favicon():
+    """Return empty favicon response to avoid 404 noise in logs."""
+    return Response(status_code=204)
 
 @app.get("/api/health")
 async def health_check():
