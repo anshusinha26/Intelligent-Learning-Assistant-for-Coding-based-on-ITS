@@ -14,7 +14,7 @@ This is a **complete, working implementation** of Phase 1 and Phase 2 design spe
 ## 📁 Project Structure
 
 ```
-coding_assistant/
+Intelligent Learning Assistant for Coding based on ITS/
 │
 ├── 📄 README.md                 # Complete documentation
 ├── 📄 QUICKSTART.md             # 5-minute setup guide
