@@ -4,7 +4,29 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Intelligent Coding Assistant</title>
+        <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23ff9d00'/%3E%3Cpath d='M23 50h54M50 23v54' stroke='%230f141c' stroke-width='10' stroke-linecap='round'/%3E%3C/svg%3E"
+        />
         <style>
+            :root {
+                --bg-main: #0b1016;
+                --bg-grid: #0f1622;
+                --panel: #141d2a;
+                --panel-strong: #0f1723;
+                --border: rgba(255, 255, 255, 0.08);
+                --text-primary: #f3f6fb;
+                --text-muted: #9caec7;
+                --accent: #ff9d00;
+                --accent-strong: #ffb84d;
+                --teal: #17c6b6;
+                --danger: #ff6b6b;
+                --easy: #26c281;
+                --medium: #f7b731;
+                --hard: #ff6b6b;
+                --shadow: 0 14px 38px rgba(0, 0, 0, 0.35);
+            }
+
             * {
                 margin: 0;
                 padding: 0;
@@ -12,324 +34,660 @@
             }
 
             body {
-                font-family:
-                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                    Oxygen, Ubuntu, sans-serif;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                font-family: "IBM Plex Sans", "Avenir Next", "Segoe UI", sans-serif;
                 min-height: 100vh;
-                padding: 20px;
+                color: var(--text-primary);
+                background:
+                    radial-gradient(circle at 18% 12%, rgba(255, 157, 0, 0.18), transparent 36%),
+                    radial-gradient(circle at 82% 8%, rgba(23, 198, 182, 0.14), transparent 35%),
+                    linear-gradient(145deg, #090d13 0%, #0f1622 56%, #101925 100%);
+                padding: 24px;
+                overflow-x: hidden;
+            }
+
+            body::before {
+                content: "";
+                position: fixed;
+                inset: 0;
+                background-image:
+                    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+                background-size: 40px 40px;
+                pointer-events: none;
+                z-index: 0;
+            }
+
+            .hidden {
+                display: none !important;
             }
 
             .container {
-                max-width: 1200px;
+                max-width: 1180px;
                 margin: 0 auto;
+                position: relative;
+                z-index: 1;
             }
 
-            .header {
-                background: white;
-                padding: 20px 30px;
-                border-radius: 10px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                margin-bottom: 20px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .header h1 {
-                color: #667eea;
-                font-size: 24px;
-            }
-
-            .user-info {
-                display: flex;
-                gap: 15px;
-                align-items: center;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 14px;
-                transition: all 0.3s;
-            }
-
-            .btn-primary {
-                background: #667eea;
-                color: white;
-            }
-
-            .btn-primary:hover {
-                background: #5568d3;
-            }
-
-            .btn-secondary {
-                background: #e0e7ff;
-                color: #667eea;
-            }
-
-            .stats-grid {
+            .login-shell {
+                min-height: calc(100vh - 48px);
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 20px;
-                margin-bottom: 20px;
-            }
-
-            .stat-card {
-                background: white;
-                padding: 25px;
-                border-radius: 10px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-
-            .stat-card h3 {
-                color: #666;
-                font-size: 14px;
-                margin-bottom: 10px;
-                text-transform: uppercase;
-            }
-
-            .stat-card .value {
-                font-size: 32px;
-                font-weight: bold;
-                color: #667eea;
-            }
-
-            .section {
-                background: white;
-                padding: 25px;
-                border-radius: 10px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                margin-bottom: 20px;
-            }
-
-            .section h2 {
-                color: #333;
-                margin-bottom: 20px;
-                padding-bottom: 10px;
-                border-bottom: 2px solid #f0f0f0;
-            }
-
-            .recommendation-card,
-            .revision-card {
-                background: #f8f9ff;
-                padding: 15px;
-                border-radius: 8px;
-                margin-bottom: 10px;
-                border-left: 4px solid #667eea;
-            }
-
-            .recommendation-card h4,
-            .revision-card h4 {
-                color: #333;
-                margin-bottom: 5px;
-            }
-
-            .badge {
-                display: inline-block;
-                padding: 4px 8px;
-                border-radius: 4px;
-                font-size: 12px;
-                font-weight: 500;
-                margin-right: 5px;
-            }
-
-            .badge-easy {
-                background: #d1fae5;
-                color: #065f46;
-            }
-            .badge-medium {
-                background: #fef3c7;
-                color: #92400e;
-            }
-            .badge-hard {
-                background: #fee2e2;
-                color: #991b1b;
-            }
-
-            .weakness-item {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 12px;
-                background: #f9fafb;
-                border-radius: 6px;
-                margin-bottom: 8px;
-            }
-
-            .progress-bar {
-                width: 200px;
-                height: 8px;
-                background: #e5e7eb;
-                border-radius: 4px;
-                overflow: hidden;
-            }
-
-            .progress-fill {
-                height: 100%;
-                background: #667eea;
-                transition: width 0.3s;
-            }
-
-            .empty-state {
-                text-align: center;
-                padding: 40px;
-                color: #999;
+                place-items: center;
+                position: relative;
+                z-index: 1;
             }
 
             .login-form {
-                max-width: 400px;
-                margin: 100px auto;
-                background: white;
-                padding: 40px;
-                border-radius: 10px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                width: min(460px, 100%);
+                background: linear-gradient(165deg, rgba(20, 29, 42, 0.96), rgba(15, 24, 36, 0.96));
+                border: 1px solid var(--border);
+                border-radius: 18px;
+                padding: 36px;
+                box-shadow: var(--shadow);
+                backdrop-filter: blur(8px);
+                animation: float-up 480ms ease both;
+            }
+
+            .brand-row {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                margin-bottom: 26px;
+            }
+
+            .brand-mark {
+                width: 46px;
+                height: 46px;
+                border-radius: 12px;
+                background: linear-gradient(140deg, var(--accent), var(--accent-strong));
+                color: #131a26;
+                font-weight: 800;
+                display: grid;
+                place-items: center;
+                letter-spacing: 0.02em;
+                flex-shrink: 0;
+            }
+
+            .login-title {
+                font-size: 1.45rem;
+                letter-spacing: 0.01em;
+                margin-bottom: 4px;
+            }
+
+            .login-subtitle {
+                color: var(--text-muted);
+                font-size: 0.95rem;
             }
 
             .form-group {
-                margin-bottom: 20px;
+                margin-bottom: 18px;
             }
 
             .form-group label {
                 display: block;
-                margin-bottom: 8px;
-                color: #333;
-                font-weight: 500;
+                font-size: 0.88rem;
+                color: var(--text-muted);
+                margin-bottom: 7px;
+                font-weight: 600;
             }
 
             .form-group input {
                 width: 100%;
-                padding: 12px;
-                border: 1px solid #e0e0e0;
-                border-radius: 5px;
-                font-size: 14px;
+                border: 1px solid var(--border);
+                border-radius: 11px;
+                padding: 12px 14px;
+                font-size: 0.95rem;
+                background: rgba(9, 14, 22, 0.75);
+                color: var(--text-primary);
+                transition: border-color 140ms ease, box-shadow 140ms ease;
+            }
+
+            .form-group input:focus {
+                outline: none;
+                border-color: rgba(255, 157, 0, 0.82);
+                box-shadow: 0 0 0 3px rgba(255, 157, 0, 0.16);
+            }
+
+            .btn {
+                border: none;
+                border-radius: 11px;
+                cursor: pointer;
+                font-weight: 700;
+                font-size: 0.92rem;
+                letter-spacing: 0.01em;
+                transition: transform 140ms ease, filter 140ms ease;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 7px;
+            }
+
+            .btn:hover {
+                transform: translateY(-1px);
+                filter: brightness(1.06);
+            }
+
+            .btn:disabled {
+                opacity: 0.72;
+                cursor: wait;
+                transform: none;
+            }
+
+            .btn-primary {
+                width: 100%;
+                padding: 12px 18px;
+                background: linear-gradient(140deg, var(--accent), var(--accent-strong));
+                color: #111722;
+            }
+
+            .btn-secondary {
+                padding: 9px 14px;
+                background: rgba(255, 255, 255, 0.08);
+                color: var(--text-primary);
+                border: 1px solid var(--border);
+            }
+
+            .btn-generate {
+                width: auto;
+                min-width: 146px;
+            }
+
+            .demo-note {
+                text-align: center;
+                margin-top: 18px;
+                color: var(--text-muted);
+                font-size: 0.86rem;
             }
 
             .error {
-                background: #fee2e2;
-                color: #991b1b;
-                padding: 12px;
-                border-radius: 5px;
-                margin-bottom: 15px;
+                background: rgba(255, 107, 107, 0.14);
+                color: #ffc9c9;
+                border: 1px solid rgba(255, 107, 107, 0.35);
+                border-radius: 11px;
+                padding: 11px 12px;
+                margin-bottom: 14px;
+                font-size: 0.9rem;
             }
 
-            .hidden {
-                display: none;
+            .header {
+                background: linear-gradient(160deg, rgba(20, 29, 42, 0.94), rgba(13, 21, 32, 0.92));
+                border: 1px solid var(--border);
+                border-radius: 18px;
+                box-shadow: var(--shadow);
+                padding: 22px 24px;
+                margin-bottom: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+                animation: float-up 500ms ease both;
+            }
+
+            .brand-block {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+            }
+
+            .brand-dot {
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background: radial-gradient(circle at 35% 35%, #ffd37f, var(--accent));
+                box-shadow: 0 0 0 7px rgba(255, 157, 0, 0.14);
+                flex-shrink: 0;
+            }
+
+            .header h1 {
+                font-size: 1.42rem;
+                margin-bottom: 4px;
+                letter-spacing: 0.01em;
+            }
+
+            .header-subtitle {
+                font-size: 0.88rem;
+                color: var(--text-muted);
+            }
+
+            .user-info {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .user-pill {
+                border: 1px solid rgba(23, 198, 182, 0.42);
+                color: #c9fffa;
+                background: rgba(23, 198, 182, 0.1);
+                border-radius: 999px;
+                font-size: 0.82rem;
+                padding: 7px 12px;
+                max-width: 260px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 14px;
+                margin-bottom: 16px;
+            }
+
+            .stat-card {
+                background: linear-gradient(165deg, rgba(20, 29, 42, 0.9), rgba(13, 22, 32, 0.9));
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                padding: 18px;
+                box-shadow: var(--shadow);
+                animation: float-up 520ms ease both;
+            }
+
+            .stat-card .label {
+                color: var(--text-muted);
+                font-size: 0.76rem;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                margin-bottom: 8px;
+                display: inline-block;
+            }
+
+            .stat-card .value {
+                font-size: 1.9rem;
+                font-weight: 750;
+                color: #ffffff;
+                line-height: 1;
+            }
+
+            .section-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+            }
+
+            .section {
+                background: linear-gradient(165deg, rgba(20, 29, 42, 0.92), rgba(13, 22, 32, 0.92));
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                padding: 18px;
+                box-shadow: var(--shadow);
+                animation: float-up 560ms ease both;
+            }
+
+            .section-wide {
+                grid-column: 1 / -1;
+            }
+
+            .section-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                margin-bottom: 12px;
+            }
+
+            .section h2 {
+                font-size: 1.03rem;
+                color: #ffffff;
+                letter-spacing: 0.01em;
+            }
+
+            .list-stack {
+                display: grid;
+                gap: 10px;
+            }
+
+            .list-stack > * {
+                animation: card-in 320ms ease both;
+            }
+
+            .list-stack > *:nth-child(2) {
+                animation-delay: 40ms;
+            }
+            .list-stack > *:nth-child(3) {
+                animation-delay: 70ms;
+            }
+            .list-stack > *:nth-child(4) {
+                animation-delay: 90ms;
+            }
+            .list-stack > *:nth-child(5) {
+                animation-delay: 110ms;
+            }
+            .list-stack > *:nth-child(6) {
+                animation-delay: 130ms;
+            }
+
+            .recommendation-card,
+            .revision-card {
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                background: linear-gradient(180deg, rgba(16, 25, 37, 0.86), rgba(14, 20, 30, 0.9));
+                border-radius: 12px;
+                padding: 13px 14px;
+                transition: border-color 150ms ease, transform 150ms ease;
+            }
+
+            .recommendation-card:hover,
+            .revision-card:hover {
+                border-color: rgba(255, 157, 0, 0.48);
+                transform: translateY(-1px);
+            }
+
+            .card-title-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                margin-bottom: 9px;
+            }
+
+            .card-title-row h4 {
+                font-size: 1rem;
+                color: #eef4ff;
+            }
+
+            .score-pill {
+                font-size: 0.76rem;
+                font-weight: 700;
+                color: #1f2633;
+                background: linear-gradient(140deg, var(--accent), var(--accent-strong));
+                border-radius: 999px;
+                padding: 4px 10px;
+                white-space: nowrap;
+            }
+
+            .recommendation-meta,
+            .revision-meta {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+
+            .badge {
+                display: inline-flex;
+                align-items: center;
+                border-radius: 999px;
+                padding: 4px 10px;
+                font-size: 0.75rem;
+                font-weight: 700;
+                letter-spacing: 0.02em;
+            }
+
+            .badge-easy {
+                background: rgba(38, 194, 129, 0.18);
+                color: #9df3cb;
+                border: 1px solid rgba(38, 194, 129, 0.35);
+            }
+
+            .badge-medium {
+                background: rgba(247, 183, 49, 0.2);
+                color: #ffe1a2;
+                border: 1px solid rgba(247, 183, 49, 0.38);
+            }
+
+            .badge-hard {
+                background: rgba(255, 107, 107, 0.2);
+                color: #ffcccc;
+                border: 1px solid rgba(255, 107, 107, 0.4);
+            }
+
+            .badge-topic {
+                background: rgba(87, 146, 255, 0.16);
+                color: #b8d5ff;
+                border: 1px solid rgba(87, 146, 255, 0.38);
+            }
+
+            .badge-pattern {
+                background: rgba(23, 198, 182, 0.16);
+                color: #b8ffef;
+                border: 1px solid rgba(23, 198, 182, 0.38);
+            }
+
+            .reason-text,
+            .review-date {
+                margin-top: 10px;
+                font-size: 0.86rem;
+                color: var(--text-muted);
+                line-height: 1.42;
+            }
+
+            .weakness-item {
+                display: grid;
+                grid-template-columns: minmax(160px, 1fr) minmax(140px, 220px);
+                align-items: center;
+                gap: 12px;
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                background: linear-gradient(180deg, rgba(16, 25, 37, 0.84), rgba(14, 20, 30, 0.9));
+                border-radius: 12px;
+                padding: 13px 14px;
+            }
+
+            .weakness-item strong {
+                color: #eef4ff;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .weakness-meta {
+                font-size: 0.82rem;
+                color: var(--text-muted);
+            }
+
+            .progress-track {
+                width: 100%;
+                height: 10px;
+                border-radius: 999px;
+                background: rgba(255, 255, 255, 0.08);
+                overflow: hidden;
+                border: 1px solid rgba(255, 255, 255, 0.07);
+            }
+
+            .progress-fill {
+                height: 100%;
+                border-radius: 999px;
+                background: linear-gradient(90deg, #ff7f32, #ffd164 58%, #17c6b6);
+                transition: width 260ms ease;
+            }
+
+            .empty-state {
+                border: 1px dashed rgba(255, 255, 255, 0.18);
+                border-radius: 12px;
+                padding: 24px 14px;
+                text-align: center;
+                color: var(--text-muted);
+                font-size: 0.9rem;
+                background: rgba(12, 18, 28, 0.5);
+            }
+
+            @keyframes float-up {
+                from {
+                    opacity: 0;
+                    transform: translateY(9px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes card-in {
+                from {
+                    opacity: 0;
+                    transform: translateY(6px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @media (max-width: 1024px) {
+                .stats-grid {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+            }
+
+            @media (max-width: 860px) {
+                body {
+                    padding: 16px;
+                }
+
+                .header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .user-info {
+                    width: 100%;
+                    justify-content: space-between;
+                }
+
+                .section-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .section-wide {
+                    grid-column: auto;
+                }
+            }
+
+            @media (max-width: 620px) {
+                .login-form,
+                .header,
+                .section,
+                .stat-card {
+                    border-radius: 14px;
+                }
+
+                .login-form {
+                    padding: 28px 20px;
+                }
+
+                .stats-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .weakness-item {
+                    grid-template-columns: 1fr;
+                }
+
+                .card-title-row {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .score-pill {
+                    align-self: flex-start;
+                }
             }
         </style>
     </head>
     <body>
-        <!-- Login Form -->
-        <div id="loginSection" class="login-form">
-            <h2 style="margin-bottom: 30px; color: #667eea; text-align: center">
-                Intelligent Coding Assistant
-            </h2>
-            <div id="loginError" class="error hidden"></div>
-            <form id="loginForm">
-                <div class="form-group">
-                    <label>Email</label>
-                    <input
-                        type="email"
-                        id="email"
-                        required
-                        value="demo@example.com"
-                    />
+        <div id="loginSection" class="login-shell">
+            <div class="login-form">
+                <div class="brand-row">
+                    <div class="brand-mark">LC</div>
+                    <div>
+                        <h2 class="login-title">Intelligent Coding Assistant</h2>
+                        <p class="login-subtitle">
+                            Practice smarter with adaptive recommendations
+                        </p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        required
-                        value="demo123"
-                    />
-                </div>
-                <button
-                    type="submit"
-                    class="btn btn-primary"
-                    style="width: 100%"
-                >
-                    Login
-                </button>
-            </form>
-            <p
-                style="
-                    text-align: center;
-                    margin-top: 20px;
-                    color: #666;
-                    font-size: 14px;
-                "
-            >
-                Demo credentials: demo@example.com / demo123
-            </p>
+
+                <div id="loginError" class="error hidden"></div>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            required
+                            value="demo@example.com"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            required
+                            value="demo123"
+                        />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                </form>
+
+                <p class="demo-note">Demo credentials: demo@example.com / demo123</p>
+            </div>
         </div>
 
-        <!-- Main Dashboard -->
         <div id="dashboardSection" class="container hidden">
-            <div class="header">
-                <h1>📊 Coding Practice Dashboard</h1>
+            <header class="header">
+                <div class="brand-block">
+                    <span class="brand-dot" aria-hidden="true"></span>
+                    <div>
+                        <h1>Coding Practice Dashboard</h1>
+                        <p class="header-subtitle">
+                            Interview-focused progress insights and guided practice
+                        </p>
+                    </div>
+                </div>
                 <div class="user-info">
-                    <span id="userName" style="color: #666"></span>
+                    <span id="userName" class="user-pill"></span>
                     <button class="btn btn-secondary" onclick="logout()">
-                        Logout
+                        Log Out
                     </button>
                 </div>
-            </div>
+            </header>
 
-            <!-- Stats Cards -->
-            <div class="stats-grid">
+            <section class="stats-grid">
                 <div class="stat-card">
-                    <h3>Problems Solved</h3>
+                    <span class="label">Problems Solved</span>
                     <div class="value" id="problemsSolved">0</div>
                 </div>
                 <div class="stat-card">
-                    <h3>Success Rate</h3>
+                    <span class="label">Success Rate</span>
                     <div class="value" id="successRate">0%</div>
                 </div>
                 <div class="stat-card">
-                    <h3>Current Streak</h3>
+                    <span class="label">Current Streak</span>
                     <div class="value" id="currentStreak">0</div>
                 </div>
                 <div class="stat-card">
-                    <h3>Due Revisions</h3>
+                    <span class="label">Due Revisions</span>
                     <div class="value" id="dueRevisions">0</div>
                 </div>
-            </div>
+            </section>
 
-            <!-- Recommendations Section -->
-            <div class="section">
-                <div
-                    style="
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        margin-bottom: 20px;
-                    "
-                >
-                    <h2>🎯 Recommended for You</h2>
-                    <button
-                        class="btn btn-primary"
-                        onclick="generateRecommendations()"
-                    >
-                        Generate New
-                    </button>
-                </div>
-                <div id="recommendationsList"></div>
-            </div>
+            <main class="section-grid">
+                <section class="section section-wide">
+                    <div class="section-header">
+                        <h2>Recommended for You</h2>
+                        <button
+                            class="btn btn-primary btn-generate"
+                            onclick="generateRecommendations(this)"
+                        >
+                            Generate New
+                        </button>
+                    </div>
+                    <div id="recommendationsList" class="list-stack"></div>
+                </section>
 
-            <!-- Weaknesses Section -->
-            <div class="section">
-                <h2>📈 Your Weaknesses</h2>
-                <div id="weaknessesList"></div>
-            </div>
+                <section class="section">
+                    <div class="section-header">
+                        <h2>Your Weaknesses</h2>
+                    </div>
+                    <div id="weaknessesList" class="list-stack"></div>
+                </section>
 
-            <!-- Revision Queue -->
-            <div class="section">
-                <h2>🔄 Due for Revision</h2>
-                <div id="revisionsList"></div>
-            </div>
+                <section class="section">
+                    <div class="section-header">
+                        <h2>Due for Revision</h2>
+                    </div>
+                    <div id="revisionsList" class="list-stack"></div>
+                </section>
+            </main>
         </div>
 
         <script>
@@ -337,16 +695,16 @@
             let authToken = localStorage.getItem("authToken");
             let userName = localStorage.getItem("userName");
 
-            // Check if already logged in
             if (authToken) {
                 showDashboard();
             }
 
-            // Login
             document
                 .getElementById("loginForm")
                 .addEventListener("submit", async (e) => {
                     e.preventDefault();
+                    document.getElementById("loginError").classList.add("hidden");
+
                     const email = document.getElementById("email").value;
                     const password = document.getElementById("password").value;
 
@@ -368,9 +726,7 @@
                             showError("Invalid email or password");
                         }
                     } catch (error) {
-                        showError(
-                            "Login failed. Make sure the server is running.",
-                        );
+                        showError("Login failed. Make sure the server is running.");
                     }
                 });
 
@@ -393,6 +749,14 @@
                 localStorage.removeItem("authToken");
                 localStorage.removeItem("userName");
                 location.reload();
+            }
+
+            function normalizeDifficulty(value) {
+                const difficulty = (value || "medium").toString().toLowerCase();
+                if (["easy", "medium", "hard"].includes(difficulty)) {
+                    return difficulty;
+                }
+                return "medium";
             }
 
             async function apiCall(endpoint, options = {}) {
@@ -444,95 +808,119 @@
 
             async function loadRecommendations() {
                 const data = await apiCall("/recommendations");
-                const container = document.getElementById(
-                    "recommendationsList",
-                );
+                const container = document.getElementById("recommendationsList");
+                const recommendations = data?.recommendations ?? [];
 
-                if (data && data.recommendations.length > 0) {
-                    container.innerHTML = data.recommendations
-                        .map(
-                            (rec) => `
-                    <div class="recommendation-card">
-                        <h4>${rec.title}</h4>
-                        <div style="margin: 10px 0;">
-                            <span class="badge badge-${rec.difficulty.toLowerCase()}">${rec.difficulty}</span>
-                            <span class="badge" style="background: #e0e7ff; color: #667eea;">${rec.topic}</span>
-                            ${rec.pattern ? `<span class="badge" style="background: #fef3c7; color: #92400e;">${rec.pattern}</span>` : ""}
-                        </div>
-                        <p style="color: #666; font-size: 14px; margin-top: 8px;">💡 ${rec.reason}</p>
-                    </div>
-                `,
-                        )
+                if (recommendations.length > 0) {
+                    container.innerHTML = recommendations
+                        .map((rec) => {
+                            const difficultyClass = normalizeDifficulty(
+                                rec.difficulty,
+                            );
+                            const score = Math.round(rec.score ?? 0);
+                            const patternBadge = rec.pattern
+                                ? `<span class="badge badge-pattern">${rec.pattern}</span>`
+                                : "";
+
+                            return `
+                                <article class="recommendation-card">
+                                    <div class="card-title-row">
+                                        <h4>${rec.title}</h4>
+                                        <span class="score-pill">Score ${score}</span>
+                                    </div>
+                                    <div class="recommendation-meta">
+                                        <span class="badge badge-${difficultyClass}">${rec.difficulty}</span>
+                                        <span class="badge badge-topic">${rec.topic}</span>
+                                        ${patternBadge}
+                                    </div>
+                                    <p class="reason-text">${rec.reason}</p>
+                                </article>
+                            `;
+                        })
                         .join("");
                 } else {
                     container.innerHTML =
-                        '<div class="empty-state">No recommendations yet. Click "Generate New" to get personalized suggestions!</div>';
+                        '<div class="empty-state">No recommendations yet. Click "Generate New" to get personalized suggestions.</div>';
                 }
             }
 
             async function loadWeaknesses() {
                 const data = await apiCall("/analytics/weaknesses");
                 const container = document.getElementById("weaknessesList");
+                const weaknesses = data?.weaknesses ?? [];
 
-                if (data && data.weaknesses.length > 0) {
-                    container.innerHTML = data.weaknesses
-                        .map(
-                            (w) => `
-                    <div class="weakness-item">
-                        <div>
-                            <strong>${w.topic}</strong>
-                            <div style="font-size: 12px; color: #666; margin-top: 4px;">
-                                ${w.attempts_count} attempts • ${w.success_rate}% success
-                            </div>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: ${w.mastery_score * 100}%"></div>
-                        </div>
-                    </div>
-                `,
-                        )
+                if (weaknesses.length > 0) {
+                    container.innerHTML = weaknesses
+                        .map((w) => {
+                            const mastery = Math.max(
+                                0,
+                                Math.min(100, (w.mastery_score ?? 0) * 100),
+                            );
+                            return `
+                                <article class="weakness-item">
+                                    <div>
+                                        <strong>${w.topic}</strong>
+                                        <div class="weakness-meta">
+                                            ${w.attempts_count} attempts • ${w.success_rate}% success
+                                        </div>
+                                    </div>
+                                    <div class="progress-track" title="Mastery ${mastery.toFixed(0)}%">
+                                        <div class="progress-fill" style="width: ${mastery}%"></div>
+                                    </div>
+                                </article>
+                            `;
+                        })
                         .join("");
                 } else {
                     container.innerHTML =
-                        '<div class="empty-state">Start practicing to see your weaknesses!</div>';
+                        '<div class="empty-state">Start practicing to discover your weak areas.</div>';
                 }
             }
 
             async function loadRevisions() {
                 const data = await apiCall("/revisions/due");
                 const container = document.getElementById("revisionsList");
+                const revisions = data?.revisions ?? [];
 
-                if (data && data.revisions.length > 0) {
-                    container.innerHTML = data.revisions
-                        .map(
-                            (rev) => `
-                    <div class="revision-card">
-                        <h4>${rev.title}</h4>
-                        <div style="margin: 10px 0;">
-                            <span class="badge badge-${rev.difficulty.toLowerCase()}">${rev.difficulty}</span>
-                            <span class="badge" style="background: #e0e7ff; color: #667eea;">${rev.topic}</span>
-                        </div>
-                        <p style="color: #666; font-size: 14px;">📅 Review due: ${rev.next_review_date}</p>
-                    </div>
-                `,
-                        )
+                if (revisions.length > 0) {
+                    container.innerHTML = revisions
+                        .map((rev) => {
+                            const difficultyClass = normalizeDifficulty(
+                                rev.difficulty,
+                            );
+                            return `
+                                <article class="revision-card">
+                                    <div class="card-title-row">
+                                        <h4>${rev.title}</h4>
+                                    </div>
+                                    <div class="revision-meta">
+                                        <span class="badge badge-${difficultyClass}">${rev.difficulty}</span>
+                                        <span class="badge badge-topic">${rev.topic}</span>
+                                    </div>
+                                    <p class="review-date">Review due: ${rev.next_review_date}</p>
+                                </article>
+                            `;
+                        })
                         .join("");
                 } else {
                     container.innerHTML =
-                        '<div class="empty-state">No problems due for revision!</div>';
+                        '<div class="empty-state">No problems are due for revision right now.</div>';
                 }
             }
 
-            async function generateRecommendations() {
-                const btn = event.target;
+            async function generateRecommendations(button) {
+                const btn = button;
                 btn.disabled = true;
+                const originalText = btn.textContent;
                 btn.textContent = "Generating...";
 
-                await apiCall("/recommendations/generate", { method: "POST" });
-                await loadRecommendations();
-
-                btn.disabled = false;
-                btn.textContent = "Generate New";
+                try {
+                    await apiCall("/recommendations/generate", { method: "POST" });
+                    await loadRecommendations();
+                } finally {
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                }
             }
         </script>
     </body>
