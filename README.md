@@ -355,7 +355,7 @@ For questions or issues:
 
 ## 📄 License
 
-Academic project for educational purposes.
+MIT License
 
 ---
 
