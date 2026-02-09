@@ -9,6 +9,13 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 from typing import Optional, List
 import os
+import sys
+
+# Allow running as `python src/main.py` and `python main.py` from inside `src/`.
+if __package__ in (None, ""):
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
 
 from src.database import Database
 from src.models import *

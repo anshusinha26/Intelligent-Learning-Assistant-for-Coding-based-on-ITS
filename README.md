@@ -74,8 +74,7 @@ This creates:
 3. **Start the backend server:**
 
 ```bash
-cd src
-python main.py
+python -m src.main
 ```
 
 The API will be available at `http://localhost:8000`

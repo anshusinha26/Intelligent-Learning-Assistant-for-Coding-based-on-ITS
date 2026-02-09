@@ -31,8 +31,7 @@ run.bat
 
 **Option B - Manual start:**
 ```bash
-cd src
-python main.py
+python -m src.main
 ```
 
 The API will start at `http://localhost:8000`

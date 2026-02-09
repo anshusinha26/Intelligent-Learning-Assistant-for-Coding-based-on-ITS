@@ -22,5 +22,4 @@ echo "  Email: demo@example.com"
 echo "  Password: demo123"
 echo ""
 
-cd src
-python main.py
+python -m src.main

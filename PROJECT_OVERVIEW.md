@@ -86,7 +86,7 @@ pip install -r requirements.txt
 python load_sample_data.py
 
 # 3. Start server
-./run.sh   # or python src/main.py
+./run.sh   # or python -m src.main
 ```
 
 Then open `frontend/index.html` and login with:
