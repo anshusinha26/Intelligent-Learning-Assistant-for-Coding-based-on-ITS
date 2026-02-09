@@ -80,14 +80,17 @@ Intelligent Learning Assistant for Coding based on ITS/
 ### Quick Start (3 Commands)
 ```bash
 # 1. Install dependencies
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 
 # 2. Load sample data
-python load_sample_data.py
+python3 load_sample_data.py
 
 # 3. Start server
-./run.sh   # or python -m src.main
+./run.sh   # or python3 -m src.main
 ```
+
+Default backend URL: `http://localhost:8000`.  
+If port 8000 is busy, run `PORT=8001 ./run.sh` and update `API_URL` in `frontend/index.html`.
 
 Then open `frontend/index.html` and login with:
 - Email: `demo@example.com`
@@ -95,7 +98,7 @@ Then open `frontend/index.html` and login with:
 
 ### Test Installation
 ```bash
-python test_installation.py
+python3 test_installation.py
 ```
 
 ## 📊 Key Features Demonstration

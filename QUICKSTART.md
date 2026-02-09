@@ -4,12 +4,12 @@
 
 ### Step 1: Install Dependencies
 ```bash
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ### Step 2: Load Sample Data
 ```bash
-python load_sample_data.py
+python3 load_sample_data.py
 ```
 
 This creates:
@@ -31,10 +31,16 @@ run.bat
 
 **Option B - Manual start:**
 ```bash
-python -m src.main
+python3 -m src.main
 ```
 
-The API will start at `http://localhost:8000`
+The API will start at `http://localhost:8000` (default).  
+If port 8000 is busy:
+```bash
+PORT=8001 python3 -m src.main
+# or
+PORT=8001 ./run.sh
+```
 
 ### Step 4: Open the Frontend
 
@@ -42,7 +48,7 @@ Open `frontend/index.html` in your web browser, or:
 
 ```bash
 cd frontend
-python -m http.server 8080
+python3 -m http.server 8080
 ```
 
 Then visit `http://localhost:8080`
@@ -57,7 +63,7 @@ Use these credentials to login:
 
 Run the test script to verify everything is working:
 ```bash
-python test_installation.py
+python3 test_installation.py
 ```
 
 ## 📖 What You'll See
@@ -105,29 +111,32 @@ curl -X POST http://localhost:8000/api/attempts \
 ```
 
 ### 3. View API Documentation
-Visit `http://localhost:8000/docs` for interactive API docs (Swagger UI).
+Visit `http://localhost:8000/docs` for interactive API docs (Swagger UI).  
+If you changed backend port, use that port in the URL.
 
 ## 🐛 Troubleshooting
 
 ### Error: "Module not found"
 ```bash
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ### Error: "Database not found"
 ```bash
-python load_sample_data.py
+python3 load_sample_data.py
 ```
 
 ### Error: "Port 8000 already in use"
-Edit `src/main.py` and change:
-```python
-uvicorn.run(app, host="0.0.0.0", port=8001)  # Change to 8001
+Run the backend on a different port:
+```bash
+PORT=8001 python3 -m src.main
+# or
+PORT=8001 ./run.sh
 ```
 
 ### Frontend can't connect to API
 Make sure:
-1. Backend is running on port 8000
+1. Backend is running on the same port configured in `frontend/index.html` (`API_URL`, default: 8000)
 2. Open browser console (F12) to see errors
 3. Check CORS is enabled in `src/main.py`
 

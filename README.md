@@ -48,21 +48,21 @@ Intelligent Learning Assistant for Coding based on ITS/
 
 ### Prerequisites
 
-- Python 3.8 or higher
-- pip (Python package manager)
+- Python 3.8 or higher (`python3`)
+- pip (`python3 -m pip`)
 
 ### Installation
 
 1. **Install dependencies:**
 
 ```bash
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 2. **Initialize database with sample data:**
 
 ```bash
-python load_sample_data.py
+python3 load_sample_data.py
 ```
 
 This creates:
@@ -74,10 +74,11 @@ This creates:
 3. **Start the backend server:**
 
 ```bash
-python -m src.main
+python3 -m src.main
 ```
 
-The API will be available at `http://localhost:8000`
+The API will be available at `http://localhost:8000` (default).  
+If port 8000 is busy, run `PORT=8001 python3 -m src.main`.
 
 4. **Open the frontend:**
 
@@ -86,10 +87,12 @@ Open `frontend/index.html` in your web browser, or serve it using:
 ```bash
 # Using Python's built-in server
 cd frontend
-python -m http.server 8080
+python3 -m http.server 8080
 ```
 
 Then visit `http://localhost:8080`
+
+If backend runs on a non-default port, update `API_URL` in `frontend/index.html` to match.
 
 ## 🎯 Features Implemented
 
