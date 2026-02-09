@@ -18,21 +18,30 @@ An intelligent web-based tutoring system that personalizes coding interview prep
 ## 🏗️ System Architecture
 
 ```
-coding_assistant/
-├── src/
-│   ├── main.py              # FastAPI application & endpoints
-│   ├── database.py          # SQLite database schema
-│   ├── models.py            # Pydantic data models
-│   ├── auth.py              # Authentication module
-│   ├── learner_model.py     # Learner modeling & metrics
-│   ├── recommender.py       # Recommendation engine
-│   └── revision_scheduler.py # Spaced repetition scheduler
-├── frontend/
-│   └── index.html           # Web dashboard
-├── data/
-│   └── coding_assistant.db  # SQLite database (auto-created)
-├── load_sample_data.py      # Sample data loader
-└── requirements.txt         # Python dependencies
+Intelligent Learning Assistant for Coding based on ITS/
+│
+├── 📄 README.md                 # Complete documentation
+├── 📄 QUICKSTART.md             # 5-minute setup guide
+├── 📄 requirements.txt          # Python dependencies
+│
+├── 🔧 run.sh / run.bat          # Startup scripts
+├── 🧪 test_installation.py     # Verify installation
+├── 📊 load_sample_data.py       # Initialize database
+│
+├── 💻 src/                      # Backend source code
+│   ├── main.py                  # FastAPI application (14 endpoints)
+│   ├── database.py              # SQLite schema (6 tables)
+│   ├── models.py                # Pydantic models (10+ models)
+│   ├── auth.py                  # JWT authentication
+│   ├── learner_model.py         # Learner analytics
+│   ├── recommender.py           # Recommendation engine
+│   └── revision_scheduler.py   # Spaced repetition
+│
+├── 🌐 frontend/                 # Web interface
+│   └── index.html               # Dashboard UI
+│
+└── 💾 data/                     # Database (auto-created)
+    └── coding_assistant.db
 ```
 
 ## 🚀 Quick Start
