@@ -15,6 +15,14 @@ An intelligent web-based tutoring system that personalizes coding interview prep
 - Scheduling spaced-repetition reviews
 - Providing interpretable progress analytics
 
+## 🆕 Phase 3 Upgrades
+
+- Added environment-driven runtime configuration (`src/config.py`) for JWT settings, host/port, and CORS origins.
+- Enforced admin authorization on `POST /api/problems`.
+- Added analytics export endpoint `GET /api/analytics/export` (CSV download).
+- Updated frontend API routing logic to support runtime override via `?api=http://localhost:PORT/api`.
+- Updated documentation and validation notes for implementation readiness.
+
 ## 🏗️ System Architecture
 
 ```
@@ -95,9 +103,26 @@ Then visit `http://localhost:8080`
 
 If backend runs on a non-default port, open frontend with `?api=http://localhost:PORT/api` to override without editing code.
 
+### Environment Configuration
+
+Optional runtime variables:
+
+- `SECRET_KEY` (default: `dev-secret-change-me`)
+- `JWT_ALGORITHM` (default: `HS256`)
+- `ACCESS_TOKEN_EXPIRE_MINUTES` (default: `1440`)
+- `HOST` (default: `0.0.0.0`)
+- `PORT` (default: `8000`)
+- `CORS_ALLOW_ORIGINS` (comma-separated, defaults to local frontend origins)
+
+Example:
+
+```bash
+SECRET_KEY="replace-this" PORT=8001 CORS_ALLOW_ORIGINS="http://localhost:8080" python3 -m src.main
+```
+
 ## 🎯 Features Implemented
 
-### ✅ Phase 2 Functional Requirements
+### ✅ Functional Requirements Status (Phase 3)
 
 | Requirement                      | Status | Implementation                      |
 | -------------------------------- | ------ | ----------------------------------- |
@@ -273,10 +298,10 @@ Demo user has 16 practice attempts with:
 - Add rate limiting
 - Implement CSRF protection
 
-## 🎓 Phase 2 Deliverables Checklist
+## 🎓 Phase 3 Deliverables Checklist
 
 - ✅ System architecture defined
-- ✅ Functional requirements (FR1-FR14) implemented
+- ✅ FR1-FR12 implemented, FR13 partially implemented, FR14 implemented
 - ✅ Non-functional requirements addressed
 - ✅ Database schema created
 - ✅ Recommendation algorithm implemented
@@ -286,9 +311,9 @@ Demo user has 16 practice attempts with:
 - ✅ Authentication system secure
 - ✅ API documentation provided
 
-## 🚧 Future Enhancements (Phase 3)
+## 🚧 Future Enhancements (Post-Phase 3)
 
-Based on Phase 2 scope, potential improvements:
+Based on the current implementation, next-step improvements:
 
 - Integration with LeetCode/HackerRank APIs
 - Advanced ML models (collaborative filtering)
@@ -362,5 +387,5 @@ MIT License
 
 ---
 
-**Last Updated:** February 9, 2026  
+**Last Updated:** February 26, 2026
 **Version:** 1.1.0 (Phase 3 Implementation)
