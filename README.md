@@ -3,7 +3,7 @@
 **Study Project - AI/ML Course**  
 **Student:** Anshu Sinha (2034EBCS191)  
 **Advisor:** Vamsi Bandi  
-**Based on:** Phase 1 & Phase 2 Design Specifications
+**Based on:** Phase 1, Phase 2, and Phase 3 implementation
 
 ## 📋 Project Overview
 
@@ -29,10 +29,11 @@ Intelligent Learning Assistant for Coding based on ITS/
 ├── 📊 load_sample_data.py       # Initialize database
 │
 ├── 💻 src/                      # Backend source code
-│   ├── main.py                  # FastAPI application (14 endpoints)
+│   ├── main.py                  # FastAPI application (API + health routes)
 │   ├── database.py              # SQLite schema (6 tables)
 │   ├── models.py                # Pydantic models (10+ models)
 │   ├── auth.py                  # JWT authentication
+│   ├── config.py                # Environment-based runtime settings
 │   ├── learner_model.py         # Learner analytics
 │   ├── recommender.py           # Recommendation engine
 │   └── revision_scheduler.py   # Spaced repetition
@@ -92,7 +93,7 @@ python3 -m http.server 8080
 
 Then visit `http://localhost:8080`
 
-If backend runs on a non-default port, update `API_URL` in `frontend/index.html` to match.
+If backend runs on a non-default port, open frontend with `?api=http://localhost:PORT/api` to override without editing code.
 
 ## 🎯 Features Implemented
 
@@ -112,8 +113,8 @@ If backend runs on a non-default port, update `API_URL` in `frontend/index.html`
 | FR10: Progress dashboard         | ✅     | Stats, charts, weaknesses           |
 | FR11: Recommendation feedback    | ✅     | Mark completed/not solved           |
 | FR12: Real-time metric updates   | ✅     | Auto-update after attempts          |
-| FR13: Admin problem management   | ✅     | Add/update problems                 |
-| FR14: Progress export            | ✅     | API endpoints for data export       |
+| FR13: Admin problem management   | ⚠️     | Create endpoint is admin-protected in Phase 3; update flow pending |
+| FR14: Progress export            | ✅     | CSV export endpoint (`GET /api/analytics/export`) |
 
 ## 🔑 API Endpoints
 
@@ -144,6 +145,7 @@ If backend runs on a non-default port, update `API_URL` in `frontend/index.html`
 - `GET /api/analytics/dashboard` - Complete dashboard stats
 - `GET /api/analytics/weaknesses` - Top weakness areas
 - `GET /api/analytics/errors` - Error pattern summary
+- `GET /api/analytics/export` - Download attempt history as CSV
 
 ### Revisions
 
@@ -263,11 +265,10 @@ Demo user has 16 practice attempts with:
 - **Authentication:** JWT tokens (24h expiration)
 - **Authorization:** Bearer token in headers
 - **SQL Injection:** Parameterized queries
-- **CORS:** Configured for local development
+- **CORS:** Configured through `CORS_ALLOW_ORIGINS` environment variable
 
 **Production TODO:**
 
-- Use environment variables for SECRET_KEY
 - Enable HTTPS
 - Add rate limiting
 - Implement CSRF protection
@@ -362,4 +363,4 @@ MIT License
 ---
 
 **Last Updated:** February 9, 2026  
-**Version:** 1.0.0 (Phase 2 Implementation)
+**Version:** 1.1.0 (Phase 3 Implementation)

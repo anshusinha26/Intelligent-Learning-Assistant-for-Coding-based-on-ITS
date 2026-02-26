@@ -136,9 +136,9 @@ PORT=8001 ./run.sh
 
 ### Frontend can't connect to API
 Make sure:
-1. Backend is running on the same port configured in `frontend/index.html` (`API_URL`, default: 8000)
+1. Backend is running and open frontend with `?api=http://localhost:PORT/api` when using a custom backend port
 2. Open browser console (F12) to see errors
-3. Check CORS is enabled in `src/main.py`
+3. Check CORS origins in `src/config.py` include your frontend URL
 
 ## 📚 Next Steps
 
