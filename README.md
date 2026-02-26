@@ -53,7 +53,26 @@ Intelligent Learning Assistant for Coding based on ITS/
     └── coding_assistant.db
 ```
 
+## 🔄 Workflow Pipeline
+
+```mermaid
+flowchart TD
+  A["User Registers/Logs In"] --> B["JWT Issued by Auth API"]
+  B --> C["Dashboard Calls Analytics, Recommendations, and Revisions APIs"]
+  C --> D["User Records Attempt via /api/attempts"]
+  D --> E["Attempt Stored in SQLite"]
+  E --> F["Learner Model Recomputes Mastery and Error Frequency"]
+  F --> G["Recommendation Engine Scores and Ranks Problems"]
+  G --> H["Top-K Recommendations Saved with Explanation"]
+  H --> I["Frontend Renders Recommendations and Weaknesses"]
+  E --> J["If Accepted, Revision Scheduler Updates Review Queue"]
+  J --> K["Due Revisions Retrieved via /api/revisions/due"]
+  K --> I
+  I --> L["User Can Export Progress CSV via /api/analytics/export"]
+```
+
 ## 🚀 Quick Start
+
 
 ### Prerequisites
 
