@@ -35,6 +35,12 @@ Intelligent Learning Assistant for Coding based on ITS/
 ├── 🔧 run.sh / run.bat          # Startup scripts
 ├── 🧪 test_installation.py     # Verify installation
 ├── 📊 load_sample_data.py       # Initialize database
+├── 📁 evidence/               # Phase 3 validation logs and API outputs
+│   ├── test_installation.txt
+│   ├── api_health.json
+│   ├── dashboard.json / recommendations.json / revisions.json
+│   ├── progress.csv
+│   └── performance.txt
 │
 ├── 💻 src/                      # Backend source code
 │   ├── main.py                  # FastAPI application (API + health routes)
@@ -284,6 +290,23 @@ curl -X POST http://localhost:8000/api/attempts \
 2. Generate recommendations
 3. Verify DP problems are prioritized
 4. Check explanation mentions weakness
+
+
+## 📁 Validation Evidence (Phase 3)
+
+A reproducible evidence bundle is stored in `evidence/` and can be attached during evaluation.
+
+Key artifacts:
+
+- `evidence/test_installation.txt` - installation and module validation output
+- `evidence/api_health.json` - health endpoint response snapshot
+- `evidence/dashboard.json` - dashboard API output snapshot
+- `evidence/recommendations.json` - recommendation output snapshot
+- `evidence/revisions.json` - revision queue output snapshot
+- `evidence/progress.csv` - exported learner attempt history (FR14)
+- `evidence/performance.txt` - measured runtime for core analytics/recommendation flows
+- `evidence/run_meta.txt` - execution metadata (date, OS, Python version, commit)
+- `evidence/_index.txt` - evidence file index
 
 ## 📚 Sample Data
 
