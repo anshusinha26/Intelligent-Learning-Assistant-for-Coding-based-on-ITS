@@ -1,0 +1,9 @@
+Loading sample data...
+Loaded 30 sample problems
+Demo user might already exist: Email already registered
+
+Demo user created!
+Email: demo@example.com
+Password: demo123
+
+You can now login and test the system!

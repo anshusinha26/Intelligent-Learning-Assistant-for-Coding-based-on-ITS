@@ -1,0 +1,17 @@
+attempt_id,problem_id,title,topic,pattern,difficulty,verdict,time_taken,error_type,attempted_at
+1,two-sum,Two Sum,Array,Hash Map,Easy,Accepted,300,,2026-02-09 06:12:08
+2,contains-duplicate,Contains Duplicate,Array,Hash Set,Easy,Accepted,250,,2026-02-09 06:12:08
+3,valid-palindrome,Valid Palindrome,String,Two Pointers,Easy,Accepted,180,,2026-02-09 06:12:08
+4,reverse-string,Reverse String,String,Two Pointers,Easy,Accepted,150,,2026-02-09 06:12:08
+5,max-depth-tree,Maximum Depth of Binary Tree,Tree,DFS,Easy,Wrong Answer,420,edge-case,2026-02-09 06:12:08
+6,max-depth-tree,Maximum Depth of Binary Tree,Tree,DFS,Easy,Accepted,380,,2026-02-09 06:12:08
+7,3sum,3Sum,Array,Two Pointers,Medium,Time Limit Exceeded,1800,timeout,2026-02-09 06:12:08
+8,3sum,3Sum,Array,Two Pointers,Medium,Wrong Answer,1500,logic-error,2026-02-09 06:12:08
+9,longest-substring,Longest Substring Without Repeating,String,Sliding Window,Medium,Wrong Answer,900,off-by-one,2026-02-09 06:12:08
+10,longest-substring,Longest Substring Without Repeating,String,Sliding Window,Medium,Accepted,850,,2026-02-09 06:12:08
+11,search-rotated,Search in Rotated Sorted Array,Array,Binary Search,Medium,Wrong Answer,600,edge-case,2026-02-09 06:12:08
+12,container-water,Container With Most Water,Array,Two Pointers,Medium,Time Limit Exceeded,1200,timeout,2026-02-09 06:12:08
+13,climbing-stairs,Climbing Stairs,Dynamic Programming,1D DP,Easy,Accepted,400,,2026-02-09 06:12:08
+14,coin-change,Coin Change,Dynamic Programming,1D DP,Medium,Wrong Answer,1800,logic-error,2026-02-09 06:12:08
+15,house-robber,House Robber,Dynamic Programming,1D DP,Medium,Time Limit Exceeded,2000,timeout,2026-02-09 06:12:08
+16,house-robber,House Robber,Dynamic Programming,1D DP,Medium,Wrong Answer,1700,logic-error,2026-02-09 06:12:08

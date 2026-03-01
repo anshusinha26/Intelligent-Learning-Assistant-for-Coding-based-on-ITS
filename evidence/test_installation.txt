@@ -1,0 +1,39 @@
+==================================================
+Intelligent Coding Assistant - Installation Test
+==================================================
+
+Testing imports...
+✓ Database module imported
+✓ Models module imported
+✓ Auth module imported
+✓ Learner model module imported
+✓ Recommender module imported
+✓ Revision scheduler module imported
+
+✅ All imports successful!
+
+Testing database...
+✓ Database schema verified
+✅ Database tests passed!
+
+Testing authentication...
+✓ Password hashing works
+✓ User registration works
+✓ User login works
+✓ Token verification works
+✅ Authentication tests passed!
+
+==================================================
+Test Summary:
+==================================================
+Imports              ✅ PASS
+Database             ✅ PASS
+Authentication       ✅ PASS
+
+🎉 All tests passed! System is ready to use.
+
+Next steps:
+1. Run: python load_sample_data.py
+2. Run: python src/main.py
+3. Open frontend/index.html in your browser
+
