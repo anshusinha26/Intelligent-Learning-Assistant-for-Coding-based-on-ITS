@@ -57,3 +57,12 @@ data/*.db-wal
 # OS files
 .DS_Store
 Thumbs.db
+
+# repowise API keys (local)
+.repowise/.env
+.gitnexus
+.claude/
+.mcp.json
+.repowise/
+AGENTS.md
+CLAUDE.md
