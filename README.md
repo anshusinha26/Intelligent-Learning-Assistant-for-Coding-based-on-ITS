@@ -1,433 +1,351 @@
 # Intelligent Learning Assistant for Coding based on ITS
 
-**Study Project - AI/ML Course**  
+Capstone project for an Intelligent Tutoring System (ITS) based coding practice platform.
+
 **Student:** Anshu Sinha (2034EBCS191)  
 **Advisor:** Vamsi Bandi  
-**Based on:** Phase 1, Phase 2, and Phase 3 implementation
+**Current version:** Capstone build after Phase 1, Phase 2, and Phase 3
 
-## 📋 Project Overview
+## Overview
 
-An intelligent web-based tutoring system that personalizes coding interview preparation by:
+This project is a web-based coding practice and analytics system. It combines a curated DSA problem bank, authentication, a LeetCode-style practice UI, a limited Python judge, learner modeling, adaptive recommendations, spaced revision scheduling, and a dashboard for progress insights.
 
-- Analyzing learner practice history and error patterns
-- Recommending optimal next problems to solve
-- Tracking weaknesses in specific topics and patterns
-- Scheduling spaced-repetition reviews
-- Providing interpretable progress analytics
+The key idea is not only to let a learner solve problems, but to track attempts, identify weak topics and patterns, recommend unseen problems, and schedule revision using ITS principles.
 
-## 🆕 Phase 3 Upgrades
+## Current Features
 
-- Added environment-driven runtime configuration (`src/config.py`) for JWT settings, host/port, and CORS origins.
-- Enforced admin authorization on `POST /api/problems`.
-- Added analytics export endpoint `GET /api/analytics/export` (CSV download).
-- Updated frontend API routing logic to support runtime override via `?api=http://localhost:PORT/api`.
-- Updated documentation and validation notes for implementation readiness.
+- User registration and login using JWT authentication.
+- Curated DSA problem bank with 630 problems loaded from `data/dsa_problems.md`.
+- React/Vite frontend based on an online IDE style UI.
+- Problem list, problem detail page, split-pane code editor, and submission flow.
+- Monaco editor for Python code.
+- Limited Python judge for executable demo problems.
+- Manual attempt recording support through backend API.
+- Learner model that recomputes mastery and error frequency after attempts.
+- Recommendation engine that scores unseen problems by weakness and difficulty.
+- Spaced repetition scheduler for solved problems.
+- Dashboard for solved count, success rate, streak, weaknesses, and due revisions.
+- CSV export of user attempt history.
 
-## 🏗️ System Architecture
+## Project Structure
 
-```
-Intelligent Learning Assistant for Coding based on ITS/
-│
-├── 📄 README.md                 # Complete documentation
-├── 📄 QUICKSTART.md             # 5-minute setup guide
-├── 📄 requirements.txt          # Python dependencies
-│
-├── 🔧 run.sh / run.bat          # Startup scripts
-├── 🧪 test_installation.py     # Verify installation
-├── 📊 load_sample_data.py       # Initialize database
-├── 📁 evidence/               # Phase 3 validation logs and API outputs
-│   ├── test_installation.txt
-│   ├── api_health.json
-│   ├── dashboard.json / recommendations.json / revisions.json
-│   ├── progress.csv
-│   └── performance.txt
-│
-├── 💻 src/                      # Backend source code
-│   ├── main.py                  # FastAPI application (API + health routes)
-│   ├── database.py              # SQLite schema (6 tables)
-│   ├── models.py                # Pydantic models (10+ models)
-│   ├── auth.py                  # JWT authentication
-│   ├── config.py                # Environment-based runtime settings
-│   ├── learner_model.py         # Learner analytics
-│   ├── recommender.py           # Recommendation engine
-│   └── revision_scheduler.py   # Spaced repetition
-│
-├── 🌐 frontend/                 # Web interface
-│   └── index.html               # Dashboard UI
-│
-└── 💾 data/                     # Database (auto-created)
-    └── coding_assistant.db
+```text
+.
+├── src/
+│   ├── main.py                 # FastAPI routes and service wiring
+│   ├── database.py             # SQLite schema and migration helpers
+│   ├── models.py               # Pydantic request/response models
+│   ├── auth.py                 # JWT auth and bcrypt password hashing
+│   ├── learner_model.py        # Mastery, weakness, and error analytics
+│   ├── recommender.py          # Personalized recommendation scoring
+│   ├── revision_scheduler.py   # Spaced repetition scheduler
+│   ├── judge.py                # Limited Python judge for demo submissions
+│   └── config.py               # Environment-driven runtime config
+├── frontend/
+│   ├── src/                    # React/Vite frontend
+│   ├── package.json            # Frontend dependencies and scripts
+│   └── LICENSE.online-ide      # MIT attribution for referenced UI project
+├── data/
+│   ├── dsa_problems.md         # Curated DSA problem bank
+│   └── coding_assistant.db     # Local SQLite DB, generated/updated locally
+├── load_sample_data.py         # Seeds problem bank and demo user
+├── test_installation.py        # Backend smoke tests
+├── requirements.txt            # Backend dependencies
+└── run.sh                      # Backend convenience runner
 ```
 
-## 🔄 Workflow Pipeline
+## Architecture
 
 ```mermaid
 flowchart TD
-  A["User Registers/Logs In"] --> B["JWT Issued by Auth API"]
-  B --> C["Dashboard Calls Analytics, Recommendations, and Revisions APIs"]
-  C --> D["User Records Attempt via /api/attempts"]
-  D --> E["Attempt Stored in SQLite"]
-  E --> F["Learner Model Recomputes Mastery and Error Frequency"]
-  F --> G["Recommendation Engine Scores and Ranks Problems"]
-  G --> H["Top-K Recommendations Saved with Explanation"]
-  H --> I["Frontend Renders Recommendations and Weaknesses"]
-  E --> J["If Accepted, Revision Scheduler Updates Review Queue"]
-  J --> K["Due Revisions Retrieved via /api/revisions/due"]
-  K --> I
-  I --> L["User Can Export Progress CSV via /api/analytics/export"]
+  A["React frontend"] --> B["FastAPI backend"]
+  B --> C["SQLite database"]
+  B --> D["Auth service"]
+  B --> E["Learner model"]
+  B --> F["Recommendation engine"]
+  B --> G["Revision scheduler"]
+  B --> H["Limited Python judge"]
+  C --> I["Problem bank, users, attempts, submissions, metrics"]
+  H --> J["Submission verdict"]
+  J --> E
+  E --> F
+  E --> G
 ```
 
-## 🚀 Quick Start
+## Learning Flow
 
+1. User registers or logs in.
+2. User opens the DSA problem bank.
+3. User solves a problem in the editor or records an attempt.
+4. Backend stores the attempt/submission.
+5. Learner model recomputes topic and pattern mastery.
+6. Recommender ranks unseen problems.
+7. Revision scheduler creates review tasks for solved problems.
+8. Dashboard shows progress, weak areas, recommendations, and due revisions.
 
-### Prerequisites
+## Tech Stack
 
-- Python 3.8 or higher (`python3`)
-- pip (`python3 -m pip`)
+**Backend**
 
-### Installation
+- Python
+- FastAPI
+- SQLite
+- Pydantic
+- bcrypt
+- JWT
 
-1. **Install dependencies:**
+**Frontend**
+
+- React
+- Vite
+- Tailwind CSS
+- shadcn-style UI components
+- Monaco Editor
+- React Router
+
+**Data**
+
+- Curated DSA markdown problem bank
+- SQLite local storage
+
+## Quick Start
+
+### 1. Backend Setup
 
 ```bash
 python3 -m pip install -r requirements.txt
+python3 load_sample_data.py
+PORT=8020 python3 -m src.main
 ```
 
-2. **Initialize database with sample data:**
+Backend runs at:
+
+```text
+http://localhost:8020
+```
+
+API docs:
+
+```text
+http://localhost:8020/docs
+```
+
+### 2. Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev -- --host 0.0.0.0 --port 5173
+```
+
+Frontend runs at:
+
+```text
+http://localhost:5173
+```
+
+If needed, force API URL:
+
+```text
+http://localhost:5173/?api=http://localhost:8020/api
+```
+
+### 3. Demo Login
+
+```text
+Email: demo@example.com
+Password: demo123
+```
+
+## Environment Variables
+
+Backend:
+
+- `SECRET_KEY` defaults to `dev-secret-change-me`
+- `JWT_ALGORITHM` defaults to `HS256`
+- `ACCESS_TOKEN_EXPIRE_MINUTES` defaults to `1440`
+- `HOST` defaults to `0.0.0.0`
+- `PORT` defaults to `8000`
+- `CORS_ALLOW_ORIGINS` defaults to local frontend origins including `5173`
+
+Frontend:
+
+- Runtime `?api=http://localhost:PORT/api` overrides the backend API base URL and is stored in local storage.
+- The default frontend API URL is `http://localhost:8020/api`.
+
+## API Endpoints
+
+Authentication:
+
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+- `GET /api/auth/me`
+
+Problems:
+
+- `GET /api/problems`
+- `GET /api/problems/{problem_id}`
+- `POST /api/problems` admin only
+
+Practice and submissions:
+
+- `POST /api/attempts`
+- `GET /api/attempts`
+- `POST /api/submissions`
+- `GET /api/submissions`
+
+Recommendations:
+
+- `POST /api/recommendations/generate`
+- `GET /api/recommendations`
+- `POST /api/recommendations/{rec_id}/complete`
+
+Analytics:
+
+- `GET /api/analytics/dashboard`
+- `GET /api/analytics/weaknesses`
+- `GET /api/analytics/errors`
+- `GET /api/analytics/export`
+
+Revisions:
+
+- `GET /api/revisions/due`
+- `POST /api/revisions/{schedule_id}/complete`
+
+## Problem Bank
+
+Problems are loaded from:
+
+```text
+data/dsa_problems.md
+```
+
+The current markdown bank parses into 630 problems.
+
+The loader parses markdown headings into:
+
+- topic
+- difficulty
+- problem title
+- source URL
+- tags
+- description
+
+Some key problems also include executable sample tests for the limited judge, such as:
+
+- `two-sum`
+- `contains-duplicate`
+- `valid-anagram`
+- `valid-palindrome`
+- `longest-substring`
+- `climbing-stairs`
+
+Run this after editing the markdown bank:
 
 ```bash
 python3 load_sample_data.py
 ```
 
-This creates:
+## Data Model
 
-- 30 sample coding problems
-- Demo user account (email: `demo@example.com`, password: `demo123`)
-- Sample practice history
+SQLite tables:
 
-3. **Start the backend server:**
+- `users`
+- `problems`
+- `attempts`
+- `learner_metrics`
+- `recommendations`
+- `revision_schedule`
+- `submissions`
 
-```bash
-python3 -m src.main
+## Limited Judge
+
+`src/judge.py` provides a demo Python judge.
+
+It supports:
+
+- function-style Python submissions
+- JSON test cases stored in the `problems` table
+- subprocess timeout
+- restricted import allowlist for common modules such as `typing`, `math`, `collections`, `heapq`, `bisect`, and `itertools`
+
+Important: this judge is suitable for capstone demo only. A production judge must use stronger isolation such as Docker, Judge0, or a separate sandboxed runner service.
+
+## Recommendation Logic
+
+The recommender scores unseen problems using:
+
+- topic weakness
+- pattern weakness
+- target difficulty match
+
+It stores the top recommendations with human-readable explanations.
+
+## Learner Model
+
+The learner model tracks:
+
+- total attempts
+- solved problems
+- topic mastery
+- pattern mastery
+- error frequency
+- recurring error types
+- current streak
+
+Mastery is computed as accepted attempts divided by total attempts for each topic or pattern.
+
+## Spaced Repetition
+
+Solved problems are scheduled for revision using intervals:
+
+```text
+1, 3, 7, 14, 30, 60 days
 ```
 
-The API will be available at `http://localhost:8000` (default).  
-If port 8000 is busy, run `PORT=8001 python3 -m src.main`.
+After the final interval, the schedule continues with longer intervals capped at 90 days.
 
-4. **Open the frontend:**
+## Testing
 
-Open `frontend/index.html` in your web browser, or serve it using:
+Backend smoke test:
 
 ```bash
-# Using Python's built-in server
+python3 test_installation.py
+```
+
+Compile check:
+
+```bash
+python3 -m compileall -q src load_sample_data.py test_installation.py
+```
+
+Frontend build:
+
+```bash
 cd frontend
-python3 -m http.server 8080
+npm run build
 ```
 
-Then visit `http://localhost:8080`
+## Deployment Notes
 
-If backend runs on a non-default port, open frontend with `?api=http://localhost:PORT/api` to override without editing code.
+Recommended capstone deployment:
 
-### Environment Configuration
+- Frontend on Vercel.
+- Backend on Render, Railway, Fly.io, or another Python-capable host.
+- Database upgrade from SQLite to Postgres/Supabase before multi-user public deployment.
+- Judge moved to a Dockerized runner service before allowing untrusted public code execution.
+- GitHub Pages alone is suitable only for a static frontend; the authenticated backend, database, recommendations, and judge require a separate backend service.
 
-Optional runtime variables:
+## Attribution
 
-- `SECRET_KEY` (default: `dev-secret-change-me`)
-- `JWT_ALGORITHM` (default: `HS256`)
-- `ACCESS_TOKEN_EXPIRE_MINUTES` (default: `1440`)
-- `HOST` (default: `0.0.0.0`)
-- `PORT` (default: `8000`)
-- `CORS_ALLOW_ORIGINS` (comma-separated, defaults to local frontend origins)
+The React frontend design and UI structure are based on the MIT-licensed `online-ide` project by Manan Gandhi. The license text is included in:
 
-Example:
-
-```bash
-SECRET_KEY="replace-this" PORT=8001 CORS_ALLOW_ORIGINS="http://localhost:8080" python3 -m src.main
+```text
+frontend/LICENSE.online-ide
 ```
 
-## 🎯 Features Implemented
+This project adapts the frontend to the ITS backend, learner modeling, DSA bank, recommendation engine, and revision scheduler.
 
-### ✅ Functional Requirements Status (Phase 3)
+## License
 
-| Requirement                      | Status | Implementation                      |
-| -------------------------------- | ------ | ----------------------------------- |
-| FR1: User registration & login   | ✅     | JWT-based authentication            |
-| FR2: User profile management     | ✅     | Target level, preferences           |
-| FR3: Problem catalog             | ✅     | 30 sample problems, CRUD operations |
-| FR4: Practice attempt recording  | ✅     | Verdict, time, error type tracking  |
-| FR5: Weakness score computation  | ✅     | Topic/pattern mastery calculation   |
-| FR6: Error pattern detection     | ✅     | Categorized error tracking          |
-| FR7: Top-K recommendations       | ✅     | Hybrid scoring algorithm            |
-| FR8: Recommendation explanations | ✅     | Human-readable reasons              |
-| FR9: Spaced revision scheduling  | ✅     | 6-interval spaced repetition        |
-| FR10: Progress dashboard         | ✅     | Stats, charts, weaknesses           |
-| FR11: Recommendation feedback    | ✅     | Mark completed/not solved           |
-| FR12: Real-time metric updates   | ✅     | Auto-update after attempts          |
-| FR13: Admin problem management   | ⚠️     | Create endpoint is admin-protected in Phase 3; update flow pending |
-| FR14: Progress export            | ✅     | CSV export endpoint (`GET /api/analytics/export`) |
-
-## 🔑 API Endpoints
-
-### Authentication
-
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - Login and get JWT token
-- `GET /api/auth/me` - Get current user profile
-
-### Problems
-
-- `POST /api/problems` - Create problem (admin)
-- `GET /api/problems` - List problems with filters
-
-### Practice
-
-- `POST /api/attempts` - Record attempt
-- `GET /api/attempts` - Get attempt history
-
-### Recommendations
-
-- `POST /api/recommendations/generate` - Generate top-K recommendations
-- `GET /api/recommendations` - Get existing recommendations
-- `POST /api/recommendations/{id}/complete` - Mark as completed
-
-### Analytics
-
-- `GET /api/analytics/dashboard` - Complete dashboard stats
-- `GET /api/analytics/weaknesses` - Top weakness areas
-- `GET /api/analytics/errors` - Error pattern summary
-- `GET /api/analytics/export` - Download attempt history as CSV
-
-### Revisions
-
-- `GET /api/revisions/due` - Problems due for review
-- `POST /api/revisions/{id}/complete` - Mark revision completed
-
-## 🧠 Recommendation Algorithm
-
-The system uses a **hybrid scoring approach**:
-
-### Scoring Factors
-
-1. **Topic Weakness (0-50 points)**
-    - Higher score for topics with low mastery
-    - Considers error frequency in topic
-
-2. **Pattern Weakness (0-30 points)**
-    - Targets specific algorithmic patterns
-    - Two Pointers, Sliding Window, DFS, etc.
-
-3. **Difficulty Progression (0-20 points)**
-    - Matches user's target difficulty level
-    - Supports adaptive progression
-
-### Example Calculation
-
-```python
-Problem: "3Sum" (Medium, Array, Two Pointers)
-User: Weak in Arrays (30% mastery), Target: Medium
-
-Score = 35 (topic) + 20 (pattern) + 20 (difficulty) = 75
-Reason: "Weak in Array (mastery: 30%) • Practice Two Pointers pattern"
-```
-
-## 📊 Learner Modeling
-
-### Metrics Tracked
-
-- **Mastery Score** = Success Rate per Topic/Pattern
-- **Error Frequency** = Error Rate per Topic/Pattern
-- **Attempt Count** = Total attempts per area
-- **Success Rate** = Overall acceptance rate
-- **Current Streak** = Consecutive successful days
-
-### Error Categories
-
-- `off-by-one` - Index boundary errors
-- `edge-case` - Missed corner cases
-- `timeout` - Time complexity issues
-- `logic-error` - Algorithmic mistakes
-- `memory-limit` - Space complexity issues
-
-## 🔄 Spaced Repetition
-
-Uses **6-interval schedule**:
-
-- Day 1 (initial review)
-- Day 3
-- Day 7
-- Day 14
-- Day 30
-- Day 60
-
-Intervals double after completion, capped at 90 days.
-
-## 🧪 Testing the System
-
-### Test Scenario 1: New User Flow
-
-1. Register account
-2. Log solved problems
-3. Generate recommendations
-4. View weaknesses identified
-
-### Test Scenario 2: Practice Recording
-
-```bash
-# Via API
-curl -X POST http://localhost:8000/api/attempts \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "problem_id": "two-sum",
-    "verdict": "Accepted",
-    "time_taken": 300
-  }'
-```
-
-### Test Scenario 3: Recommendation Quality
-
-1. Record struggles in Dynamic Programming
-2. Generate recommendations
-3. Verify DP problems are prioritized
-4. Check explanation mentions weakness
-
-
-## 📁 Validation Evidence (Phase 3)
-
-A reproducible evidence bundle is stored in `evidence/` and can be attached during evaluation.
-
-Key artifacts:
-
-- `evidence/test_installation.txt` - installation and module validation output
-- `evidence/api_health.json` - health endpoint response snapshot
-- `evidence/dashboard.json` - dashboard API output snapshot
-- `evidence/recommendations.json` - recommendation output snapshot
-- `evidence/revisions.json` - revision queue output snapshot
-- `evidence/progress.csv` - exported learner attempt history (FR14)
-- `evidence/performance.txt` - measured runtime for core analytics/recommendation flows
-- `evidence/run_meta.txt` - execution metadata (date, OS, Python version, commit)
-- `evidence/_index.txt` - evidence file index
-
-## 📚 Sample Data
-
-The system includes 30 LeetCode-style problems across:
-
-- **Arrays** (Easy, Medium)
-- **Strings** (Easy, Medium)
-- **Linked Lists** (Easy)
-- **Trees** (Easy, Medium)
-- **Dynamic Programming** (Easy, Medium)
-- **Graphs** (Medium)
-
-Demo user has 16 practice attempts with:
-
-- Mix of accepted/failed attempts
-- Various error types
-- Weakness in Dynamic Programming
-- Moderate success in Arrays/Strings
-
-## 🔒 Security
-
-- **Password Hashing:** bcrypt with salt
-- **Authentication:** JWT tokens (24h expiration)
-- **Authorization:** Bearer token in headers
-- **SQL Injection:** Parameterized queries
-- **CORS:** Configured through `CORS_ALLOW_ORIGINS` environment variable
-
-**Production TODO:**
-
-- Enable HTTPS
-- Add rate limiting
-- Implement CSRF protection
-
-## 🎓 Phase 3 Deliverables Checklist
-
-- ✅ System architecture defined
-- ✅ FR1-FR12 implemented, FR13 partially implemented, FR14 implemented
-- ✅ Non-functional requirements addressed
-- ✅ Database schema created
-- ✅ Recommendation algorithm implemented
-- ✅ Learner modeling module complete
-- ✅ Spaced repetition scheduler working
-- ✅ Web dashboard functional
-- ✅ Authentication system secure
-- ✅ API documentation provided
-
-## 🚧 Future Enhancements (Post-Phase 3)
-
-Based on the current implementation, next-step improvements:
-
-- Integration with LeetCode/HackerRank APIs
-- Advanced ML models (collaborative filtering)
-- Real-time code analysis
-- Peer comparison features
-- Mobile app development
-- PostgreSQL migration for scale
-- Docker containerization
-- CI/CD pipeline setup
-
-## 📝 Academic Alignment
-
-### Course Learning Outcomes Achieved
-
-✅ Intelligent, adaptive system design  
-✅ User modeling and personalization  
-✅ Recommender system implementation  
-✅ AI-driven learning support  
-✅ Python development skills  
-✅ System design and documentation
-
-### ITS Components Implemented
-
-- **Learner Model:** Tracks mastery, errors, progress
-- **Domain Model:** Problem catalog with metadata
-- **Tutoring Model:** Recommendation engine
-- **Interface:** Web dashboard with analytics
-
-## 👨‍💻 Development Notes
-
-### Adding New Problems
-
-```python
-from src.database import Database
-db = Database()
-conn = db.get_connection()
-cursor = conn.cursor()
-
-cursor.execute("""
-    INSERT INTO problems
-    (problem_id, title, topic, pattern, difficulty, tags, description)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
-""", ("new-problem", "Problem Title", "Array", "Two Pointers",
-      "Medium", "array,pointers", "Description here"))
-
-conn.commit()
-conn.close()
-```
-
-### Manual Testing
-
-```bash
-# Check database
-sqlite3 data/coding_assistant.db
-> SELECT * FROM users;
-> SELECT * FROM problems LIMIT 5;
-> SELECT * FROM attempts WHERE user_id = 1;
-```
-
-## 📞 Contact
-
-For questions or issues:
-
-- **Student:** Anshu Sinha
-- **Email:** anshujuly2@gmail.com
-- **Advisor:** Vamsi Bandi
-
-## 📄 License
-
-MIT License
-
----
-
-**Last Updated:** February 26, 2026
-**Version:** 1.1.0 (Phase 3 Implementation)
+MIT License. See `LICENSE`.
