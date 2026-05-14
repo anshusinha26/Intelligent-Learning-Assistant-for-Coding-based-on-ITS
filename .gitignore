@@ -6,6 +6,7 @@ __pycache__/
 # Build and packaging artifacts
 build/
 dist/
+node_modules/
 .eggs/
 *.egg-info/
 *.egg
