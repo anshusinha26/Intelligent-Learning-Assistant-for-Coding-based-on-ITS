@@ -34,6 +34,12 @@ class ProblemCreate(BaseModel):
     difficulty: str
     tags: Optional[str] = None
     description: Optional[str] = None
+    constraints: Optional[str] = None
+    examples: Optional[str] = None
+    source_url: Optional[str] = None
+    function_name: Optional[str] = "solve"
+    starter_code: Optional[str] = None
+    test_cases: Optional[str] = None
 
 class Problem(BaseModel):
     problem_id: str
@@ -43,6 +49,12 @@ class Problem(BaseModel):
     difficulty: str
     tags: Optional[str]
     description: Optional[str]
+    constraints: Optional[str] = None
+    examples: Optional[str] = None
+    source_url: Optional[str] = None
+    function_name: Optional[str] = "solve"
+    starter_code: Optional[str] = None
+    test_cases: Optional[str] = None
 
 # Attempt Models
 class AttemptCreate(BaseModel):
@@ -59,6 +71,23 @@ class Attempt(BaseModel):
     time_taken: Optional[int]
     error_type: Optional[str]
     attempted_at: datetime
+
+# Submission Models
+class CodeSubmissionCreate(BaseModel):
+    problem_id: str
+    code: str
+    language: str = "python"
+
+class CodeSubmission(BaseModel):
+    submission_id: int
+    user_id: int
+    problem_id: str
+    language: str
+    code: str
+    verdict: str
+    runtime_ms: Optional[int]
+    output: Optional[str]
+    submitted_at: datetime
 
 # Learner Metrics Models
 class LearnerMetric(BaseModel):

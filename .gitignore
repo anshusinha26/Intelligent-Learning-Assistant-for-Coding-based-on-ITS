@@ -58,7 +58,7 @@ data/*.db-wal
 .DS_Store
 Thumbs.db
 
-# repowise API keys (local)
+# repowise and gitnexus (local)
 .repowise/.env
 .gitnexus
 .claude/

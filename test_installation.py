@@ -28,6 +28,9 @@ def test_imports():
         
         from src.revision_scheduler import RevisionScheduler
         print("✓ Revision scheduler module imported")
+
+        from src.judge import JudgeService
+        print("✓ Judge module imported")
         
         print("\n✅ All imports successful!\n")
         return True
@@ -52,8 +55,8 @@ def test_database():
         cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
         tables = [row[0] for row in cursor.fetchall()]
         
-        required_tables = ['users', 'problems', 'attempts', 'learner_metrics', 
-                          'recommendations', 'revision_schedule']
+        required_tables = ['users', 'problems', 'attempts', 'learner_metrics',
+                          'recommendations', 'revision_schedule', 'submissions']
         
         missing_tables = [t for t in required_tables if t not in tables]
         

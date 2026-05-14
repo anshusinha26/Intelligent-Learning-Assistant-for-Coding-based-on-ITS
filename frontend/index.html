@@ -130,7 +130,8 @@
                 font-weight: 600;
             }
 
-            .form-group input {
+            .form-group input,
+            .form-group select {
                 width: 100%;
                 border: 1px solid var(--border);
                 border-radius: 11px;
@@ -141,10 +142,34 @@
                 transition: border-color 140ms ease, box-shadow 140ms ease;
             }
 
-            .form-group input:focus {
+            .form-group input:focus,
+            .form-group select:focus {
                 outline: none;
                 border-color: rgba(255, 157, 0, 0.82);
                 box-shadow: 0 0 0 3px rgba(255, 157, 0, 0.16);
+            }
+
+            .auth-toggle {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                margin-bottom: 18px;
+            }
+
+            .auth-toggle button {
+                border: 1px solid var(--border);
+                border-radius: 11px;
+                padding: 10px;
+                background: rgba(255, 255, 255, 0.06);
+                color: var(--text-muted);
+                cursor: pointer;
+                font-weight: 700;
+            }
+
+            .auth-toggle button.active {
+                background: rgba(255, 157, 0, 0.16);
+                border-color: rgba(255, 157, 0, 0.48);
+                color: var(--text-primary);
             }
 
             .btn {
@@ -330,6 +355,124 @@
                 font-size: 1.03rem;
                 color: #ffffff;
                 letter-spacing: 0.01em;
+            }
+
+            .practice-grid {
+                display: grid;
+                grid-template-columns: minmax(250px, 330px) minmax(0, 1fr);
+                gap: 14px;
+            }
+
+            .problem-tools {
+                display: grid;
+                grid-template-columns: 1fr 120px;
+                gap: 8px;
+                margin-bottom: 10px;
+            }
+
+            .problem-tools input,
+            .problem-tools select,
+            .manual-attempt select {
+                min-width: 0;
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 10px 11px;
+                background: rgba(9, 14, 22, 0.72);
+                color: var(--text-primary);
+            }
+
+            .problem-list {
+                max-height: 510px;
+                overflow: auto;
+                display: grid;
+                gap: 8px;
+                padding-right: 4px;
+            }
+
+            .problem-row {
+                width: 100%;
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                border-radius: 12px;
+                padding: 11px;
+                background: rgba(12, 18, 28, 0.64);
+                color: var(--text-primary);
+                cursor: pointer;
+                text-align: left;
+            }
+
+            .problem-row.active {
+                border-color: rgba(255, 157, 0, 0.52);
+                background: rgba(255, 157, 0, 0.1);
+            }
+
+            .problem-row-title {
+                display: block;
+                font-weight: 750;
+                margin-bottom: 7px;
+            }
+
+            .problem-detail {
+                display: grid;
+                gap: 12px;
+            }
+
+            .problem-description {
+                color: var(--text-muted);
+                line-height: 1.48;
+                font-size: 0.92rem;
+            }
+
+            .code-editor {
+                width: 100%;
+                min-height: 260px;
+                resize: vertical;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 12px;
+                padding: 14px;
+                color: #e9f0fb;
+                background: #080d14;
+                font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .submission-actions {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            .manual-attempt {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+
+            .result-box {
+                min-height: 68px;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 12px;
+                padding: 12px;
+                background: rgba(7, 11, 18, 0.72);
+                color: var(--text-muted);
+                white-space: pre-wrap;
+                font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+                font-size: 0.82rem;
+                overflow-x: auto;
+            }
+
+            .submission-row {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                gap: 8px;
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                border-radius: 12px;
+                padding: 10px 12px;
+                background: rgba(12, 18, 28, 0.58);
+                color: var(--text-muted);
+                font-size: 0.84rem;
             }
 
             .list-stack {
@@ -548,6 +691,10 @@
                 .section-wide {
                     grid-column: auto;
                 }
+
+                .practice-grid {
+                    grid-template-columns: 1fr;
+                }
             }
 
             @media (max-width: 620px) {
@@ -578,6 +725,10 @@
                 .score-pill {
                     align-self: flex-start;
                 }
+
+                .problem-tools {
+                    grid-template-columns: 1fr;
+                }
             }
         </style>
     </head>
@@ -596,7 +747,20 @@
 
                 <div id="loginError" class="error hidden"></div>
 
+                <div class="auth-toggle">
+                    <button id="loginModeBtn" class="active" type="button" onclick="setAuthMode('login')">
+                        Sign In
+                    </button>
+                    <button id="registerModeBtn" type="button" onclick="setAuthMode('register')">
+                        Create Account
+                    </button>
+                </div>
+
                 <form id="loginForm">
+                    <div id="nameGroup" class="form-group hidden">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" value="New Learner" />
+                    </div>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input
@@ -605,6 +769,14 @@
                             required
                             value="demo@example.com"
                         />
+                    </div>
+                    <div id="targetLevelGroup" class="form-group hidden">
+                        <label for="targetLevel">Target Level</label>
+                        <select id="targetLevel">
+                            <option value="easy">Easy</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
@@ -615,7 +787,7 @@
                             value="demo123"
                         />
                     </div>
-                    <button type="submit" class="btn btn-primary">Sign In</button>
+                    <button id="authSubmitBtn" type="submit" class="btn btn-primary">Sign In</button>
                 </form>
 
                 <p class="demo-note">Demo credentials: demo@example.com / demo123</p>
@@ -663,6 +835,75 @@
             <main class="section-grid">
                 <section class="section section-wide">
                     <div class="section-header">
+                        <h2>Practice Lab</h2>
+                    </div>
+                    <div class="practice-grid">
+                        <aside>
+                            <div class="problem-tools">
+                                <input
+                                    id="problemSearch"
+                                    type="search"
+                                    placeholder="Search problems"
+                                    oninput="loadProblems()"
+                                />
+                                <select id="difficultyFilter" onchange="loadProblems()">
+                                    <option value="">All</option>
+                                    <option value="Easy">Easy</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Hard">Hard</option>
+                                </select>
+                            </div>
+                            <div id="problemList" class="problem-list"></div>
+                        </aside>
+
+                        <article class="problem-detail">
+                            <div>
+                                <div class="card-title-row">
+                                    <h2 id="problemTitle">Select a problem</h2>
+                                    <span id="problemDifficulty" class="badge badge-medium">Medium</span>
+                                </div>
+                                <div id="problemMeta" class="recommendation-meta"></div>
+                                <p id="problemDescription" class="problem-description">
+                                    Choose from the bank, solve in Python, then submit to update your learner profile.
+                                </p>
+                                <p id="problemExamples" class="reason-text"></p>
+                                <p id="problemConstraints" class="reason-text"></p>
+                                <p id="problemSource" class="reason-text"></p>
+                            </div>
+
+                            <textarea id="codeEditor" class="code-editor" spellcheck="false"></textarea>
+
+                            <div class="submission-actions">
+                                <button class="btn btn-primary btn-generate" onclick="runCode(this)">
+                                    Run Python
+                                </button>
+                                <div class="manual-attempt">
+                                    <select id="manualVerdict">
+                                        <option value="Accepted">Accepted</option>
+                                        <option value="Wrong Answer">Wrong Answer</option>
+                                        <option value="Time Limit Exceeded">Time Limit Exceeded</option>
+                                        <option value="Runtime Error">Runtime Error</option>
+                                    </select>
+                                    <button class="btn btn-secondary" onclick="recordManualAttempt(this)">
+                                        Record Attempt
+                                    </button>
+                                </div>
+                            </div>
+
+                            <pre id="judgeOutput" class="result-box">No submissions yet.</pre>
+
+                            <div>
+                                <div class="section-header">
+                                    <h2>Submissions</h2>
+                                </div>
+                                <div id="submissionsList" class="list-stack"></div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="section section-wide">
+                    <div class="section-header">
                         <h2>Recommended for You</h2>
                         <button
                             class="btn btn-primary btn-generate"
@@ -702,9 +943,30 @@
             }
             let authToken = localStorage.getItem("authToken");
             let userName = localStorage.getItem("userName");
+            let authMode = "login";
+            let selectedProblemId = null;
+            let allProblems = [];
 
             if (authToken) {
                 showDashboard();
+            }
+
+            function setAuthMode(mode) {
+                authMode = mode;
+                document
+                    .getElementById("loginModeBtn")
+                    .classList.toggle("active", mode === "login");
+                document
+                    .getElementById("registerModeBtn")
+                    .classList.toggle("active", mode === "register");
+                document
+                    .getElementById("nameGroup")
+                    .classList.toggle("hidden", mode !== "register");
+                document
+                    .getElementById("targetLevelGroup")
+                    .classList.toggle("hidden", mode !== "register");
+                document.getElementById("authSubmitBtn").textContent =
+                    mode === "login" ? "Sign In" : "Create Account";
             }
 
             document
@@ -715,12 +977,24 @@
 
                     const email = document.getElementById("email").value;
                     const password = document.getElementById("password").value;
+                    const endpoint =
+                        authMode === "login" ? "/auth/login" : "/auth/register";
+                    const payload =
+                        authMode === "login"
+                            ? { email, password }
+                            : {
+                                  name: document.getElementById("name").value,
+                                  email,
+                                  password,
+                                  target_level:
+                                      document.getElementById("targetLevel").value,
+                              };
 
                     try {
-                        const response = await fetch(`${API_URL}/auth/login`, {
+                        const response = await fetch(`${API_URL}${endpoint}`, {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({ email, password }),
+                            body: JSON.stringify(payload),
                         });
 
                         if (response.ok) {
@@ -731,7 +1005,8 @@
                             localStorage.setItem("userName", userName);
                             showDashboard();
                         } else {
-                            showError("Invalid email or password");
+                            const error = await response.json().catch(() => ({}));
+                            showError(error.detail || "Authentication failed");
                         }
                     } catch (error) {
                         showError("Login failed. Make sure the server is running.");
@@ -787,12 +1062,22 @@
                 return response.json();
             }
 
+            function escapeHtml(value) {
+                return String(value ?? "")
+                    .replaceAll("&", "&amp;")
+                    .replaceAll("<", "&lt;")
+                    .replaceAll(">", "&gt;")
+                    .replaceAll('"', "&quot;")
+                    .replaceAll("'", "&#039;");
+            }
+
             async function loadDashboard() {
                 await Promise.all([
                     loadStats(),
                     loadRecommendations(),
                     loadWeaknesses(),
                     loadRevisions(),
+                    loadProblems(),
                 ]);
             }
 
@@ -812,6 +1097,118 @@
                     document.getElementById("dueRevisions").textContent =
                         revisionData.stats.due_revisions;
                 }
+            }
+
+            async function loadProblems() {
+                const search = document.getElementById("problemSearch")?.value || "";
+                const difficulty =
+                    document.getElementById("difficultyFilter")?.value || "";
+                const params = new URLSearchParams({ limit: "500" });
+                if (search) params.set("q", search);
+                if (difficulty) params.set("difficulty", difficulty);
+
+                const problems = await apiCall(`/problems?${params.toString()}`);
+                allProblems = problems || [];
+                renderProblems();
+
+                if (!selectedProblemId && allProblems.length > 0) {
+                    selectProblem(allProblems[0].problem_id);
+                }
+            }
+
+            function renderProblems() {
+                const container = document.getElementById("problemList");
+                if (!container) return;
+
+                if (!allProblems.length) {
+                    container.innerHTML =
+                        '<div class="empty-state">No problems match current filters.</div>';
+                    return;
+                }
+
+                container.innerHTML = allProblems
+                    .slice(0, 120)
+                    .map((problem) => {
+                        const difficultyClass = normalizeDifficulty(
+                            problem.difficulty,
+                        );
+                        const active =
+                            problem.problem_id === selectedProblemId ? " active" : "";
+                        return `
+                            <button class="problem-row${active}" onclick="selectProblem('${escapeHtml(problem.problem_id)}')">
+                                <span class="problem-row-title">${escapeHtml(problem.title)}</span>
+                                <span class="badge badge-${difficultyClass}">${escapeHtml(problem.difficulty)}</span>
+                                <span class="badge badge-topic">${escapeHtml(problem.topic)}</span>
+                            </button>
+                        `;
+                    })
+                    .join("");
+            }
+
+            async function selectProblem(problemId) {
+                selectedProblemId = problemId;
+                renderProblems();
+
+                const problem = await apiCall(`/problems/${encodeURIComponent(problemId)}`);
+                if (!problem) return;
+
+                const difficultyClass = normalizeDifficulty(problem.difficulty);
+                document.getElementById("problemTitle").textContent = problem.title;
+                const difficulty = document.getElementById("problemDifficulty");
+                difficulty.textContent = problem.difficulty;
+                difficulty.className = `badge badge-${difficultyClass}`;
+                document.getElementById("problemMeta").innerHTML = `
+                    <span class="badge badge-topic">${escapeHtml(problem.topic)}</span>
+                    ${problem.pattern ? `<span class="badge badge-pattern">${escapeHtml(problem.pattern)}</span>` : ""}
+                `;
+                document.getElementById("problemDescription").textContent =
+                    problem.description || "No description available.";
+                document.getElementById("problemExamples").textContent =
+                    problem.examples ? `Example: ${problem.examples}` : "";
+                document.getElementById("problemConstraints").textContent =
+                    problem.constraints ? `Constraints: ${problem.constraints}` : "";
+                document.getElementById("problemSource").innerHTML = problem.source_url
+                    ? `<a href="${escapeHtml(problem.source_url)}" target="_blank" rel="noreferrer" style="color: var(--accent-strong)">Open original problem</a>`
+                    : "";
+                document.getElementById("codeEditor").value =
+                    problem.starter_code ||
+                    "def solve(*args):\n    # Write your solution here.\n    return None\n";
+                document.getElementById("judgeOutput").textContent =
+                    "Ready. Submit Python function shown in starter code.";
+                await loadSubmissions(problemId);
+            }
+
+            async function loadSubmissions(problemId = selectedProblemId) {
+                const container = document.getElementById("submissionsList");
+                if (!container || !problemId) return;
+
+                const data = await apiCall(
+                    `/submissions?problem_id=${encodeURIComponent(problemId)}&limit=8`,
+                );
+                const submissions = data?.submissions ?? [];
+
+                if (!submissions.length) {
+                    container.innerHTML =
+                        '<div class="empty-state">No submissions for this problem yet.</div>';
+                    return;
+                }
+
+                container.innerHTML = submissions
+                    .map((sub) => {
+                        const verdictClass =
+                            sub.verdict === "Accepted"
+                                ? "badge-easy"
+                                : sub.verdict === "Wrong Answer"
+                                  ? "badge-hard"
+                                  : "badge-medium";
+                        return `
+                            <article class="submission-row">
+                                <span>${escapeHtml(sub.title)} • ${escapeHtml(sub.submitted_at)}</span>
+                                <span class="badge ${verdictClass}">${escapeHtml(sub.verdict)} • ${sub.runtime_ms ?? 0}ms</span>
+                            </article>
+                        `;
+                    })
+                    .join("");
             }
 
             async function loadRecommendations() {
@@ -842,6 +1239,9 @@
                                         ${patternBadge}
                                     </div>
                                     <p class="reason-text">${rec.reason}</p>
+                                    <button class="btn btn-secondary" onclick="selectProblem('${escapeHtml(rec.problem_id)}')">
+                                        Open
+                                    </button>
                                 </article>
                             `;
                         })
@@ -913,6 +1313,83 @@
                 } else {
                     container.innerHTML =
                         '<div class="empty-state">No problems are due for revision right now.</div>';
+                }
+            }
+
+            async function runCode(button) {
+                if (!selectedProblemId) return;
+                const btn = button;
+                const originalText = btn.textContent;
+                btn.disabled = true;
+                btn.textContent = "Running...";
+
+                try {
+                    const result = await apiCall("/submissions", {
+                        method: "POST",
+                        body: JSON.stringify({
+                            problem_id: selectedProblemId,
+                            language: "python",
+                            code: document.getElementById("codeEditor").value,
+                        }),
+                    });
+
+                    if (result) {
+                        document.getElementById("judgeOutput").textContent =
+                            JSON.stringify(result, null, 2);
+                        await Promise.all([
+                            loadStats(),
+                            loadWeaknesses(),
+                            loadRecommendations(),
+                            loadRevisions(),
+                            loadSubmissions(),
+                        ]);
+                    }
+                } finally {
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                }
+            }
+
+            async function recordManualAttempt(button) {
+                if (!selectedProblemId) return;
+                const btn = button;
+                const originalText = btn.textContent;
+                const verdict = document.getElementById("manualVerdict").value;
+                btn.disabled = true;
+                btn.textContent = "Recording...";
+
+                try {
+                    const errorType =
+                        verdict === "Accepted"
+                            ? null
+                            : verdict === "Time Limit Exceeded"
+                              ? "timeout"
+                              : verdict === "Runtime Error"
+                                ? "runtime-error"
+                                : "wrong-answer";
+                    const result = await apiCall("/attempts", {
+                        method: "POST",
+                        body: JSON.stringify({
+                            problem_id: selectedProblemId,
+                            verdict,
+                            time_taken: null,
+                            error_type: errorType,
+                        }),
+                    });
+
+                    if (result) {
+                        document.getElementById("judgeOutput").textContent =
+                            `${verdict} recorded for ${selectedProblemId}.`;
+                        await Promise.all([
+                            loadStats(),
+                            loadWeaknesses(),
+                            loadRecommendations(),
+                            loadRevisions(),
+                        ]);
+                    }
+                } finally {
+                    btn.disabled = false;
+                    btn.textContent = originalText;
                 }
             }
 

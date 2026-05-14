@@ -17,6 +17,7 @@ class Database:
         """Get database connection"""
         conn = sqlite3.connect(self.db_path)
         conn.row_factory = sqlite3.Row
+        conn.execute("PRAGMA foreign_keys = ON")
         return conn
     
     def init_db(self):
@@ -47,9 +48,28 @@ class Database:
             difficulty TEXT NOT NULL,
             tags TEXT,
             description TEXT,
+            constraints TEXT,
+            examples TEXT,
+            source_url TEXT,
+            function_name TEXT DEFAULT 'solve',
+            starter_code TEXT,
+            test_cases TEXT,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
         """)
+
+        problem_columns = {row["name"] for row in cursor.execute("PRAGMA table_info(problems)")}
+        extra_problem_columns = {
+            "constraints": "TEXT",
+            "examples": "TEXT",
+            "source_url": "TEXT",
+            "function_name": "TEXT DEFAULT 'solve'",
+            "starter_code": "TEXT",
+            "test_cases": "TEXT",
+        }
+        for column, definition in extra_problem_columns.items():
+            if column not in problem_columns:
+                cursor.execute(f"ALTER TABLE problems ADD COLUMN {column} {definition}")
         
         # Attempts table
         cursor.execute("""
@@ -107,6 +127,23 @@ class Database:
             interval_days INTEGER DEFAULT 1,
             status TEXT DEFAULT 'pending',
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users (user_id),
+            FOREIGN KEY (problem_id) REFERENCES problems (problem_id)
+        )
+        """)
+
+        # Code submissions power the limited Python judge and feed attempts.
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS submissions (
+            submission_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            problem_id TEXT NOT NULL,
+            language TEXT DEFAULT 'python',
+            code TEXT NOT NULL,
+            verdict TEXT NOT NULL,
+            runtime_ms INTEGER,
+            output TEXT,
+            submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (user_id) REFERENCES users (user_id),
             FOREIGN KEY (problem_id) REFERENCES problems (problem_id)
         )

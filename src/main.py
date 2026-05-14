@@ -10,6 +10,7 @@ from fastapi.responses import Response
 from typing import Optional, List
 import csv
 import io
+import json
 import os
 import sys
 
@@ -25,6 +26,7 @@ from src.auth import AuthService
 from src.learner_model import LearnerModel
 from src.recommender import RecommendationEngine
 from src.revision_scheduler import RevisionScheduler
+from src.judge import JudgeService
 from src.config import settings
 
 # Initialize app
@@ -45,6 +47,7 @@ auth_service = AuthService(db)
 learner_model = LearnerModel(db)
 recommender = RecommendationEngine(db)
 scheduler = RevisionScheduler(db)
+judge = JudgeService()
 
 
 # Dependency for authentication
@@ -129,8 +132,11 @@ async def create_problem(problem: ProblemCreate, current_user: dict = Depends(ge
     try:
         cursor.execute(
             """
-            INSERT INTO problems (problem_id, title, topic, pattern, difficulty, tags, description)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO problems (
+                problem_id, title, topic, pattern, difficulty, tags, description,
+                constraints, examples, source_url, function_name, starter_code, test_cases
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
             (
                 problem.problem_id,
@@ -140,6 +146,12 @@ async def create_problem(problem: ProblemCreate, current_user: dict = Depends(ge
                 problem.difficulty,
                 problem.tags,
                 problem.description,
+                problem.constraints,
+                problem.examples,
+                problem.source_url,
+                problem.function_name,
+                problem.starter_code,
+                problem.test_cases,
             ),
         )
 
@@ -156,6 +168,7 @@ async def create_problem(problem: ProblemCreate, current_user: dict = Depends(ge
 async def get_problems(
     topic: Optional[str] = None,
     difficulty: Optional[str] = None,
+    q: Optional[str] = None,
     limit: int = 50,
     current_user: dict = Depends(get_current_user),
 ):
@@ -172,6 +185,10 @@ async def get_problems(
     if difficulty:
         query += " AND difficulty = ?"
         params.append(difficulty)
+    if q:
+        query += " AND (LOWER(title) LIKE ? OR LOWER(tags) LIKE ? OR LOWER(topic) LIKE ?)"
+        term = f"%{q.lower()}%"
+        params.extend([term, term, term])
 
     query += " LIMIT ?"
     params.append(limit)
@@ -181,6 +198,21 @@ async def get_problems(
     conn.close()
 
     return problems
+
+
+@app.get("/api/problems/{problem_id}", response_model=Problem)
+async def get_problem(problem_id: str, current_user: dict = Depends(get_current_user)):
+    """Get one problem with starter code and judge metadata."""
+    conn = db.get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM problems WHERE problem_id = ?", (problem_id,))
+    problem = cursor.fetchone()
+    conn.close()
+
+    if not problem:
+        raise HTTPException(status_code=404, detail="Problem not found")
+
+    return dict(problem)
 
 
 # ============ Attempt Recording Endpoints ============
@@ -232,6 +264,104 @@ async def get_attempts(
     conn.close()
 
     return attempts
+
+
+# ============ Code Submission Endpoints ============
+
+@app.post("/api/submissions")
+async def submit_code(
+    submission: CodeSubmissionCreate,
+    current_user: dict = Depends(get_current_user),
+):
+    """Run Python code against configured tests and record the result."""
+    user_id = current_user["user_id"]
+    language = submission.language.lower()
+    if language not in ("python", "py"):
+        raise HTTPException(status_code=400, detail="Only Python submissions are supported")
+
+    conn = db.get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM problems WHERE problem_id = ?", (submission.problem_id,))
+    problem = cursor.fetchone()
+    conn.close()
+
+    if not problem:
+        raise HTTPException(status_code=404, detail="Problem not found")
+
+    result = judge.run_python(
+        code=submission.code,
+        function_name=problem["function_name"] or "solve",
+        test_cases_json=problem["test_cases"],
+    )
+    verdict = result["verdict"]
+    runtime_ms = result["runtime_ms"]
+    output_json = json.dumps(result["output"])
+
+    conn = db.get_connection()
+    cursor = conn.cursor()
+    cursor.execute(
+        """
+        INSERT INTO submissions (user_id, problem_id, language, code, verdict, runtime_ms, output)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    """,
+        (user_id, submission.problem_id, "python", submission.code, verdict, runtime_ms, output_json),
+    )
+    submission_id = cursor.lastrowid
+    conn.commit()
+    conn.close()
+
+    attempt_id = None
+    if verdict != "Manual Review":
+        attempt_id = learner_model.record_attempt(
+            user_id=user_id,
+            problem_id=submission.problem_id,
+            verdict=verdict,
+            time_taken=runtime_ms,
+            error_type=judge.summarize_error_type(verdict),
+        )
+        if verdict == "Accepted":
+            scheduler.schedule_revisions(user_id)
+
+    return {
+        "submission_id": submission_id,
+        "attempt_id": attempt_id,
+        "verdict": verdict,
+        "runtime_ms": runtime_ms,
+        "output": result["output"],
+    }
+
+
+@app.get("/api/submissions")
+async def get_submissions(
+    problem_id: Optional[str] = None,
+    limit: int = 20,
+    current_user: dict = Depends(get_current_user),
+):
+    """Get recent code submissions for the current user."""
+    user_id = current_user["user_id"]
+    conn = db.get_connection()
+    cursor = conn.cursor()
+
+    query = """
+        SELECT s.submission_id, s.problem_id, p.title, s.language, s.verdict,
+               s.runtime_ms, s.output, s.submitted_at
+        FROM submissions s
+        JOIN problems p ON s.problem_id = p.problem_id
+        WHERE s.user_id = ?
+    """
+    params = [user_id]
+    if problem_id:
+        query += " AND s.problem_id = ?"
+        params.append(problem_id)
+
+    query += " ORDER BY s.submitted_at DESC LIMIT ?"
+    params.append(limit)
+
+    cursor.execute(query, params)
+    submissions = [dict(row) for row in cursor.fetchall()]
+    conn.close()
+
+    return {"submissions": submissions, "count": len(submissions)}
 
 
 # ============ Recommendations Endpoints ============
