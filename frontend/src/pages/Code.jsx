@@ -54,6 +54,8 @@ function Code() {
             problemStatement.starterCode?.[0]?.code ||
             "def solve(*args):\n    return None\n",
     );
+    const codeBlockClass =
+        "my-2 rounded-md border border-border bg-muted/70 p-3 font-code text-sm text-foreground shadow-sm";
 
     useEffect(() => {
         localStorage.setItem(`code-python-${problemStatement.id}`, code);
@@ -283,13 +285,21 @@ function Code() {
                                                             </p>
                                                             <div className="my-1">
                                                                 Input
-                                                                <div className="bg-code p-2 my-2 rounded font-mono">
+                                                                <div
+                                                                    className={
+                                                                        codeBlockClass
+                                                                    }
+                                                                >
                                                                     {
                                                                         testCase.input
                                                                     }
                                                                 </div>
                                                                 Output
-                                                                <div className="bg-code p-2 my-2 rounded font-mono">
+                                                                <div
+                                                                    className={
+                                                                        codeBlockClass
+                                                                    }
+                                                                >
                                                                     {
                                                                         testCase.output
                                                                     }
@@ -336,7 +346,7 @@ function Code() {
                                                 {output.map((line, index) => (
                                                     <div
                                                         key={index}
-                                                        className="bg-code p-2 my-3 rounded font-mono whitespace-pre-wrap"
+                                                        className={`${codeBlockClass} whitespace-pre-wrap`}
                                                     >
                                                         {line}
                                                     </div>

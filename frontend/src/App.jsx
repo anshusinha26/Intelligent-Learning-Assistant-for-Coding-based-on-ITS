@@ -201,7 +201,7 @@ function App() {
     );
 
     return (
-        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <ThemeProvider defaultTheme="light" storageKey="ila-ui-theme">
             <AuthContext.Provider value={{ user, setUser }}>
                 <RouterProvider router={router} />
             </AuthContext.Provider>

@@ -7,6 +7,7 @@ import {
     CardTitle,
 } from "@/components/ui/card.jsx";
 import { Badge } from "@/components/ui/badge.jsx";
+import { CalendarCheck, CheckCircle2, Flame, Gauge } from "lucide-react";
 
 function Dashboard() {
     const { dashboard, weaknesses, revisions } = useLoaderData();
@@ -14,44 +15,63 @@ function Dashboard() {
         {
             label: "Problems Solved",
             value: dashboard.total_problems_solved,
+            icon: CheckCircle2,
         },
         {
             label: "Success Rate",
             value: `${dashboard.success_rate.toFixed(1)}%`,
+            icon: Gauge,
         },
         {
             label: "Current Streak",
             value: dashboard.current_streak,
+            icon: Flame,
         },
         {
             label: "Due Revisions",
             value: revisions.stats.due_revisions,
+            icon: CalendarCheck,
         },
     ];
 
     return (
-        <div className="w-screen flex justify-center">
-            <div className="w-[1152px] max-w-6xl py-5 px-4 flex flex-col gap-5">
-                <div>
-                    <h1 className="text-2xl font-semibold">
+        <div className="min-h-full-w-nav w-full bg-background px-4 py-8 md:px-6">
+            <div className="mx-auto flex w-full max-w-7xl flex-col gap-6">
+                <div className="flex flex-col gap-2">
+                    <Badge variant="secondary" className="w-max">
+                        ITS learner state
+                    </Badge>
+                    <h1 className="text-3xl font-bold tracking-normal">
                         Learning Dashboard
                     </h1>
-                    <p className="text-muted-foreground">
+                    <p className="max-w-3xl text-muted-foreground">
                         ITS insights from attempts, submissions, weaknesses, and
                         revision schedule.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    {cards.map((card) => (
-                        <Card key={card.label}>
-                            <CardHeader>
-                                <CardDescription>{card.label}</CardDescription>
-                                <CardTitle>{card.value}</CardTitle>
-                            </CardHeader>
-                        </Card>
-                    ))}
+
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
+                    {cards.map((card) => {
+                        const Icon = card.icon;
+                        return (
+                            <Card key={card.label}>
+                                <CardHeader className="gap-3">
+                                    <div className="flex h-10 w-10 items-center justify-center rounded-md bg-primary/10 text-primary">
+                                        <Icon className="h-5 w-5" />
+                                    </div>
+                                    <CardDescription>
+                                        {card.label}
+                                    </CardDescription>
+                                    <CardTitle className="text-3xl">
+                                        {card.value}
+                                    </CardTitle>
+                                </CardHeader>
+                            </Card>
+                        );
+                    })}
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <Card>
                         <CardHeader>
                             <CardTitle>Weak Areas</CardTitle>
@@ -63,7 +83,7 @@ function Dashboard() {
                             {(weaknesses.weaknesses || []).map((item) => (
                                 <div
                                     key={item.topic}
-                                    className="flex items-center justify-between border rounded-md p-3"
+                                    className="flex items-center justify-between rounded-md border p-3"
                                 >
                                     <div>
                                         <p className="font-medium">
@@ -84,6 +104,7 @@ function Dashboard() {
                             ))}
                         </CardContent>
                     </Card>
+
                     <Card>
                         <CardHeader>
                             <CardTitle>Revision Queue</CardTitle>
@@ -100,7 +121,7 @@ function Dashboard() {
                                 revisions.revisions.map((item) => (
                                     <div
                                         key={item.schedule_id}
-                                        className="flex items-center justify-between border rounded-md p-3"
+                                        className="flex items-center justify-between rounded-md border p-3"
                                     >
                                         <div>
                                             <p className="font-medium">

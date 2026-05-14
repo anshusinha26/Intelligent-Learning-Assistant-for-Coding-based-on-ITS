@@ -61,8 +61,8 @@ function Login() {
     };
 
     return (
-        <div className="h-full-w-nav w-screen m-auto flex items-center justify-center">
-            <Card className="w-[350px]">
+        <div className="min-h-full-w-nav w-full bg-[linear-gradient(135deg,hsl(var(--background))_0%,hsl(var(--secondary))_100%)] px-4 py-10 flex items-center justify-center">
+            <Card className="w-full max-w-[390px] shadow-lg">
                 <form
                     onSubmit={(event) => {
                         event.preventDefault();
@@ -70,8 +70,10 @@ function Login() {
                     }}
                 >
                     <CardHeader>
-                        <CardTitle>Login</CardTitle>
-                        <CardDescription>Log in to your account</CardDescription>
+                        <CardTitle>Welcome back</CardTitle>
+                        <CardDescription>
+                            Continue to your ILA Coding workspace
+                        </CardDescription>
                     </CardHeader>
                     <CardContent>
                         <div className="grid w-full items-center gap-4">
