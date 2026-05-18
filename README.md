@@ -44,7 +44,7 @@ The key idea is not only to let a learner solve problems, but to track attempts,
 ├── frontend/
 │   ├── src/                    # React/Vite frontend
 │   ├── package.json            # Frontend dependencies and scripts
-│   └── LICENSE.online-ide      # MIT attribution for referenced UI project
+│   └── vite.config.js          # Frontend build config
 ├── data/
 │   ├── dsa_problems.md         # Curated DSA problem bank
 │   └── coding_assistant.db     # Local SQLite DB, generated/updated locally
@@ -335,16 +335,6 @@ Recommended capstone deployment:
 - Database upgrade from SQLite to Postgres/Supabase before multi-user public deployment.
 - Judge moved to a Dockerized runner service before allowing untrusted public code execution.
 - GitHub Pages alone is suitable only for a static frontend; the authenticated backend, database, recommendations, and judge require a separate backend service.
-
-## Attribution
-
-The React frontend design and UI structure are based on the MIT-licensed `online-ide` project by Manan Gandhi. The license text is included in:
-
-```text
-frontend/LICENSE.online-ide
-```
-
-This project adapts the frontend to the ITS backend, learner modeling, DSA bank, recommendation engine, and revision scheduler.
 
 ## License
 
