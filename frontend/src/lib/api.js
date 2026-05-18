@@ -1,4 +1,5 @@
-const DEFAULT_API_URL = "http://localhost:8020/api";
+const DEFAULT_API_URL = "http://localhost:8001/api";
+const STALE_API_URLS = new Set(["http://localhost:8020/api"]);
 
 export function getApiUrl() {
     const override = new URLSearchParams(window.location.search).get("api");
@@ -6,11 +7,14 @@ export function getApiUrl() {
         localStorage.setItem("apiUrl", override);
         return override;
     }
-    return (
-        localStorage.getItem("apiUrl") ||
-        import.meta.env.REACT_APP_SERVER_URL ||
-        DEFAULT_API_URL
-    );
+    const stored = localStorage.getItem("apiUrl");
+    if (stored && !STALE_API_URLS.has(stored)) {
+        return stored;
+    }
+    if (stored) {
+        localStorage.removeItem("apiUrl");
+    }
+    return import.meta.env.REACT_APP_SERVER_URL || DEFAULT_API_URL;
 }
 
 export async function apiRequest(path, { token, method = "GET", body } = {}) {
