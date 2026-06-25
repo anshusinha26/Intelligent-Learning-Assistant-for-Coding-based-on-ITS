@@ -26,6 +26,7 @@ The key idea is not only to let a learner solve problems, but to track attempts,
 - Spaced repetition scheduler for solved problems.
 - Dashboard for solved count, success rate, streak, weaknesses, and due revisions.
 - CSV export of user attempt history.
+- Optional external RAG assistant integration from the Ask AI tab with ITS context (problem, weaknesses, error patterns).
 
 ## Project Structure
 
@@ -40,6 +41,7 @@ The key idea is not only to let a learner solve problems, but to track attempts,
 │   ├── recommender.py          # Personalized recommendation scoring
 │   ├── revision_scheduler.py   # Spaced repetition scheduler
 │   ├── judge.py                # Limited Python judge for demo submissions
+│   ├── rag_service.py          # External RAG adapter with local fallback
 │   └── config.py               # Environment-driven runtime config
 ├── frontend/
 │   ├── src/                    # React/Vite frontend
@@ -65,11 +67,13 @@ flowchart TD
   B --> F["Recommendation engine"]
   B --> G["Revision scheduler"]
   B --> H["Limited Python judge"]
+  B --> K["External RAG service (optional)"]
   C --> I["Problem bank, users, attempts, submissions, metrics"]
   H --> J["Submission verdict"]
   J --> E
   E --> F
   E --> G
+  E --> K
 ```
 
 ## Learning Flow
@@ -81,7 +85,8 @@ flowchart TD
 5. Learner model recomputes topic and pattern mastery.
 6. Recommender ranks unseen problems.
 7. Revision scheduler creates review tasks for solved problems.
-8. Dashboard shows progress, weak areas, recommendations, and due revisions.
+8. Ask AI tab can query external RAG with user learning context.
+9. Dashboard shows progress, weak areas, recommendations, and due revisions.
 
 ## Tech Stack
 
@@ -135,7 +140,7 @@ http://localhost:8020/docs
 ```bash
 cd frontend
 npm install
-npm run dev -- --host 0.0.0.0 --port 5173
+VITE_API_URL=http://localhost:8020/api npm run dev -- --host 0.0.0.0 --port 5173
 ```
 
 Frontend runs at:
@@ -157,6 +162,12 @@ Email: demo@example.com
 Password: demo123
 ```
 
+### 4. Login Troubleshooting
+
+If login shows Could not log in and Not Found, frontend is likely using the wrong API URL.
+Start frontend with VITE_API_URL=http://localhost:8020/api.
+If needed, clear browser local storage key apiUrl and reload.
+
 ## Environment Variables
 
 Backend:
@@ -167,11 +178,39 @@ Backend:
 - `HOST` defaults to `0.0.0.0`
 - `PORT` defaults to `8000`
 - `CORS_ALLOW_ORIGINS` defaults to local frontend origins including `5173`
+- `RAG_ENABLED` defaults to `false`
+- `RAG_BASE_URL` defaults to `http://127.0.0.1:8000`
+- `RAG_ORG_ID` defaults to `test_org`
+- `RAG_AGENT_ID` defaults to `default_bot`
+- `RAG_SERVICE_TOKEN` defaults to empty
+- `RAG_TIMEOUT_SECONDS` defaults to `20`
 
 Frontend:
 
+- `VITE_API_URL` can be used at startup for stable API routing in local/dev deployments.
 - Runtime `?api=http://localhost:PORT/api` overrides the backend API base URL and is stored in local storage.
-- The default frontend API URL is `http://localhost:8020/api`.
+- The frontend fallback API URL in code is `http://localhost:8001/api`; set `VITE_API_URL` to match your backend port.
+
+## RAG Integration (Optional)
+
+Ask AI tab is wired to backend `/api/rag/query`.
+
+Default behavior:
+
+- `RAG_ENABLED=false`: backend returns local ITS fallback guidance.
+- `RAG_ENABLED=true` without `RAG_SERVICE_TOKEN`: endpoint returns clear token-missing message.
+- `RAG_ENABLED=true` with token and reachable runtime: answer source becomes `rag-service`.
+
+Example backend startup with external RAG:
+
+```bash
+RAG_ENABLED=true \
+RAG_BASE_URL=http://127.0.0.1:8000 \
+RAG_ORG_ID=<org_id> \
+RAG_AGENT_ID=<agent_id> \
+RAG_SERVICE_TOKEN=<service_token> \
+PORT=8020 python3 -m src.main
+```
 
 ## API Endpoints
 
@@ -211,6 +250,11 @@ Revisions:
 
 - `GET /api/revisions/due`
 - `POST /api/revisions/{schedule_id}/complete`
+
+RAG assistant:
+
+- `GET /api/rag/health`
+- `POST /api/rag/query`
 
 ## Problem Bank
 
@@ -316,7 +360,7 @@ python3 test_installation.py
 Compile check:
 
 ```bash
-python3 -m compileall -q src load_sample_data.py test_installation.py
+PYTHONPYCACHEPREFIX=/private/tmp/ila_pyc python3 -m py_compile src/config.py src/models.py src/rag_service.py src/main.py
 ```
 
 Frontend build:
