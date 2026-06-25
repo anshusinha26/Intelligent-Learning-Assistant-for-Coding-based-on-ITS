@@ -43,6 +43,10 @@ function Code() {
     const [tabValue, setTabValue] = useState("testcases");
     const [output, setOutput] = useState(null);
     const [customTestcase, setCustomTestcase] = useState("");
+    const [aiQuestion, setAiQuestion] = useState("");
+    const [aiAnswer, setAiAnswer] = useState("");
+    const [aiSource, setAiSource] = useState("");
+    const [aiLoading, setAiLoading] = useState(false);
     const [dialogData, setDialogData] = useState({
         title: "",
         description: "",
@@ -107,6 +111,30 @@ function Code() {
         }
     };
 
+    const askAI = async () => {
+        if (!aiQuestion.trim() || aiLoading) {
+            return;
+        }
+        setAiLoading(true);
+        try {
+            const result = await apiRequest("/rag/query", {
+                token: user.token,
+                method: "POST",
+                body: {
+                    question: aiQuestion.trim(),
+                    problem_id: problemStatement.id,
+                },
+            });
+            setAiAnswer(result.answer || "No answer returned.");
+            setAiSource(result.source || "unknown");
+        } catch (error) {
+            setAiAnswer(error.message || "RAG query failed");
+            setAiSource("error");
+        } finally {
+            setAiLoading(false);
+        }
+    };
+
     if (!problemStatement) {
         return (
             <div className="w-screen h-full-w-nav flex justify-center align-middle items-center">
@@ -158,9 +186,35 @@ function Code() {
                             </ScrollArea>
                         </TabsContent>
                         <TabsContent value="ai">
-                            <div className="p-6 text-muted-foreground">
-                                RAG assistant integration kept on hold for final
-                                phase.
+                            <div className="p-6 flex flex-col gap-3">
+                                <p className="text-sm text-muted-foreground">
+                                    Ask context-aware help for this problem.
+                                </p>
+                                <Textarea
+                                    value={aiQuestion}
+                                    onChange={(event) => setAiQuestion(event.target.value)}
+                                    placeholder="Ask for hint, approach, edge cases, or complexity guidance"
+                                    className="resize-none"
+                                    rows={4}
+                                />
+                                <div className="flex items-center gap-3">
+                                    <Button onClick={askAI} disabled={aiLoading}>
+                                        {aiLoading ? (
+                                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                        ) : null}
+                                        Ask AI
+                                    </Button>
+                                    {aiSource ? (
+                                        <span className="text-xs text-muted-foreground">
+                                            source: {aiSource}
+                                        </span>
+                                    ) : null}
+                                </div>
+                                {aiAnswer ? (
+                                    <div className="rounded-md border border-border bg-muted/50 p-4 text-sm whitespace-pre-wrap">
+                                        {aiAnswer}
+                                    </div>
+                                ) : null}
                             </div>
                         </TabsContent>
                         <TabsContent value="editorials">

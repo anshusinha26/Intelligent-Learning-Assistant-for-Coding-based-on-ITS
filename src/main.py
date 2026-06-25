@@ -27,6 +27,7 @@ from src.learner_model import LearnerModel
 from src.recommender import RecommendationEngine
 from src.revision_scheduler import RevisionScheduler
 from src.judge import JudgeService
+from src.rag_service import RAGService
 from src.config import settings
 
 # Initialize app
@@ -48,6 +49,14 @@ learner_model = LearnerModel(db)
 recommender = RecommendationEngine(db)
 scheduler = RevisionScheduler(db)
 judge = JudgeService()
+rag_service = RAGService(
+    enabled=settings.rag_enabled,
+    base_url=settings.rag_base_url,
+    org_id=settings.rag_org_id,
+    agent_id=settings.rag_agent_id,
+    service_token=settings.rag_service_token,
+    timeout_seconds=settings.rag_timeout_seconds,
+)
 
 
 # Dependency for authentication
@@ -547,6 +556,54 @@ async def complete_revision(schedule_id: int, current_user: dict = Depends(get_c
     user_id = current_user["user_id"]
     scheduler.mark_revision_completed(schedule_id, user_id)
     return {"message": "Revision completed, next review scheduled"}
+
+
+# ============ RAG Assistant Endpoints ============
+
+@app.get("/api/rag/health")
+async def rag_health(current_user: dict = Depends(get_current_user)):
+    """Check external RAG runtime availability."""
+    return rag_service.health()
+
+
+@app.post("/api/rag/query", response_model=RAGQueryResponse)
+async def rag_query(payload: RAGQueryCreate, current_user: dict = Depends(get_current_user)):
+    """Ask ITS-aware RAG assistant with user-scoped learning context."""
+    user_id = current_user["user_id"]
+    thread_id = payload.thread_id or f"its_{user_id}_{payload.problem_id or 'general'}"
+
+    weaknesses = learner_model.get_weakness_summary(user_id, 3)
+    error_patterns = learner_model.get_error_patterns(user_id)
+
+    problem_context = None
+    if payload.problem_id:
+        conn = db.get_connection()
+        cursor = conn.cursor()
+        cursor.execute(
+            "SELECT problem_id, title, topic, pattern, difficulty FROM problems WHERE problem_id = ?",
+            (payload.problem_id,),
+        )
+        row = cursor.fetchone()
+        conn.close()
+        if row:
+            problem_context = dict(row)
+
+    result = rag_service.query(
+        user_id=user_id,
+        thread_id=thread_id,
+        question=payload.question,
+        problem_context=problem_context,
+        weakness_context=weaknesses,
+        error_context=error_patterns,
+    )
+
+    return {
+        "answer": result.answer,
+        "source": result.source,
+        "rag_available": result.rag_available,
+        "thread_id": thread_id,
+        "error": result.error,
+    }
 
 
 # ============ Health Check ============

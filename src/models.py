@@ -13,9 +13,11 @@ class UserCreate(BaseModel):
     password: str
     target_level: Optional[str] = "medium"
 
+
 class UserLogin(BaseModel):
     email: EmailStr
     password: str
+
 
 class User(BaseModel):
     user_id: int
@@ -24,6 +26,7 @@ class User(BaseModel):
     role: str
     target_level: Optional[str]
     created_at: datetime
+
 
 # Problem Models
 class ProblemCreate(BaseModel):
@@ -41,6 +44,7 @@ class ProblemCreate(BaseModel):
     starter_code: Optional[str] = None
     test_cases: Optional[str] = None
 
+
 class Problem(BaseModel):
     problem_id: str
     title: str
@@ -56,12 +60,14 @@ class Problem(BaseModel):
     starter_code: Optional[str] = None
     test_cases: Optional[str] = None
 
+
 # Attempt Models
 class AttemptCreate(BaseModel):
     problem_id: str
     verdict: str  # Accepted, Wrong Answer, Time Limit Exceeded, etc.
     time_taken: Optional[int] = None  # in seconds
     error_type: Optional[str] = None  # off-by-one, edge-case, logic-error, etc.
+
 
 class Attempt(BaseModel):
     attempt_id: int
@@ -72,11 +78,13 @@ class Attempt(BaseModel):
     error_type: Optional[str]
     attempted_at: datetime
 
+
 # Submission Models
 class CodeSubmissionCreate(BaseModel):
     problem_id: str
     code: str
     language: str = "python"
+
 
 class CodeSubmission(BaseModel):
     submission_id: int
@@ -89,6 +97,7 @@ class CodeSubmission(BaseModel):
     output: Optional[str]
     submitted_at: datetime
 
+
 # Learner Metrics Models
 class LearnerMetric(BaseModel):
     metric_id: int
@@ -100,6 +109,7 @@ class LearnerMetric(BaseModel):
     attempts_count: int
     success_count: int
     updated_at: datetime
+
 
 # Recommendation Models
 class Recommendation(BaseModel):
@@ -114,9 +124,11 @@ class Recommendation(BaseModel):
     problem_difficulty: Optional[str] = None
     problem_topic: Optional[str] = None
 
+
 class RecommendationResponse(BaseModel):
     recommendations: List[Recommendation]
     total_count: int
+
 
 # Revision Schedule Models
 class RevisionTask(BaseModel):
@@ -128,6 +140,7 @@ class RevisionTask(BaseModel):
     status: str
     problem_title: Optional[str] = None
 
+
 # Dashboard Models
 class WeaknessSummary(BaseModel):
     topic: str
@@ -136,6 +149,7 @@ class WeaknessSummary(BaseModel):
     attempts_count: int
     success_rate: float
 
+
 class DashboardStats(BaseModel):
     total_problems_attempted: int
     total_problems_solved: int
@@ -143,6 +157,22 @@ class DashboardStats(BaseModel):
     success_rate: float
     top_weaknesses: List[WeaknessSummary]
     recent_attempts: List[Attempt]
+
+
+# RAG Models
+class RAGQueryCreate(BaseModel):
+    question: str
+    problem_id: Optional[str] = None
+    thread_id: Optional[str] = None
+
+
+class RAGQueryResponse(BaseModel):
+    answer: str
+    source: str
+    rag_available: bool
+    thread_id: str
+    error: Optional[str] = None
+
 
 # Token Model
 class Token(BaseModel):
