@@ -12,7 +12,33 @@ class RecommendationEngine:
     def __init__(self, db: Database):
         self.db = db
     
-    def generate_recommendations(self, user_id: int, top_k: int = 5) -> List[Dict]:
+    def sync_recommendation_state(self, user_id: int) -> None:
+        """Keep pending recommendation state aligned with solved problems."""
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            UPDATE recommendations
+            SET status = 'completed'
+            WHERE user_id = ?
+              AND status = 'pending'
+              AND problem_id IN (
+                    SELECT DISTINCT problem_id
+                    FROM attempts
+                    WHERE user_id = ? AND verdict = 'Accepted'
+              )
+        """,
+            (user_id, user_id),
+        )
+        conn.commit()
+        conn.close()
+
+    def generate_recommendations(
+        self,
+        user_id: int,
+        top_k: int = 5,
+        refresh_pending: bool = True,
+    ) -> List[Dict]:
         """
         Generate top-K personalized problem recommendations
         
@@ -25,25 +51,37 @@ class RecommendationEngine:
         conn = self.db.get_connection()
         cursor = conn.cursor()
         
+        self.sync_recommendation_state(user_id)
+
         # Get user's target level and metrics
         cursor.execute("SELECT target_level FROM users WHERE user_id = ?", (user_id,))
         user_row = cursor.fetchone()
         target_level = user_row['target_level'] if user_row else 'medium'
         
         # Get weak topics and patterns
-        cursor.execute("""
-            SELECT 
+        cursor.execute(
+            """
+            SELECT
                 COALESCE(topic, pattern) as area,
                 mastery_score,
-                error_frequency
+                error_frequency,
+                attempts_count
             FROM learner_metrics
             WHERE user_id = ?
             ORDER BY mastery_score ASC
             LIMIT 10
-        """, (user_id,))
-        
-        weak_areas = {row['area']: (row['mastery_score'], row['error_frequency']) 
-                     for row in cursor.fetchall()}
+        """,
+            (user_id,),
+        )
+
+        weak_areas = {
+            row["area"]: (
+                row["mastery_score"],
+                row["error_frequency"],
+                row["attempts_count"],
+            )
+            for row in cursor.fetchall()
+        }
         
         # Get attempted problems
         cursor.execute("""
@@ -86,23 +124,88 @@ class RecommendationEngine:
         
         # Sort by score and get top-K
         scored_problems.sort(key=lambda x: x['score'], reverse=True)
-        top_recommendations = scored_problems[:top_k]
-        
-        # Save recommendations to database
+        top_recommendations: List[Dict] = []
+        topic_counts: Dict[str, int] = {}
+        selected_ids = set()
+
+        for candidate in scored_problems:
+            topic = candidate["topic"]
+            cap = self._topic_recommendation_cap(topic, weak_areas, top_k)
+            if topic_counts.get(topic, 0) >= cap:
+                continue
+            top_recommendations.append(candidate)
+            topic_counts[topic] = topic_counts.get(topic, 0) + 1
+            selected_ids.add(candidate["problem_id"])
+            if len(top_recommendations) >= top_k:
+                break
+
+        if len(top_recommendations) < top_k:
+            for candidate in scored_problems:
+                if candidate["problem_id"] in selected_ids:
+                    continue
+                top_recommendations.append(candidate)
+                if len(top_recommendations) >= top_k:
+                    break
+
+        if refresh_pending:
+            top_ids = {rec["problem_id"] for rec in top_recommendations}
+            if top_ids:
+                placeholders = ",".join(["?"] * len(top_ids))
+                params = [user_id, *top_ids]
+                cursor.execute(
+                    f"""
+                    DELETE FROM recommendations
+                    WHERE user_id = ?
+                      AND status = 'pending'
+                      AND problem_id NOT IN ({placeholders})
+                """,
+                    params,
+                )
+            else:
+                cursor.execute(
+                    """
+                    DELETE FROM recommendations
+                    WHERE user_id = ? AND status = 'pending'
+                """,
+                    (user_id,),
+                )
+
+        # Save recommendations to database (upsert by state)
         timestamp = datetime.now()
         for rec in top_recommendations:
             cursor.execute("""
-                INSERT INTO recommendations 
-                (user_id, problem_id, score, reason, created_at)
-                VALUES (?, ?, ?, ?, ?)
+                INSERT INTO recommendations
+                (user_id, problem_id, score, reason, status, created_at)
+                VALUES (?, ?, ?, ?, 'pending', ?)
+                ON CONFLICT(user_id, problem_id, status)
+                DO UPDATE SET
+                    score = excluded.score,
+                    reason = excluded.reason,
+                    created_at = excluded.created_at
             """, (user_id, rec['problem_id'], rec['score'], rec['reason'], timestamp))
         
         conn.commit()
         conn.close()
         
         return top_recommendations
+
+    @staticmethod
+    def _topic_recommendation_cap(
+        topic: str,
+        weak_areas: Dict[str, Tuple[float, float, int]],
+        top_k: int,
+    ) -> int:
+        area = weak_areas.get(topic)
+        if not area:
+            return max(2, top_k // 2)
+        mastery, error_freq, _ = area
+        if mastery < 0.5 or error_freq >= 0.5:
+            return top_k
+        if mastery < 0.65:
+            return max(2, top_k // 3)
+        return max(1, top_k // 4)
     
-    def _score_problem(self, problem: dict, weak_areas: Dict[str, Tuple[float, float]], 
+    def _score_problem(self, problem: dict, weak_areas: Dict[str, Tuple[float, float, int]], 
                       target_level: str) -> Tuple[float, str]:
         """
         Score a single problem for recommendation
@@ -121,15 +224,28 @@ class RecommendationEngine:
         
         # Factor 1: Topic weakness targeting (0-50 points)
         if topic in weak_areas:
-            mastery, error_freq = weak_areas[topic]
+            mastery, error_freq, attempts_count = weak_areas[topic]
             weakness_score = (1 - mastery) * 30 + error_freq * 20
+            if mastery >= 0.6 and error_freq <= 0.4:
+                weakness_score *= 0.2
+            elif mastery >= 0.5:
+                weakness_score *= 0.5
+            if attempts_count >= 10:
+                weakness_score *= 0.8
             score += weakness_score
             reasons.append(f"Weak in {topic} (mastery: {mastery:.1%})")
+        else:
+            score += 8
+            reasons.append(f"Explore {topic}")
         
         # Factor 2: Pattern weakness targeting (0-30 points)
         if pattern and pattern in weak_areas:
-            mastery, error_freq = weak_areas[pattern]
+            mastery, error_freq, attempts_count = weak_areas[pattern]
             pattern_score = (1 - mastery) * 20 + error_freq * 10
+            if mastery >= 0.6 and error_freq <= 0.4:
+                pattern_score *= 0.25
+            if attempts_count >= 10:
+                pattern_score *= 0.85
             score += pattern_score
             reasons.append(f"Practice {pattern} pattern")
         
@@ -156,6 +272,8 @@ class RecommendationEngine:
     
     def get_recommendations(self, user_id: int, status: str = 'pending', limit: int = 10) -> List[Dict]:
         """Fetch existing recommendations from database"""
+        self.sync_recommendation_state(user_id)
+
         conn = self.db.get_connection()
         cursor = conn.cursor()
         
@@ -206,6 +324,8 @@ class RecommendationEngine:
             SET status = 'completed'
             WHERE rec_id = ? AND user_id = ?
         """, (rec_id, user_id))
-        
+        if cursor.rowcount == 0:
+            conn.close()
+            raise ValueError("Recommendation not found")
         conn.commit()
         conn.close()

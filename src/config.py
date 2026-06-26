@@ -14,8 +14,13 @@ class Settings:
             os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "1440"),
             default=1440,
         )
+        self.refresh_token_expire_days = self._parse_int(
+            os.getenv("REFRESH_TOKEN_EXPIRE_DAYS", "30"),
+            default=30,
+        )
         self.host = os.getenv("HOST", "0.0.0.0")
         self.port = self._parse_int(os.getenv("PORT", "8000"), default=8000)
+        self.db_path = os.getenv("DB_PATH", "data/coding_assistant.db")
 
         default_origins = (
             "http://localhost:8080,"

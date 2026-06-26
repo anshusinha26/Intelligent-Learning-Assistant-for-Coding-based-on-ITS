@@ -43,7 +43,7 @@ app.add_middleware(
 )
 
 # Initialize services
-db = Database()
+db = Database(settings.db_path)
 auth_service = AuthService(db)
 learner_model = LearnerModel(db)
 recommender = RecommendationEngine(db)
@@ -116,6 +116,34 @@ async def login(credentials: UserLogin):
         raise HTTPException(status_code=401, detail=str(e))
 
 
+@app.post("/api/auth/refresh", response_model=Token)
+async def refresh_token(payload: RefreshTokenRequest):
+    """Refresh access token using a valid refresh token."""
+    try:
+        return auth_service.refresh_access_token(payload.refresh_token)
+    except ValueError as e:
+        raise HTTPException(status_code=401, detail=str(e))
+
+
+@app.post("/api/auth/logout")
+async def logout(
+    payload: Optional[LogoutRequest] = None,
+    authorization: Optional[str] = Header(None),
+    current_user: dict = Depends(get_current_user),
+):
+    """Logout current session and revoke active tokens."""
+    if not authorization:
+        raise HTTPException(status_code=401, detail="Not authenticated")
+    try:
+        _, token = authorization.split()
+    except ValueError:
+        raise HTTPException(status_code=401, detail="Invalid authorization header")
+
+    refresh_token = payload.refresh_token if payload else None
+    auth_service.logout_user(token, current_user["user_id"], refresh_token)
+    return {"message": "Logged out successfully"}
+
+
 @app.get("/api/auth/me", response_model=User)
 async def get_me(current_user: dict = Depends(get_current_user)):
     """Get current user profile (FR2)."""
@@ -178,6 +206,8 @@ async def create_problem(problem: ProblemCreate, current_user: dict = Depends(ge
 async def get_problems(
     topic: Optional[str] = None,
     difficulty: Optional[str] = None,
+    pattern: Optional[str] = None,
+    tags: Optional[str] = None,
     q: Optional[str] = None,
     limit: int = 50,
     current_user: dict = Depends(get_current_user),
@@ -189,16 +219,42 @@ async def get_problems(
     query = "SELECT * FROM problems WHERE 1=1"
     params = []
 
-    if topic:
-        query += " AND topic = ?"
-        params.append(topic)
-    if difficulty:
-        query += " AND difficulty = ?"
-        params.append(difficulty)
+    def parse_values(value: Optional[str]) -> List[str]:
+        if not value:
+            return []
+        return [item.strip() for item in value.split(",") if item.strip()]
+
+    topic_values = parse_values(topic)
+    difficulty_values = parse_values(difficulty)
+    pattern_values = parse_values(pattern)
+
+    if topic_values:
+        placeholders = ",".join(["?"] * len(topic_values))
+        query += f" AND topic IN ({placeholders})"
+        params.extend(topic_values)
+    if difficulty_values:
+        placeholders = ",".join(["?"] * len(difficulty_values))
+        query += f" AND difficulty IN ({placeholders})"
+        params.extend(difficulty_values)
+    if pattern_values:
+        placeholders = ",".join(["?"] * len(pattern_values))
+        query += f" AND pattern IN ({placeholders})"
+        params.extend(pattern_values)
+    if tags:
+        query += " AND LOWER(tags) LIKE ?"
+        params.append(f"%{tags.lower()}%")
     if q:
-        query += " AND (LOWER(title) LIKE ? OR LOWER(tags) LIKE ? OR LOWER(topic) LIKE ?)"
+        query += """
+            AND (
+                LOWER(title) LIKE ?
+                OR LOWER(tags) LIKE ?
+                OR LOWER(topic) LIKE ?
+                OR LOWER(COALESCE(pattern, '')) LIKE ?
+                OR LOWER(COALESCE(description, '')) LIKE ?
+            )
+        """
         term = f"%{q.lower()}%"
-        params.extend([term, term, term])
+        params.extend([term, term, term, term, term])
 
     query += " LIMIT ?"
     params.append(limit)
@@ -264,7 +320,7 @@ async def get_attempts(
         """
         SELECT * FROM attempts
         WHERE user_id = ?
-        ORDER BY attempted_at DESC
+        ORDER BY attempted_at DESC, attempt_id DESC
         LIMIT ?
     """,
         (user_id, limit),
@@ -379,13 +435,18 @@ async def get_submissions(
 @app.post("/api/recommendations/generate")
 async def generate_recommendations(
     top_k: int = 5,
+    refresh: bool = True,
     current_user: dict = Depends(get_current_user),
 ):
     """Generate new personalized recommendations (FR7, FR8)."""
     user_id = current_user["user_id"]
 
     try:
-        recommendations = recommender.generate_recommendations(user_id, top_k)
+        recommendations = recommender.generate_recommendations(
+            user_id=user_id,
+            top_k=top_k,
+            refresh_pending=refresh,
+        )
         return {
             "recommendations": recommendations,
             "count": len(recommendations),
@@ -415,7 +476,10 @@ async def get_recommendations(
 async def complete_recommendation(rec_id: int, current_user: dict = Depends(get_current_user)):
     """Mark recommendation as completed (FR11)."""
     user_id = current_user["user_id"]
-    recommender.mark_recommendation_completed(rec_id, user_id)
+    try:
+        recommender.mark_recommendation_completed(rec_id, user_id)
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
     return {"message": "Recommendation marked as completed"}
 
 
@@ -458,7 +522,7 @@ async def get_dashboard_stats(current_user: dict = Depends(get_current_user)):
         """
         SELECT * FROM attempts
         WHERE user_id = ?
-        ORDER BY attempted_at DESC
+        ORDER BY attempted_at DESC, attempt_id DESC
         LIMIT 10
     """,
         (user_id,),
@@ -555,7 +619,10 @@ async def get_due_revisions(
 async def complete_revision(schedule_id: int, current_user: dict = Depends(get_current_user)):
     """Mark revision as completed (FR9)."""
     user_id = current_user["user_id"]
-    scheduler.mark_revision_completed(schedule_id, user_id)
+    try:
+        scheduler.mark_revision_completed(schedule_id, user_id)
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
     return {"message": "Revision completed, next review scheduled"}
 
 

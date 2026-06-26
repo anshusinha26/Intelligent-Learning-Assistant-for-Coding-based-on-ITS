@@ -21,21 +21,64 @@ export function getApiUrl() {
     );
 }
 
+function readStoredUser() {
+    try {
+        const raw = localStorage.getItem("user");
+        return raw ? JSON.parse(raw) : null;
+    } catch {
+        return null;
+    }
+}
+
+async function parseJsonSafe(response) {
+    return response.json().catch(() => ({}));
+}
+
 export async function apiRequest(path, { token, method = "GET", body } = {}) {
-    const headers = {
-        "Content-Type": "application/json",
+    const request = async (activeToken) => {
+        const headers = {
+            "Content-Type": "application/json",
+        };
+        if (activeToken) {
+            headers.Authorization = `Bearer ${activeToken}`;
+        }
+        return fetch(`${getApiUrl()}${path}`, {
+            method,
+            headers,
+            body: body == null ? undefined : JSON.stringify(body),
+        });
     };
-    if (token) {
-        headers.Authorization = `Bearer ${token}`;
+
+    let response = await request(token);
+    if (response.status === 401 && token) {
+        const storedUser = readStoredUser();
+        const refreshToken = storedUser?.refreshToken;
+        if (refreshToken) {
+            const refreshResponse = await fetch(`${getApiUrl()}/auth/refresh`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ refresh_token: refreshToken }),
+            });
+            const refreshData = await parseJsonSafe(refreshResponse);
+            if (refreshResponse.ok && refreshData.access_token) {
+                const updatedUser = {
+                    ...(storedUser || {}),
+                    token: refreshData.access_token,
+                    refreshToken: refreshData.refresh_token || refreshToken,
+                    id: refreshData.user_id ?? storedUser?.id ?? null,
+                    name: refreshData.name ?? storedUser?.name ?? null,
+                    email: refreshData.email ?? storedUser?.email ?? null,
+                    isAuthenticated: true,
+                };
+                localStorage.setItem("user", JSON.stringify(updatedUser));
+                response = await request(updatedUser.token);
+            } else {
+                localStorage.removeItem("user");
+            }
+        }
     }
 
-    const response = await fetch(`${getApiUrl()}${path}`, {
-        method,
-        headers,
-        body: body == null ? undefined : JSON.stringify(body),
-    });
-
-    const data = await response.json().catch(() => ({}));
+    const data = await parseJsonSafe(response);
     if (!response.ok) {
         throw new Error(data.detail || "Request failed");
     }

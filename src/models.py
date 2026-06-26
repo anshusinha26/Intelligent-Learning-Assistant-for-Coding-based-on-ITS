@@ -2,9 +2,20 @@
 Data models using Pydantic
 """
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, field_validator
 from typing import Optional, List
 from datetime import datetime, date
+
+
+ALLOWED_ATTEMPT_VERDICTS = {
+    "Accepted",
+    "Wrong Answer",
+    "Time Limit Exceeded",
+    "Runtime Error",
+    "Manual Review",
+    "Compilation Error",
+}
+
 
 # User Models
 class UserCreate(BaseModel):
@@ -67,6 +78,15 @@ class AttemptCreate(BaseModel):
     verdict: str  # Accepted, Wrong Answer, Time Limit Exceeded, etc.
     time_taken: Optional[int] = None  # in seconds
     error_type: Optional[str] = None  # off-by-one, edge-case, logic-error, etc.
+
+    @field_validator("verdict")
+    @classmethod
+    def validate_verdict(cls, value: str) -> str:
+        verdict = value.strip()
+        if verdict not in ALLOWED_ATTEMPT_VERDICTS:
+            allowed = ", ".join(sorted(ALLOWED_ATTEMPT_VERDICTS))
+            raise ValueError(f"Invalid verdict. Allowed values: {allowed}")
+        return verdict
 
 
 class Attempt(BaseModel):
@@ -177,6 +197,15 @@ class RAGQueryResponse(BaseModel):
 # Token Model
 class Token(BaseModel):
     access_token: str
+    refresh_token: Optional[str] = None
     token_type: str
     user_id: int
     name: str
+
+
+class RefreshTokenRequest(BaseModel):
+    refresh_token: str
+
+
+class LogoutRequest(BaseModel):
+    refresh_token: Optional[str] = None

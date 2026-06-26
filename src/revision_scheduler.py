@@ -47,27 +47,13 @@ class RevisionScheduler:
             
             existing = cursor.fetchone()
             
-            if existing:
-                # Update existing schedule if needed
-                next_review = date.fromisoformat(existing['next_review_date'])
-                if next_review <= date.today():
-                    # Time to review - move to next interval
-                    current_interval = existing['interval_days']
-                    next_interval = self._get_next_interval(current_interval)
-                    new_review_date = date.today() + timedelta(days=next_interval)
-                    
-                    cursor.execute("""
-                        UPDATE revision_schedule
-                        SET interval_days = ?, next_review_date = ?
-                        WHERE schedule_id = ?
-                    """, (next_interval, new_review_date, existing['schedule_id']))
-            else:
+            if not existing:
                 # Create new revision schedule
                 first_interval = self.intervals[0]
                 next_review = last_attempt.date() + timedelta(days=first_interval)
                 
                 cursor.execute("""
-                    INSERT INTO revision_schedule
+                    INSERT OR IGNORE INTO revision_schedule
                     (user_id, problem_id, next_review_date, interval_days)
                     VALUES (?, ?, ?, ?)
                 """, (user_id, problem_id, next_review, first_interval))
@@ -136,30 +122,38 @@ class RevisionScheduler:
         cursor.execute("""
             SELECT interval_days, problem_id
             FROM revision_schedule
-            WHERE schedule_id = ? AND user_id = ?
+            WHERE schedule_id = ? AND user_id = ? AND status = 'pending'
         """, (schedule_id, user_id))
         
         schedule = cursor.fetchone()
         
-        if schedule:
-            # Mark current as completed
-            cursor.execute("""
-                UPDATE revision_schedule
-                SET status = 'completed'
-                WHERE schedule_id = ?
-            """, (schedule_id,))
-            
-            # Schedule next revision
-            next_interval = self._get_next_interval(schedule['interval_days'])
-            next_review = date.today() + timedelta(days=next_interval)
-            
-            cursor.execute("""
-                INSERT INTO revision_schedule
-                (user_id, problem_id, next_review_date, interval_days)
-                VALUES (?, ?, ?, ?)
-            """, (user_id, schedule['problem_id'], next_review, next_interval))
-            
-            conn.commit()
+        if not schedule:
+            conn.close()
+            raise ValueError("Pending revision schedule not found")
+
+        cursor.execute("""
+            UPDATE revision_schedule
+            SET status = 'completed'
+            WHERE schedule_id = ?
+        """, (schedule_id,))
+
+        cursor.execute("""
+            DELETE FROM revision_schedule
+            WHERE user_id = ?
+              AND problem_id = ?
+              AND status = 'pending'
+        """, (user_id, schedule["problem_id"]))
+
+        next_interval = self._get_next_interval(schedule['interval_days'])
+        next_review = date.today() + timedelta(days=next_interval)
+
+        cursor.execute("""
+            INSERT INTO revision_schedule
+            (user_id, problem_id, next_review_date, interval_days)
+            VALUES (?, ?, ?, ?)
+        """, (user_id, schedule['problem_id'], next_review, next_interval))
+
+        conn.commit()
         
         conn.close()
     

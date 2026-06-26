@@ -24,6 +24,7 @@ const initialUser = {
     name: null,
     email: null,
     token: null,
+    refreshToken: null,
     points: 0,
     isAuthenticated: false,
 };

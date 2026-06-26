@@ -38,6 +38,7 @@ function Login() {
                 name: data.name,
                 email: data.email,
                 token: data.access_token,
+                refreshToken: data.refresh_token || null,
                 points: 0,
                 isAuthenticated: true,
             });

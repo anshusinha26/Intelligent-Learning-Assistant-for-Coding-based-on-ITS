@@ -6,6 +6,7 @@ import { useContext, useEffect, useRef } from "react";
 import { Link, useNavigate, useNavigation } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 import NumberTicker from "@/components/ui/number-ticker";
+import { apiRequest } from "@/lib/api.js";
 
 export default function NavBar() {
     const { user, setUser } = useContext(AuthContext);
@@ -21,12 +22,23 @@ export default function NavBar() {
         }
     }, [navState]);
 
-    const logout = () => {
+    const logout = async () => {
+        try {
+            if (user.token) {
+                await apiRequest("/auth/logout", {
+                    method: "POST",
+                    token: user.token,
+                    body: { refresh_token: user.refreshToken || null },
+                });
+            }
+        } catch (_) {
+        }
         setUser({
             id: null,
             email: null,
             name: null,
             token: null,
+            refreshToken: null,
             isAuthenticated: false,
             points: 0,
         });

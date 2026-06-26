@@ -4,7 +4,7 @@ Tracks user mastery, identifies weakness patterns, and computes learning metrics
 """
 
 from typing import List, Dict
-from datetime import datetime
+from datetime import datetime, date
 from src.database import Database
 
 class LearnerModel:
@@ -81,8 +81,8 @@ class LearnerModel:
         
         # Insert updated topic metrics
         for topic, stats in topic_stats.items():
-            mastery_score = stats['successes'] / stats['attempts'] if stats['attempts'] > 0 else 0.0
-            error_frequency = stats['errors'] / stats['attempts'] if stats['attempts'] > 0 else 0.0
+            mastery_score = (stats['successes'] + 1) / (stats['attempts'] + 2)
+            error_frequency = (stats['errors'] + 1) / (stats['attempts'] + 2)
             
             cursor.execute("""
                 INSERT INTO learner_metrics 
@@ -92,8 +92,8 @@ class LearnerModel:
         
         # Insert updated pattern metrics
         for pattern, stats in pattern_stats.items():
-            mastery_score = stats['successes'] / stats['attempts'] if stats['attempts'] > 0 else 0.0
-            error_frequency = stats['errors'] / stats['attempts'] if stats['attempts'] > 0 else 0.0
+            mastery_score = (stats['successes'] + 1) / (stats['attempts'] + 2)
+            error_frequency = (stats['errors'] + 1) / (stats['attempts'] + 2)
             
             cursor.execute("""
                 INSERT INTO learner_metrics 
@@ -165,7 +165,7 @@ class LearnerModel:
         cursor.execute("""
             SELECT 
                 COUNT(*) as total_attempts,
-                SUM(CASE WHEN verdict = 'Accepted' THEN 1 ELSE 0 END) as total_solved,
+                COUNT(DISTINCT CASE WHEN verdict = 'Accepted' THEN problem_id END) as total_solved,
                 COUNT(DISTINCT problem_id) as unique_problems
             FROM attempts
             WHERE user_id = ?
@@ -181,25 +181,29 @@ class LearnerModel:
         
         # Calculate current streak
         cursor.execute("""
-            SELECT verdict, DATE(attempted_at) as attempt_date
+            SELECT DISTINCT DATE(attempted_at) as attempt_date
             FROM attempts
-            WHERE user_id = ?
-            ORDER BY attempted_at DESC
-            LIMIT 30
+            WHERE user_id = ? AND verdict = 'Accepted'
+            ORDER BY attempt_date DESC
+            LIMIT 90
         """, (user_id,))
-        
-        recent_attempts = cursor.fetchall()
+
+        recent_days = [
+            date.fromisoformat(row["attempt_date"])
+            for row in cursor.fetchall()
+            if row["attempt_date"]
+        ]
         streak = 0
-        last_date = None
-        
-        for attempt in recent_attempts:
-            if attempt['verdict'] == 'Accepted':
-                current_date = attempt['attempt_date']
-                if last_date is None or current_date == last_date:
-                    streak += 1
-                    last_date = current_date
-                else:
-                    break
+        last_day = None
+
+        for attempt_day in recent_days:
+            if last_day is None:
+                streak = 1
+                last_day = attempt_day
+                continue
+            if (last_day - attempt_day).days == 1:
+                streak += 1
+                last_day = attempt_day
             else:
                 break
         
