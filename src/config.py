@@ -29,8 +29,9 @@ class Settings:
             os.getenv("CORS_ALLOW_ORIGINS", default_origins)
         )
 
-        # Optional external RAG service integration
-        self.rag_enabled = self._parse_bool(os.getenv("RAG_ENABLED", "false"), False)
+        # RAG configuration: local mode runs fully in this repo.
+        self.rag_enabled = self._parse_bool(os.getenv("RAG_ENABLED", "true"), True)
+        self.rag_mode = os.getenv("RAG_MODE", "local").strip().lower()
         self.rag_base_url = os.getenv("RAG_BASE_URL", "http://127.0.0.1:8000").rstrip("/")
         self.rag_org_id = os.getenv("RAG_ORG_ID", "test_org")
         self.rag_agent_id = os.getenv("RAG_AGENT_ID", "default_bot")

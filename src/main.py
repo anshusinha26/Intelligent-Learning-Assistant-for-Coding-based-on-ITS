@@ -51,6 +51,7 @@ scheduler = RevisionScheduler(db)
 judge = JudgeService()
 rag_service = RAGService(
     enabled=settings.rag_enabled,
+    mode=settings.rag_mode,
     base_url=settings.rag_base_url,
     org_id=settings.rag_org_id,
     agent_id=settings.rag_agent_id,
@@ -562,7 +563,7 @@ async def complete_revision(schedule_id: int, current_user: dict = Depends(get_c
 
 @app.get("/api/rag/health")
 async def rag_health(current_user: dict = Depends(get_current_user)):
-    """Check external RAG runtime availability."""
+    """Check configured RAG availability (local or external)."""
     return rag_service.health()
 
 
