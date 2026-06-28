@@ -1,0 +1,17 @@
+{
+  "check": "invalid_attempt_verdict_acceptance",
+  "request": {
+    "problem_id": "two-sum",
+    "verdict": "Banana Verdict"
+  },
+  "response_status": 200,
+  "response_body": {
+    "attempt_id": 95,
+    "message": "Attempt recorded successfully"
+  },
+  "db_row": {
+    "attempt_id": 95,
+    "verdict": "Banana Verdict",
+    "error_type": null
+  }
+}

@@ -1,141 +1,194 @@
 # Intelligent Learning Assistant for Coding based on ITS
 
-Capstone project for an Intelligent Tutoring System (ITS) based coding practice platform.
+Capstone project implementing an Intelligent Tutoring System (ITS) for coding practice.
 
 **Student:** Anshu Sinha (2034EBCS191)  
 **Advisor:** Vamsi Bandi  
-**Current version:** Capstone build after Phase 1, Phase 2, and Phase 3
+**Checkpoint:** Phase 1–6 complete
 
-## Overview
+## Project Overview
 
-This project is a web-based coding practice and analytics system. It combines a curated DSA problem bank, authentication, a LeetCode-style practice UI, a limited Python judge, learner modeling, adaptive recommendations, spaced revision scheduling, and a dashboard for progress insights.
+This repository contains a full-stack adaptive coding tutor with:
 
-The key idea is not only to let a learner solve problems, but to track attempts, identify weak topics and patterns, recommend unseen problems, and schedule revision using ITS principles.
+- FastAPI backend
+- React/Vite frontend
+- SQLite persistence
+- Premium executable problem bank (75 active problems)
+- Learner model + recommendation engine + revision scheduler
+- Local AI Tutor (RAG-capable)
+- Auth/security hardening
+- Docker/Compose deployment profiles
+- CI pipeline and observability stack
 
-## Current Features
+The active runtime dataset is the **Premium 75-problem bank**. Legacy problems are archived and excluded from active recommendation, analytics, and practice flows.
 
-- User registration and login using JWT authentication.
-- Curated DSA problem bank with 630 problems loaded from `data/dsa_problems.md`.
-- React/Vite frontend based on an online IDE style UI.
-- Problem list, problem detail page, split-pane code editor, and submission flow.
-- Monaco editor for Python code.
-- Limited Python judge for executable demo problems.
-- Manual attempt recording support through backend API.
-- Learner model that recomputes mastery and error frequency after attempts.
-- Recommendation engine that scores unseen problems by weakness and difficulty.
-- Spaced repetition scheduler for solved problems.
-- Dashboard for solved count, success rate, streak, weaknesses, and due revisions.
-- CSV export of user attempt history.
-- Optional external RAG assistant integration from the Ask AI tab with ITS context (problem, weaknesses, error patterns).
+## Research Objective
 
-## Project Structure
+Build and validate an ITS-driven coding platform that:
 
-```text
-.
-├── src/
-│   ├── main.py                 # FastAPI routes and service wiring
-│   ├── database.py             # SQLite schema and migration helpers
-│   ├── models.py               # Pydantic request/response models
-│   ├── auth.py                 # JWT auth and bcrypt password hashing
-│   ├── learner_model.py        # Mastery, weakness, and error analytics
-│   ├── recommender.py          # Personalized recommendation scoring
-│   ├── revision_scheduler.py   # Spaced repetition scheduler
-│   ├── judge.py                # Limited Python judge for demo submissions
-│   ├── rag_service.py          # External RAG adapter with local fallback
-│   └── config.py               # Environment-driven runtime config
-├── frontend/
-│   ├── src/                    # React/Vite frontend
-│   ├── package.json            # Frontend dependencies and scripts
-│   └── vite.config.js          # Frontend build config
-├── data/
-│   ├── dsa_problems.md         # Curated DSA problem bank
-│   └── coding_assistant.db     # Local SQLite DB, generated/updated locally
-├── load_sample_data.py         # Seeds problem bank and demo user
-├── test_installation.py        # Backend smoke tests
-├── requirements.txt            # Backend dependencies
-└── run.sh                      # Backend convenience runner
-```
+1. Records learner behavior from submissions/attempts.
+2. Estimates topic/pattern mastery over time.
+3. Recommends next problems adaptively.
+4. Schedules spaced revision to improve retention.
+5. Provides pedagogically aligned AI tutoring with controllable hint depth.
 
-## Architecture
+## ITS Architecture
 
 ```mermaid
 flowchart TD
-  A["React frontend"] --> B["FastAPI backend"]
-  B --> C["SQLite database"]
-  B --> D["Auth service"]
-  B --> E["Learner model"]
-  B --> F["Recommendation engine"]
-  B --> G["Revision scheduler"]
-  B --> H["Limited Python judge"]
-  B --> K["External RAG service (optional)"]
-  C --> I["Problem bank, users, attempts, submissions, metrics"]
-  H --> J["Submission verdict"]
-  J --> E
-  E --> F
-  E --> G
-  E --> K
+  UI["React Frontend"] --> API["FastAPI API Layer"]
+  API --> AUTH["Auth + JWT + OTP"]
+  API --> DB["SQLite"]
+  API --> JUDGE["Python Judge"]
+  API --> LM["Learner Model"]
+  API --> REC["Recommendation Engine"]
+  API --> REV["Revision Scheduler"]
+  API --> RAG["AI Tutor / Local RAG"]
+
+  DB --> PB["Premium Problem Bank (75 active)"]
+  DB --> MET["Attempts / Submissions / Metrics"]
+  DB --> ED["Educational Assets (editorial/hints/tests/chunks)"]
+
+  JUDGE --> LM
+  LM --> REC
+  LM --> REV
+  LM --> RAG
 ```
 
-## Learning Flow
+## Core Subsystems
 
-1. User registers or logs in.
-2. User opens the DSA problem bank.
-3. User solves a problem in the editor or records an attempt.
-4. Backend stores the attempt/submission.
-5. Learner model recomputes topic and pattern mastery.
-6. Recommender ranks unseen problems.
-7. Revision scheduler creates review tasks for solved problems.
-8. Ask AI tab can query external RAG with user learning context.
-9. Dashboard shows progress, weak areas, recommendations, and due revisions.
+### Adaptive Learner Model
 
-## Tech Stack
+- Tracks topic/pattern mastery, error frequency, and success trends.
+- Updates after attempts and judge submissions.
+- Drives weaknesses shown in dashboard and AI tutor context.
 
-**Backend**
+### Recommendation Engine
 
-- Python
-- FastAPI
-- SQLite
-- Pydantic
-- bcrypt
-- JWT
+- Scores unseen premium problems by weakness alignment and progression rules.
+- Uses recommendation graph metadata (prerequisite/review/recovery/follow-up edges).
+- Avoids recommending inactive/legacy items.
 
-**Frontend**
+### Revision Scheduler
 
-- React
-- Vite
-- Tailwind CSS
-- shadcn-style UI components
-- Monaco Editor
-- React Router
+- Spaced intervals for solved content.
+- Maintains due reviews and completion history.
+- Updates with learner changes and accepted submissions.
 
-**Data**
+### AI Tutor + Local RAG
 
-- Curated DSA markdown problem bank
-- SQLite local storage
+- Endpoint-backed “Ask AI” workflow.
+- Supports hint progression and pedagogical guardrails.
+- Uses local context (problem + learner state + educational chunks).
+- Optional external RAG mode also supported via environment config.
 
-## Quick Start
+### Premium Problem Bank (Active)
 
-### 1. Backend Setup
+- Source: `data/premium/problem_bank.json`
+- Active count: 75 problems
+- Includes metadata, learning objectives, hints, editorial, starter code, reference solution, visible tests, hidden tests, relationships, and RAG chunks.
+
+### Educational Assets
+
+- Versioned problem content in premium tables.
+- Structured hints, hidden/visible testcase sets, relationship graph, and retrieval chunks.
+
+### Judge
+
+- Python execution service for coding submissions.
+- Produces verdicts and execution metadata.
+- Guardrails: request limits, runtime limits, memory/output limits.
+- Intended for controlled deployment; see limitations for public untrusted execution.
+
+### Authentication and User Features
+
+- Register, login, refresh token, logout, forgot/reset password, email OTP verification.
+- Notes CRUD.
+- Bookmarks CRUD.
+- User settings/preferences.
+
+## Security Features
+
+- Rate limiting on auth, judge, and AI tutor endpoints.
+- Password policy enforcement and common-password rejection.
+- OTP expiry/cooldown/retry controls.
+- JWT issuer/audience/jti/revocation and refresh reuse checks.
+- Request size limits and payload validation.
+- CORS + security headers (CSP, HSTS, X-Frame-Options, etc.).
+
+## Infrastructure, CI/CD, and Observability
+
+- Dockerized backend and frontend with multi-stage builds.
+- `docker compose` dev/prod profiles.
+- Prometheus metrics endpoint and Grafana dashboard provisioning.
+- GitHub Actions CI:
+  - backend lint/format/tests
+  - frontend build
+  - validators
+  - security scans
+  - Docker/Compose checks
+
+## Installation and Run Guide
+
+## 1) Prerequisites
+
+- Python: **3.11+** recommended
+- Node.js: **20+** recommended
+- npm: version bundled with Node 20 (typically npm 10+)
+- SQLite: available via Python `sqlite3` module (CLI optional)
+- Docker + Docker Compose (optional, for containerized run)
+
+## 2) Clone and Backend Setup
 
 ```bash
-python3 -m pip install -r requirements.txt
+git clone <your-repo-url>
+cd Intelligent-Learning-Assistant-for-Coding-based-on-ITS
+
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+## 3) Database Setup (Migrations + Premium Data)
+
+Run migrations:
+
+```bash
+python3 scripts/manage_migrations.py upgrade --db-path data/coding_assistant.db
+```
+
+Load premium dataset + demo user:
+
+```bash
 python3 load_sample_data.py
+```
+
+Notes:
+
+- By default, loader uses premium source (`LOAD_LEGACY_PROBLEM_BANK=false`).
+- Legacy archive stays in `data/archive/legacy_problem_bank/`.
+
+## 4) Run Backend
+
+Primary runtime command used by this project:
+
+```bash
 PORT=8020 python3 -m src.main
 ```
 
-Backend runs at:
+Alternative equivalent command:
 
-```text
-http://localhost:8020
+```bash
+uvicorn src.main:app --host 0.0.0.0 --port 8020 --reload
 ```
 
-API docs:
+Backend URLs:
 
-```text
-http://localhost:8020/docs
-```
+- API root: `http://localhost:8020`
+- Swagger: `http://localhost:8020/docs`
+- Health: `http://localhost:8020/api/health`
 
-### 2. Frontend Setup
+## 5) Run Frontend
 
 ```bash
 cd frontend
@@ -143,130 +196,209 @@ npm install
 VITE_API_URL=http://localhost:8020/api npm run dev -- --host 0.0.0.0 --port 5173
 ```
 
-Frontend runs at:
+Frontend URL:
 
-```text
-http://localhost:5173
+- `http://localhost:5173`
+
+## 6) Docker (Optional)
+
+Development profile:
+
+```bash
+docker compose --profile dev up --build
 ```
 
-If needed, force API URL:
+Production profile:
 
-```text
-http://localhost:5173/?api=http://localhost:8020/api
+```bash
+docker compose --profile prod up --build
 ```
 
-### 3. Demo Login
+## 7) Environment Variables
 
-```text
-Email: demo@example.com
-Password: demo123
+Use templates:
+
+- `.env.example`
+- `.env.development.example`
+- `.env.production.example`
+
+| Variable | Purpose | Required | Default | Production requirement |
+|---|---|---:|---|---|
+| `APP_ENV` | Runtime profile | No | `development` | Must be `production` in prod |
+| `HOST` | API bind host | No | `0.0.0.0` | Public bind needs `ALLOW_PUBLIC_BIND=true` |
+| `PORT` | API port | No | `8000` | Set explicitly |
+| `DB_PATH` | SQLite DB file | No | `data/coding_assistant.db` | Set persistent volume/path |
+| `SECRET_KEY` | JWT/signing secret | Yes (prod) | auto-generated in dev/test | Must be strong and length >= 32 |
+| `JWT_ALGORITHM` | JWT algorithm | No | `HS256` | Keep secure default or explicit |
+| `JWT_ISSUER` | JWT issuer claim | No | `ila-coding-api` | Set explicitly |
+| `JWT_AUDIENCE` | JWT audience claim | No | `ila-coding-clients` | Set explicitly |
+| `ACCESS_TOKEN_EXPIRE_MINUTES` | Access TTL | No | `1440` | Tune per policy |
+| `REFRESH_TOKEN_EXPIRE_DAYS` | Refresh TTL | No | `30` | Tune per policy |
+| `PASSWORD_RESET_TOKEN_EXPIRE_MINUTES` | Reset token TTL | No | `20` | Keep strict |
+| `OTP_EXPIRE_MINUTES` | OTP validity | No | `10` | Keep strict |
+| `OTP_MAX_ATTEMPTS` | OTP retry limit | No | `5` | Keep strict |
+| `OTP_COOLDOWN_SECONDS` | OTP resend cooldown | No | `30` | Keep strict |
+| `DEV_EXPOSE_OTP` | Expose OTP in responses | No | `true` | Must be `false` |
+| `PASSWORD_MIN_LENGTH` | Password policy | No | `6` | Must be `>=8` |
+| `PASSWORD_REQUIRE_UPPER` | Password policy | No | `false` | Must be `true` |
+| `PASSWORD_REQUIRE_LOWER` | Password policy | No | `true` | Keep `true` |
+| `PASSWORD_REQUIRE_DIGIT` | Password policy | No | `true` | Keep `true` |
+| `PASSWORD_REQUIRE_SYMBOL` | Password policy | No | `false` | Must be `true` |
+| `CORS_ALLOW_ORIGINS` | Allowed web origins | No | localhost list | Must be explicit, no `*` |
+| `HSTS_ENABLED` | HSTS header | No | `false` | Must be `true` |
+| `ALLOW_PUBLIC_BIND` | Allow `0.0.0.0` in prod | No | `false` | Must be `true` if host is public |
+| `METRICS_ENABLED` | Metrics endpoint toggle | No | `true` | Enable and scrape |
+| `SLOW_REQUEST_THRESHOLD_MS` | Slow request logging | No | `1200` | Tune for env |
+| `DB_SLOW_QUERY_THRESHOLD_MS` | Slow DB query logging | No | `120` | Tune for env |
+| `PREMIUM_PROBLEM_BANK_PATH` | Premium dataset JSON path | No | `data/premium/problem_bank.json` | Must point to valid premium JSON |
+| `LOAD_LEGACY_PROBLEM_BANK` | Load legacy archive rows | No | `false` | Keep `false` |
+| `RAG_ENABLED` | AI Tutor/RAG toggle | No | `true` | Set explicitly |
+| `RAG_MODE` | `local` or `external` | No | `local` | Set explicitly |
+| `RAG_SERVICE_TOKEN` | External RAG auth token | Conditional | empty | Required when `RAG_MODE=external` |
+| `VITE_API_URL` (frontend) | Frontend API base | No | `http://localhost:8001/api` fallback | Set to deployed backend `/api` URL |
+
+## 8) Verification Checklist
+
+Backend health:
+
+```bash
+curl -s http://localhost:8020/api/health
 ```
 
-### 4. Login Troubleshooting
+Migration status:
 
-If login shows Could not log in and Not Found, frontend is likely using the wrong API URL.
-Start frontend with VITE_API_URL=http://localhost:8020/api.
-If needed, clear browser local storage key apiUrl and reload.
+```bash
+python3 scripts/manage_migrations.py status --db-path data/coding_assistant.db
+```
 
-## Environment Variables
+Premium bank loaded (expect 75 active premium problems):
 
-Backend:
+```bash
+python3 - <<'PY'
+import sqlite3
+conn = sqlite3.connect("data/coding_assistant.db")
+cur = conn.cursor()
+cur.execute("SELECT COUNT(*) FROM problems WHERE dataset_tier='premium' AND is_active=1")
+print(cur.fetchone()[0])
+conn.close()
+PY
+```
 
-- `SECRET_KEY` defaults to `dev-secret-change-me`
-- `JWT_ALGORITHM` defaults to `HS256`
-- `ACCESS_TOKEN_EXPIRE_MINUTES` defaults to `1440`
-- `HOST` defaults to `0.0.0.0`
-- `PORT` defaults to `8000`
-- `CORS_ALLOW_ORIGINS` defaults to local frontend origins including `5173`
-- `RAG_ENABLED` defaults to `false`
-- `RAG_BASE_URL` defaults to `http://127.0.0.1:8000`
-- `RAG_ORG_ID` defaults to `test_org`
-- `RAG_AGENT_ID` defaults to `default_bot`
-- `RAG_SERVICE_TOKEN` defaults to empty
-- `RAG_TIMEOUT_SECONDS` defaults to `20`
+Auth smoke test:
+
+```bash
+curl -s -X POST http://localhost:8020/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"demo@example.com","password":"demo123"}'
+```
 
 Frontend:
 
-- `VITE_API_URL` can be used at startup for stable API routing in local/dev deployments.
-- Runtime `?api=http://localhost:PORT/api` overrides the backend API base URL and is stored in local storage.
-- The frontend fallback API URL in code is `http://localhost:8001/api`; set `VITE_API_URL` to match your backend port.
+- Open `http://localhost:5173`
+- Login with demo user
+- Verify Home and Problems show premium counts (75 with current dataset)
 
-## RAG Integration (Optional)
+## Troubleshooting
 
-Ask AI tab is wired to backend `/api/rag/query`.
+- **Wrong API URL in frontend:** set `VITE_API_URL=http://localhost:8020/api`.
+- **Wrong backend running:** verify by checking `GET /api/health` and API logs.
+- **Legacy DB loaded accidentally:** ensure `LOAD_LEGACY_PROBLEM_BANK=false`; re-run migrations + loader.
+- **Premium migration missing:** run `python3 scripts/manage_migrations.py upgrade --db-path data/coding_assistant.db`.
+- **Docker daemon unavailable:** start Docker Desktop/daemon before compose commands.
+- **`SECRET_KEY` missing in production:** set a strong `SECRET_KEY` in `.env`.
+- **Migration failures:** inspect migration status and DB file path (`DB_PATH`).
+- **CORS issues:** set exact frontend origin in `CORS_ALLOW_ORIGINS`.
+- **Stale frontend cache/localStorage:** clear browser storage and hard refresh.
+- **Incorrect `VITE_API_URL`:** must include `/api`.
+- **Incorrect `localStorage.apiUrl`:** force with `?api=http://localhost:8020/api` or clear key.
+- **Port conflicts:** change `PORT` for backend or dev server port for frontend.
 
-Default behavior:
+## Testing
 
-- `RAG_ENABLED=false`: backend returns local ITS fallback guidance.
-- `RAG_ENABLED=true` without `RAG_SERVICE_TOKEN`: endpoint returns clear token-missing message.
-- `RAG_ENABLED=true` with token and reachable runtime: answer source becomes `rag-service`.
-
-Example backend startup with external RAG:
+Backend/unit/integration suite:
 
 ```bash
-RAG_ENABLED=true \
-RAG_BASE_URL=http://127.0.0.1:8000 \
-RAG_ORG_ID=<org_id> \
-RAG_AGENT_ID=<agent_id> \
-RAG_SERVICE_TOKEN=<service_token> \
-PORT=8020 python3 -m src.main
+python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-## API Endpoints
+Validators:
 
-Authentication:
+```bash
+python3 problem_validator.py --output-dir reports/phase3
+python3 metadata_validator.py --output-dir reports/phase3
+python3 curriculum_validator.py --output-dir reports/phase3
+python3 solution_validator.py --output-dir reports/phase3
+python3 testcase_validator.py --output-dir reports/phase3
+```
 
-- `POST /api/auth/register`
-- `POST /api/auth/login`
-- `GET /api/auth/me`
+## Production Readiness Summary
 
-Problems:
+Completed through Phase 1–6:
 
-- `GET /api/problems`
-- `GET /api/problems/{problem_id}`
-- `POST /api/problems` admin only
+- Functional implementation and workflow validation
+- Stabilization and functional completion
+- Security and reliability hardening
+- Infrastructure + observability enablement
+- Premium curriculum migration and validation
 
-Practice and submissions:
+Current certification status: **Production Ready for Controlled Pilot**.
 
-- `POST /api/attempts`
-- `GET /api/attempts`
-- `POST /api/submissions`
-- `GET /api/submissions`
+## Current Limitations
 
-Recommendations:
+- Judge is Python-only and suitable for controlled environments; public multi-tenant execution needs stronger isolation/sandboxing.
+- SQLite is suitable for capstone/pilot scale; high-concurrency production should use a production-grade RDBMS.
+- AI tutor quality is strong but still bounded by configured retrieval/policy and local deployment context.
 
-- `POST /api/recommendations/generate`
-- `GET /api/recommendations`
-- `POST /api/recommendations/{rec_id}/complete`
-
-Analytics:
-
-- `GET /api/analytics/dashboard`
-- `GET /api/analytics/weaknesses`
-- `GET /api/analytics/errors`
-- `GET /api/analytics/export`
-
-Revisions:
-
-- `GET /api/revisions/due`
-- `POST /api/revisions/{schedule_id}/complete`
-
-RAG assistant:
-
-- `GET /api/rag/health`
-- `POST /api/rag/query`
-
-## Problem Bank
-
-Problems are loaded from:
+## Project Directory Structure
 
 ```text
-data/dsa_problems.md
+.
+├── src/
+│   ├── main.py
+│   ├── auth.py
+│   ├── config.py
+│   ├── database.py
+│   ├── learner_model.py
+│   ├── recommender.py
+│   ├── revision_scheduler.py
+│   ├── rag_service.py
+│   ├── judge.py
+│   ├── security.py
+│   ├── observability.py
+│   ├── migrations.py
+│   ├── premium_bank_loader.py
+│   ├── problem_bank.py
+│   └── models.py
+├── frontend/
+│   ├── src/
+│   ├── package.json
+│   └── vite.config.js
+├── data/
+│   ├── premium/
+│   │   ├── problem_template.json
+│   │   └── problem_bank.json
+│   ├── archive/legacy_problem_bank/
+│   └── coding_assistant.db (local, generated)
+├── migrations/
+├── scripts/
+├── docs/
+├── tests/
+├── observability/
+├── reports/
+├── docker-compose.yml
+├── Dockerfile
+├── load_sample_data.py
+└── requirements.txt
 ```
 
-The current markdown bank parses into 630 problems.
+## Documentation Map
 
-The loader parses markdown headings into:
+- [Configuration](docs/CONFIGURATION.md)
+- [Operations](docs/OPERATIONS.md)
+- [Premium Problem Bank](docs/PREMIUM_PROBLEM_BANK.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Deployment](docs/DEPLOYMENT.md)
+- [Infrastructure](docs/INFRASTRUCTURE.md)
 
 - topic
 - difficulty
@@ -301,6 +433,12 @@ SQLite tables:
 - `recommendations`
 - `revision_schedule`
 - `submissions`
+- `refresh_tokens`
+- `revoked_tokens`
+- `otp_codes`
+- `notes`
+- `bookmarks`
+- `user_settings`
 
 ## Limited Judge
 
@@ -356,6 +494,24 @@ Backend smoke test:
 ```bash
 python3 test_installation.py
 ```
+
+## Production Deployment
+
+Build and run production profile:
+
+```bash
+docker compose --profile prod up --build -d
+```
+
+Development profile:
+
+```bash
+docker compose --profile dev up --build
+```
+
+Operations runbook:
+
+- `docs/OPERATIONS.md`
 
 Compile check:
 

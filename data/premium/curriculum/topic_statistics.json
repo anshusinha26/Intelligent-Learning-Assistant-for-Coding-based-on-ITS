@@ -1,0 +1,390 @@
+{
+  "version": "1.0",
+  "total_problems": 75,
+  "difficulty_distribution": {
+    "Easy": 20,
+    "Medium": 46,
+    "Hard": 9
+  },
+  "time_budget": {
+    "estimated_total_minutes": 2640,
+    "estimated_total_hours": 44.0,
+    "average_minutes_per_problem": 35.2
+  },
+  "topic_distribution": [
+    {
+      "topic": "Arrays & Hashing",
+      "problem_count": 7,
+      "easy": 3,
+      "medium": 4,
+      "hard": 0,
+      "estimated_minutes": 205
+    },
+    {
+      "topic": "Two Pointers",
+      "problem_count": 5,
+      "easy": 2,
+      "medium": 2,
+      "hard": 1,
+      "estimated_minutes": 180
+    },
+    {
+      "topic": "Sliding Window",
+      "problem_count": 5,
+      "easy": 0,
+      "medium": 3,
+      "hard": 2,
+      "estimated_minutes": 235
+    },
+    {
+      "topic": "Stack",
+      "problem_count": 5,
+      "easy": 1,
+      "medium": 4,
+      "hard": 0,
+      "estimated_minutes": 150
+    },
+    {
+      "topic": "Binary Search",
+      "problem_count": 5,
+      "easy": 1,
+      "medium": 4,
+      "hard": 0,
+      "estimated_minutes": 165
+    },
+    {
+      "topic": "Linked List",
+      "problem_count": 5,
+      "easy": 3,
+      "medium": 2,
+      "hard": 0,
+      "estimated_minutes": 140
+    },
+    {
+      "topic": "Trees",
+      "problem_count": 7,
+      "easy": 5,
+      "medium": 2,
+      "hard": 0,
+      "estimated_minutes": 195
+    },
+    {
+      "topic": "Heap",
+      "problem_count": 4,
+      "easy": 0,
+      "medium": 2,
+      "hard": 2,
+      "estimated_minutes": 200
+    },
+    {
+      "topic": "Backtracking",
+      "problem_count": 4,
+      "easy": 0,
+      "medium": 4,
+      "hard": 0,
+      "estimated_minutes": 150
+    },
+    {
+      "topic": "Graphs",
+      "problem_count": 7,
+      "easy": 0,
+      "medium": 4,
+      "hard": 3,
+      "estimated_minutes": 320
+    },
+    {
+      "topic": "Dynamic Programming",
+      "problem_count": 8,
+      "easy": 1,
+      "medium": 6,
+      "hard": 1,
+      "estimated_minutes": 325
+    },
+    {
+      "topic": "Greedy",
+      "problem_count": 3,
+      "easy": 0,
+      "medium": 3,
+      "hard": 0,
+      "estimated_minutes": 105
+    },
+    {
+      "topic": "Intervals",
+      "problem_count": 3,
+      "easy": 0,
+      "medium": 3,
+      "hard": 0,
+      "estimated_minutes": 100
+    },
+    {
+      "topic": "Bit Manipulation",
+      "problem_count": 3,
+      "easy": 3,
+      "medium": 0,
+      "hard": 0,
+      "estimated_minutes": 65
+    },
+    {
+      "topic": "Math",
+      "problem_count": 4,
+      "easy": 2,
+      "medium": 2,
+      "hard": 0,
+      "estimated_minutes": 105
+    }
+  ],
+  "learning_outcomes": {
+    "Arrays & Hashing": {
+      "skills_acquired": [
+        "Hash-map/set model selection",
+        "Frequency counting and grouping",
+        "Linear-time sequence detection"
+      ],
+      "typical_mistakes": [
+        "Ignoring duplicate handling",
+        "Using sorting when hashing is sufficient",
+        "Key design instability for grouping"
+      ],
+      "exit_criteria": [
+        "Solves 5/7 within target time",
+        "Explains O(n) hashing trade-offs vs sorting",
+        "Avoids duplicate-output bugs"
+      ]
+    },
+    "Two Pointers": {
+      "skills_acquired": [
+        "Pointer invariants in sorted and unsorted settings",
+        "Greedy pointer movement proofs",
+        "Boundary condition handling"
+      ],
+      "typical_mistakes": [
+        "Pointer movement in wrong direction",
+        "Off-by-one termination conditions",
+        "Incorrect duplicate skipping"
+      ],
+      "exit_criteria": [
+        "Can derive pointer movement rule before coding",
+        "Completes hard pointer task with correct proof sketch"
+      ]
+    },
+    "Sliding Window": {
+      "skills_acquired": [
+        "Window validity formulations",
+        "Dynamic shrink/expand logic",
+        "Monotonic deque integration"
+      ],
+      "typical_mistakes": [
+        "Invalid frequency bookkeeping",
+        "Forgetting to shrink loop repeatedly",
+        "Deque stale-index removal errors"
+      ],
+      "exit_criteria": [
+        "Consistently identifies fixed vs variable windows",
+        "Solves at least one hard window task"
+      ]
+    },
+    "Stack": {
+      "skills_acquired": [
+        "LIFO state management",
+        "Monotonic stack next-greater transforms",
+        "Expression reduction with operators"
+      ],
+      "typical_mistakes": [
+        "Push/pop order mismatch",
+        "Index vs value confusion",
+        "Missing empty-stack guards"
+      ],
+      "exit_criteria": [
+        "Implements monotonic stack from scratch",
+        "No bracket-matching corner-case failures"
+      ]
+    },
+    "Binary Search": {
+      "skills_acquired": [
+        "Invariant-driven binary search templates",
+        "Answer-space feasibility search",
+        "Rotated-array branch selection"
+      ],
+      "typical_mistakes": [
+        "Infinite loops from wrong bounds update",
+        "Incorrect mid bias",
+        "Broken feasibility monotonicity assumption"
+      ],
+      "exit_criteria": [
+        "Writes bug-free binary search in first pass",
+        "Explains invariant and termination formally"
+      ]
+    },
+    "Linked List": {
+      "skills_acquired": [
+        "Pointer rewiring and list stitching",
+        "Fast-slow runner reasoning",
+        "Multi-step transformations"
+      ],
+      "typical_mistakes": [
+        "Losing next pointer during rewiring",
+        "Cycle creation in reordering tasks",
+        "Head/deletion edge-case omissions"
+      ],
+      "exit_criteria": [
+        "Completes medium list transforms without template",
+        "Passes head-tail edge-case tests"
+      ]
+    },
+    "Trees": {
+      "skills_acquired": [
+        "DFS and BFS traversal selection",
+        "Global/local state decomposition",
+        "Structural matching and validation"
+      ],
+      "typical_mistakes": [
+        "Wrong base-case returns",
+        "Mixing node count with edge count",
+        "Queue level boundary mistakes"
+      ],
+      "exit_criteria": [
+        "Chooses correct traversal strategy by output type",
+        "Solves combined-state DFS tasks correctly"
+      ]
+    },
+    "Heap": {
+      "skills_acquired": [
+        "Top-k maintenance",
+        "Dual-heap balancing",
+        "K-way merge frontier control"
+      ],
+      "typical_mistakes": [
+        "Wrong heap polarity",
+        "Unbalanced dual heaps",
+        "Comparator/key misuse"
+      ],
+      "exit_criteria": [
+        "Implements min/max heap patterns reliably",
+        "Solves one hard heap problem in time"
+      ]
+    },
+    "Backtracking": {
+      "skills_acquired": [
+        "Decision-tree recursion design",
+        "Pruning and deduplication",
+        "Grid-path search constraints"
+      ],
+      "typical_mistakes": [
+        "Not undoing state after recursion",
+        "Duplicate combinations/permutations",
+        "Visited set lifecycle bugs"
+      ],
+      "exit_criteria": [
+        "Can sketch recursion tree and prune rules",
+        "Avoids duplicate-output regressions"
+      ]
+    },
+    "Graphs": {
+      "skills_acquired": [
+        "Component traversal and cloning",
+        "Cycle detection and topological ordering",
+        "Shortest path with weighted edges"
+      ],
+      "typical_mistakes": [
+        "Visited marking at wrong time",
+        "Topological indegree update bugs",
+        "Incorrect Dijkstra finalization logic"
+      ],
+      "exit_criteria": [
+        "Can choose DFS/BFS/Topo/Dijkstra appropriately",
+        "Solves one hard graph problem with complexity proof"
+      ]
+    },
+    "Dynamic Programming": {
+      "skills_acquired": [
+        "State definition and transition derivation",
+        "Knapsack and subsequence formulations",
+        "Space optimization of tabulations"
+      ],
+      "typical_mistakes": [
+        "State overlap misunderstanding",
+        "Wrong iteration order in 1D DP",
+        "Missing base states"
+      ],
+      "exit_criteria": [
+        "Derives recurrence without editorial support",
+        "Implements at least one hard DP correctly"
+      ]
+    },
+    "Greedy": {
+      "skills_acquired": [
+        "Local-choice proof techniques",
+        "Frontier/range compression",
+        "Feasibility with restart conditions"
+      ],
+      "typical_mistakes": [
+        "Using greedy without proof",
+        "Failing on adversarial counterexamples",
+        "Incorrect frontier updates"
+      ],
+      "exit_criteria": [
+        "Provides correctness argument for greedy choices",
+        "Solves all three greedy tasks within target time"
+      ]
+    },
+    "Intervals": {
+      "skills_acquired": [
+        "Sort-and-sweep interval transforms",
+        "Merge/insert/removal objectives",
+        "Earliest-finish scheduling logic"
+      ],
+      "typical_mistakes": [
+        "Unsorted input assumptions",
+        "Boundary overlap mistakes",
+        "Mutating current interval incorrectly"
+      ],
+      "exit_criteria": [
+        "Can solve any interval merge variant with one pass after sort",
+        "No interval-boundary regression failures"
+      ]
+    },
+    "Bit Manipulation": {
+      "skills_acquired": [
+        "XOR cancellation",
+        "Bit-count tricks",
+        "Bitwise DP recurrence use"
+      ],
+      "typical_mistakes": [
+        "Confusing arithmetic and bit operations",
+        "Sign handling errors",
+        "Incorrect lowbit transformations"
+      ],
+      "exit_criteria": [
+        "Derives bitwise identity used in solution",
+        "Solves all bit tasks without brute force"
+      ]
+    },
+    "Math": {
+      "skills_acquired": [
+        "Fast exponentiation",
+        "Digit carry logic",
+        "Matrix transform decomposition"
+      ],
+      "typical_mistakes": [
+        "Overflow/precision assumptions",
+        "Carry propagation edge-case misses",
+        "Wrong in-place index mapping"
+      ],
+      "exit_criteria": [
+        "Implements exponentiation by squaring correctly",
+        "Handles numeric edge cases consistently"
+      ]
+    }
+  },
+  "quality_checks": {
+    "duplicate_concepts_detected": false,
+    "curriculum_gaps_detected": false,
+    "impossible_prerequisite_chains_detected": false,
+    "balanced_progression": true,
+    "notes": [
+      "Each advanced hard problem has at least one recovery path.",
+      "All prerequisite edges point to earlier curriculum order items.",
+      "Every listed topic has at least three problems except Heap, Backtracking, Greedy, Intervals, Bit Manipulation where counts remain >=3 and aligned to interview frequency."
+    ]
+  }
+}

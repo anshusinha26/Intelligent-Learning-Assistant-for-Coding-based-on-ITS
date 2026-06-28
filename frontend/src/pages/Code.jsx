@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/resizable.jsx";
 import { Button } from "@/components/ui/button.jsx";
 import Editor from "@monaco-editor/react";
-import { CornerUpRight, Loader2, Play } from "lucide-react";
+import { Bookmark, BookmarkCheck, CornerUpRight, Loader2, Play } from "lucide-react";
 import AuthContext from "@/context/auth-provider.jsx";
 import {
     Select,
@@ -47,6 +47,8 @@ function Code() {
     const [aiAnswer, setAiAnswer] = useState("");
     const [aiSource, setAiSource] = useState("");
     const [aiLoading, setAiLoading] = useState(false);
+    const [bookmarked, setBookmarked] = useState(false);
+    const [bookmarkLoading, setBookmarkLoading] = useState(false);
     const [dialogData, setDialogData] = useState({
         title: "",
         description: "",
@@ -64,6 +66,17 @@ function Code() {
     useEffect(() => {
         localStorage.setItem(`code-python-${problemStatement.id}`, code);
     }, [code, problemStatement.id]);
+
+    useEffect(() => {
+        apiRequest("/bookmarks?limit=500", { token: user.token })
+            .then((data) => {
+                const exists = (data.bookmarks || []).some(
+                    (item) => item.problem_id === problemStatement.id,
+                );
+                setBookmarked(exists);
+            })
+            .catch(() => null);
+    }, [problemStatement.id, user.token]);
 
     const submit = async (isTempRun = false) => {
         if (submitting || running) {
@@ -132,6 +145,44 @@ function Code() {
             setAiSource("error");
         } finally {
             setAiLoading(false);
+        }
+    };
+
+    const toggleBookmark = async () => {
+        setBookmarkLoading(true);
+        try {
+            if (bookmarked) {
+                await apiRequest(
+                    `/bookmarks/${encodeURIComponent(problemStatement.id)}`,
+                    {
+                        token: user.token,
+                        method: "DELETE",
+                    },
+                );
+                setBookmarked(false);
+                toast({
+                    title: "Bookmark removed",
+                    description: "Problem removed from bookmarks.",
+                });
+            } else {
+                await apiRequest("/bookmarks", {
+                    token: user.token,
+                    method: "POST",
+                    body: { problem_id: problemStatement.id },
+                });
+                setBookmarked(true);
+                toast({
+                    title: "Bookmarked",
+                    description: "Problem saved to bookmarks.",
+                });
+            }
+        } catch (error) {
+            toast({
+                title: "Bookmark update failed",
+                description: error.message,
+            });
+        } finally {
+            setBookmarkLoading(false);
         }
     };
 
@@ -269,6 +320,21 @@ function Code() {
                                             <CornerUpRight className="mr-2 h-4 w-4" />
                                         )}
                                         Submit
+                                    </Button>
+                                    <Button
+                                        variant="outline"
+                                        className="z-10 self-end"
+                                        disabled={bookmarkLoading}
+                                        onClick={toggleBookmark}
+                                    >
+                                        {bookmarkLoading ? (
+                                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                        ) : bookmarked ? (
+                                            <BookmarkCheck className="mr-2 h-4 w-4" />
+                                        ) : (
+                                            <Bookmark className="mr-2 h-4 w-4" />
+                                        )}
+                                        {bookmarked ? "Bookmarked" : "Bookmark"}
                                     </Button>
                                 </div>
                                 <div className="h-full">

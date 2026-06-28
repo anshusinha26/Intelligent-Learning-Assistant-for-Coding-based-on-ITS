@@ -1,0 +1,261 @@
+{
+  "user_id": 4,
+  "email": "audit_phase2_1782471807@example.com",
+  "before_counts": {
+    "attempts": 0,
+    "submissions": 0,
+    "recommendations": 0,
+    "revision_schedule": 0,
+    "learner_metrics": 0
+  },
+  "after_counts": {
+    "attempts": 3,
+    "submissions": 3,
+    "recommendations": 5,
+    "revision_schedule": 1,
+    "learner_metrics": 1
+  },
+  "results": [
+    {
+      "name": "unauth_me",
+      "status": 401,
+      "payload": {
+        "detail": "Not authenticated"
+      }
+    },
+    {
+      "name": "register_ok",
+      "status": 200,
+      "payload": {
+        "token_type": "bearer",
+        "user_id": 4
+      }
+    },
+    {
+      "name": "register_duplicate",
+      "status": 400,
+      "payload": {
+        "detail": "Email already registered"
+      }
+    },
+    {
+      "name": "login_bad_pw",
+      "status": 401,
+      "payload": {
+        "detail": "Invalid email or password"
+      }
+    },
+    {
+      "name": "login_ok",
+      "status": 200,
+      "payload": {
+        "token_type": "bearer",
+        "user_id": 4
+      }
+    },
+    {
+      "name": "me_ok",
+      "status": 200,
+      "payload": {
+        "user_id": 4
+      }
+    },
+    {
+      "name": "problems_default",
+      "status": 200,
+      "payload": {
+        "list_len": 50
+      }
+    },
+    {
+      "name": "problems_limit_700",
+      "status": 200,
+      "payload": {
+        "list_len": 635
+      }
+    },
+    {
+      "name": "problems_topic_filter",
+      "status": 200,
+      "payload": {
+        "list_len": 5
+      }
+    },
+    {
+      "name": "problems_search_q",
+      "status": 200,
+      "payload": {
+        "list_len": 4
+      }
+    },
+    {
+      "name": "problem_detail_ok",
+      "status": 200,
+      "payload": {
+        "problem_id": "two-sum",
+        "title": "Two sum",
+        "has_test_cases": true
+      }
+    },
+    {
+      "name": "problem_detail_missing",
+      "status": 404,
+      "payload": {
+        "detail": "Problem not found"
+      }
+    },
+    {
+      "name": "submit_accepted",
+      "status": 200,
+      "payload": {
+        "verdict": "Accepted"
+      }
+    },
+    {
+      "name": "submit_wrong_answer",
+      "status": 200,
+      "payload": {
+        "verdict": "Wrong Answer"
+      }
+    },
+    {
+      "name": "submit_runtime_error",
+      "status": 200,
+      "payload": {
+        "verdict": "Runtime Error"
+      }
+    },
+    {
+      "name": "submit_unsupported_lang",
+      "status": 400,
+      "payload": {
+        "detail": "Only Python submissions are supported"
+      }
+    },
+    {
+      "name": "submissions_list",
+      "status": 200,
+      "payload": {
+        "count": 3,
+        "first_verdict": "Accepted"
+      }
+    },
+    {
+      "name": "attempts_list",
+      "status": 200,
+      "payload": {
+        "list_len": 3
+      }
+    },
+    {
+      "name": "analytics_dashboard",
+      "status": 200,
+      "payload": {
+        "total_problems_attempted": 1,
+        "total_problems_solved": 1,
+        "current_streak": 1,
+        "success_rate": 33.33
+      }
+    },
+    {
+      "name": "analytics_weaknesses",
+      "status": 200,
+      "payload": {
+        "weakness_count": 1
+      }
+    },
+    {
+      "name": "analytics_errors",
+      "status": 200,
+      "payload": {
+        "error_patterns": {
+          "wrong-answer": 1,
+          "runtime-error": 1
+        }
+      }
+    },
+    {
+      "name": "analytics_export",
+      "status": 200,
+      "payload": "attempt_id,problem_id,title,topic,pattern,difficulty,verdict,time_taken,error_type,attempted_at\r\n27,two-sum,Two sum,Arrays and Hashmap,,Easy,Accepted,40,,2026-06-26 11:03:27\r\n28,two-sum,Two sum,Arrays"
+    },
+    {
+      "name": "recommend_generate",
+      "status": 200,
+      "payload": {
+        "count": 5,
+        "message": "Recommendations generated successfully"
+      }
+    },
+    {
+      "name": "recommend_list",
+      "status": 200,
+      "payload": {
+        "count": 5
+      }
+    },
+    {
+      "name": "revisions_due",
+      "status": 200,
+      "payload": {
+        "revisions": 0,
+        "due": 0
+      }
+    },
+    {
+      "name": "rag_health",
+      "status": 200,
+      "payload": {
+        "message": "Local in-repo RAG ready"
+      }
+    },
+    {
+      "name": "rag_query_hint",
+      "status": 200,
+      "payload": {
+        "source": "local-rag",
+        "rag_available": true,
+        "error": null,
+        "answer_head": "Focused guidance for your question:\n- Context: Two sum (Arrays and Hashmap, patt"
+      }
+    },
+    {
+      "name": "rag_query_solution",
+      "status": 200,
+      "payload": {
+        "source": "local-rag",
+        "rag_available": true,
+        "error": null,
+        "answer_head": "Full solution (Python) for Two Sum:\n```python\ndef solve(nums, target):\n    seen "
+      }
+    },
+    {
+      "name": "forgot_password_api_missing",
+      "status": 404,
+      "payload": {
+        "detail": "Not Found"
+      }
+    },
+    {
+      "name": "bookmarks_api_missing",
+      "status": 404,
+      "payload": {
+        "detail": "Not Found"
+      }
+    },
+    {
+      "name": "notes_api_missing",
+      "status": 404,
+      "payload": {
+        "detail": "Not Found"
+      }
+    },
+    {
+      "name": "settings_api_missing",
+      "status": 404,
+      "payload": {
+        "detail": "Not Found"
+      }
+    }
+  ]
+}

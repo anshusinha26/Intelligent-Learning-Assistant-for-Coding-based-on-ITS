@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "total_problems": 75,
+    "critical_issues": 0,
+    "high_issues": 0,
+    "medium_issues": 0,
+    "low_issues": 0
+  },
+  "issues": {
+    "critical": [],
+    "high": [],
+    "medium": [],
+    "low": []
+  },
+  "autofix": {
+    "applied": false
+  }
+}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button.jsx";
 import {
     Card,
@@ -11,95 +11,87 @@ import {
 import { Label } from "@/components/ui/label.jsx";
 import { PasswordInput } from "@/components/ui/password-input.jsx";
 import { Loader2 } from "lucide-react";
-import axios from "axios";
 import { useToast } from "@/hooks/use-toast.js";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { apiRequest } from "@/lib/api.js";
 
 function ResetPassword() {
-    const location = useLocation();
-    const { email, token } = location.state;
-    const [password, setPassword] = useState("");
-    const [loading, setLoading] = useState(false);
-    const { toast } = useToast();
+    const { state } = useLocation();
     const navigate = useNavigate();
+    const { toast } = useToast();
+    const resetToken = state?.resetToken || "";
+    const [newPassword, setNewPassword] = useState("");
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        if (!email || !token) {
-            navigate("/");
+        if (!resetToken) {
+            navigate("/forgot-password");
         }
-    }, []);
+    }, [navigate, resetToken]);
 
-    const submit = async (email, password) => {
+    const submit = async () => {
         setLoading(true);
-        const res = await axios
-            .post(
-                `${process.env.SERVER_URL}/auth/reset-password`,
-                {
-                    email,
-                    password,
+        try {
+            await apiRequest("/auth/reset-password", {
+                method: "POST",
+                body: {
+                    reset_token: resetToken,
+                    new_password: newPassword,
                 },
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                    validateStatus: false,
-                },
-            )
-            .then((res) => res.data);
-        if (res.success) {
+            });
             toast({
-                title: "Success",
-                description: res.message,
+                title: "Password reset",
+                description: "Your password was updated. Log in with the new password.",
             });
             navigate("/login");
-        } else {
+        } catch (error) {
             toast({
-                title: "Couldn't reset password",
-                description: res.message,
+                title: "Reset failed",
+                description: error.message,
             });
+        } finally {
+            setLoading(false);
         }
-        setLoading(false);
     };
 
     return (
-        <div className="h-full-w-nav w-screen m-auto flex items-center justify-center">
-            <Card className="w-[350px]">
+        <div className="min-h-full-w-nav w-full bg-[linear-gradient(135deg,hsl(var(--background))_0%,hsl(var(--secondary))_100%)] px-4 py-10 flex items-center justify-center">
+            <Card className="w-full max-w-[390px] shadow-lg">
                 <form
-                    onSubmit={(e) => {
-                        e.preventDefault();
-                        submit(email, password);
+                    onSubmit={(event) => {
+                        event.preventDefault();
+                        submit();
                     }}
                 >
                     <CardHeader>
-                        <CardTitle>Reset Password</CardTitle>
-                        <CardDescription>Set a New Password</CardDescription>
+                        <CardTitle>Reset password</CardTitle>
+                        <CardDescription>Enter your new password.</CardDescription>
                     </CardHeader>
                     <CardContent>
                         <div className="grid w-full items-center gap-4">
                             <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="name">Password</Label>
+                                <Label htmlFor="newPassword">New Password</Label>
                                 <PasswordInput
-                                    id="password"
-                                    value={password}
-                                    onChange={(e) =>
-                                        setPassword(e.target.value)
+                                    id="newPassword"
+                                    value={newPassword}
+                                    onChange={(event) =>
+                                        setNewPassword(event.target.value)
                                     }
-                                    placeholder="Your password"
+                                    placeholder="At least 6 characters"
                                 />
                             </div>
+                            <Button variant="link" asChild className="px-0">
+                                <Link to="/login">Back to login</Link>
+                            </Button>
                         </div>
                     </CardContent>
                     <CardFooter className="flex justify-end">
-                        {loading ? (
-                            <Button disabled>
+                        <Button disabled={loading || newPassword.length < 6}>
+                            {loading ? (
                                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                Logging in
-                            </Button>
-                        ) : (
-                            <Button onClick={() => submit(email, password)}>
-                                Log In
-                            </Button>
-                        )}
+                            ) : null}
+                            Reset Password
+                        </Button>
                     </CardFooter>
                 </form>
             </Card>

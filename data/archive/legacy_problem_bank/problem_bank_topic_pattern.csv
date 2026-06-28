@@ -1,0 +1,631 @@
+problem_id,title,topic,pattern,difficulty,source_url
+0-1-matrix,0/1 matrix,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/01-matrix/description/
+132-pattern,132 pattern,Stacks and Queues,Conversions / Monotonic,Medium,https://leetcode.com/problems/132-pattern/description/
+3sum,3Sum,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/3sum/description/
+4sum,4Sum,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/4sum/
+accounts-merge,Accounts merge,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/accounts-merge/description/
+add-1-to-a-linked-list-number,Add 1 to a linked list number,Linked List,Singly linked list,Medium,https://www.geeksforgeeks.org/problems/add-1-to-a-number-represented-as-linked-list/1
+add-two-numbers,Add two numbers,Linked List,Singly linked list,Medium,https://leetcode.com/problems/add-two-numbers/description/
+aggressive-cows,Aggressive cows,Binary Search,1D / on Answers,Medium,https://www.geeksforgeeks.org/problems/aggressive-cows/1
+alien-dictionary,Alien dictionary,Graphs,🔁 / 🔁,Hard,https://www.geeksforgeeks.org/problems/alien-dictionary/1
+all-divisors-of-a-number,All divisors of a number,Maths and Geometry,Unspecified,Easy,https://www.geeksforgeeks.org/problems/all-divisors-of-a-number/1
+all-divisors-of-a-number-2,All divisors of a number,Maths and Geometry,Unspecified,Medium,https://www.geeksforgeeks.org/problems/all-divisors-of-a-number/1
+all-nodes-distance-k-in-binary-tree,All nodes distance k in binary tree,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/
+all-paths-from-source-to-target,All paths from source to target,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/all-paths-from-source-to-target/description/
+allocate-minimum-pages,Allocate minimum pages,Binary Search,1D / on Answers,Medium,https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1
+arithmetic-subarrays,Arithmetic subarrays,Maths and Geometry,Unspecified,Medium,https://leetcode.com/problems/arithmetic-subarrays/description/
+armstrong-numbers,Armstrong numbers,Maths and Geometry,Unspecified,Easy,https://www.geeksforgeeks.org/problems/armstrong-numbers2727/1
+array-leaders,Array leaders,Arrays and Hashmap,Unspecified,Easy,https://www.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1
+array-search,Array search,Arrays and Hashmap,Unspecified,Easy,https://www.geeksforgeeks.org/problems/search-an-element-in-an-array-1587115621/1
+as-far-land-as-possible,As far land as possible,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/as-far-from-land-as-possible/description/
+assign-cookies,Assign cookies,Dynamic Programming,2D / on Subsequences,Easy,https://leetcode.com/problems/assign-cookies/description/
+assign-cookies-2,Assign cookies,Greedy,Unspecified,Easy,https://leetcode.com/problems/assign-cookies/description/
+asteroid-collision,Asteroid collision,Stacks and Queues,Conversions / Monotonic,Medium,https://leetcode.com/problems/asteroid-collision/description/
+basic-calculator-ii,Basic calculator II,Stacks and Queues,Implementation / Core,Medium,https://leetcode.com/problems/basic-calculator-ii/description/
+best-sightseeing-pair,Best sightseeing pair,Kadane's Algorithm,Unspecified,Medium,https://leetcode.com/problems/best-sightseeing-pair/description/
+best-time-stock,Best time to buy and sell stock,Two Pointers and Sliding Window,Unspecified,Easy,https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+best-time-stock-2,Best time to buy and sell stock,Dynamic Programming,on Strings / on Stocks,Easy,https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+best-time-to-buy-and-sell-stock-ii,Best time to buy and sell stock II,Dynamic Programming,on Strings / on Stocks,Medium,https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
+best-time-to-buy-and-sell-stock-iv,Best time to buy and sell stock IV,Dynamic Programming,on Strings / on Stocks,Hard,https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/description/
+best-time-to-buy-and-sell-stocks-iii,Best time to buy and sell stocks III,Dynamic Programming,on Strings / on Stocks,Hard,https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/
+best-time-to-buy-and-sell-stocks-with-cooldown,Best time to buy and sell stocks with cooldown,Dynamic Programming,on Strings / on Stocks,Medium,https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description/
+best-time-to-buy-and-sell-stocks-with-transaction-fee,Best time to buy and sell stocks with transaction fee,Dynamic Programming,on Strings / on Stocks,Medium,https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/
+binary-search,Binary search,Binary Search,1D,Easy,https://leetcode.com/problems/binary-search/
+binary-search-tree-iterator,Binary search tree iterator,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/binary-search-tree-iterator/description/
+binary-subarray-with-sum,Binary subarray with sum,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/binary-subarrays-with-sum/description/
+binary-tree-cameras,Binary tree cameras,Dynamic Programming,Matrix Chain Multiplication / on Squares,Hard,https://leetcode.com/problems/binary-tree-cameras/description/
+binary-tree-inorder-traversal,Binary tree inorder traversal,Trees,Binary Trees / Traversals,Easy,https://leetcode.com/problems/binary-tree-inorder-traversal/description/
+binary-tree-maximum-path-sum,Binary tree maximum path sum,Trees,Binary Trees / Traversals,Hard,https://leetcode.com/problems/binary-tree-maximum-path-sum/description/
+binary-tree-paths,Binary tree paths,Trees,Binary Trees / Traversals,Easy,https://leetcode.com/problems/binary-tree-paths/description/
+binary-tree-postorder-traversal,Binary tree postorder traversal,Trees,Binary Trees / Traversals,Easy,https://leetcode.com/problems/binary-tree-postorder-traversal/description/
+binary-tree-preorder-traversal,Binary tree preorder traversal,Trees,Binary Trees / Traversals,Easy,https://leetcode.com/problems/binary-tree-preorder-traversal/description/
+binary-tree-right-side-view,Binary tree right side view,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/binary-tree-right-side-view/description/
+binary-tree-zigzag-level-order-traversal,Binary tree zigzag level order traversal,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/
+bit-s-basic-operations,Bit's basic operations,Tries,Unspecified,Medium,https://www.geeksforgeeks.org/problems/bits-basic-operations/1
+bitwise-and-of-numbers-range,Bitwise AND of numbers range,Bit Manipulation,Unspecified,Medium,https://leetcode.com/problems/bitwise-and-of-numbers-range/description/
+bottom-view-of-binary-tree,Bottom view of binary tree,Trees,Binary Trees / Traversals,Medium,https://www.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1
+burning-tree,Burning tree,Trees,Binary Trees / Traversals,Hard,https://www.geeksforgeeks.org/problems/burning-tree/1
+burst-balloons,Burst balloons,Dynamic Programming,on Stocks / Matrix Chain Multiplication,Hard,https://leetcode.com/problems/burst-balloons/description/
+bus-routes,Bus routes,Graphs,🔁 / ❌,Hard,https://leetcode.com/problems/bus-routes/description/
+candy,Candy,Greedy,Unspecified,Hard,https://leetcode.com/problems/candy/description/
+capacity-to-ship-packages-within-d-days,Capacity to ship packages within d days,Binary Search,1D / on Answers,Medium,https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
+car-fleet,Car fleet,Stacks and Queues,Conversions / Monotonic,Medium,https://leetcode.com/problems/car-fleet/description/
+car-pooling,Car pooling,Line sweep,Unspecified,Medium,https://leetcode.com/problems/points-that-intersect-with-cars/description/
+ceil-in-a-sorted-array,Ceil in a sorted array,Binary Search,1D,Easy,https://www.geeksforgeeks.org/problems/ceil-in-a-sorted-array/1
+ceil-in-bst,Ceil in BST,Trees,Binary Trees / Traversals,Medium,https://www.geeksforgeeks.org/problems/implementing-ceil-in-bst/1
+cheapest-flights-within-k-stops,Cheapest flights within k stops,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/cheapest-flights-within-k-stops/description/
+check-if-array-is-sorted-and-rotated,Check if array is sorted and rotated,Arrays and Hashmap,Unspecified,Easy,"https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/#:~:text=Input%3A%20nums%20%3D%20%5B2%2C,no%20rotation)%20to%20make%20nums."
+check-if-there-exists-a-subsequence-with-sum-k,Check if there exists a subsequence with sum k,Recursion and Backtracking,Basic / Subsequences pattern,Medium,https://www.geeksforgeeks.org/problems/check-if-there-exists-a-subsequence-with-sum-k/1
+check-if-two-string-arrays-are-equivalent,Check if two string arrays are equivalent,Strings,Unspecified,Easy,https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/description/
+check-k-th-bit,Check k-th bit,Bit Manipulation,Unspecified,Easy,https://www.geeksforgeeks.org/problems/check-whether-k-th-bit-is-set-or-not-1587115620/1
+checking-existence-of-edge-length-limited-paths,Checking existence of edge length limited paths,Graphs,🔁 / 🔁,Hard,https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/description/
+cherry-pickup,Cherry pickup,Dynamic Programming,Unbounded Knapsack / 2D,Hard,https://leetcode.com/problems/cherry-pickup/description/
+cherry-pickup-ii,Cherry pickup II,Dynamic Programming,Unbounded Knapsack / 2D,Hard,https://leetcode.com/problems/cherry-pickup-ii/description/
+children-sum-in-a-binary-tree,Children sum in a binary tree,Trees,Binary Trees / Traversals,Medium,https://www.geeksforgeeks.org/problems/children-sum-parent/1
+chocolate-distribution-problem,Chocolate distribution problem,Two Pointers and Sliding Window,Unspecified,Easy,https://www.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1
+climbing-stairs,Climbing stairs,Dynamic Programming,1D,Easy,https://leetcode.com/problems/climbing-stairs/description/
+clone-graph,Clone graph,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/clone-graph/description/
+coin-change,Coin change,Dynamic Programming,Knapsack / Unbounded Knapsack,Medium,https://leetcode.com/problems/coin-change/description/
+coin-change-ii,Coin change II,Dynamic Programming,Knapsack / Unbounded Knapsack,Medium,https://leetcode.com/problems/coin-change-ii/description/
+combination-sum,Combination sum,Recursion and Backtracking,Basic / Subsequences pattern,Medium,https://leetcode.com/problems/combination-sum/description/
+combination-sum-ii,Combination sum II,Recursion and Backtracking,Basic / Subsequences pattern,Medium,https://leetcode.com/problems/combination-sum-ii/description/
+combination-sum-iii,Combination sum III,Recursion and Backtracking,Basic / Subsequences pattern,Medium,https://leetcode.com/problems/combination-sum-iii/description/
+compare-version-numbers,Compare version numbers,Strings,Unspecified,Medium,https://leetcode.com/problems/compare-version-numbers/description/
+connected-components-in-an-undirected-graph,Connected components in an undirected graph,Graphs,BFS / DFS,Medium,https://www.geeksforgeeks.org/problems/connected-components-in-an-undirected-graph/1
+construct-binary-search-tree-from-preorder-traversal,Construct binary search tree from preorder traversal,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/description/
+construct-binary-tree-from-inorder-and-postorder-traversal,Construct binary tree from inorder and postorder traversal,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/
+construct-binary-tree-from-preorder-and-inorder-traversal,Construct binary tree from preorder and inorder traversal,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/
+construct-quad-tree,Construct quad tree,Divide and Conquer,Unspecified,Medium,https://leetcode.com/problems/construct-quad-tree/description/
+container-water,Containers with most water,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/container-with-most-water/
+contains-duplicate,Contains duplicate,Arrays and Hashmap,Unspecified,Easy,https://leetcode.com/problems/contains-duplicate/
+contains-duplicate-ii,Contains duplicate II,Arrays and Hashmap,Unspecified,Easy,https://leetcode.com/problems/contains-duplicate-ii
+contiguous-array,Contiguous array,Prefix Sum,Unspecified,Medium,https://leetcode.com/problems/contiguous-array/description/
+continuous-subarray-sum,Continuous subarray sum,Prefix Sum,Unspecified,Medium,https://leetcode.com/problems/continuous-subarray-sum/description/
+convert-array-into-zig-zag-fashion,Convert array into zig-zag fashion,Arrays and Hashmap,Unspecified,Easy,https://www.geeksforgeeks.org/problems/convert-array-into-zig-zag-fashion1638/1
+convert-min-heap-to-max-heap,Convert min heap to max heap,Heaps,Unspecified,Medium,https://www.geeksforgeeks.org/problems/convert-min-heap-to-max-heap-1666385109/1
+convert-sorted-array-to-binary-search-tree,Convert sorted array to binary search tree,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/
+convert-sorted-list-to-binary-search-tree,Convert sorted list to binary search tree,Divide and Conquer,Unspecified,Medium,https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/description/
+copy-list-with-random-pointer,Copy list with random pointer,Linked List,Singly linked list,Medium,https://leetcode.com/problems/copy-list-with-random-pointer/description/
+core,Core,Trees,Binary Trees / Traversals,Medium,
+count-all-subsequences-with-sum-k,Count all subsequences with sum k,Recursion and Backtracking,Basic / Subsequences pattern,Easy,https://takeuforward.org/plus/dsa/problems/count-all-subsequences-with-sum-k
+count-all-valid-pickup-and-delivery-options,Count all valid pickup and delivery options,Maths and Geometry,Unspecified,Hard,https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/description/
+count-and-say,Count and say,Strings,Unspecified,Medium,https://leetcode.com/problems/count-and-say/description/
+count-complete-tree-nodes,Count complete tree nodes,Trees,Binary Trees / Traversals,Easy,https://leetcode.com/problems/count-complete-tree-nodes/description/
+count-digits,Count digits,Maths and Geometry,Unspecified,Easy,https://www.geeksforgeeks.org/problems/count-digits-1606889545/1
+count-good-nodes-in-binary-tree,Count good nodes in binary tree,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/count-good-nodes-in-binary-tree/
+count-good-numbers,Count good numbers,Recursion and Backtracking,Basic,Medium,https://leetcode.com/problems/count-good-numbers/description/
+count-number-of-nice-subarrays,Count number of nice subarrays,Prefix Sum,Unspecified,Medium,https://leetcode.com/problems/count-number-of-nice-subarrays/description/
+count-numbers-with-unique-digits,Count numbers with unique digits,Dynamic Programming,on Bitmask / on Digit,Medium,https://leetcode.com/problems/count-numbers-with-unique-digits/description/
+count-of-distinct-substrings,Count of distinct substrings,Tries,Unspecified,Medium,https://www.geeksforgeeks.org/problems/count-of-distinct-substrings/1
+count-palindromic-subsequence,Count palindromic subsequence,Two Pointers and Sliding Window,Unspecified,Medium,https://www.geeksforgeeks.org/problems/count-palindromic-subsequences/1
+count-prefix-and-suffix-pairs-ii,Count prefix and suffix pairs II,Tries,Unspecified,Hard,https://leetcode.com/problems/count-prefix-and-suffix-pairs-ii/description/
+count-primes,Count primes,Maths and Geometry,Unspecified,Medium,https://leetcode.com/problems/count-primes/
+count-square-submatrices-with-all-ones,Count square submatrices with all ones,Dynamic Programming,Unbounded Knapsack / 2D,Medium,https://leetcode.com/problems/count-square-submatrices-with-all-ones/description/
+count-subsets-with-sum-k,Count subsets with sum k,Dynamic Programming,2D / on Subsequences,Medium,https://www.naukri.com/code360/problems/count-subsets-with-sum-k_3952532
+count-substring,Count substring,Two Pointers and Sliding Window,Unspecified,Medium,https://www.geeksforgeeks.org/problems/count-substring/1
+count-the-number-of-inversions,Count the number of inversions,Dynamic Programming,on Probability / on Multi-dimensional states,Medium,https://leetcode.com/problems/count-the-number-of-inversions/
+count-the-number-of-powerful-integers,Count the number of powerful integers,Dynamic Programming,on Bitmask / on Digit,Hard,https://leetcode.com/problems/count-the-number-of-powerful-integers/description/
+counting-bits,Counting bits,Bit Manipulation,Unspecified,Easy,https://leetcode.com/problems/counting-bits/description/
+course-schedule,Course schedule,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/course-schedule/description/
+course-schedule-ii,Course schedule II,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/course-schedule-ii/description/
+cracking-the-safe,Cracking the safe,Graphs,🔁 / Eulerian circuit,Hard,https://leetcode.com/problems/cracking-the-safe/description/
+critical-connections-in-a-network,Critical connections in a network,Graphs,Eulerian circuit / Advanced,Hard,https://leetcode.com/problems/critical-connections-in-a-network/description/
+custom-sort-string,Custom sort string,Strings,Unspecified,Medium,https://leetcode.com/problems/custom-sort-string/description/
+daily-temperatures,Daily temperatures,Stacks and Queues,Conversions / Monotonic,Medium,https://leetcode.com/problems/daily-temperatures/
+decode-string,Decode string,Recursion and Backtracking,Basic,Medium,https://leetcode.com/problems/decode-string/description/
+decode-ways,Decode ways,Dynamic Programming,on Subsequences / on Strings,Medium,https://leetcode.com/problems/decode-ways/description/
+delete-all-occurrences-of-a-given-key-in-a-doubly-linked-list,Delete all occurrences of a given key in a doubly linked list,Linked List,Singly linked list / Doubly linked list,Medium,https://www.geeksforgeeks.org/problems/delete-all-occurrences-of-a-given-key-in-a-doubly-linked-list/1
+delete-in-a-doubly-linked-list,Delete in a doubly linked list,Linked List,Singly linked list / Doubly linked list,Easy,https://www.geeksforgeeks.org/problems/delete-node-in-doubly-linked-list/1
+delete-node-in-a-bst,Delete node in a BST,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/delete-node-in-a-bst/description/
+delete-nodes-and-return-forest,Delete nodes and return forest,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/delete-nodes-and-return-forest/description/
+delete-operation-for-two-strings,Delete operation for two strings,Dynamic Programming,on Subsequences / on Strings,Medium,https://leetcode.com/problems/delete-operation-for-two-strings/description/
+delete-the-middle-node-of-a-linked-list,Delete the middle node of a linked list,Linked List,Singly linked list,Medium,https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/description/
+deleting-node-in-a-linked-list,Deleting node in a linked list,Linked List,Singly linked list,Medium,https://leetcode.com/problems/delete-node-in-a-linked-list/description/
+design-a-food-rating-system,Design a food rating system,Data structure design,Unspecified,Medium,https://leetcode.com/problems/design-a-food-rating-system/description/
+design-add-and-search-words-data-structure,Design add and search words data structure,Tries,Unspecified,Medium,https://leetcode.com/problems/design-add-and-search-words-data-structure/
+design-browser-history,Design browser history,Data structure design,Unspecified,Medium,https://leetcode.com/problems/design-browser-history/description/
+design-graph-with-shortest-path-calculator,Design graph with shortest path calculator,Graphs,🔁 / 🔁,Hard,https://leetcode.com/problems/design-graph-with-shortest-path-calculator/description/
+design-linked-list,Design linked list,Linked List,Singly linked list,Medium,https://leetcode.com/problems/design-linked-list/description/
+design-twitter,Design twitter,Data structure design,Unspecified,Medium,https://leetcode.com/problems/design-twitter/description/
+desing-hashmap,Desing hashmap,Arrays and Hashmap,Unspecified,Easy,https://leetcode.com/problems/design-hashmap/description/
+detect-squares,Detect squares,Maths and Geometry,Unspecified,Medium,https://leetcode.com/problems/detect-squares/description/
+di-string-match,DI string match,String matching,Unspecified,Easy,https://leetcode.com/problems/di-string-match/description/
+diagonal-traverse,Diagonal traverse,Maths and Geometry,Unspecified,Medium,https://leetcode.com/problems/diagonal-traverse
+diameter-of-binary-tree,Diameter of binary tree,Trees,Binary Trees / Traversals,Easy,https://leetcode.com/problems/diameter-of-binary-tree/description/
+directed-graph-cycle,Directed graph cycle,Graphs,Topological Sort / 🔁,Medium,https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1
+distinct-subsequences,Distinct subsequences,Dynamic Programming,2D / on Subsequences,Hard,https://leetcode.com/problems/distinct-subsequences/description/
+distribute-coins-in-binary-tree,Distribute coins in binary tree,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/distribute-coins-in-binary-tree/description/
+divide-two-integers,Divide two integers,Bit Manipulation,Unspecified,Medium,https://leetcode.com/problems/divide-two-integers/description/
+djisktra-s-algorithm,Djisktra's algorithm,Graphs,🔁 / 🔁,Medium,https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1
+does-array-represent-heap,Does array represent heap,Heaps,Unspecified,Easy,https://www.geeksforgeeks.org/problems/does-array-represent-heap4345/1
+edit-distance,Edit distance,Dynamic Programming,on Subsequences / on Strings,Medium,https://leetcode.com/problems/edit-distance/description/
+employee-importance,Employee importance,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/employee-importance/description/
+encode-and-decode-strings,Encode and decode strings,Arrays and Hashmap,Unspecified,Medium,https://leetcode.com/problems/encode-and-decode-strings/
+encode-and-decode-tinyurl,Encode and decode tinyURL,Arrays and Hashmap,Unspecified,Medium,https://leetcode.com/problems/encode-and-decode-tinyurl/description/
+evaluate-division,Evaluate division,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/evaluate-division/
+evaluate-reverse-polish-notation,Evaluate reverse polish notation,Stacks and Queues,Core / Conversions,Medium,https://leetcode.com/problems/evaluate-reverse-polish-notation/description/
+expression-add-operators,Expression add operators,Recursion and Backtracking,Subsequences pattern / Combos,Hard,https://leetcode.com/problems/expression-add-operators/description/
+factorial-trailing-zeroes,Factorial trailing zeroes,Maths and Geometry,Unspecified,Medium,https://leetcode.com/problems/factorial-trailing-zeroes/description/
+fair-distribution-of-cookies,Fair distribution of cookies,Dynamic Programming,on Squares / on Bitmask,Medium,https://leetcode.com/problems/fair-distribution-of-cookies/description/
+fibonacci-number,Fibonacci number,Dynamic Programming,1D,Easy,https://leetcode.com/problems/fibonacci-number/description/
+find-a-peak-element-ii,Find a peak element II,Binary Search,on Answers / 2D,Medium,https://leetcode.com/problems/find-a-peak-element-ii/
+find-all-anagrams-in-a-string,Find all anagrams in a string,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/find-all-anagrams-in-a-string/description/
+find-all-people-with-secret,Find all people with secret,Graphs,🔁 / 🔁,Hard,https://leetcode.com/problems/find-all-people-with-secret/description/
+find-duplicate-subtrees,Find duplicate subtrees,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/find-duplicate-subtrees/description/
+find-eventual-safe-states,Find eventual safe states,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/find-eventual-safe-states/description/
+find-first-and-last-position-of-element-in-sorted-array,Find first and last position of element in sorted array,Binary Search,1D,Medium,https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+find-greatest-common-divisor-of-array,Find greatest common divisor of array,Maths and Geometry,Unspecified,Easy,https://leetcode.com/problems/find-greatest-common-divisor-of-array/description/
+find-k-pairs-with-smallest-sums,Find k pairs with smallest sums,Heaps,Unspecified,Medium,https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/
+find-kth-rotation,Find kth rotation,Binary Search,1D,Easy,https://www.geeksforgeeks.org/problems/rotation4723/1
+find-length-of-linked-list,Find length of linked list,Linked List,Singly linked list,Easy,https://www.geeksforgeeks.org/problems/count-nodes-of-linked-list/1
+find-length-of-loop,Find length of loop,Linked List,Singly linked list,Medium,https://www.geeksforgeeks.org/problems/find-length-of-loop/1
+find-median-from-data-stream,Find median from data stream,Heaps,Unspecified,Hard,https://leetcode.com/problems/find-median-from-data-stream/description/
+find-minimum-in-rotated-sorted-array,Find minimum in rotated sorted array,Binary Search,1D,Medium,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+find-missing-and-repeated-values,Find missing and repeated values,Arrays and Hashmap,Unspecified,Easy,https://leetcode.com/problems/find-missing-and-repeated-values/
+find-nth-root-of-m,Find nth root of m,Binary Search,1D / on Answers,Medium,https://www.geeksforgeeks.org/problems/find-nth-root-of-m5843/1
+find-pairs-with-given-sum-in-doubly-linked-list,Find pairs with given sum in doubly linked list,Linked List,Singly linked list / Doubly linked list,Easy,https://www.geeksforgeeks.org/problems/find-pairs-with-given-sum-in-doubly-linked-list/1
+find-peak-element,Find peak element,Binary Search,1D,Medium,"https://leetcode.com/problems/find-peak-element/#:~:text=Find%20Peak%20Element%20%2D%20LeetCode&text=A%20peak%20element%20is%20an,to%20any%20of%20the%20peaks."
+find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance,Find the city with the smallest number of neighbors at a threshold distance,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/description/
+find-the-duplicate-number,Find the duplicate number,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/find-the-duplicate-number/description/
+find-the-index-of-the-first-occurrence-in-a-string,Find the index of the first occurrence in a string,Two Pointers and Sliding Window,Unspecified,Easy,https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
+find-the-shortest-superstring,Find the shortest superstring,Dynamic Programming,on Squares / on Bitmask,Hard,https://leetcode.com/problems/find-the-shortest-superstring/description/
+find-the-smallest-divisor,Find the smallest divisor,Binary Search,1D / on Answers,Medium,https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
+find-xor-of-numbers-from-l-to-r,Find xor of numbers from L to R,Bit Manipulation,Unspecified,Easy,https://www.geeksforgeeks.org/problems/find-xor-of-numbers-from-l-to-r/1
+first-bad-version,First bad version,Binary Search,1D,Easy,https://leetcode.com/problems/first-bad-version/description/
+first-missing-positive,First missing positive,Arrays and Hashmap,Unspecified,Hard,https://leetcode.com/problems/first-missing-positive/description/
+flatten-a-multilevel-doubly-linked-list,Flatten a multilevel doubly linked list,Linked List,Singly linked list / Doubly linked list,Medium,https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/description/
+flatten-binary-tree-to-linked-list,Flatten binary tree to linked list,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/
+flattening-of-linked-list,Flattening of linked list,Linked List,Singly linked list,Medium,https://www.geeksforgeeks.org/problems/flattening-a-linked-list/1
+flood-fill,Flood fill,Graphs,BFS / DFS,Easy,https://leetcode.com/problems/flood-fill/description/
+floor-in-a-sorted-array,Floor in a sorted array,Binary Search,1D,Easy,https://www.geeksforgeeks.org/problems/floor-in-a-sorted-array-1587115620/1
+floor-in-bst,Floor in BST,Trees,Binary Trees / Traversals,Medium,https://www.geeksforgeeks.org/problems/floor-in-bst/1
+fractional-knapsack,Fractional knapsack,Greedy,Unspecified,Medium,https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1
+frog-jump,Frog jump,Dynamic Programming,1D,Medium,https://www.geeksforgeeks.org/problems/geek-jump/1
+frog-jump-with-k-distances,Frog Jump with k distances,Dynamic Programming,1D,Medium,https://takeuforward.org/plus/dsa/problems/frog-jump-with-k-distances
+fruit-into-baskets,Fruit into baskets,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/fruit-into-baskets/description/
+furthest-building-you-can-reach,Furthest building you can reach,Heaps,Unspecified,Medium,https://leetcode.com/problems/furthest-building-you-can-reach/description/
+game-of-life,Game of life,Arrays and Hashmap,Unspecified,Medium,https://leetcode.com/problems/game-of-life/description/
+gas-station,Gas station,Greedy,Unspecified,Medium,https://leetcode.com/problems/gas-station/
+generate-all-binary-strings,Generate all binary strings,Recursion and Backtracking,Basic / Subsequences pattern,Medium,https://www.geeksforgeeks.org/problems/generate-all-binary-strings/1
+generate-parantheses,Generate parantheses,Recursion and Backtracking,Basic / Subsequences pattern,Medium,https://leetcode.com/problems/generate-parentheses/description/
+generate-parentheses,Generate parentheses,Stacks and Queues,Implementation / Core,Medium,https://leetcode.com/problems/generate-parentheses/
+graph-is-tree-or-not,Graph is tree or not,Graphs,🔁 / 🔁,Medium,https://www.geeksforgeeks.org/problems/is-it-a-tree/1
+greatest-common-divisor-of-strings,Greatest common divisor of strings,Maths and Geometry,Unspecified,Easy,https://leetcode.com/problems/greatest-common-divisor-of-strings/description/
+group-anagrams,Group anagrams,Arrays and Hashmap,Unspecified,Medium,https://leetcode.com/problems/group-anagrams/
+guess-the-word,Guess the word,Strings,Unspecified,Hard,https://leetcode.com/problems/guess-the-word/description/
+hands-of-straights,Hands of straights,Greedy,Unspecified,Medium,https://leetcode.com/problems/hand-of-straights/description/
+happy-number,Happy number,Maths and Geometry,Unspecified,Easy,https://leetcode.com/problems/happy-number
+house-robber,House robber,Dynamic Programming,1D,Medium,https://leetcode.com/problems/house-robber/description/
+house-robber-ii,House robber II,Dynamic Programming,1D,Medium,https://leetcode.com/problems/house-robber-ii/description/
+house-robber-iii,House robber III,Dynamic Programming,Matrix Chain Multiplication / on Squares,Medium,https://leetcode.com/problems/house-robber-iii/description/
+implement-lower-bound,Implement lower bound,Binary Search,1D,Easy,https://www.geeksforgeeks.org/problems/implement-lower-bound/1
+implement-queue-using-stack,Implement queue using stack,Stacks and Queues,Implementation,Easy,https://leetcode.com/problems/implement-queue-using-stacks/description/
+implement-stack-using-array,Implement stack using array,Stacks and Queues,Implementation,Easy,https://www.geeksforgeeks.org/problems/implement-stack-using-array/1
+implement-stack-using-queue,Implement stack using queue,Stacks and Queues,Implementation,Easy,https://leetcode.com/problems/implement-stack-using-queues/description/
+implement-trie-prefix-tree,Implement Trie (prefix tree),Tries,Unspecified,Medium,https://leetcode.com/problems/implement-trie-prefix-tree/description/
+implement-upper-bound,Implement upper bound,Binary Search,1D,Easy,https://www.geeksforgeeks.org/problems/implement-upper-bound/1
+increasing-triplet-subsequence,Increasing triplet subsequence,Greedy,Unspecified,Medium,https://leetcode.com/problems/increasing-triplet-subsequence/description/
+increment-submatrices-by-one,Increment submatrices by one,Prefix Sum,Unspecified,Medium,https://leetcode.com/problems/increment-submatrices-by-one/description/
+infix-to-postfix,Infix to postfix,Stacks and Queues,Core / Conversions,Medium,https://www.geeksforgeeks.org/problems/infix-to-postfix-1587115620/1
+infix-to-prefix-notation,Infix to prefix notation,Stacks and Queues,Core / Conversions,Medium,https://www.geeksforgeeks.org/problems/infix-to-prefix-notation/1
+inorder-successor-in-bst,Inorder successor in BST,Trees,Binary Trees / Traversals,Easy,https://www.geeksforgeeks.org/problems/inorder-successor-in-bst/1
+insert-delete-getrandom-o-1,Insert delete getrandom O(1),Arrays and Hashmap,Unspecified,Medium,https://leetcode.com/problems/insert-delete-getrandom-o1/description/
+insert-interval,Insert Interval,Intervals,Unspecified,Medium,https://leetcode.com/problems/insert-interval/description/
+insert-into-binary-search-tree,Insert into binary search tree,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/insert-into-a-binary-search-tree/description/
+inserting-a-node-at-a-speicific-position-in-a-linked-list,Inserting a node at a speicific position in a linked list,Linked List,Singly linked list,Easy,https://www.hackerrank.com/challenges/insert-a-node-at-a-specific-position-in-a-linked-list/problem
+insertion-at-doubly-linked-list,Insertion at doubly linked list,Linked List,Singly linked list / Doubly linked list,Easy,https://www.geeksforgeeks.org/problems/insert-a-node-in-doubly-linked-list/1
+integer-break,Integer break,Dynamic Programming,Knapsack / Unbounded Knapsack,Medium,https://leetcode.com/problems/integer-break/description/
+interleaving-string,Interleaving string,Dynamic Programming,on Subsequences / on Strings,Medium,https://leetcode.com/problems/interleaving-string/description/
+intersection-of-two-linked-lists,Intersection of two linked lists,Linked List,Singly linked list,Easy,https://leetcode.com/problems/intersection-of-two-linked-lists/description/
+invert-tree,Invert binary tree,Trees,Binary Trees / Traversals,Easy,https://leetcode.com/problems/invert-binary-tree/
+ipo,IPO,Heaps,Unspecified,Hard,https://leetcode.com/problems/ipo/description/
+is-graph-bipartite,Is graph bipartite?,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/is-graph-bipartite/description/
+is-subsequence,Is subsequence,Two Pointers and Sliding Window,Unspecified,Easy,https://leetcode.com/problems/is-subsequence/description/
+islands-and-treasure,Islands and treasure,Graphs,🔁 / 🔁,Medium,https://neetcode.io/problems/islands-and-treasure?list=neetcode150
+isomorphic-string,Isomorphic string,Strings,Unspecified,Easy,https://leetcode.com/problems/isomorphic-strings/description/
+job-sequencing-problem,Job sequencing problem,Greedy,Unspecified,Medium,https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1
+jump-game,Jump game,Greedy,Unspecified,Medium,https://leetcode.com/problems/jump-game/description/
+jump-game-ii,Jump game II,Greedy,Unspecified,Medium,https://leetcode.com/problems/jump-game-ii/description/
+jump-game-vi,Jump game VI,Stacks and Queues,Conversions / Monotonic,Medium,https://leetcode.com/problems/jump-game-vi/description/
+k-closest-points-to-origin,K closest points to origin,Heaps,Unspecified,Medium,https://leetcode.com/problems/k-closest-points-to-origin/
+k-sorted-array,K sorted array,Heaps,Unspecified,Easy,https://www.geeksforgeeks.org/problems/k-sorted-array1610/1
+k-th-element-of-two-arrays,K-th element of two arrays,Binary Search,1D / on Answers,Medium,http://geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1
+k-th-smallest-prime-fraction,K-th smallest prime fraction,Binary Search,1D / on Answers,Medium,https://leetcode.com/problems/k-th-smallest-prime-fraction/description/
+knapsack-with-duplicate-items,Knapsack with duplicate items,Dynamic Programming,2D / on Subsequences,Medium,https://www.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1
+knight-probability-in-chessboard,Knight probability in chessboard,Dynamic Programming,on Digit / on Probability,Medium,https://leetcode.com/problems/knight-probability-in-chessboard/description/
+koko-eating-bananas,Koko eating bananas,Binary Search,1D / on Answers,Medium,https://leetcode.com/problems/koko-eating-bananas/
+kth-largest-element-in-a-stream,Kth largest element in a stream,Heaps,Unspecified,Easy,https://leetcode.com/problems/kth-largest-element-in-a-stream/description/
+kth-largest-element-in-an-array,Kth largest element in an array,Heaps,Unspecified,Medium,https://leetcode.com/problems/kth-largest-element-in-an-array/description/
+kth-missing-positive-number,Kth missing positive number,Binary Search,1D / on Answers,Easy,"https://leetcode.com/problems/kth-missing-positive-number/#:~:text=Given%20an%20array%20arr%20of,13%2C...%5D."
+kth-smallest,Kth smallest,Heaps,Unspecified,Medium,https://www.geeksforgeeks.org/problems/kth-smallest-element5635/1
+kth-smallest-element-in-a-bst,Kth smallest element in a BST,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/
+kth-smallest-element-in-a-sorted-matrix,Kth smallest element in a sorted matrix,Heaps,Unspecified,Medium,https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/description/
+largest-bst,Largest BST,Trees,Binary Trees / Traversals,Medium,https://www.geeksforgeeks.org/problems/largest-bst/1
+largest-divisible-subset,Largest divisible subset,Dynamic Programming,on Strings / on Stocks,Medium,https://leetcode.com/problems/largest-divisible-subset/description/
+largest-element-in-an-array,Largest element in an array,Arrays and Hashmap,Unspecified,Easy,https://www.geeksforgeeks.org/problems/largest-element-in-array4009/1
+largest-number,Largest number,Maths and Geometry,Unspecified,Medium,https://leetcode.com/problems/largest-number/description/
+largest-odd-number-in-string,Largest odd number in string,Strings,Unspecified,Easy,https://leetcode.com/problems/largest-odd-number-in-string/
+largest-rectangle-in-histogram,Largest rectangle in histogram,Stacks and Queues,Conversions / Monotonic,Hard,https://leetcode.com/problems/largest-rectangle-in-histogram/description/
+largest-subarray-with-0-sum,Largest subarray with 0 sum,Two Pointers and Sliding Window,Unspecified,Medium,https://www.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1
+last-stone-weight,Last stone weight,Heaps,Unspecified,Easy,https://leetcode.com/problems/last-stone-weight/
+last-stone-weight-ii,Last stone weight II,Dynamic Programming,1D / Knapsack,Medium,https://leetcode.com/problems/last-stone-weight-ii/description/
+left-view-of-binary-tree,Left view of binary tree,Trees,Binary Trees / Traversals,Medium,https://www.geeksforgeeks.org/problems/left-view-of-binary-tree/1
+lemonade-change,Lemonade change,Greedy,Unspecified,Easy,https://leetcode.com/problems/lemonade-change/description/
+letter-combinations-of-a-phone-number,Letter combinations of a phone number,Recursion and Backtracking,Basic / Subsequences pattern,Medium,https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
+level-order,Binary tree level order traversal,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/binary-tree-level-order-traversal/description/
+lfu-cache,LFU cache,Arrays and Hashmap,Unspecified,Hard,https://leetcode.com/problems/lfu-cache/description/
+linked-list-cycle,Linked list cycle,Linked List,Singly linked list,Easy,https://leetcode.com/problems/linked-list-cycle/description/
+linked-list-cycle-ii,Linked list cycle II,Linked List,Singly linked list,Medium,https://leetcode.com/problems/linked-list-cycle-ii/description/
+longest-bitonic-subsequence,Longest bitonic subsequence,Dynamic Programming,on Strings / on Stocks,Medium,https://www.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/1
+longest-common-prefix,Longest common prefix,Strings,Unspecified,Easy,https://leetcode.com/problems/longest-common-prefix/description/
+longest-common-subsequence,Longest common subsequence,Dynamic Programming,on Subsequences / on Strings,Medium,https://leetcode.com/problems/longest-common-subsequence/description/
+longest-common-substring,Longest common substring,Dynamic Programming,on Subsequences / on Strings,Medium,https://www.geeksforgeeks.org/problems/longest-common-substring1452/1
+longest-common-suffix-queries,Longest common suffix queries,Tries,Unspecified,Hard,https://leetcode.com/problems/longest-common-suffix-queries/description/
+longest-consecutive-sequence,Longest consecutive sequence,Arrays and Hashmap,Unspecified,Medium,https://leetcode.com/problems/longest-consecutive-sequence/submissions/1665576491/
+longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit,Longest continuous subarray with absolute diff less than or equal to limit,Stacks and Queues,Conversions / Monotonic,Medium,https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/description/
+longest-duplicate-substring,Longest duplicate substring,Suffix Array,Unspecified,Hard,https://leetcode.com/problems/longest-duplicate-substring/description/
+longest-happy-prefix,Longest happy prefix,Strings,Unspecified,Hard,https://leetcode.com/problems/longest-happy-prefix/description/
+longest-increasing,Longest increasing subsequence,Dynamic Programming,on Strings / on Stocks,Medium,https://leetcode.com/problems/longest-increasing-subsequence/
+longest-increasing-path-in-a-matrix,Longest increasing path in a matrix,Dynamic Programming,Unbounded Knapsack / 2D,Hard,https://leetcode.com/problems/longest-increasing-path-in-a-matrix/description/
+longest-increasing-subsequence-ii,Longest increasing subsequence II,Dynamic Programming,on Strings / on Stocks,Hard,https://leetcode.com/problems/longest-increasing-subsequence-ii/description/
+longest-palindromic-subsequence,Longest palindromic subsequence,Dynamic Programming,on Subsequences / on Strings,Medium,https://leetcode.com/problems/longest-palindromic-subsequence/description/
+longest-palindromic-substring,Longest palindromic substring,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/longest-palindromic-substring/description/
+longest-palindromic-substring-2,Longest palindromic substring,Dynamic Programming,on Subsequences / on Strings,Medium,https://leetcode.com/problems/longest-palindromic-substring/description/
+longest-path-in-a-directed-acyclic-graph,Longest path in a directed acyclic graph,Graphs,🔁 / 🔁,Hard,https://www.geeksforgeeks.org/problems/longest-path-in-a-directed-acyclic-graph/1
+longest-repeating-character-replacement,Longest repeating character replacement,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/longest-repeating-character-replacement/description/
+longest-string-chain,Longest string chain,Dynamic Programming,on Strings / on Stocks,Medium,https://leetcode.com/problems/longest-string-chain/description/
+longest-subarray-with-sum,Longest subarray with sum,Prefix Sum,Unspecified,Medium,https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1
+longest-substring,Longest substring without repeating characters,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+longest-substring-with-k-uniques,Longest substring with k uniques,Two Pointers and Sliding Window,Unspecified,Medium,https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1
+longest-valid-parentheses,Longest valid parentheses,Stacks and Queues,Implementation / Core,Hard,https://leetcode.com/problems/longest-valid-parentheses/description/
+longest-valid-word-with-all-prefixes,Longest valid word with all prefixes,Tries,Unspecified,Medium,https://www.geeksforgeeks.org/problems/longest-valid-word-with-all-prefixes/1
+longest-word-in-dictionary,Longest word in dictionary,Tries,Unspecified,Medium,https://leetcode.com/problems/longest-word-in-dictionary/description/
+lowest-common-ancestor,Lowest common ancestor of a binary search tree,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
+lowest-common-ancestor-of-a-binary-tree,Lowest common ancestor of a binary tree,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/
+lru-cache,LRU cache,Arrays and Hashmap,Unspecified,Medium,https://leetcode.com/problems/lru-cache/description/
+lru-cache-2,LRU cache,Linked List,Singly linked list,Medium,https://leetcode.com/problems/lru-cache/description/
+m-coloring-problem,M-coloring problem,Recursion and Backtracking,Subsequences pattern / Combos,Medium,https://www.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1
+majority-element,Majority element,Arrays and Hashmap,Unspecified,Easy,https://leetcode.com/problems/majority-element/
+majority-element-ii,Majority element II,Arrays and Hashmap,Unspecified,Medium,https://leetcode.com/problems/majority-element-ii/
+making-a-large-island,Making a large island,Graphs,🔁 / 🔁,Hard,https://leetcode.com/problems/making-a-large-island/description/
+matrix-chain-multiplication,Matrix chain multiplication,Dynamic Programming,on Stocks / Matrix Chain Multiplication,Hard,https://www.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1
+max-area-of-island,Max area of island,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/max-area-of-island/description/
+max-consecutive-ones-iii,Max consecutive ones III,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/max-consecutive-ones-iii/description/
+max-points-on-a-line,Max points on a line,Maths and Geometry,Unspecified,Hard,https://leetcode.com/problems/max-points-on-a-line/description/
+max-value-of-equation,Max value of equation,Stacks and Queues,Conversions / Monotonic,Hard,https://leetcode.com/problems/max-value-of-equation/description/
+maximal-rectangle,Maximal rectangle,Stacks and Queues,Conversions / Monotonic,Hard,https://leetcode.com/problems/maximal-rectangle/description/
+maximal-rectangle-2,Maximal rectangle,Dynamic Programming,Matrix Chain Multiplication / on Squares,Hard,https://leetcode.com/problems/maximal-rectangle/description/
+maximize-score-after-n-operations,Maximize score after N operations,Dynamic Programming,on Squares / on Bitmask,Hard,https://leetcode.com/problems/maximize-score-after-n-operations/description/
+maximum-average-subarray-i,Maximum average subarray I,Two Pointers and Sliding Window,Unspecified,Easy,https://leetcode.com/problems/maximum-average-subarray-i/description/
+maximum-binary-tree,Maximum binary tree,Divide and Conquer,Unspecified,Medium,https://leetcode.com/problems/maximum-binary-tree/description/
+maximum-consecutive-ones,Maximum consecutive ones,Two Pointers and Sliding Window,Unspecified,Easy,https://leetcode.com/problems/max-consecutive-ones/
+maximum-depth-of-binary-tree,Maximum depth of binary tree,Trees,Binary Trees / Traversals,Easy,https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
+maximum-difference-between-node-and-ancestor,Maximum difference between node and ancestor,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/description/
+maximum-frequency-stack,Maximum frequency stack,Data structure design,Unspecified,Hard,https://leetcode.com/problems/maximum-frequency-stack/description/
+maximum-gap,Maximum gap,Arrays and Hashmap,Unspecified,Medium,https://leetcode.com/problems/maximum-gap/description/
+maximum-nesting-depth-of-the-paranthesis,Maximum nesting depth of the paranthesis,Stacks and Queues,Implementation / Core,Easy,https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/description/
+maximum-number-of-balloons,Maximum number of balloons,Arrays and Hashmap,Unspecified,Easy,https://leetcode.com/problems/maximum-number-of-balloons/description/
+maximum-number-of-events-that-can-be-attended,Maximum number of events that can be attended,Intervals,Unspecified,Medium,https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/description/
+maximum-number-of-points-with-cost,Maximum number of points with cost,Dynamic Programming,Unbounded Knapsack / 2D,Medium,https://leetcode.com/problems/maximum-number-of-points-with-cost/description/
+maximum-point-you-can-obtain-from-cards,Maximum point you can obtain from cards,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/description/
+maximum-product-subarray,Maximum product subarray,Prefix Sum,Unspecified,Medium,https://leetcode.com/problems/maximum-product-subarray/
+maximum-product-subarray-2,Maximum product subarray,Kadane's Algorithm,Unspecified,Medium,https://leetcode.com/problems/maximum-product-subarray/description/
+maximum-profit-in-job-scheduling,Maximum profit in job scheduling,Dynamic Programming,Unbounded Knapsack / 2D,Hard,https://leetcode.com/problems/maximum-profit-in-job-scheduling/description/
+maximum-students-taking-exam,Maximum students taking exam,Dynamic Programming,on Squares / on Bitmask,Hard,https://leetcode.com/problems/maximum-students-taking-exam/description/
+maximum-subarray,Maximum subarray,Two Pointers and Sliding Window,Unspecified,Medium,https://www.geeksforgeeks.org/problems/maximum-sub-array5443/1
+maximum-subarray-2,Maximum subarray,Kadane's Algorithm,Unspecified,Medium,https://leetcode.com/problems/maximum-subarray/
+maximum-sum-circular-subarray,Maximum sum circular subarray,Kadane's Algorithm,Unspecified,Medium,https://leetcode.com/problems/maximum-sum-circular-subarray/description/
+maximum-sum-combination,Maximum sum combination,Heaps,Unspecified,Medium,https://www.geeksforgeeks.org/problems/maximum-sum-combination/1
+maximum-sum-of-distinct-subarrays-with-length-k,Maximum sum of distinct subarrays with length k,Two Pointers and Sliding Window,Unspecified,Medium,
+maximum-sum-of-subsequence-with-non-adjacent-elements,Maximum sum of subsequence with non-adjacent elements,Dynamic Programming,1D,Hard,https://leetcode.com/problems/maximum-sum-of-subsequence-with-non-adjacent-elements/description/
+maximum-width-of-binary-tree,Maximum width of binary tree,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/maximum-width-of-binary-tree/description/
+maximum-xor-of-two-numbers-in-an-array,Maximum xor of two numbers in an array,Tries,Unspecified,Medium,https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/description/
+maximum-xor-with-an-element-from-array,Maximum xor with an element from array,Tries,Unspecified,Hard,https://leetcode.com/problems/maximum-xor-with-an-element-from-array/description/
+median-in-a-row-wise-sorted-matrix,Median in a row-wise sorted matrix,Binary Search,on Answers / 2D,Hard,https://www.geeksforgeeks.org/problems/median-in-a-row-wise-sorted-matrix1527/1
+median-of-two-sorted-arrays,Median of two sorted arrays,Binary Search,1D / on Answers,Hard,https://leetcode.com/problems/median-of-two-sorted-arrays/
+meeting-rooms,Meeting rooms,Intervals,Unspecified,Easy,https://www.geeksforgeeks.org/problems/attend-all-meetings/1
+meeting-rooms-ii,Meeting rooms II,Heaps,Unspecified,Medium,https://www.geeksforgeeks.org/problems/attend-all-meetings-ii/1
+merge-intervals,Merge Intervals,Intervals,Unspecified,Medium,https://leetcode.com/problems/merge-intervals/description/
+merge-k-sorted-lists,Merge k sorted lists,Heaps,Unspecified,Hard,https://leetcode.com/problems/merge-k-sorted-lists/description/
+merge-sorted-array,Merge sorted array,Two Pointers and Sliding Window,Unspecified,Easy,https://leetcode.com/problems/merge-sorted-array/
+merge-two-bst-s,Merge two BST's,Trees,Binary Trees / Traversals,Medium,https://www.geeksforgeeks.org/problems/merge-two-bst-s/1
+merge-two-sorted-lists,Merge two sorted lists,Linked List,Singly linked list,Easy,https://leetcode.com/problems/merge-two-sorted-lists/
+middle-of-the-linked-list,Middle of the linked list,Linked List,Singly linked list,Easy,https://leetcode.com/problems/middle-of-the-linked-list/description/
+min-cost-climbing-stairs,Min cost climbing stairs,Dynamic Programming,1D,Easy,https://leetcode.com/problems/min-cost-climbing-stairs/description/
+min-cost-to-connect-all-points,Min cost to connect all points,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/min-cost-to-connect-all-points/description/
+min-heap-implementation,Min heap implementation,Heaps,Unspecified,Easy,https://www.geeksforgeeks.org/problems/min-heap-implementation/1
+min-stack,Min stack,Stacks and Queues,Implementation,Medium,https://leetcode.com/problems/min-stack/description/
+minimize-malware-spread,Minimize malware spread,Graphs,🔁 / 🔁,Hard,https://leetcode.com/problems/minimize-malware-spread/description/
+minimize-manhattan-distances,Minimize manhattan distances,Maths and Geometry,Unspecified,Hard,https://leetcode.com/problems/minimize-manhattan-distances/description/
+minimize-max-distance-to-gas-station,Minimize max distance to gas station,Binary Search,1D / on Answers,Hard,https://www.geeksforgeeks.org/problems/minimize-max-distance-to-gas-station/1
+minimum-add-to-make-parentheses-valid,Minimum add to make parentheses valid,Greedy,Unspecified,Medium,https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/description/
+minimum-area-rectangle-ii,Minimum area rectangle II,Maths and Geometry,Unspecified,Medium,https://leetcode.com/problems/minimum-area-rectangle-ii/description/
+minimum-bit-flips-to-convert-number,Minimum bit flips to convert number,Bit Manipulation,Unspecified,Easy,https://leetcode.com/problems/minimum-bit-flips-to-convert-number/description/
+minimum-cost-of-ropes,Minimum cost of ropes,Heaps,Unspecified,Medium,https://www.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1
+minimum-cost-to-cut-a-stick,Minimum cost to cut a stick,Dynamic Programming,on Stocks / Matrix Chain Multiplication,Hard,https://leetcode.com/problems/minimum-cost-to-cut-a-stick/description/
+minimum-cost-to-hire-k-workers,Minimum cost to hire k workers,Greedy,Unspecified,Hard,https://leetcode.com/problems/minimum-cost-to-hire-k-workers/description/
+minimum-cost-to-make-array-equal,Minimum cost to make array equal,Binary Search,1D / on Answers,Hard,https://leetcode.com/problems/minimum-cost-to-make-array-equal/description/
+minimum-element-in-bst,Minimum element in BST,Trees,Binary Trees / Traversals,Easy,https://www.geeksforgeeks.org/problems/minimum-element-in-bst/1
+minimum-falling-path-sum,Minimum falling path sum,Dynamic Programming,Unbounded Knapsack / 2D,Medium,https://leetcode.com/problems/minimum-falling-path-sum/description/
+minimum-height-trees,Minimum height trees,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/minimum-height-trees/description/
+minimum-insertions-steps-to-make-a-string-palindrome,Minimum insertions steps to make a string palindrome,Dynamic Programming,on Subsequences / on Strings,Hard,https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/description/
+minimum-interval-to-include-each-query,Minimum interval to include each query,Intervals,Unspecified,Hard,https://leetcode.com/problems/minimum-interval-to-include-each-query/description/
+minimum-interval-to-include-each-query-2,Minimum interval to include each query,Line sweep,Unspecified,Hard,https://leetcode.com/problems/minimum-interval-to-include-each-query/description/
+minimum-moves-to-spread-stones-over-grid,Minimum moves to spread stones over grid,Recursion and Backtracking,Subsequences pattern / Combos,Medium,https://leetcode.com/problems/minimum-moves-to-spread-stones-over-grid/description/
+minimum-multiplications-to-reach-end,Minimum multiplications to reach end,Graphs,🔁 / 🔁,Medium,https://www.geeksforgeeks.org/problems/minimum-multiplications-to-reach-end/1
+minimum-number-of-arrows-to-burst-balloons,Minimum number of arrows to burst balloons,Intervals,Unspecified,Medium,https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/
+minimum-number-of-coins,Minimum number of coins,Greedy,Unspecified,Easy,https://www.geeksforgeeks.org/problems/-minimum-number-of-coins4426/1
+minimum-number-of-days-to-make-m-bouquets,Minimum number of days to make m bouquets,Binary Search,1D / on Answers,Medium,https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
+minimum-number-of-refueling-stops,Minimum number of refueling stops,Greedy,Unspecified,Hard,https://leetcode.com/problems/minimum-number-of-refueling-stops/description/
+minimum-number-of-steps-to-make-two-strings-anagram-ii,Minimum number of steps to make two strings anagram II,Strings,Unspecified,Medium,https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram-ii/description/
+minimum-number-of-work-sessions-to-finish-the-tasks,Minimum number of work sessions to finish the tasks,Dynamic Programming,on Squares / on Bitmask,Medium,https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/
+minimum-path-sum,Minimum path sum,Dynamic Programming,Unbounded Knapsack / 2D,Medium,https://leetcode.com/problems/minimum-path-sum/description/
+minimum-platforms,Minimum platforms,Greedy,Unspecified,Medium,https://www.geeksforgeeks.org/problems/minimum-platforms-1587115620/1
+minimum-size-subarray-sum,Minimum size subarray sum,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/minimum-size-subarray-sum/description/
+minimum-spanning-tree,Minimum spanning tree,Graphs,🔁 / 🔁,Medium,https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1
+minimum-window-subsequence,Minimum window subsequence,Two Pointers and Sliding Window,Unspecified,Hard,https://www.naukri.com/code360/problems/minimum-window-subsequence_2181133
+minimum-window-substring,Minimum window substring,Two Pointers and Sliding Window,Unspecified,Hard,https://leetcode.com/problems/minimum-window-substring/description/
+missing-number,Missing number,Arrays and Hashmap,Unspecified,Easy,https://leetcode.com/problems/missing-number/
+missing-number-2,Missing number,Bit Manipulation,Unspecified,Easy,https://leetcode.com/problems/missing-number/description/
+most-stones-removed-with-same-row-or-column,Most stones removed with same row or column,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/description/
+move-zeros,Move zeros,Two Pointers and Sliding Window,Unspecified,Easy,https://leetcode.com/problems/move-zeroes/
+multiply-strings,Multiply strings,Maths and Geometry,Unspecified,Medium,https://leetcode.com/problems/multiply-strings/description/
+my-calendar-i,My calendar I,Binary Search,1D / on Answers,Medium,https://leetcode.com/problems/my-calendar-i/description/
+my-calendar-ii,My calendar II,Line sweep,Unspecified,Medium,https://leetcode.com/problems/my-calendar-ii/description/
+n-meetings-in-one-room,N meetings in one room,Greedy,Unspecified,Easy,https://www.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1
+n-queen,N-queen,Recursion and Backtracking,Subsequences pattern / Combos,Hard,https://leetcode.com/problems/n-queens/description/
+nearest-smaller-element,Nearest smaller element,Stacks and Queues,Conversions / Monotonic,Easy,https://www.interviewbit.com/problems/nearest-smaller-element/
+network-delay-time,Network delay time,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/network-delay-time/description/
+new-21-game,New 21 game,Dynamic Programming,on Digit / on Probability,Medium,https://leetcode.com/problems/new-21-game/description/
+next-greater-element,Next greater element,Stacks and Queues,Conversions / Monotonic,Easy,https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1
+next-greater-element-ii,Next greater element II,Stacks and Queues,Conversions / Monotonic,Medium,https://leetcode.com/problems/next-greater-element-ii/description/
+next-permutation,Next permutation,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/next-permutation/
+ninja-s-training,Ninja's training,Dynamic Programming,Unbounded Knapsack / 2D,Medium,https://www.naukri.com/code360/problems/ninja-s-training_3621003
+non-overlapping-intervals,Non-overlapping Intervals,Intervals,Unspecified,Medium,https://leetcode.com/problems/non-overlapping-intervals/description/
+number-of-1-bits,Number of 1 bits,Bit Manipulation,Unspecified,Easy,https://leetcode.com/problems/number-of-1-bits/description/
+number-of-digit-one,Number of digit one,Dynamic Programming,on Bitmask / on Digit,Hard,https://leetcode.com/problems/number-of-digit-one/description/
+number-of-distinct-islands,Number of distinct islands,Graphs,🔁 / 🔁,Medium,https://www.geeksforgeeks.org/problems/number-of-distinct-islands/1
+number-of-enclaves,Number of enclaves,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/number-of-enclaves/description/
+number-of-flowers-in-full-bloom,Number of flowers in full bloom,Line sweep,Unspecified,Hard,https://leetcode.com/problems/number-of-flowers-in-full-bloom/description/
+number-of-good-pairs,Number of good pairs,Arrays and Hashmap,Unspecified,Easy,https://leetcode.com/problems/number-of-good-pairs/description/
+number-of-good-ways-to-split-a-string,Number of good ways to split a string,Greedy,Unspecified,Medium,https://leetcode.com/problems/number-of-good-ways-to-split-a-string/description/
+number-of-islands,Number of islands,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/number-of-islands/description/
+number-of-islands-ii,Number of islands II,Graphs,🔁 / 🔁,Hard,https://www.naukri.com/code360/problems/number-of-islands-ii_1266048
+number-of-longest-increasing-subsequence,Number of longest increasing subsequence,Dynamic Programming,on Strings / on Stocks,Medium,https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/
+number-of-matching-subsequences,Number of matching subsequences,Binary Search,1D / on Answers,Medium,https://leetcode.com/problems/number-of-matching-subsequences
+number-of-occurence,Number of occurence,Binary Search,1D,Easy,https://www.geeksforgeeks.org/problems/number-of-occurrence2259/1
+number-of-operations-to-make-network-connected,Number of operations to make network connected,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/number-of-operations-to-make-network-connected/description/
+number-of-provinces,Number of provinces,Graphs,BFS / DFS,Medium,https://leetcode.com/problems/number-of-provinces/description/
+number-of-recent-calls,Number of recent calls,Stacks and Queues,Implementation / Core,Easy,https://leetcode.com/problems/number-of-recent-calls/description/
+number-of-students-unable-to-eat-lunch,Number of students unable to eat lunch,Stacks and Queues,Implementation / Core,Easy,https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/description/
+number-of-submatrices-that-sum-target,Number of submatrices that sum target,Arrays and Hashmap,Unspecified,Hard,https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/description/
+number-of-substring-containing-all-three-characters,Number of substring containing all three characters,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/description/
+number-of-visible-people-in-a-queue,Number of visible people in a queue,Stacks and Queues,Conversions / Monotonic,Hard,https://leetcode.com/problems/number-of-visible-people-in-a-queue/description/
+number-of-ways-to-arrive-at-destination,Number of ways to arrive at destination,Dynamic Programming,Matrix Chain Multiplication / on Squares,Medium,https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/description/
+number-of-ways-to-wear-different-hats-to-each-other,Number of ways to wear different hats to each other,Dynamic Programming,on Squares / on Bitmask,Hard,https://leetcode.com/problems/number-of-ways-to-wear-different-hats-to-each-other/description/
+number-of-zero-filled-subarrays,Number of zero-filled subarrays,Arrays and Hashmap,Unspecified,Medium,https://leetcode.com/problems/number-of-zero-filled-subarrays/description/
+numbers-at-most-n-given-digit-set,Numbers at most N given digit set,Dynamic Programming,on Bitmask / on Digit,Hard,https://leetcode.com/problems/numbers-at-most-n-given-digit-set/description/
+odd-even-linked-list,Odd even linked list,Linked List,Singly linked list,Medium,https://leetcode.com/problems/odd-even-linked-list/description/
+odd-or-even,Odd or even,Bit Manipulation,Unspecified,Easy,https://www.geeksforgeeks.org/problems/odd-or-even3618/1
+online-stock-span,Online stock span,Stacks and Queues,Monotonic / Design,Medium,https://leetcode.com/problems/online-stock-span/description/
+open-the-lock,Open the lock,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/open-the-lock/description/
+pacific-atlantic-water-flow,Pacific atlantic water flow,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/pacific-atlantic-water-flow/description/
+page-faults-in-lru,Page faults in LRU,Greedy,Unspecified,Easy,https://www.geeksforgeeks.org/problems/page-faults-in-lru5603/1
+painter-s-partition-problem,Painter's partition problem,Binary Search,1D / on Answers,Medium,https://www.interviewbit.com/problems/painters-partition-problem/
+palindrome-linked-list,Palindrome linked list,Linked List,Singly linked list,Easy,https://leetcode.com/problems/palindrome-linked-list/description/
+palindrome-number,Palindrome number,Maths and Geometry,Unspecified,Easy,https://leetcode.com/problems/palindrome-number/description/
+palindrome-partitioning,Palindrome partitioning,Dynamic Programming,on Stocks / Matrix Chain Multiplication,Medium,https://leetcode.com/problems/palindrome-partitioning/description/
+palindrome-partitioning-ii,Palindrome partitioning II,Dynamic Programming,on Subsequences / on Strings,Hard,https://leetcode.com/problems/palindrome-partitioning-ii/description/
+palindromic-substrings,Palindromic substrings,Dynamic Programming,on Subsequences / on Strings,Medium,https://leetcode.com/problems/palindromic-substrings/description/
+parsing-a-boolean-expression,Parsing a boolean expression,Dynamic Programming,on Stocks / Matrix Chain Multiplication,Hard,https://leetcode.com/problems/parsing-a-boolean-expression/description/
+partition-array-according-to-given-pivot,Partition array according to given pivot,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/partition-array-according-to-given-pivot/description/
+partition-array-for-maximum-sum,Partition array for maximum sum,Dynamic Programming,on Stocks / Matrix Chain Multiplication,Medium,https://leetcode.com/problems/partition-array-for-maximum-sum/description/
+partition-array-into-two-arrays-to-minimize-sum-difference,Partition array into two arrays to minimize sum difference,Dynamic Programming,2D / on Subsequences,Hard,https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/description/
+partition-equal-subset-sum,Partition equal subset sum,Dynamic Programming,1D / Knapsack,Medium,https://leetcode.com/problems/partition-equal-subset-sum/description/
+partition-labels,Partition labels,Greedy,Unspecified,Medium,https://leetcode.com/problems/partition-labels/
+partition-list,Partition list,Linked List,Singly linked list,Medium,https://leetcode.com/problems/partition-list/description/
+partitions-with-given-difference,Partitions with given difference,Dynamic Programming,2D / on Subsequences,Medium,https://www.geeksforgeeks.org/problems/partitions-with-given-difference/1
+pascal-s-triangle,Pascal's triangle,Arrays and Hashmap,Unspecified,Easy,https://leetcode.com/problems/pascals-triangle/
+path-sum,Path sum,Trees,Binary Trees / Traversals,Easy,https://leetcode.com/problems/path-sum/description/
+path-sum-ii,Path sum II,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/path-sum-ii/
+path-sum-iii,Path sum III,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/path-sum-iii/description/
+path-with-maximum-probability,Path with maximum probability,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/path-with-maximum-probability/description/
+path-with-minimum-effort,Path with minimum effort,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/path-with-minimum-effort/description/
+perfect-squares,Perfect squares,Dynamic Programming,Knapsack / Unbounded Knapsack,Medium,https://leetcode.com/problems/perfect-squares/description/
+perfect-sum-problem,Perfect sum problem,Dynamic Programming,1D / Knapsack,Medium,https://www.geeksforgeeks.org/problems/perfect-sum-problem5633/1
+permutation-in-string,Permutation in string,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/permutation-in-string/
+permutations,Permutations,Recursion and Backtracking,Basic,Medium,https://leetcode.com/problems/permutations/
+plus-one,Plus one,Maths and Geometry,Unspecified,Easy,https://leetcode.com/problems/plus-one/
+points-that-intersect-with-cars,Points that intersect with cars,Line sweep,Unspecified,Easy,https://leetcode.com/problems/points-that-intersect-with-cars/description/
+populating-next-right-pointers-in-each-node-ii,Populating next right pointers in each node II,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/description/
+postfix-to-infix-conversion,Postfix to infix conversion,Stacks and Queues,Core / Conversions,Medium,https://www.geeksforgeeks.org/problems/postfix-to-infix-conversion/1
+postfix-to-prefix-conversion,Postfix to prefix conversion,Stacks and Queues,Core / Conversions,Medium,https://www.geeksforgeeks.org/problems/postfix-to-prefix-conversion/1
+pow-x-n,"Pow(x, n)",Recursion and Backtracking,Basic,Medium,https://leetcode.com/problems/powx-n/description/
+pow-x-n-2,"Pow(x, n)",Maths and Geometry,Unspecified,Medium,https://leetcode.com/problems/powx-n/description/
+power-of-2,Power of 2,Bit Manipulation,Unspecified,Easy,https://www.geeksforgeeks.org/problems/power-of-2-1587115620/1
+predecessor-and-successor,Predecessor and successor,Trees,Binary Trees / Traversals,Medium,https://www.geeksforgeeks.org/problems/predecessor-and-successor/1
+prefix-to-infix-conversion,Prefix to infix conversion,Stacks and Queues,Core / Conversions,Medium,https://www.geeksforgeeks.org/problems/prefix-to-infix-conversion/1
+prefix-to-postfix-conversion,Prefix to postfix conversion,Stacks and Queues,Core / Conversions,Medium,https://www.geeksforgeeks.org/problems/prefix-to-postfix-conversion/1
+prime-factorization-using-sieve,Prime factorization using sieve,Maths and Geometry,Unspecified,Medium,https://www.geeksforgeeks.org/problems/prime-factorization-using-sieve/1
+prime-factors,Prime factors,Maths and Geometry,Unspecified,Medium,https://www.geeksforgeeks.org/problems/prime-factors5052/1
+prime-number,Prime number,Maths and Geometry,Unspecified,Easy,https://www.geeksforgeeks.org/problems/prime-number2314/1
+print-all-lcs-sequences,Print all LCS sequences,Dynamic Programming,on Subsequences / on Strings,Hard,https://www.geeksforgeeks.org/problems/print-all-lcs-sequences3413/1
+printing-longest-increasing-subsequence,Printing longest increasing subsequence,Dynamic Programming,on Strings / on Stocks,Medium,https://www.geeksforgeeks.org/problems/printing-longest-increasing-subsequence/1
+process-tasks-using-servers,Process tasks using servers,Heaps,Unspecified,Medium,https://leetcode.com/problems/process-tasks-using-servers/description/
+product-except-self,Product of array except self,Prefix Sum,Unspecified,Medium,https://leetcode.com/problems/product-of-array-except-self/
+product-of-last-k-numbers,Product of last k numbers,Prefix Sum,Unspecified,Medium,https://leetcode.com/problems/product-of-the-last-k-numbers/description/
+queue-using-array,Queue using array,Stacks and Queues,Implementation,Easy,https://www.geeksforgeeks.org/problems/implement-queue-using-array/1
+queue-using-linked-list,Queue using linked list,Stacks and Queues,Implementation,Easy,https://www.geeksforgeeks.org/problems/implement-queue-using-linked-list/1
+random-pick-with-weight,Random pick with weight,Binary Search,1D / on Answers,Medium,https://leetcode.com/problems/random-pick-with-weight/description/
+range-sum-query-2d-immutable,Range sum query 2D - immutable,Prefix Sum,Unspecified,Medium,https://leetcode.com/problems/range-sum-query-2d-immutable/description/
+range-sum-query-immutable,Range Sum Query - Immutable,Prefix Sum,Unspecified,Easy,https://leetcode.com/problems/range-sum-query-immutable
+rank-transform-of-an-array,Rank transform of an array,Heaps,Unspecified,Easy,https://leetcode.com/problems/rank-transform-of-an-array/description/
+ransom-note,Ransom note,Arrays and Hashmap,Unspecified,Easy,https://leetcode.com/problems/ransom-note
+rat-in-a-maze-problem-i,Rat in a maze problem - I,Recursion and Backtracking,Subsequences pattern / Combos,Medium,https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1&selectedLang=python3
+rearrange-array-elements-by-sign,Rearrange array elements by sign,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/rearrange-array-elements-by-sign/
+reconstruct-itinerary,Reconstruct itinerary,Graphs,🔁 / Eulerian circuit,Hard,https://leetcode.com/problems/reconstruct-itinerary/description/
+recover-binary-search-tree,Recover binary search tree,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/recover-binary-search-tree/description/
+reducing-dishes,Reducing dishes,Greedy,Unspecified,Hard,https://leetcode.com/problems/reducing-dishes/description/
+redundant-connection,Redundant connection,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/redundant-connection/description/
+regular-expression-matching,Regular expression matching,Dynamic Programming,on Stocks / Matrix Chain Multiplication,Hard,https://leetcode.com/problems/regular-expression-matching/description/
+remove-all-adjacent-duplicates-in-string,Remove all adjacent duplicates in string,Stacks and Queues,Implementation / Core,Easy,https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/description/
+remove-duplicate-letters,Remove duplicate letters,Stacks and Queues,Implementation / Core,Medium,https://leetcode.com/problems/remove-duplicate-letters/description/
+remove-duplicates-from-a-sorted-doubly-linked-list,Remove duplicates from a sorted doubly linked list,Linked List,Singly linked list / Doubly linked list,Easy,https://www.geeksforgeeks.org/problems/remove-duplicates-from-a-sorted-doubly-linked-list/1
+remove-duplicates-from-sorted-array,Remove duplicates from sorted array,Two Pointers and Sliding Window,Unspecified,Easy,"https://leetcode.com/problems/remove-duplicates-from-sorted-array/#:~:text=Input%3A%20nums%20%3D%20%5B0%2C,%2C%203%2C%20and%204%20respectively."
+remove-duplicates-from-sorted-list,Remove duplicates from sorted list,Linked List,Singly linked list,Easy,https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
+remove-duplicates-from-sorted-list-ii,Remove duplicates from sorted list II,Linked List,Singly linked list,Medium,https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
+remove-k-digits,Remove k digits,Stacks and Queues,Conversions / Monotonic,Medium,https://leetcode.com/problems/remove-k-digits/description/
+remove-max-number-of-edges-to-keep-graph-fully-traversable,Remove max number of edges to keep graph fully traversable,Graphs,🔁 / 🔁,Hard,https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/description/
+remove-nth-node-from-end-of-list,Remove nth node from end of list,Linked List,Singly linked list,Medium,https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
+remove-outermost-paranthesis,Remove outermost paranthesis,Strings,Unspecified,Easy,https://leetcode.com/problems/remove-outermost-parentheses/
+remove-stars-from-a-string,Remove stars from a string,Stacks and Queues,Implementation / Core,Medium,https://leetcode.com/problems/removing-stars-from-a-string/description/
+reorder-list,Reorder list,Linked List,Singly linked list,Medium,https://leetcode.com/problems/reorder-list/description/
+reorganize-string,Reorganize string,Heaps,Unspecified,Medium,https://leetcode.com/problems/reorganize-string/description/
+repeated-string-match,Repeated string match,String matching,Unspecified,Medium,https://leetcode.com/problems/repeated-string-match/description/
+reveal-cards-in-increasing-order,Reveal cards in increasing order,Stacks and Queues,Implementation / Core,Medium,https://leetcode.com/problems/reveal-cards-in-increasing-order/description/
+reverse-a-doubly-linked-list,Reverse a doubly linked list,Linked List,Singly linked list / Doubly linked list,Easy,https://www.geeksforgeeks.org/problems/reverse-a-doubly-linked-list/1
+reverse-a-stack,Reverse a stack,Recursion and Backtracking,Basic,Medium,https://www.geeksforgeeks.org/problems/reverse-a-stack/1
+reverse-bits,Reverse bits,Bit Manipulation,Unspecified,Easy,https://leetcode.com/problems/reverse-bits/description/
+reverse-integer,Reverse integer,Bit Manipulation,Unspecified,Medium,https://leetcode.com/problems/reverse-integer/description/
+reverse-integer-2,Reverse integer,Maths and Geometry,Unspecified,Medium,https://leetcode.com/problems/reverse-integer/description/
+reverse-linked-list,Reverse linked List,Linked List,Singly linked list,Easy,https://leetcode.com/problems/reverse-linked-list/) (iterative / recursive
+reverse-nodes-in-k-group,Reverse nodes in k-group,Linked List,Singly linked list,Hard,https://leetcode.com/problems/reverse-nodes-in-k-group/description/
+reverse-pairs,Reverse pairs,Divide and Conquer,Unspecified,Hard,https://leetcode.com/problems/reverse-pairs/
+reverse-words-in-a-string,Reverse words in a string,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/reverse-words-in-a-string/
+rod-cutting,Rod cutting,Dynamic Programming,2D / on Subsequences,Medium,https://www.geeksforgeeks.org/problems/rod-cutting0840/1
+roman-to-integer,Roman to integer,Strings,Unspecified,Easy,https://leetcode.com/problems/roman-to-integer/
+root-to-leaf-paths,Root to leaf paths,Trees,Binary Trees / Traversals,Medium,https://www.geeksforgeeks.org/problems/root-to-leaf-paths/1
+rotate-array,Rotate array,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/rotate-array/
+rotate-image,Rotate image,Arrays and Hashmap,Unspecified,Medium,https://leetcode.com/problems/rotate-image/
+rotate-image-2,Rotate image,Maths and Geometry,Unspecified,Medium,https://leetcode.com/problems/rotate-image/
+rotate-list,Rotate list,Linked List,Singly linked list,Medium,https://leetcode.com/problems/rotate-list/description/
+rotate-string,Rotate string,Strings,Unspecified,Easy,https://leetcode.com/problems/rotate-string/description/
+rotten-oranges,Rotten oranges,Graphs,BFS / DFS / 🔁,Medium,https://leetcode.com/problems/rotting-oranges/description/
+russian-doll-envelopes,Russian doll envelopes,Dynamic Programming,on Strings / on Stocks,Hard,https://leetcode.com/problems/russian-doll-envelopes/description/
+same-tree,Same tree,Trees,Binary Trees / Traversals,Easy,https://leetcode.com/problems/same-tree/description/
+search-a-2d-matrix,Search a 2D matrix,Binary Search,on Answers / 2D,Medium,https://leetcode.com/problems/search-a-2d-matrix/
+search-a-2d-matrix-ii,Search a 2D matrix II,Two Pointers and Sliding Window,Unspecified,Hard,https://leetcode.com/problems/search-a-2d-matrix-ii/
+search-in-a-binary-search-tree,Search in a binary search tree,Trees,Binary Trees / Traversals,Easy,https://leetcode.com/problems/search-in-a-binary-search-tree/description/
+search-in-linked-list,Search in linked list,Linked List,Singly linked list,Easy,https://www.geeksforgeeks.org/problems/search-in-linked-list-1664434326/1
+search-in-rotated-sorted-array-ii,Search in rotated sorted array II,Binary Search,1D,Medium,https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
+search-insert-position,Search insert position,Binary Search,1D,Easy,"https://leetcode.com/problems/search-insert-position/#:~:text=Search%20Insert%20Position%20%2D%20LeetCode&text=Given%20a%20sorted%20array%20of,(log%20n)%20runtime%20complexity."
+search-pattern,Search pattern,Strings,Unspecified,Hard,https://www.geeksforgeeks.org/problems/search-pattern0205/1
+search-rotated,Search in rotated sorted array,Binary Search,1D,Medium,https://leetcode.com/problems/search-in-rotated-sorted-array/
+search-suggestions-system,Search suggestions system,Tries,Unspecified,Medium,https://leetcode.com/problems/search-suggestions-system/description/
+second-largest,Second largest,Arrays and Hashmap,Unspecified,Easy,https://www.geeksforgeeks.org/problems/second-largest3735/1
+sequential-digits,Sequential digits,Dynamic Programming,on Bitmask / on Digit,Medium,https://leetcode.com/problems/sequential-digits/description/
+serialize-and-deserialize-binary-tree,Serialize and deserialize binary tree,Trees,Binary Trees / Traversals,Hard,https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/
+set-matrix-zeroes,Set matrix zeroes,Maths and Geometry,Unspecified,Medium,https://leetcode.com/problems/set-matrix-zeroes/
+set-matrix-zeros,Set matrix zeros,Arrays and Hashmap,Unspecified,Medium,https://leetcode.com/problems/set-matrix-zeroes/
+set-the-rightmost-unset-bit,Set the rightmost unset bit,Bit Manipulation,Unspecified,Easy,https://www.geeksforgeeks.org/problems/set-the-rightmost-unset-bit4436/1
+shortest-bridge,Shortest bridge,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/shortest-bridge/description/
+shortest-common-supersequence,Shortest common supersequence,Dynamic Programming,on Subsequences / on Strings,Hard,https://leetcode.com/problems/shortest-common-supersequence/description/
+shortest-job-first,Shortest job first,Greedy,Unspecified,Medium,https://www.geeksforgeeks.org/problems/shortest-job-first/1
+shortest-palindrome,Shortest palindrome,String matching,Unspecified,Hard,https://leetcode.com/problems/shortest-palindrome/description/
+shortest-path-in-a-binary-matrix,Shortest path in a binary matrix,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/shortest-path-in-binary-matrix/description/
+shortest-path-in-a-grid-with-obstacles-elimination,Shortest path in a grid with obstacles elimination,Graphs,🔁 / ❌,Hard,https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/description/
+shortest-path-in-directed-acyclic-graph,Shortest path in directed acyclic graph,Graphs,Shortest Path / 🔁,Medium,https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1
+shortest-path-in-undirected-graph,Shortest path in undirected graph,Graphs,🔁 / Shortest Path,Medium,https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1
+shortest-path-visiting-all-nodes,Shortest path visiting all nodes,Dynamic Programming,on Squares / on Bitmask,Hard,https://leetcode.com/problems/shortest-path-visiting-all-nodes/description/
+simplify-path,Simplify path,Stacks and Queues,Monotonic / Design,Medium,https://leetcode.com/problems/simplify-path/description/
+single-element-in-a-sorted-array,Single element in a sorted array,Binary Search,1D,Medium,https://leetcode.com/problems/single-element-in-a-sorted-array/
+single-number,Single number,Arrays and Hashmap,Unspecified,Easy,https://leetcode.com/problems/single-number/description/
+single-number-2,Single number,Bit Manipulation,Unspecified,Easy,https://leetcode.com/problems/single-number/description/
+single-number-iii,Single number III,Bit Manipulation,Unspecified,Medium,https://leetcode.com/problems/single-number-iii/description/
+single-threaded-cpu,Single-threaded cpu,Heaps,Unspecified,Medium,https://leetcode.com/problems/single-threaded-cpu/description/
+sliding-window-maximum,Sliding window maximum,Two Pointers and Sliding Window,Unspecified,Hard,https://leetcode.com/problems/sliding-window-maximum/
+sliding-window-median,Sliding window median,Heaps,Unspecified,Hard,https://leetcode.com/problems/sliding-window-median/description/
+smallest-range-covering-elements-from-k-lists,Smallest range covering elements from k lists,K-Way Merge,Unspecified,Hard,https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/description/
+snakes-and-ladders,Snakes and ladders,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/snakes-and-ladders/description/
+snapshot-array,Snapshot array,Data structure design,Unspecified,Medium,https://leetcode.com/problems/snapshot-array/description/
+sort-a-linked-list-of-0s-1s-and-2s,"Sort a linked list of 0s, 1s and 2s",Linked List,Singly linked list,Medium,https://www.geeksforgeeks.org/problems/given-a-linked-list-of-0s-1s-and-2s-sort-it/1
+sort-a-stack,Sort a stack,Recursion and Backtracking,Basic,Medium,https://www.geeksforgeeks.org/problems/sort-a-stack/1&selectedLang=python3
+sort-array-by-parity-ii,Sort array by parity II,Two Pointers and Sliding Window,Unspecified,Easy,https://leetcode.com/problems/sort-array-by-parity-ii/description/
+sort-characters-by-frequency,Sort characters by frequency,Heaps,Unspecified,Medium,https://leetcode.com/problems/sort-characters-by-frequency/description/
+sort-colors,Sort colors,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/sort-colors/
+sort-items-by-groups-respecting-dependencies,Sort items by groups respecting dependencies,Graphs,🔁 / 🔁,Hard,https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/description/
+sort-list,Sort list,Linked List,Singly linked list,Medium,https://leetcode.com/problems/sort-list/description/
+soup-servings,Soup servings,Dynamic Programming,on Digit / on Probability,Medium,https://leetcode.com/problems/soup-servings/description/
+spiral-matrix,Spiral matrix,Arrays and Hashmap,Unspecified,Medium,https://leetcode.com/problems/spiral-matrix/
+spiral-matrix-2,Spiral matrix,Maths and Geometry,Unspecified,Medium,https://leetcode.com/problems/spiral-matrix/
+split-array-into-consecutive-subsequences,Split array into consecutive subsequences,Greedy,Unspecified,Medium,https://leetcode.com/problems/split-array-into-consecutive-subsequences/description/
+split-array-largest-sum,Split array largest sum,Binary Search,1D / on Answers,Hard,https://leetcode.com/problems/split-array-largest-sum/
+sqrt-x,Sqrt(x),Binary Search,1D / on Answers,Easy,https://leetcode.com/problems/sqrtx/
+squares-of-a-sorted-array,Squares of a sorted array,Two Pointers and Sliding Window,Unspecified,Easy,https://leetcode.com/problems/squares-of-a-sorted-array/description/
+stack-using-linked-list,Stack using linked list,Stacks and Queues,Implementation,Easy,https://www.geeksforgeeks.org/problems/implement-stack-using-linked-list/1
+step-by-step-directions-from-a-binary-tree-node-to-another,Step-by-step directions from a binary tree node to another,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/description/
+stock-price-fluctuation,Stock price fluctuation,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/stock-price-fluctuation/description/
+strange-printer,Strange printer,Dynamic Programming,on Stocks / Matrix Chain Multiplication,Hard,https://leetcode.com/problems/strange-printer/description/
+string-rotated-by-2-places,String rotated by 2 places,Strings,Unspecified,Easy,https://www.geeksforgeeks.org/problems/check-if-string-is-rotated-by-two-places-1587115620/1?page=1&%3Bcategory%255B%255D=Strings&%3BsortBy=
+string-to-integer-atoi,String to integer (atoi),Recursion and Backtracking,Basic,Medium,https://leetcode.com/problems/string-to-integer-atoi/description/
+subarray-sum-divisible-by-k,Subarray sum divisible by k,Prefix Sum,Unspecified,Medium,https://leetcode.com/problems/subarray-sums-divisible-by-k/description/
+subarray-sum-equals-k,Subarray sum equals k,Prefix Sum,Unspecified,Medium,https://leetcode.com/problems/subarray-sum-equals-k/description/
+subarray-with-k-different-integers,Subarray with k different integers,Two Pointers and Sliding Window,Unspecified,Hard,https://leetcode.com/problems/subarrays-with-k-different-integers/description/
+subarray-with-least-average,Subarray with least average,Two Pointers and Sliding Window,Unspecified,Easy,https://www.geeksforgeeks.org/problems/subarray-with-least-average5031/1
+subset-sum,Subset sum,Dynamic Programming,1D / Knapsack,Medium,https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1
+subset-sums,Subset sums,Recursion and Backtracking,Basic / Subsequences pattern,Medium,https://www.geeksforgeeks.org/problems/subset-sums2234/1&selectedLang=python3
+subsets,Subsets,Recursion and Backtracking,Basic / Subsequences pattern,Medium,https://leetcode.com/problems/subsets/description/
+subsets-2,Subsets,Bit Manipulation,Unspecified,Medium,https://leetcode.com/problems/subsets/description/
+subsets-ii,Subsets II,Recursion and Backtracking,Basic / Subsequences pattern,Medium,https://leetcode.com/problems/subsets-ii/
+substring-with-concatenation-of-all-words,Substring with concatenation of all words,Two Pointers and Sliding Window,Unspecified,Hard,https://leetcode.com/problems/substring-with-concatenation-of-all-words/description/
+subtree-of-another-tree,Subtree of another tree,Trees,Binary Trees / Traversals,Easy,https://leetcode.com/problems/subtree-of-another-tree/
+sudoku-solver,Sudoku solver,Recursion and Backtracking,Subsequences pattern / Combos,Hard,https://leetcode.com/problems/sudoku-solver/description/
+sum-of-beauty-of-all-substring,Sum of beauty of all substring,Strings,Unspecified,Medium,https://leetcode.com/problems/sum-of-beauty-of-all-substrings/description/
+sum-of-distances-in-tree,Sum of distances in tree,Dynamic Programming,Matrix Chain Multiplication / on Squares,Hard,https://leetcode.com/problems/sum-of-distances-in-tree/description/
+sum-of-subarray-minimum,Sum of subarray minimum,Stacks and Queues,Conversions / Monotonic,Medium,https://leetcode.com/problems/sum-of-subarray-minimums/description/
+sum-of-subarray-ranges,Sum of subarray ranges,Stacks and Queues,Conversions / Monotonic,Medium,https://leetcode.com/problems/sum-of-subarray-ranges/description/
+sum-of-two-integers,Sum of two integers,Bit Manipulation,Unspecified,Medium,https://leetcode.com/problems/sum-of-two-integers/description/
+surrounded-regions,Surrounded regions,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/surrounded-regions/description/
+swap-nodes-in-pairs,Swap nodes in pairs,Linked List,Singly linked list,Medium,https://leetcode.com/problems/swap-nodes-in-pairs/description/
+swap-two-numbers,Swap two numbers,Bit Manipulation,Unspecified,Easy,https://www.geeksforgeeks.org/problems/swap-two-numbers3844/1
+swim-in-rising-water,Swim in rising water,Graphs,🔁 / 🔁,Hard,https://leetcode.com/problems/swim-in-rising-water/description/
+symmetric-tree,Symmetric tree,Trees,Binary Trees / Traversals,Easy,https://leetcode.com/problems/symmetric-tree/description/
+target-sum,Target sum,Dynamic Programming,1D / Knapsack,Medium,https://leetcode.com/problems/target-sum/description/
+task-scheduler,Task scheduler,Heaps,Unspecified,Medium,https://leetcode.com/problems/task-scheduler/description/
+text-justification,Text justification,Arrays and Hashmap,Unspecified,Hard,https://leetcode.com/problems/text-justification/description/
+the-celebrity-problem,The celebrity problem,Stacks and Queues,Monotonic / Design,Medium,https://www.geeksforgeeks.org/problems/the-celebrity-problem/1
+the-skyline-problem,The skyline problem,Line sweep,Unspecified,Hard,https://leetcode.com/problems/the-skyline-problem/description/
+throne-inheritance,Throne inheritance,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/throne-inheritance/description/
+time-based-key-value-store,Time based key value store,Binary Search,2D / Design,Medium,https://leetcode.com/problems/time-based-key-value-store/
+time-needed-to-buy-tickets,Time needed to buy tickets,Stacks and Queues,Implementation / Core,Easy,https://leetcode.com/problems/time-needed-to-buy-tickets/description/
+time-needed-to-inform-all-employees,Time needed to inform all employees,Graphs,🔁 / 🔁,Medium,https://leetcode.com/problems/time-needed-to-inform-all-employees/description/
+top-k-frequent-words,Top k frequent words,Heaps,Unspecified,Medium,https://leetcode.com/problems/top-k-frequent-words/description/
+top-k-most-frequent-elements,Top k most frequent elements,Heaps,Unspecified,Medium,https://leetcode.com/problems/top-k-frequent-elements/description/
+top-view-of-binary-tree,Top view of binary tree,Trees,Binary Trees / Traversals,Medium,https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1
+topological-sort,Topological sort,Graphs,❌ / Topological Sort,Medium,https://www.geeksforgeeks.org/problems/topological-sort/1
+tower-of-hanoi,Tower of Hanoi,Recursion and Backtracking,Basic,Medium,https://www.geeksforgeeks.org/problems/tower-of-hanoi-1587115621/1
+transpose-matrix,Transpose matrix,Maths and Geometry,Unspecified,Easy,https://leetcode.com/problems/transpose-matrix
+trapping-rain-water,Trapping rain water,Two Pointers and Sliding Window,Unspecified,Hard,https://leetcode.com/problems/trapping-rain-water/
+tree-boundary-traversal,Tree boundary traversal,Trees,Binary Trees / Traversals,Medium,https://www.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1
+triangle,Triangle,Dynamic Programming,Unbounded Knapsack / 2D,Medium,https://leetcode.com/problems/triangle/description/
+trim-a-binary-search-tree,Trim a binary search tree,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/trim-a-binary-search-tree/description/
+two-odd-occuring,Two odd occuring,Bit Manipulation,Unspecified,Medium,https://www.geeksforgeeks.org/problems/two-numbers-with-odd-occurrences5846/1
+two-sum,Two sum,Arrays and Hashmap,Unspecified,Easy,https://leetcode.com/problems/two-sum/
+two-sum-ii-input-array-is-sorted,Two sum II - input array is sorted,Two Pointers and Sliding Window,Unspecified,Medium,https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
+two-sum-iv-input-is-a-bst,Two sum IV - input is a BST,Trees,Binary Trees / Traversals,Easy,https://leetcode.com/problems/two-sum-iv-input-is-a-bst/description/
+two-sum-pairs-with-0-sum,Two sum - pairs with 0 sum,Two Pointers and Sliding Window,Unspecified,Easy,https://www.geeksforgeeks.org/problems/count-pairs-with-given-sum5022/1
+type-of-triangle,Type of triangle,Maths and Geometry,Unspecified,Easy,https://leetcode.com/problems/type-of-triangle/description/
+undirected-graph-cycle,Undirected graph cycle,Graphs,BFS / DFS / 🔁,Medium,https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1
+union-find,Union find,Graphs,🔁 / 🔁,Easy,https://www.geeksforgeeks.org/problems/union-find/1
+unique-binary-search-trees-ii,Unique binary search trees II,Dynamic Programming,Matrix Chain Multiplication / on Squares,Medium,https://leetcode.com/problems/unique-binary-search-trees-ii/description/
+unique-binary-tree-requirements,Unique binary tree requirements,Trees,Binary Trees / Traversals,Easy,https://www.geeksforgeeks.org/problems/unique-binary-tree-requirements/1
+unique-paths,Unique paths,Dynamic Programming,Unbounded Knapsack / 2D,Medium,https://leetcode.com/problems/unique-paths/description/
+unique-paths-ii,Unique paths II,Dynamic Programming,Unbounded Knapsack / 2D,Medium,https://leetcode.com/problems/unique-paths-ii/description/
+valid-anagram,Valid anagram,Arrays and Hashmap,Unspecified,Easy,https://leetcode.com/problems/valid-anagram/
+valid-palindrome,Valid palindrome,Two Pointers and Sliding Window,Unspecified,Easy,https://leetcode.com/problems/valid-palindrome/description/
+valid-palindrome-ii,Valid palindrome II,Two Pointers and Sliding Window,Unspecified,Easy,https://leetcode.com/problems/valid-palindrome-ii/description/
+valid-paranthesis-string,Valid paranthesis string,Greedy,Unspecified,Medium,https://leetcode.com/problems/valid-parenthesis-string/description/
+valid-parentheses,Valid parentheses,Stacks and Queues,Implementation / Core,Easy,https://leetcode.com/problems/valid-parentheses/
+valid-square,Valid square,Maths and Geometry,Unspecified,Medium,https://leetcode.com/problems/valid-square/description/
+valid-sudoku,Valid sudoku,Arrays and Hashmap,Unspecified,Medium,https://leetcode.com/problems/valid-sudoku/description/
+validate-an-ip-address,Validate an IP address,Strings,Unspecified,Medium,https://leetcode.com/problems/validate-ip-address/description/
+validate-binary-search-tree,Validate binary search tree,Trees,Binary Trees / Traversals,Medium,https://leetcode.com/problems/validate-binary-search-tree/description/
+vertical-order-traversal-of-a-binary-tree,Vertical order traversal of a binary tree,Trees,Binary Trees / Traversals,Hard,https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/
+views,Views,Trees,Binary Trees / Traversals,Hard,
+wildcard-matching,Wildcard matching,Dynamic Programming,on Subsequences / on Strings,Hard,https://leetcode.com/problems/wildcard-matching/description/
+word-break,Word break,Dynamic Programming,on Subsequences / on Strings,Medium,https://leetcode.com/problems/word-break/description/
+word-ladder,Word ladder,Graphs,🔁 / 🔁,Hard,https://leetcode.com/problems/word-ladder/description/
+word-ladder-ii,Word ladder II,Graphs,🔁 / 🔁,Hard,https://leetcode.com/problems/word-ladder-ii/description/
+word-search,Word search,Recursion and Backtracking,Subsequences pattern / Combos,Medium,https://leetcode.com/problems/word-search/description/
+word-search-ii,Word search II,Tries,Unspecified,Hard,https://leetcode.com/problems/word-search-ii/
+zigzag-conversion,Zigzag conversion,Strings,Unspecified,Medium,https://leetcode.com/problems/zigzag-conversion/description/

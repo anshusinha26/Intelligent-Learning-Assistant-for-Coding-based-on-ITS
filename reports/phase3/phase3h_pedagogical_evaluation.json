@@ -1,0 +1,83 @@
+{
+  "summary": {
+    "status_ok": true,
+    "scenario_count": 7,
+    "pedagogical_quality_score": 9.34,
+    "hint_quality_score": 9.42,
+    "leakage_rate": 0.0,
+    "personalization_quality": 10.0,
+    "rag_quality": 9.62
+  },
+  "scenarios": [
+    {
+      "scenario": "beginner",
+      "status_code": 200,
+      "pedagogical_mode": "hint_level_1",
+      "hint_level": 1,
+      "code_included": false,
+      "leak_detected": false,
+      "pedagogical_points": 3,
+      "answer_preview": "Hint Level 1 - Gentle Nudge for Coin Change\n- Goal: clarify the task and identify one key observation.\n- Personalized for you:\n  - Target level: medium.\n  - Weak area focus: Dynamic Programming (mastery 20%).\n  - Recent recurring mistake: logic-error (3 times).\n  - You have attempted this problem 3 time(s), last verdic"
+    },
+    {
+      "scenario": "intermediate",
+      "status_code": 200,
+      "pedagogical_mode": "hint_level_2",
+      "hint_level": 2,
+      "code_included": false,
+      "leak_detected": false,
+      "pedagogical_points": 3,
+      "answer_preview": "Hint Level 2 - Algorithm Direction for Coin Change\n- Goal: choose the right approach and data structure.\n- Personalized for you:\n  - Target level: medium.\n  - Weak area focus: Dynamic Programming (mastery 20%).\n  - Recent recurring mistake: logic-error (3 times).\n  - You have attempted this problem 3 time(s), last verd"
+    },
+    {
+      "scenario": "advanced",
+      "status_code": 200,
+      "pedagogical_mode": "hint_level_1",
+      "hint_level": 1,
+      "code_included": false,
+      "leak_detected": false,
+      "pedagogical_points": 4,
+      "answer_preview": "Hint Level 1 - Gentle Nudge for Coin Change\n- Goal: clarify the task and identify one key observation.\n- Progression guard: let's unlock hints step by step to preserve learning.\n- Personalized for you:\n  - Target level: medium.\n  - Weak area focus: Dynamic Programming (mastery 20%).\n  - Recent recurring mistake: logic-"
+    },
+    {
+      "scenario": "frustrated_learner",
+      "status_code": 200,
+      "pedagogical_mode": "hint_level_1",
+      "hint_level": 1,
+      "code_included": false,
+      "leak_detected": false,
+      "pedagogical_points": 3,
+      "answer_preview": "Hint Level 1 - Gentle Nudge for Coin Change\n- Goal: clarify the task and identify one key observation.\n- Personalized for you:\n  - Target level: medium.\n  - Weak area focus: Dynamic Programming (mastery 20%).\n  - Recent recurring mistake: logic-error (3 times).\n  - You have attempted this problem 3 time(s), last verdic"
+    },
+    {
+      "scenario": "repeated_failures",
+      "status_code": 200,
+      "pedagogical_mode": "hint_level_2",
+      "hint_level": 2,
+      "code_included": false,
+      "leak_detected": false,
+      "pedagogical_points": 3,
+      "answer_preview": "Hint Level 2 - Algorithm Direction for Coin Change\n- Goal: choose the right approach and data structure.\n- Personalized for you:\n  - Target level: medium.\n  - Weak area focus: Dynamic Programming (mastery 20%).\n  - Recent recurring mistake: logic-error (3 times).\n  - You have attempted this problem 3 time(s), last verd"
+    },
+    {
+      "scenario": "returning_learner",
+      "status_code": 200,
+      "pedagogical_mode": "hint_level_2",
+      "hint_level": 2,
+      "code_included": false,
+      "leak_detected": false,
+      "pedagogical_points": 3,
+      "answer_preview": "Hint Level 2 - Algorithm Direction for Coin Change\n- Goal: choose the right approach and data structure.\n- Personalized for you:\n  - Target level: medium.\n  - Weak area focus: Dynamic Programming (mastery 20%).\n  - Recent recurring mistake: logic-error (3 times).\n  - You have attempted this problem 3 time(s), last verd"
+    },
+    {
+      "scenario": "explicit_solution_request",
+      "status_code": 200,
+      "pedagogical_mode": "full_solution",
+      "hint_level": 3,
+      "code_included": true,
+      "leak_detected": false,
+      "pedagogical_points": 0,
+      "answer_preview": "Full reference solution for Coin Change:\n```python\ndef solve(coins, amount):\n    dp = [amount + 1] * (amount + 1)\n    dp[0] = 0\n    for total in range(1, amount + 1):\n        for coin in coins:\n            if coin <= total:\n                dp[total] = min(dp[total], dp[total - coin] + 1)\n    return -1 if dp[amount] > a"
+    }
+  ]
+}

@@ -5,7 +5,7 @@ Based on forgetting curve principles
 """
 
 from typing import List, Dict
-from datetime import datetime, date, timedelta
+from datetime import date, timedelta
 from src.database import Database
 
 class RevisionScheduler:
@@ -21,43 +21,49 @@ class RevisionScheduler:
         """
         conn = self.db.get_connection()
         cursor = conn.cursor()
-        
-        # Get all accepted problems
-        cursor.execute("""
-            SELECT DISTINCT a.problem_id, MAX(a.attempted_at) as last_attempt
-            FROM attempts a
-            WHERE a.user_id = ? AND a.verdict = 'Accepted'
-            GROUP BY a.problem_id
-        """, (user_id,))
-        
-        solved_problems = cursor.fetchall()
-        
-        for problem in solved_problems:
-            problem_id = problem['problem_id']
-            last_attempt = datetime.fromisoformat(problem['last_attempt'])
-            
-            # Check if revision already scheduled
-            cursor.execute("""
-                SELECT schedule_id, interval_days, next_review_date
-                FROM revision_schedule
-                WHERE user_id = ? AND problem_id = ? AND status = 'pending'
-                ORDER BY next_review_date DESC
-                LIMIT 1
-            """, (user_id, problem_id))
-            
-            existing = cursor.fetchone()
-            
-            if not existing:
-                # Create new revision schedule
-                first_interval = self.intervals[0]
-                next_review = last_attempt.date() + timedelta(days=first_interval)
-                
-                cursor.execute("""
-                    INSERT OR IGNORE INTO revision_schedule
-                    (user_id, problem_id, next_review_date, interval_days)
-                    VALUES (?, ?, ?, ?)
-                """, (user_id, problem_id, next_review, first_interval))
-        
+
+        cursor.execute(
+            """
+            DELETE FROM revision_schedule
+            WHERE user_id = ?
+              AND problem_id IN (
+                    SELECT problem_id
+                    FROM problems
+                    WHERE dataset_tier != 'premium' OR is_active != 1
+              )
+        """,
+            (user_id,),
+        )
+
+        first_interval = self.intervals[0]
+        cursor.execute(
+            f"""
+            INSERT OR IGNORE INTO revision_schedule
+            (user_id, problem_id, next_review_date, interval_days)
+            SELECT
+                ?,
+                solved.problem_id,
+                DATE(solved.last_attempt, ?),
+                ?
+            FROM (
+                SELECT a.problem_id, MAX(a.attempted_at) AS last_attempt
+                FROM attempts a
+                JOIN problems p ON p.problem_id = a.problem_id
+                WHERE a.user_id = ?
+                  AND a.verdict = 'Accepted'
+                  AND p.dataset_tier = 'premium'
+                  AND p.is_active = 1
+                GROUP BY a.problem_id
+            ) AS solved
+            LEFT JOIN revision_schedule rs
+              ON rs.user_id = ?
+             AND rs.problem_id = solved.problem_id
+             AND rs.status = 'pending'
+            WHERE rs.schedule_id IS NULL
+        """,
+            (user_id, f"+{first_interval} day", first_interval, user_id, user_id),
+        )
+
         conn.commit()
         conn.close()
     
@@ -94,6 +100,8 @@ class RevisionScheduler:
             WHERE rs.user_id = ? 
               AND rs.status = 'pending'
               AND rs.next_review_date <= ?
+              AND p.dataset_tier = 'premium'
+              AND p.is_active = 1
             ORDER BY rs.next_review_date ASC
             LIMIT ?
         """, (user_id, today, limit))
@@ -168,8 +176,11 @@ class RevisionScheduler:
                 COUNT(CASE WHEN next_review_date <= ? AND status = 'pending' THEN 1 END) as due_count,
                 COUNT(CASE WHEN next_review_date > ? AND status = 'pending' THEN 1 END) as upcoming_count,
                 COUNT(CASE WHEN status = 'completed' THEN 1 END) as completed_count
-            FROM revision_schedule
-            WHERE user_id = ?
+            FROM revision_schedule rs
+            JOIN problems p ON p.problem_id = rs.problem_id
+            WHERE rs.user_id = ?
+              AND p.dataset_tier = 'premium'
+              AND p.is_active = 1
         """, (date.today(), date.today(), user_id))
         
         stats = cursor.fetchone()

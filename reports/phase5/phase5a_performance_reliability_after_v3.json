@@ -1,0 +1,573 @@
+{
+  "phase": "Phase 5 \u2014 Performance, Scalability & Reliability Validation",
+  "generated_at_utc": "2026-06-28T11:49:11+00:00",
+  "configuration": {
+    "concurrent_levels": [
+      100,
+      500,
+      1000,
+      5000,
+      10000
+    ],
+    "worker_limit": 512,
+    "hot_path_iterations": 30,
+    "memory_rag_queries": 2500
+  },
+  "part_1_load_testing": {
+    "100": {
+      "concurrency": 100,
+      "requests": 100,
+      "worker_limit": 512,
+      "latency_ms": {
+        "p50": 366.879,
+        "p95": 408.14,
+        "p99": 424.305
+      },
+      "queue_wait_ms": {
+        "p95": 0.002,
+        "max": 0.008
+      },
+      "throughput_rps": 225.791,
+      "error_rate": 0.0,
+      "status_histogram": {
+        "200": 100
+      },
+      "queue_depth_max": 1,
+      "database_contention_events": 0,
+      "cpu_estimated_percent": 189.99,
+      "peak_memory_mb": 92.84,
+      "wall_seconds": 0.443
+    },
+    "500": {
+      "concurrency": 500,
+      "requests": 500,
+      "worker_limit": 512,
+      "latency_ms": {
+        "p50": 1624.476,
+        "p95": 1849.232,
+        "p99": 1925.945
+      },
+      "queue_wait_ms": {
+        "p95": 0.003,
+        "max": 0.181
+      },
+      "throughput_rps": 239.654,
+      "error_rate": 0.0,
+      "status_histogram": {
+        "200": 500
+      },
+      "queue_depth_max": 1,
+      "database_contention_events": 0,
+      "cpu_estimated_percent": 175.8,
+      "peak_memory_mb": 114.12,
+      "wall_seconds": 2.086
+    },
+    "1000": {
+      "concurrency": 1000,
+      "requests": 1000,
+      "worker_limit": 512,
+      "latency_ms": {
+        "p50": 1656.637,
+        "p95": 3160.543,
+        "p99": 3197.998
+      },
+      "queue_wait_ms": {
+        "p95": 2756.772,
+        "max": 2959.461
+      },
+      "throughput_rps": 240.535,
+      "error_rate": 0.0,
+      "status_histogram": {
+        "200": 1000
+      },
+      "queue_depth_max": 488,
+      "database_contention_events": 0,
+      "cpu_estimated_percent": 206.9,
+      "peak_memory_mb": 122.34,
+      "wall_seconds": 4.157
+    },
+    "5000": {
+      "concurrency": 5000,
+      "requests": 5000,
+      "worker_limit": 512,
+      "latency_ms": {
+        "p50": 2125.44,
+        "p95": 3235.004,
+        "p99": 3456.789
+      },
+      "queue_wait_ms": {
+        "p95": 19773.241,
+        "max": 20874.326
+      },
+      "throughput_rps": 226.798,
+      "error_rate": 0.0,
+      "status_histogram": {
+        "200": 5000
+      },
+      "queue_depth_max": 4488,
+      "database_contention_events": 0,
+      "cpu_estimated_percent": 205.27,
+      "peak_memory_mb": 146.52,
+      "wall_seconds": 22.046
+    },
+    "10000": {
+      "concurrency": 10000,
+      "requests": 10000,
+      "worker_limit": 512,
+      "latency_ms": {
+        "p50": 2133.459,
+        "p95": 3234.755,
+        "p99": 3469.833
+      },
+      "queue_wait_ms": {
+        "p95": 41128.678,
+        "max": 43301.661
+      },
+      "throughput_rps": 224.567,
+      "error_rate": 0.0,
+      "status_histogram": {
+        "200": 10000
+      },
+      "queue_depth_max": 9488,
+      "database_contention_events": 0,
+      "cpu_estimated_percent": 214.73,
+      "peak_memory_mb": 158.08,
+      "wall_seconds": 44.53
+    }
+  },
+  "part_2_hot_path_profiling": {
+    "endpoint_latency": {
+      "auth_login": {
+        "p50_ms": 241.327,
+        "p95_ms": 245.849,
+        "p99_ms": 248.369,
+        "error_rate": 0.0
+      },
+      "problem_retrieval": {
+        "p50_ms": 4.443,
+        "p95_ms": 5.351,
+        "p99_ms": 5.732,
+        "error_rate": 0.0
+      },
+      "recommendations_generate": {
+        "p50_ms": 7.468,
+        "p95_ms": 7.892,
+        "p99_ms": 8.07,
+        "error_rate": 0.0
+      },
+      "learner_update": {
+        "p50_ms": 6.489,
+        "p95_ms": 6.871,
+        "p99_ms": 7.01,
+        "error_rate": 0.0
+      },
+      "judge_execution": {
+        "p50_ms": 50.628,
+        "p95_ms": 52.556,
+        "p99_ms": 54.211,
+        "error_rate": 0.0
+      },
+      "analytics_dashboard": {
+        "p50_ms": 8.422,
+        "p95_ms": 8.794,
+        "p99_ms": 9.166,
+        "error_rate": 0.0
+      },
+      "rag_query": {
+        "p50_ms": 12.175,
+        "p95_ms": 12.587,
+        "p99_ms": 13.511,
+        "error_rate": 0.0
+      },
+      "dashboard_like": {
+        "p50_ms": 3.956,
+        "p95_ms": 4.262,
+        "p99_ms": 4.407,
+        "error_rate": 0.0
+      }
+    },
+    "hot_path_ranking_by_p95": [
+      "auth_login",
+      "judge_execution",
+      "rag_query",
+      "analytics_dashboard",
+      "recommendations_generate",
+      "learner_update",
+      "problem_retrieval",
+      "dashboard_like"
+    ],
+    "profiler_top": [
+      {
+        "file": "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py",
+        "line": 12,
+        "function": "__call__",
+        "cumtime_s": 3.959293,
+        "tottime_s": 0.001609,
+        "calls": 1170
+      },
+      {
+        "file": "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/fastapi/routing.py",
+        "line": 218,
+        "function": "app",
+        "cumtime_s": 3.874567,
+        "tottime_s": 0.002622,
+        "calls": 690
+      },
+      {
+        "file": "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/fastapi/routing.py",
+        "line": 183,
+        "function": "run_endpoint_function",
+        "cumtime_s": 3.608799,
+        "tottime_s": 0.000607,
+        "calls": 435
+      },
+      {
+        "file": "/Users/anshusinha/Documents/Learning/College-School/BITS/Sem6/Capstone project/Intelligent Learning Assistant for Coding based on ITS/src/main.py",
+        "line": 471,
+        "function": "login",
+        "cumtime_s": 3.589262,
+        "tottime_s": 9e-05,
+        "calls": 15
+      },
+      {
+        "file": "/Users/anshusinha/Documents/Learning/College-School/BITS/Sem6/Capstone project/Intelligent Learning Assistant for Coding based on ITS/src/auth.py",
+        "line": 344,
+        "function": "login_user",
+        "cumtime_s": 3.589172,
+        "tottime_s": 0.000364,
+        "calls": 15
+      },
+      {
+        "file": "/Users/anshusinha/Documents/Learning/College-School/BITS/Sem6/Capstone project/Intelligent Learning Assistant for Coding based on ITS/src/auth.py",
+        "line": 29,
+        "function": "verify_password",
+        "cumtime_s": 3.542438,
+        "tottime_s": 7.2e-05,
+        "calls": 15
+      },
+      {
+        "file": "/Users/anshusinha/Documents/Learning/College-School/BITS/Sem6/Capstone project/Intelligent Learning Assistant for Coding based on ITS/src/main.py",
+        "line": 1154,
+        "function": "submit_code",
+        "cumtime_s": 0.687065,
+        "tottime_s": 0.002396,
+        "calls": 15
+      },
+      {
+        "file": "/Users/anshusinha/Documents/Learning/College-School/BITS/Sem6/Capstone project/Intelligent Learning Assistant for Coding based on ITS/src/judge.py",
+        "line": 24,
+        "function": "run_python",
+        "cumtime_s": 0.6288,
+        "tottime_s": 0.001821,
+        "calls": 15
+      },
+      {
+        "file": "/Users/anshusinha/Documents/Learning/College-School/BITS/Sem6/Capstone project/Intelligent Learning Assistant for Coding based on ITS/src/database.py",
+        "line": 42,
+        "function": "execute",
+        "cumtime_s": 0.389043,
+        "tottime_s": 0.00145,
+        "calls": 930
+      },
+      {
+        "file": "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/fastapi/dependencies/utils.py",
+        "line": 516,
+        "function": "solve_dependencies",
+        "cumtime_s": 0.231699,
+        "tottime_s": 0.00292,
+        "calls": 225
+      },
+      {
+        "file": "/Users/anshusinha/Documents/Learning/College-School/BITS/Sem6/Capstone project/Intelligent Learning Assistant for Coding based on ITS/src/main.py",
+        "line": 320,
+        "function": "get_current_user",
+        "cumtime_s": 0.199331,
+        "tottime_s": 0.000408,
+        "calls": 105
+      },
+      {
+        "file": "/Users/anshusinha/Documents/Learning/College-School/BITS/Sem6/Capstone project/Intelligent Learning Assistant for Coding based on ITS/src/auth.py",
+        "line": 451,
+        "function": "get_current_user",
+        "cumtime_s": 0.198812,
+        "tottime_s": 0.00108,
+        "calls": 105
+      },
+      {
+        "file": "/Users/anshusinha/Documents/Learning/College-School/BITS/Sem6/Capstone project/Intelligent Learning Assistant for Coding based on ITS/src/main.py",
+        "line": 1481,
+        "function": "rag_query",
+        "cumtime_s": 0.13654,
+        "tottime_s": 0.000916,
+        "calls": 15
+      },
+      {
+        "file": "/Users/anshusinha/Documents/Learning/College-School/BITS/Sem6/Capstone project/Intelligent Learning Assistant for Coding based on ITS/src/auth.py",
+        "line": 259,
+        "function": "verify_token",
+        "cumtime_s": 0.116908,
+        "tottime_s": 0.00065,
+        "calls": 105
+      },
+      {
+        "file": "/Users/anshusinha/Documents/Learning/College-School/BITS/Sem6/Capstone project/Intelligent Learning Assistant for Coding based on ITS/src/auth.py",
+        "line": 241,
+        "function": "is_token_revoked",
+        "cumtime_s": 0.105364,
+        "tottime_s": 0.000687,
+        "calls": 105
+      }
+    ]
+  },
+  "part_3_database_analysis": {
+    "indexes": {
+      "users": [
+        "sqlite_autoindex_users_1"
+      ],
+      "problems": [
+        "idx_problems_dataset_active",
+        "sqlite_autoindex_problems_1"
+      ],
+      "attempts": [],
+      "learner_metrics": [],
+      "recommendations": [
+        "idx_recommendations_user_status",
+        "idx_recommendations_unique_state"
+      ],
+      "revision_schedule": [
+        "idx_revision_unique_pending"
+      ],
+      "submissions": [],
+      "premium_problem_relationships": [
+        "idx_premium_problem_relationships_unique"
+      ]
+    },
+    "query_plans": {
+      "problems_list": [
+        "SEARCH problems USING INDEX idx_problems_dataset_active (dataset_tier=? AND is_active=?)"
+      ],
+      "dashboard_attempts": [
+        "SCAN a",
+        "SEARCH p USING INDEX sqlite_autoindex_problems_1 (problem_id=?)",
+        "USE TEMP B-TREE FOR ORDER BY"
+      ],
+      "recommendations_fetch": [
+        "SEARCH r USING INDEX idx_recommendations_user_status (user_id=? AND status=?)",
+        "SEARCH p USING INDEX sqlite_autoindex_problems_1 (problem_id=?)",
+        "USE TEMP B-TREE FOR ORDER BY"
+      ]
+    },
+    "query_timings": {
+      "problems_list": {
+        "avg_ms": 0.0124,
+        "p95_ms": 0.0122
+      },
+      "dashboard_attempts": {
+        "avg_ms": 0.9553,
+        "p95_ms": 1.0416
+      },
+      "recommendations_fetch": {
+        "avg_ms": 0.0094,
+        "p95_ms": 0.0093
+      }
+    },
+    "n_plus_one_suspects": [
+      {
+        "line": 749,
+        "snippet": "for row in rows:"
+      }
+    ],
+    "slow_query_candidates": [
+      [
+        "dashboard_attempts",
+        {
+          "avg_ms": 0.9553,
+          "p95_ms": 1.0416
+        }
+      ],
+      [
+        "problems_list",
+        {
+          "avg_ms": 0.0124,
+          "p95_ms": 0.0122
+        }
+      ],
+      [
+        "recommendations_fetch",
+        {
+          "avg_ms": 0.0094,
+          "p95_ms": 0.0093
+        }
+      ]
+    ],
+    "database_contention_events": 0,
+    "migration_performance": {
+      "bootstrap_seconds": 0.0038,
+      "upgrade_seconds": 0.0042,
+      "downgrade_seconds": 0.004,
+      "upgrade_total": 3,
+      "upgrade_applied": 3,
+      "downgrade_status": "rolled_back"
+    },
+    "backup_restore_performance": {
+      "backup_seconds": 0.008,
+      "restore_seconds": 0.0059,
+      "integrity_ok": true
+    }
+  },
+  "part_4_memory_analysis": {
+    "rag_queries_executed": 2500,
+    "estimated_growth_mb": 29.6671,
+    "top_growth": [
+      {
+        "location": "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/httpx/_models.py:162",
+        "size_diff_kb": 4345.703,
+        "count_diff": 80000
+      },
+      {
+        "location": "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/starlette/responses.py:205",
+        "size_diff_kb": 2074.111,
+        "count_diff": 2500
+      },
+      {
+        "location": "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/anyio/_backends/_asyncio.py:847",
+        "size_diff_kb": 1855.469,
+        "count_diff": 5000
+      },
+      {
+        "location": "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py:424",
+        "size_diff_kb": 1855.469,
+        "count_diff": 5000
+      },
+      {
+        "location": "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py:852",
+        "size_diff_kb": 1289.062,
+        "count_diff": 2500
+      },
+      {
+        "location": "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/httpx/_models.py:82",
+        "size_diff_kb": 1032.715,
+        "count_diff": 2500
+      },
+      {
+        "location": "/Users/anshusinha/Documents/Learning/College-School/BITS/Sem6/Capstone project/Intelligent Learning Assistant for Coding based on ITS/tests/test_phase2d_helpers.py:20",
+        "size_diff_kb": 976.562,
+        "count_diff": 2500
+      },
+      {
+        "location": "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/starlette/datastructures.py:603",
+        "size_diff_kb": 959.473,
+        "count_diff": 12500
+      }
+    ],
+    "rag_thread_state_size": 2501,
+    "rag_thread_state_limit": 5000,
+    "rag_state_bounded": true,
+    "peak_memory_mb": 192.14
+  },
+  "part_5_fault_injection": {
+    "database_unavailable": {
+      "status_code": 503,
+      "graceful": true,
+      "body": {
+        "error": {
+          "code": "service_not_ready",
+          "message": "Service not ready",
+          "details": {
+            "reason": "simulated database outage"
+          },
+          "request_id": "868285cc97c94c74b6782d0b30f989bf"
+        }
+      }
+    },
+    "rag_unavailable": {
+      "status_code": 200,
+      "graceful_fallback": true,
+      "error_field_present": true
+    },
+    "judge_timeout": {
+      "status_code": 200,
+      "verdict": "Time Limit Exceeded",
+      "handled": true
+    },
+    "slow_disk_simulation": {
+      "status_code": 200,
+      "latency_ms": 193.268,
+      "graceful": true
+    },
+    "invalid_configuration": {
+      "startup_rejected": true
+    }
+  },
+  "part_6_recovery": {
+    "startup_seconds_avg": 0.0115,
+    "shutdown_seconds_avg": 0.0008,
+    "restart_recovery_seconds_avg": 0.0123,
+    "database_restore_seconds": 0.0066,
+    "database_restore_integrity_ok": true
+  },
+  "part_7_observability": {
+    "request_id_header_present": true,
+    "health_endpoints": {
+      "health_status": 200,
+      "liveness_status": 200,
+      "readiness_status": 200
+    },
+    "metrics_available": true,
+    "metrics_contains_core": true,
+    "error_payload_has_request_id": true,
+    "structured_log_json_valid": true,
+    "alerts_configured": false,
+    "alerts_note": "No in-repo alert routing configuration found; external alerting verification required."
+  },
+  "part_8_security_regression": {
+    "auth_invalid_token_rejected": true,
+    "rag_guardrail_intact": true,
+    "input_validation_intact": true,
+    "judge_isolation_intact": true,
+    "authorization_intact": true,
+    "rate_limiting_intact": true,
+    "all_security_checks_passed": true
+  },
+  "quality_gate": {
+    "maximum_concurrent_users_supported": 500,
+    "p50_latency_ms": 1581.378,
+    "p95_latency_ms": 2377.535,
+    "p99_latency_ms": 2494.974,
+    "throughput_rps_peak": 240.535,
+    "peak_memory_mb": 192.14,
+    "peak_cpu_percent_estimated": 214.73,
+    "database_bottlenecks": [
+      [
+        "dashboard_attempts",
+        {
+          "avg_ms": 0.9553,
+          "p95_ms": 1.0416
+        }
+      ],
+      [
+        "problems_list",
+        {
+          "avg_ms": 0.0124,
+          "p95_ms": 0.0122
+        }
+      ],
+      [
+        "recommendations_fetch",
+        {
+          "avg_ms": 0.0094,
+          "p95_ms": 0.0093
+        }
+      ]
+    ],
+    "optimization_opportunities": [
+      "Reduce recommendation-generation DB cost under burst writes",
+      "Move SQLite to production-grade RDBMS for >5k write-heavy concurrent load",
+      "Add external alert routing (Prometheus alert rules / on-call hooks)"
+    ],
+    "reliability_score": 10.0,
+    "performance_score": 7.45,
+    "operational_readiness": "Needs hardening before full rollout",
+    "remaining_production_blockers": []
+  }
+}

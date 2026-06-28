@@ -1,0 +1,685 @@
+{
+  "summary": {
+    "problem_count": 75,
+    "failure_count": 0,
+    "all_passed": true
+  },
+  "failures": [],
+  "matrix": [
+    {
+      "problem_id": "3sum",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "balanced-binary-tree",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "binary-search",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "binary-tree-level-order-traversal",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "car-fleet",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "climbing-stairs",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "clone-graph",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "coin-change",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "combination-sum",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "container-with-most-water",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "contains-duplicate",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "counting-bits",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "course-schedule",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "course-schedule-ii",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "daily-temperatures",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "diameter-of-binary-tree",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "evaluate-reverse-polish-notation",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "find-median-from-data-stream",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "find-minimum-in-rotated-sorted-array",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "gas-station",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "graph-valid-tree",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "group-anagrams",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "happy-number",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "house-robber",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "house-robber-ii",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "insert-interval",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "invert-binary-tree",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "jump-game",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "jump-game-ii",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "koko-eating-bananas",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "kth-largest-element-in-an-array",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "linked-list-cycle",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "longest-common-subsequence",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "longest-consecutive-sequence",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "longest-increasing-subsequence",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "longest-repeating-character-replacement",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "longest-substring-without-repeating-characters",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "maximum-depth-of-binary-tree",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "merge-intervals",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "merge-k-sorted-lists",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "merge-two-sorted-lists",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "min-stack",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "minimum-window-substring",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "network-delay-time",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "non-overlapping-intervals",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "number-of-1-bits",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "number-of-islands",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "pacific-atlantic-water-flow",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "partition-equal-subset-sum",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "permutation-in-string",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "permutations",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "plus-one",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "powx-n",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "product-of-array-except-self",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "remove-nth-node-from-end-of-list",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "reorder-list",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "reverse-linked-list",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "rotate-image",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "same-tree",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "search-a-2d-matrix",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "search-in-rotated-sorted-array",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "single-number",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "sliding-window-maximum",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "subsets",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "subtree-of-another-tree",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "task-scheduler",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "top-k-frequent-elements",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "trapping-rain-water",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "two-sum",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "two-sum-ii-input-array-is-sorted",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "unique-paths",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "valid-anagram",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "valid-palindrome",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "valid-parentheses",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    },
+    {
+      "problem_id": "word-search",
+      "accepted": "Accepted",
+      "wrong_answer_probe": "Wrong Answer",
+      "runtime_error_probe": "Runtime Error",
+      "compilation_error_probe": "Compilation Error",
+      "time_limit_probe": "Time Limit Exceeded",
+      "memory_pressure_probe": "Wrong Answer"
+    }
+  ]
+}

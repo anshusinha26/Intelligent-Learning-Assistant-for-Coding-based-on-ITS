@@ -1,0 +1,320 @@
+{
+  "version": "1.0",
+  "nodes": [
+    "two-sum",
+    "contains-duplicate",
+    "valid-anagram",
+    "group-anagrams",
+    "product-of-array-except-self",
+    "top-k-frequent-elements",
+    "longest-consecutive-sequence",
+    "valid-palindrome",
+    "two-sum-ii-input-array-is-sorted",
+    "3sum",
+    "container-with-most-water",
+    "trapping-rain-water",
+    "longest-substring-without-repeating-characters",
+    "longest-repeating-character-replacement",
+    "permutation-in-string",
+    "minimum-window-substring",
+    "sliding-window-maximum",
+    "valid-parentheses",
+    "min-stack",
+    "evaluate-reverse-polish-notation",
+    "daily-temperatures",
+    "car-fleet",
+    "binary-search",
+    "search-a-2d-matrix",
+    "koko-eating-bananas",
+    "find-minimum-in-rotated-sorted-array",
+    "search-in-rotated-sorted-array",
+    "reverse-linked-list",
+    "merge-two-sorted-lists",
+    "reorder-list",
+    "remove-nth-node-from-end-of-list",
+    "linked-list-cycle",
+    "invert-binary-tree",
+    "maximum-depth-of-binary-tree",
+    "diameter-of-binary-tree",
+    "balanced-binary-tree",
+    "same-tree",
+    "subtree-of-another-tree",
+    "binary-tree-level-order-traversal",
+    "kth-largest-element-in-an-array",
+    "task-scheduler",
+    "find-median-from-data-stream",
+    "merge-k-sorted-lists",
+    "subsets",
+    "combination-sum",
+    "permutations",
+    "word-search",
+    "number-of-islands",
+    "clone-graph",
+    "pacific-atlantic-water-flow",
+    "course-schedule",
+    "course-schedule-ii",
+    "graph-valid-tree",
+    "network-delay-time",
+    "climbing-stairs",
+    "house-robber",
+    "house-robber-ii",
+    "coin-change",
+    "longest-increasing-subsequence",
+    "partition-equal-subset-sum",
+    "unique-paths",
+    "longest-common-subsequence",
+    "jump-game",
+    "jump-game-ii",
+    "gas-station",
+    "merge-intervals",
+    "insert-interval",
+    "non-overlapping-intervals",
+    "single-number",
+    "number-of-1-bits",
+    "counting-bits",
+    "powx-n",
+    "happy-number",
+    "plus-one",
+    "rotate-image"
+  ],
+  "prerequisite_edges": [
+    { "from": "contains-duplicate", "to": "valid-anagram" },
+    { "from": "valid-anagram", "to": "group-anagrams" },
+    { "from": "two-sum", "to": "product-of-array-except-self" },
+    { "from": "group-anagrams", "to": "top-k-frequent-elements" },
+    { "from": "contains-duplicate", "to": "longest-consecutive-sequence" },
+    { "from": "two-sum", "to": "two-sum-ii-input-array-is-sorted" },
+    { "from": "valid-palindrome", "to": "two-sum-ii-input-array-is-sorted" },
+    { "from": "two-sum-ii-input-array-is-sorted", "to": "3sum" },
+    { "from": "two-sum-ii-input-array-is-sorted", "to": "container-with-most-water" },
+    { "from": "container-with-most-water", "to": "trapping-rain-water" },
+    { "from": "contains-duplicate", "to": "longest-substring-without-repeating-characters" },
+    { "from": "longest-substring-without-repeating-characters", "to": "longest-repeating-character-replacement" },
+    { "from": "valid-anagram", "to": "permutation-in-string" },
+    { "from": "longest-substring-without-repeating-characters", "to": "permutation-in-string" },
+    { "from": "permutation-in-string", "to": "minimum-window-substring" },
+    { "from": "minimum-window-substring", "to": "sliding-window-maximum" },
+    { "from": "valid-parentheses", "to": "min-stack" },
+    { "from": "valid-parentheses", "to": "evaluate-reverse-polish-notation" },
+    { "from": "min-stack", "to": "daily-temperatures" },
+    { "from": "daily-temperatures", "to": "car-fleet" },
+    { "from": "binary-search", "to": "search-a-2d-matrix" },
+    { "from": "binary-search", "to": "koko-eating-bananas" },
+    { "from": "binary-search", "to": "find-minimum-in-rotated-sorted-array" },
+    { "from": "find-minimum-in-rotated-sorted-array", "to": "search-in-rotated-sorted-array" },
+    { "from": "reverse-linked-list", "to": "merge-two-sorted-lists" },
+    { "from": "reverse-linked-list", "to": "reorder-list" },
+    { "from": "merge-two-sorted-lists", "to": "reorder-list" },
+    { "from": "reverse-linked-list", "to": "remove-nth-node-from-end-of-list" },
+    { "from": "reverse-linked-list", "to": "linked-list-cycle" },
+    { "from": "invert-binary-tree", "to": "maximum-depth-of-binary-tree" },
+    { "from": "maximum-depth-of-binary-tree", "to": "diameter-of-binary-tree" },
+    { "from": "maximum-depth-of-binary-tree", "to": "balanced-binary-tree" },
+    { "from": "invert-binary-tree", "to": "same-tree" },
+    { "from": "same-tree", "to": "subtree-of-another-tree" },
+    { "from": "maximum-depth-of-binary-tree", "to": "binary-tree-level-order-traversal" },
+    { "from": "top-k-frequent-elements", "to": "kth-largest-element-in-an-array" },
+    { "from": "top-k-frequent-elements", "to": "task-scheduler" },
+    { "from": "kth-largest-element-in-an-array", "to": "find-median-from-data-stream" },
+    { "from": "merge-two-sorted-lists", "to": "merge-k-sorted-lists" },
+    { "from": "kth-largest-element-in-an-array", "to": "merge-k-sorted-lists" },
+    { "from": "subsets", "to": "combination-sum" },
+    { "from": "subsets", "to": "permutations" },
+    { "from": "subsets", "to": "word-search" },
+    { "from": "permutations", "to": "word-search" },
+    { "from": "word-search", "to": "number-of-islands" },
+    { "from": "number-of-islands", "to": "clone-graph" },
+    { "from": "number-of-islands", "to": "pacific-atlantic-water-flow" },
+    { "from": "clone-graph", "to": "course-schedule" },
+    { "from": "course-schedule", "to": "course-schedule-ii" },
+    { "from": "number-of-islands", "to": "graph-valid-tree" },
+    { "from": "course-schedule-ii", "to": "network-delay-time" },
+    { "from": "kth-largest-element-in-an-array", "to": "network-delay-time" },
+    { "from": "climbing-stairs", "to": "house-robber" },
+    { "from": "house-robber", "to": "house-robber-ii" },
+    { "from": "climbing-stairs", "to": "coin-change" },
+    { "from": "climbing-stairs", "to": "longest-increasing-subsequence" },
+    { "from": "binary-search", "to": "longest-increasing-subsequence" },
+    { "from": "coin-change", "to": "partition-equal-subset-sum" },
+    { "from": "climbing-stairs", "to": "unique-paths" },
+    { "from": "unique-paths", "to": "longest-common-subsequence" },
+    { "from": "valid-anagram", "to": "longest-common-subsequence" },
+    { "from": "house-robber", "to": "jump-game" },
+    { "from": "jump-game", "to": "jump-game-ii" },
+    { "from": "jump-game", "to": "gas-station" },
+    { "from": "container-with-most-water", "to": "merge-intervals" },
+    { "from": "merge-intervals", "to": "insert-interval" },
+    { "from": "merge-intervals", "to": "non-overlapping-intervals" },
+    { "from": "single-number", "to": "number-of-1-bits" },
+    { "from": "number-of-1-bits", "to": "counting-bits" },
+    { "from": "climbing-stairs", "to": "counting-bits" },
+    { "from": "binary-search", "to": "powx-n" },
+    { "from": "linked-list-cycle", "to": "happy-number" },
+    { "from": "plus-one", "to": "rotate-image" },
+    { "from": "invert-binary-tree", "to": "rotate-image" }
+  ],
+  "alternative_edges": [
+    ["two-sum", "two-sum-ii-input-array-is-sorted"],
+    ["contains-duplicate", "valid-anagram"],
+    ["group-anagrams", "top-k-frequent-elements"],
+    ["valid-palindrome", "longest-substring-without-repeating-characters"],
+    ["3sum", "container-with-most-water"],
+    ["longest-repeating-character-replacement", "permutation-in-string"],
+    ["search-a-2d-matrix", "koko-eating-bananas"],
+    ["find-minimum-in-rotated-sorted-array", "search-in-rotated-sorted-array"],
+    ["remove-nth-node-from-end-of-list", "linked-list-cycle"],
+    ["maximum-depth-of-binary-tree", "balanced-binary-tree"],
+    ["diameter-of-binary-tree", "subtree-of-another-tree"],
+    ["kth-largest-element-in-an-array", "task-scheduler"],
+    ["subsets", "permutations"],
+    ["clone-graph", "graph-valid-tree"],
+    ["course-schedule", "course-schedule-ii"],
+    ["house-robber", "jump-game"],
+    ["coin-change", "partition-equal-subset-sum"],
+    ["merge-intervals", "insert-interval"],
+    ["single-number", "number-of-1-bits"],
+    ["powx-n", "counting-bits"]
+  ],
+  "review_edges": [
+    {
+      "trigger_problem": "trapping-rain-water",
+      "review_problems": ["container-with-most-water", "two-sum-ii-input-array-is-sorted"]
+    },
+    {
+      "trigger_problem": "minimum-window-substring",
+      "review_problems": ["longest-substring-without-repeating-characters", "permutation-in-string"]
+    },
+    {
+      "trigger_problem": "sliding-window-maximum",
+      "review_problems": ["longest-repeating-character-replacement", "daily-temperatures"]
+    },
+    {
+      "trigger_problem": "search-in-rotated-sorted-array",
+      "review_problems": ["binary-search", "find-minimum-in-rotated-sorted-array"]
+    },
+    {
+      "trigger_problem": "reorder-list",
+      "review_problems": ["reverse-linked-list", "merge-two-sorted-lists"]
+    },
+    {
+      "trigger_problem": "subtree-of-another-tree",
+      "review_problems": ["same-tree", "maximum-depth-of-binary-tree"]
+    },
+    {
+      "trigger_problem": "find-median-from-data-stream",
+      "review_problems": ["kth-largest-element-in-an-array"]
+    },
+    {
+      "trigger_problem": "merge-k-sorted-lists",
+      "review_problems": ["merge-two-sorted-lists", "kth-largest-element-in-an-array"]
+    },
+    {
+      "trigger_problem": "network-delay-time",
+      "review_problems": ["course-schedule", "course-schedule-ii"]
+    },
+    {
+      "trigger_problem": "coin-change",
+      "review_problems": ["house-robber", "climbing-stairs"]
+    },
+    {
+      "trigger_problem": "longest-common-subsequence",
+      "review_problems": ["unique-paths", "valid-anagram"]
+    },
+    {
+      "trigger_problem": "rotate-image",
+      "review_problems": ["plus-one", "invert-binary-tree"]
+    }
+  ],
+  "recovery_edges": [
+    {
+      "struggling_problem": "trapping-rain-water",
+      "recover_with": ["container-with-most-water", "valid-palindrome"]
+    },
+    {
+      "struggling_problem": "minimum-window-substring",
+      "recover_with": ["longest-substring-without-repeating-characters", "permutation-in-string"]
+    },
+    {
+      "struggling_problem": "sliding-window-maximum",
+      "recover_with": ["daily-temperatures", "longest-repeating-character-replacement"]
+    },
+    {
+      "struggling_problem": "find-median-from-data-stream",
+      "recover_with": ["kth-largest-element-in-an-array", "task-scheduler"]
+    },
+    {
+      "struggling_problem": "merge-k-sorted-lists",
+      "recover_with": ["merge-two-sorted-lists", "kth-largest-element-in-an-array"]
+    },
+    {
+      "struggling_problem": "pacific-atlantic-water-flow",
+      "recover_with": ["number-of-islands", "word-search"]
+    },
+    {
+      "struggling_problem": "course-schedule-ii",
+      "recover_with": ["course-schedule", "graph-valid-tree"]
+    },
+    {
+      "struggling_problem": "network-delay-time",
+      "recover_with": ["course-schedule-ii", "kth-largest-element-in-an-array"]
+    },
+    {
+      "struggling_problem": "coin-change",
+      "recover_with": ["climbing-stairs", "house-robber"]
+    },
+    {
+      "struggling_problem": "longest-common-subsequence",
+      "recover_with": ["unique-paths", "valid-anagram"]
+    }
+  ],
+  "stretch_edges": [
+    {
+      "from_problem": "3sum",
+      "stretch_to": ["trapping-rain-water"]
+    },
+    {
+      "from_problem": "permutation-in-string",
+      "stretch_to": ["minimum-window-substring"]
+    },
+    {
+      "from_problem": "minimum-window-substring",
+      "stretch_to": ["sliding-window-maximum"]
+    },
+    {
+      "from_problem": "search-in-rotated-sorted-array",
+      "stretch_to": ["koko-eating-bananas"]
+    },
+    {
+      "from_problem": "reorder-list",
+      "stretch_to": ["merge-k-sorted-lists"]
+    },
+    {
+      "from_problem": "diameter-of-binary-tree",
+      "stretch_to": ["subtree-of-another-tree"]
+    },
+    {
+      "from_problem": "task-scheduler",
+      "stretch_to": ["find-median-from-data-stream"]
+    },
+    {
+      "from_problem": "clone-graph",
+      "stretch_to": ["course-schedule-ii", "network-delay-time"]
+    },
+    {
+      "from_problem": "house-robber-ii",
+      "stretch_to": ["coin-change", "partition-equal-subset-sum"]
+    },
+    {
+      "from_problem": "jump-game-ii",
+      "stretch_to": ["gas-station"]
+    },
+    {
+      "from_problem": "insert-interval",
+      "stretch_to": ["non-overlapping-intervals"]
+    },
+    {
+      "from_problem": "powx-n",
+      "stretch_to": ["rotate-image"]
+    }
+  ]
+}

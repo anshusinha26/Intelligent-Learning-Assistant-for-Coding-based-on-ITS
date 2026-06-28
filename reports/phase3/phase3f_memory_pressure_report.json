@@ -1,0 +1,307 @@
+{
+  "total": 75,
+  "accepted_handling": 75,
+  "bad": [],
+  "results": [
+    {
+      "problem_id": "3sum",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "balanced-binary-tree",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "binary-search",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "binary-tree-level-order-traversal",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "car-fleet",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "climbing-stairs",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "clone-graph",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "coin-change",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "combination-sum",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "container-with-most-water",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "contains-duplicate",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "counting-bits",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "course-schedule",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "course-schedule-ii",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "daily-temperatures",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "diameter-of-binary-tree",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "evaluate-reverse-polish-notation",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "find-median-from-data-stream",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "find-minimum-in-rotated-sorted-array",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "gas-station",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "graph-valid-tree",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "group-anagrams",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "happy-number",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "house-robber",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "house-robber-ii",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "insert-interval",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "invert-binary-tree",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "jump-game",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "jump-game-ii",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "koko-eating-bananas",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "kth-largest-element-in-an-array",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "linked-list-cycle",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "longest-common-subsequence",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "longest-consecutive-sequence",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "longest-increasing-subsequence",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "longest-repeating-character-replacement",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "longest-substring-without-repeating-characters",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "maximum-depth-of-binary-tree",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "merge-intervals",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "merge-k-sorted-lists",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "merge-two-sorted-lists",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "min-stack",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "minimum-window-substring",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "network-delay-time",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "non-overlapping-intervals",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "number-of-1-bits",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "number-of-islands",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "pacific-atlantic-water-flow",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "partition-equal-subset-sum",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "permutation-in-string",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "permutations",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "plus-one",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "powx-n",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "product-of-array-except-self",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "remove-nth-node-from-end-of-list",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "reorder-list",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "reverse-linked-list",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "rotate-image",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "same-tree",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "search-a-2d-matrix",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "search-in-rotated-sorted-array",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "single-number",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "sliding-window-maximum",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "subsets",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "subtree-of-another-tree",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "task-scheduler",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "top-k-frequent-elements",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "trapping-rain-water",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "two-sum",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "two-sum-ii-input-array-is-sorted",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "unique-paths",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "valid-anagram",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "valid-palindrome",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "valid-parentheses",
+      "memory_pressure_verdict": "Runtime Error"
+    },
+    {
+      "problem_id": "word-search",
+      "memory_pressure_verdict": "Runtime Error"
+    }
+  ]
+}

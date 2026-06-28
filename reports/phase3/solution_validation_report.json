@@ -1,0 +1,1293 @@
+{
+  "summary": {
+    "executed_problem_count": 75,
+    "critical_issues": 0,
+    "high_issues": 0,
+    "medium_issues": 0,
+    "low_issues": 0,
+    "manual_review_count": 0
+  },
+  "issues": {
+    "critical": [],
+    "high": [],
+    "medium": [],
+    "low": []
+  },
+  "results": [
+    {
+      "problem_id": "3sum",
+      "title": "3Sum",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(1) extra",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 39,
+      "accepted_runtime_ms_hidden": 42
+    },
+    {
+      "problem_id": "balanced-binary-tree",
+      "title": "Balanced Binary Tree",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(h)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 41,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "binary-search",
+      "title": "Binary Search",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(log n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 61,
+      "accepted_runtime_ms_hidden": 71
+    },
+    {
+      "problem_id": "binary-tree-level-order-traversal",
+      "title": "Binary Tree Level Order Traversal",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 42
+    },
+    {
+      "problem_id": "car-fleet",
+      "title": "Car Fleet",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 47,
+      "accepted_runtime_ms_hidden": 44
+    },
+    {
+      "problem_id": "climbing-stairs",
+      "title": "Climbing Stairs",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 49,
+      "accepted_runtime_ms_hidden": 38
+    },
+    {
+      "problem_id": "clone-graph",
+      "title": "Clone Graph",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(V + E)",
+      "space_complexity": "O(V)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 42,
+      "accepted_runtime_ms_hidden": 37
+    },
+    {
+      "problem_id": "coin-change",
+      "title": "Coin Change",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(len(coins)*amount)",
+      "space_complexity": "O(amount)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 41,
+      "accepted_runtime_ms_hidden": 40
+    },
+    {
+      "problem_id": "combination-sum",
+      "title": "Combination Sum",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(number of valid states)",
+      "space_complexity": "O(target)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 44,
+      "accepted_runtime_ms_hidden": 42
+    },
+    {
+      "problem_id": "container-with-most-water",
+      "title": "Container With Most Water",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 39,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "contains-duplicate",
+      "title": "Contains Duplicate",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 41,
+      "accepted_runtime_ms_hidden": 44
+    },
+    {
+      "problem_id": "counting-bits",
+      "title": "Counting Bits",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 37
+    },
+    {
+      "problem_id": "course-schedule",
+      "title": "Course Schedule",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(V + E)",
+      "space_complexity": "O(V + E)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 42
+    },
+    {
+      "problem_id": "course-schedule-ii",
+      "title": "Course Schedule II",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(V + E)",
+      "space_complexity": "O(V + E)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 39
+    },
+    {
+      "problem_id": "daily-temperatures",
+      "title": "Daily Temperatures",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 38,
+      "accepted_runtime_ms_hidden": 37
+    },
+    {
+      "problem_id": "diameter-of-binary-tree",
+      "title": "Diameter of Binary Tree",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(h)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 41,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "evaluate-reverse-polish-notation",
+      "title": "Evaluate Reverse Polish Notation",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 70,
+      "accepted_runtime_ms_hidden": 45
+    },
+    {
+      "problem_id": "find-median-from-data-stream",
+      "title": "Find Median from Data Stream",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(log n) per add",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 45,
+      "accepted_runtime_ms_hidden": 44
+    },
+    {
+      "problem_id": "find-minimum-in-rotated-sorted-array",
+      "title": "Find Minimum in Rotated Sorted Array",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(log n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 38,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "gas-station",
+      "title": "Gas Station",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 43,
+      "accepted_runtime_ms_hidden": 38
+    },
+    {
+      "problem_id": "graph-valid-tree",
+      "title": "Graph Valid Tree",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n + e)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 53
+    },
+    {
+      "problem_id": "group-anagrams",
+      "title": "Group Anagrams",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n * k log k)",
+      "space_complexity": "O(n * k)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 41,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "happy-number",
+      "title": "Happy Number",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(log n)",
+      "space_complexity": "O(log n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 42,
+      "accepted_runtime_ms_hidden": 43
+    },
+    {
+      "problem_id": "house-robber",
+      "title": "House Robber",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 37,
+      "accepted_runtime_ms_hidden": 45
+    },
+    {
+      "problem_id": "house-robber-ii",
+      "title": "House Robber II",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 39,
+      "accepted_runtime_ms_hidden": 43
+    },
+    {
+      "problem_id": "insert-interval",
+      "title": "Insert Interval",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 42,
+      "accepted_runtime_ms_hidden": 44
+    },
+    {
+      "problem_id": "invert-binary-tree",
+      "title": "Invert Binary Tree",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(h)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 47,
+      "accepted_runtime_ms_hidden": 46
+    },
+    {
+      "problem_id": "jump-game",
+      "title": "Jump Game",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 42,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "jump-game-ii",
+      "title": "Jump Game II",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 45
+    },
+    {
+      "problem_id": "koko-eating-bananas",
+      "title": "Koko Eating Bananas",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n log M)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 42,
+      "accepted_runtime_ms_hidden": 42
+    },
+    {
+      "problem_id": "kth-largest-element-in-an-array",
+      "title": "Kth Largest Element in an Array",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n log k)",
+      "space_complexity": "O(k)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 43,
+      "accepted_runtime_ms_hidden": 40
+    },
+    {
+      "problem_id": "linked-list-cycle",
+      "title": "Linked List Cycle",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(1)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "longest-common-subsequence",
+      "title": "Longest Common Subsequence",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(m*n)",
+      "space_complexity": "O(m*n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 38,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "longest-consecutive-sequence",
+      "title": "Longest Consecutive Sequence",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 47,
+      "accepted_runtime_ms_hidden": 50
+    },
+    {
+      "problem_id": "longest-increasing-subsequence",
+      "title": "Longest Increasing Subsequence",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 42,
+      "accepted_runtime_ms_hidden": 42
+    },
+    {
+      "problem_id": "longest-repeating-character-replacement",
+      "title": "Longest Repeating Character Replacement",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "longest-substring-without-repeating-characters",
+      "title": "Longest Substring Without Repeating Characters",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(min(n, alphabet))",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 42
+    },
+    {
+      "problem_id": "maximum-depth-of-binary-tree",
+      "title": "Maximum Depth of Binary Tree",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(h)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 39,
+      "accepted_runtime_ms_hidden": 39
+    },
+    {
+      "problem_id": "merge-intervals",
+      "title": "Merge Intervals",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 39
+    },
+    {
+      "problem_id": "merge-k-sorted-lists",
+      "title": "Merge K Sorted Lists",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(N log k)",
+      "space_complexity": "O(k)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 41,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "merge-two-sorted-lists",
+      "title": "Merge Two Sorted Lists",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n + m)",
+      "space_complexity": "O(1) extra",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 41,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "min-stack",
+      "title": "Min Stack",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n) total, O(1) each operation",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 41,
+      "accepted_runtime_ms_hidden": 44
+    },
+    {
+      "problem_id": "minimum-window-substring",
+      "title": "Minimum Window Substring",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(|s| + |t|)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 41,
+      "accepted_runtime_ms_hidden": 40
+    },
+    {
+      "problem_id": "network-delay-time",
+      "title": "Network Delay Time",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O((V + E) log V)",
+      "space_complexity": "O(V + E)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 41,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "non-overlapping-intervals",
+      "title": "Non-overlapping Intervals",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n log n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 47,
+      "accepted_runtime_ms_hidden": 50
+    },
+    {
+      "problem_id": "number-of-1-bits",
+      "title": "Number of 1 Bits",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(k)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 60,
+      "accepted_runtime_ms_hidden": 80
+    },
+    {
+      "problem_id": "number-of-islands",
+      "title": "Number of Islands",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(rows*cols)",
+      "space_complexity": "O(rows*cols) worst recursion/stack",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 42,
+      "accepted_runtime_ms_hidden": 39
+    },
+    {
+      "problem_id": "pacific-atlantic-water-flow",
+      "title": "Pacific Atlantic Water Flow",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(rows*cols)",
+      "space_complexity": "O(rows*cols)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 49,
+      "accepted_runtime_ms_hidden": 42
+    },
+    {
+      "problem_id": "partition-equal-subset-sum",
+      "title": "Partition Equal Subset Sum",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n * target)",
+      "space_complexity": "O(target)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 38,
+      "accepted_runtime_ms_hidden": 39
+    },
+    {
+      "problem_id": "permutation-in-string",
+      "title": "Permutation in String",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 43,
+      "accepted_runtime_ms_hidden": 40
+    },
+    {
+      "problem_id": "permutations",
+      "title": "Permutations",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n * n!)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 64
+    },
+    {
+      "problem_id": "plus-one",
+      "title": "Plus One",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1) extra",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 45,
+      "accepted_runtime_ms_hidden": 45
+    },
+    {
+      "problem_id": "powx-n",
+      "title": "Pow(x, n)",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(log |n|)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 42,
+      "accepted_runtime_ms_hidden": 39
+    },
+    {
+      "problem_id": "product-of-array-except-self",
+      "title": "Product of Array Except Self",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1) extra (excluding output)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 44,
+      "accepted_runtime_ms_hidden": 40
+    },
+    {
+      "problem_id": "remove-nth-node-from-end-of-list",
+      "title": "Remove Nth Node From End of List",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1) extra",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 39,
+      "accepted_runtime_ms_hidden": 42
+    },
+    {
+      "problem_id": "reorder-list",
+      "title": "Reorder List",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 39,
+      "accepted_runtime_ms_hidden": 40
+    },
+    {
+      "problem_id": "reverse-linked-list",
+      "title": "Reverse Linked List",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1) extra",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 43
+    },
+    {
+      "problem_id": "rotate-image",
+      "title": "Rotate Image",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n^2)",
+      "space_complexity": "O(n^2)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "same-tree",
+      "title": "Same Tree",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(h)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 45,
+      "accepted_runtime_ms_hidden": 43
+    },
+    {
+      "problem_id": "search-a-2d-matrix",
+      "title": "Search a 2D Matrix",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(log(m*n))",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 49,
+      "accepted_runtime_ms_hidden": 44
+    },
+    {
+      "problem_id": "search-in-rotated-sorted-array",
+      "title": "Search in Rotated Sorted Array",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(log n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 42,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "single-number",
+      "title": "Single Number",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 38,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "sliding-window-maximum",
+      "title": "Sliding Window Maximum",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(k)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 39,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "subsets",
+      "title": "Subsets",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n * 2^n)",
+      "space_complexity": "O(n * 2^n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 39
+    },
+    {
+      "problem_id": "subtree-of-another-tree",
+      "title": "Subtree of Another Tree",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n * m)",
+      "space_complexity": "O(h)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 41,
+      "accepted_runtime_ms_hidden": 42
+    },
+    {
+      "problem_id": "task-scheduler",
+      "title": "Task Scheduler",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(m)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 39,
+      "accepted_runtime_ms_hidden": 40
+    },
+    {
+      "problem_id": "top-k-frequent-elements",
+      "title": "Top K Frequent Elements",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n log k)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 41,
+      "accepted_runtime_ms_hidden": 43
+    },
+    {
+      "problem_id": "trapping-rain-water",
+      "title": "Trapping Rain Water",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 39,
+      "accepted_runtime_ms_hidden": 40
+    },
+    {
+      "problem_id": "two-sum",
+      "title": "Two Sum",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 40
+    },
+    {
+      "problem_id": "two-sum-ii-input-array-is-sorted",
+      "title": "Two Sum II - Input Array Is Sorted",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 39,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "unique-paths",
+      "title": "Unique Paths",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(m*n)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 39,
+      "accepted_runtime_ms_hidden": 39
+    },
+    {
+      "problem_id": "valid-anagram",
+      "title": "Valid Anagram",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 41,
+      "accepted_runtime_ms_hidden": 44
+    },
+    {
+      "problem_id": "valid-palindrome",
+      "title": "Valid Palindrome",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(1)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 41
+    },
+    {
+      "problem_id": "valid-parentheses",
+      "title": "Valid Parentheses",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 40,
+      "accepted_runtime_ms_hidden": 38
+    },
+    {
+      "problem_id": "word-search",
+      "title": "Word Search",
+      "has_reference_solution": true,
+      "algorithm_correct_visible": true,
+      "algorithm_correct_hidden": true,
+      "time_complexity": "O(rows*cols*4^L)",
+      "space_complexity": "O(L)",
+      "negative_verdicts": {
+        "wrong_answer": "Wrong Answer",
+        "runtime_error": "Runtime Error",
+        "time_limit": "Time Limit Exceeded",
+        "compilation_error": "Compilation Error"
+      },
+      "accepted_runtime_ms_visible": 38,
+      "accepted_runtime_ms_hidden": 37
+    }
+  ]
+}

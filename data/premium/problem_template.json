@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "required_root_fields": [
+    "problem_id",
+    "title",
+    "topic",
+    "subtopic",
+    "pattern",
+    "difficulty",
+    "metadata",
+    "educational_assets",
+    "hints",
+    "reference_solution",
+    "starter_code",
+    "tests",
+    "recommendation_graph",
+    "learning_objectives",
+    "common_mistakes",
+    "prerequisites",
+    "related_problems",
+    "rag_assets",
+    "version"
+  ],
+  "problem_template": {
+    "problem_id": "string-slug",
+    "title": "Problem Title",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "pattern": "Hash Map",
+    "difficulty": "Easy",
+    "metadata": {
+      "company_tags": ["google"],
+      "source": "internal",
+      "estimated_minutes": 20,
+      "tags": ["array", "hash-table"]
+    },
+    "educational_assets": {
+      "statement_md": "Full statement",
+      "constraints_md": "Detailed constraints",
+      "examples_md": "At least one worked example",
+      "editorial_md": "Approach breakdown and tradeoffs"
+    },
+    "hints": [
+      {"order": 1, "text_md": "Hint 1"}
+    ],
+    "reference_solution": {
+      "language": "python",
+      "code": "def solve(*args):\n    return None",
+      "time_complexity": "O(n)",
+      "space_complexity": "O(n)"
+    },
+    "starter_code": {
+      "language": "python",
+      "function_name": "solve",
+      "code": "def solve(*args):\n    return None"
+    },
+    "tests": {
+      "visible": [
+        {
+          "input": [],
+          "expected": null,
+          "explanation": "Visible sample"
+        }
+      ],
+      "hidden": [
+        {
+          "input": [],
+          "expected": null,
+          "explanation": "Hidden edge case"
+        }
+      ]
+    },
+    "recommendation_graph": {
+      "prerequisite": [],
+      "alternative": [],
+      "follow_up": [],
+      "review": [],
+      "recovery": []
+    },
+    "learning_objectives": [
+      "One clear measurable objective"
+    ],
+    "common_mistakes": [
+      "One common learner mistake"
+    ],
+    "prerequisites": [
+      "Prior concept"
+    ],
+    "related_problems": [
+      "other-problem-id"
+    ],
+    "rag_assets": {
+      "statement_chunks": [],
+      "editorial_chunks": [],
+      "hints_chunks": [],
+      "common_mistakes_chunks": [],
+      "learning_objectives_chunks": []
+    },
+    "version": 1
+  }
+}

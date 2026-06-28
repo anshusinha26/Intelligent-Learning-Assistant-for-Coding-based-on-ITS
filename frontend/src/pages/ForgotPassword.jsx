@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button.jsx";
 import {
     Card,
@@ -11,91 +11,90 @@ import {
 import { Input } from "@/components/ui/input.jsx";
 import { Label } from "@/components/ui/label.jsx";
 import { Loader2 } from "lucide-react";
-import axios from "axios";
 import { useToast } from "@/hooks/use-toast.js";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { apiRequest } from "@/lib/api.js";
 
 function ForgotPassword() {
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState("demo@example.com");
     const [loading, setLoading] = useState(false);
     const { toast } = useToast();
     const navigate = useNavigate();
-    const location = useLocation();
-    const { email: initialEmail } = location.state || {};
 
-    useEffect(() => {
-        if (initialEmail) {
-            setEmail(initialEmail);
-        }
-    }, [initialEmail]);
-
-    const submit = async (email) => {
+    const submit = async () => {
         setLoading(true);
-        const res = await axios
-            .post(
-                `${process.env.SERVER_URL}/auth/forgot-password`,
-                {
+        try {
+            const data = await apiRequest("/auth/forgot-password", {
+                method: "POST",
+                body: { email },
+            });
+            if (data.dev_otp) {
+                toast({
+                    title: "OTP generated",
+                    description: `Dev OTP: ${data.dev_otp}`,
+                });
+            } else {
+                toast({
+                    title: "OTP generated",
+                    description: data.message,
+                });
+            }
+            navigate("/verify-otp", {
+                state: {
                     email,
+                    purpose: "password_reset",
                 },
-                {
-                    validateStatus: false,
-                },
-            )
-            .then((res) => res.data);
-        if (res.success) {
-            toast({
-                title: "Success",
-                description: res.message,
             });
-            navigate("/verify-otp", { state: { email } });
-        } else {
+        } catch (error) {
             toast({
-                title: "An error occurred",
-                description: res.message,
+                title: "Request failed",
+                description: error.message,
             });
+        } finally {
+            setLoading(false);
         }
-        setLoading(false);
     };
 
     return (
-        <div className="h-full-w-nav w-screen m-auto flex items-center justify-center">
-            <Card className="w-[350px]">
+        <div className="min-h-full-w-nav w-full bg-[linear-gradient(135deg,hsl(var(--background))_0%,hsl(var(--secondary))_100%)] px-4 py-10 flex items-center justify-center">
+            <Card className="w-full max-w-[390px] shadow-lg">
                 <form
-                    onSubmit={(e) => {
-                        e.preventDefault();
-                        submit(email);
+                    onSubmit={(event) => {
+                        event.preventDefault();
+                        submit();
                     }}
                 >
                     <CardHeader>
-                        <CardTitle>Forgot Password</CardTitle>
+                        <CardTitle>Forgot password</CardTitle>
                         <CardDescription>
-                            Request a Password Reset
+                            Enter your account email to generate an OTP.
                         </CardDescription>
                     </CardHeader>
                     <CardContent>
                         <div className="grid w-full items-center gap-4">
                             <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="name">Email</Label>
+                                <Label htmlFor="email">Email</Label>
                                 <Input
                                     id="email"
                                     value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="Your email"
+                                    onChange={(event) =>
+                                        setEmail(event.target.value)
+                                    }
+                                    placeholder="you@example.com"
                                 />
                             </div>
+                            <Button variant="link" asChild className="px-0">
+                                <Link to="/login">Back to login</Link>
+                            </Button>
                         </div>
                     </CardContent>
                     <CardFooter className="flex justify-end">
-                        {loading ? (
-                            <Button disabled>
+                        <Button disabled={loading}>
+                            {loading ? (
                                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                Submitting
-                            </Button>
-                        ) : (
-                            <Button onClick={() => submit(email)}>
-                                Submit
-                            </Button>
-                        )}
+                            ) : null}
+                            Send OTP
+                        </Button>
                     </CardFooter>
                 </form>
             </Card>

@@ -1,0 +1,223 @@
+{
+  "phase": "Phase 4 \u2014 Learner Model & Adaptive Intelligence Validation",
+  "generated_at_utc": "2026-06-28T12:26:49+00:00",
+  "configuration": {
+    "learners_per_archetype": 200,
+    "archetype_count": 10,
+    "core_learners": 2000,
+    "stress_learners": 8000,
+    "total_learners": 10000,
+    "core_attempts_per_user": 45,
+    "stress_attempts_per_user": 2,
+    "minimum_submissions_required": 100000,
+    "recommender_strategy": "optimized",
+    "seed": 42
+  },
+  "part_1_synthetic_learners": {
+    "archetype_counts": {
+      "Beginner": 200,
+      "Intermediate": 200,
+      "Advanced": 200,
+      "Returning learners": 200,
+      "Weak Graph learners": 200,
+      "Weak DP learners": 200,
+      "Weak Tree learners": 200,
+      "Weak Array learners": 200,
+      "Random learners": 200,
+      "High-speed learners": 200
+    },
+    "unique_parameterized_learners": 10000,
+    "parameter_ranges": {
+      "accuracy": [
+        0.03,
+        0.97
+      ],
+      "speed_ms": [
+        220,
+        3158
+      ],
+      "consistency": [
+        0.05,
+        0.98
+      ],
+      "learning_rate": [
+        0.003,
+        0.0784
+      ],
+      "forgetting_rate": [
+        0.001,
+        0.1052
+      ]
+    }
+  },
+  "part_2_longitudinal_simulation": {
+    "attempt_rows": 101227,
+    "submission_rows": 101227,
+    "verdict_coverage": [
+      "Accepted",
+      "Wrong Answer",
+      "Runtime Error",
+      "Compilation Error",
+      "Time Limit Exceeded"
+    ],
+    "minimum_submissions_met": true,
+    "signals_included": [
+      "Accepted",
+      "Wrong Answer",
+      "Runtime Error",
+      "Compilation Error",
+      "Time Limit Exceeded",
+      "Repeated failures",
+      "Long inactivity",
+      "Rapid improvement",
+      "Regression",
+      "Topic switching"
+    ]
+  },
+  "part_3_learner_model": {
+    "skill_vs_mastery_correlation": 0.9573,
+    "skill_vs_success_correlation": 0.9556,
+    "weak_topic_detection_hit_rate": 0.7675,
+    "cold_start_recommendation_availability": 1.0,
+    "average_phase_improvement": 0.0058
+  },
+  "part_4_recommendation_engine": {
+    "precision_at_k": 0.7334,
+    "recall_at_k": 0.198,
+    "ndcg_at_k": 0.7727,
+    "coverage": 1.0,
+    "novelty": 0.4956,
+    "diversity": 0.7324,
+    "progression_signal": 0.6557,
+    "difficulty_mismatch_rate": 0.2611,
+    "unsolved_retry_focus": 1.0,
+    "weak_recovery_hit_rate": 0.2108,
+    "repeated_recommendation_rate": 0.0,
+    "topic_entropy": 3.6654,
+    "pending_recommendation_rows": 35812,
+    "distribution": {
+      "precision": {
+        "mean": 0.7334166666666667,
+        "std": 0.3195130735457732,
+        "ci95_low": 0.7194133888045613,
+        "ci95_high": 0.7474199445287721,
+        "n": 2000
+      },
+      "recall": {
+        "mean": 0.19804814437135446,
+        "std": 0.09728259785353624,
+        "ci95_low": 0.19378454653552013,
+        "ci95_high": 0.20231174220718878,
+        "n": 2000
+      },
+      "ndcg": {
+        "mean": 0.7726861679459324,
+        "std": 0.3024575115236709,
+        "ci95_low": 0.7594303830469142,
+        "ci95_high": 0.7859419528449505,
+        "n": 2000
+      },
+      "diversity": {
+        "mean": 0.7323583333333333,
+        "std": 0.220276390618443,
+        "ci95_low": 0.7227042948614151,
+        "ci95_high": 0.7420123718052516,
+        "n": 2000
+      },
+      "novelty": {
+        "mean": 0.4956060228664761,
+        "std": 0.10376466900048636,
+        "ci95_low": 0.4910583357369382,
+        "ci95_high": 0.500153709996014,
+        "n": 2000
+      },
+      "difficulty_mismatch": {
+        "mean": 0.26115,
+        "std": 0.26871114137675794,
+        "ci95_low": 0.24937321498277223,
+        "ci95_high": 0.2729267850172277,
+        "n": 2000
+      }
+    }
+  },
+  "part_5_revision_engine": {
+    "revision_rows": 31830,
+    "due_revisions": 30528,
+    "completed_revision_actions": 651,
+    "retention_improvement_effect": 0.0274
+  },
+  "part_6_personalization": {
+    "cross_phase_recommendation_overlap": 0.5873,
+    "cross_archetype_jaccard_mean": 0.0625,
+    "rag_personalization_probe": {
+      "answer_a": "Hint Level 2 - Algorithm Direction for 3Sum\n- Goal: choose the right approach and data structure.\n- Personalized for you:\n  - Weak area focus: Union Find / DFS Cycle Check (mastery 14%).\n  - Recent recurring mistake: logic-error (6 times).\n  - You have attempted this problem 45 time(s), last verdict: None.\n  - You have 11 due revision task(s); keep this hint concise and actionable.\n- Suggested str",
+      "answer_b": "Hint Level 2 - Algorithm Direction for 3Sum\n- Goal: choose the right approach and data structure.\n- Personalized for you:\n  - Weak area focus: Dynamic Programming (mastery 12%).\n  - Recent recurring mistake: timeout (8 times).\n  - You have attempted this problem 45 time(s), last verdict: None.\n  - You have 5 due revision task(s); keep this hint concise and actionable.\n- Suggested strategy family: ",
+      "identical": false,
+      "mentions_a_topic": false,
+      "mentions_b_topic": true
+    }
+  },
+  "part_7_stress_test": {
+    "active_learners_simulated": 10000,
+    "simulated_submissions": 101227,
+    "stress_wall_seconds": 340.2535,
+    "stress_cpu_seconds": 328.1459,
+    "memory_peak_mb": 120.38,
+    "learner_update_latency_ms": {
+      "p50": 1.217,
+      "p95": 1.868,
+      "max": 35.071
+    },
+    "recommendation_latency_ms": {
+      "p50": 31.254,
+      "p95": 32.87,
+      "max": 196.752
+    },
+    "revision_latency_ms": {
+      "p50": 1.0,
+      "p95": 1.744,
+      "max": 11.011
+    }
+  },
+  "part_8_scientific_validation": {
+    "consistency_checks": {
+      "no_duplicate_pending_recommendations": true,
+      "nonzero_revision_activity": true,
+      "weak_topic_signal_present": true
+    },
+    "detected_failure_modes": [
+      {
+        "severity": "Medium",
+        "issue": "Revision effect size is weak",
+        "metric": 0.02735604944061097
+      }
+    ]
+  },
+  "part_9_auto_tuning": {
+    "statistically_justified": false,
+    "recommendation_weight_adjustment": "No tuning applied. Evidence does not justify parameter changes.",
+    "t_stat_precision_vs_random": 69.324,
+    "random_baseline_precision": 0.2381
+  },
+  "quality_gate": {
+    "learning_quality_score": 8.67,
+    "recommendation_quality_score": 6.24,
+    "revision_quality_score": 8.35,
+    "personalization_quality_score": 7.79,
+    "its_quality_score": 7.74,
+    "production_readiness_after_phase4": "Ready for controlled production pilot"
+  },
+  "tests_added": [
+    "tests/test_phase4_adaptive_validation.py::test_phase4_small_run_metrics",
+    "tests/test_phase4_adaptive_validation.py::test_phase4_counts_and_quality_gate"
+  ],
+  "limitations": [
+    "Stress test models 10,000 active learners with interleaved operations on SQLite. True multi-node concurrency is out of scope for single-process simulation.",
+    "Educational outcomes are derived from synthetic behavior profiles, not real classroom cohorts."
+  ],
+  "debug": {
+    "baseline_update_latency_ms_p95": 0.857,
+    "baseline_recommendation_latency_ms_p95": 17.61,
+    "baseline_revision_latency_ms_p95": 0.699
+  }
+}

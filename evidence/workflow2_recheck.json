@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-06-26T16:51:16.271153",
+  "workflow": "workflow_2_returning_user_resume_recheck",
+  "statuses": {
+    "login": 200,
+    "before_dashboard": 200,
+    "submissions": 200,
+    "problem": 200,
+    "submit": 200,
+    "after_dashboard": 200
+  },
+  "problem_id": "two-sum",
+  "submit_verdict": "Accepted",
+  "dashboard_before": {
+    "total_problems_attempted": 4,
+    "total_problems_solved": 54,
+    "success_rate": 85.71,
+    "current_streak": 1
+  },
+  "dashboard_after": {
+    "total_problems_attempted": 4,
+    "total_problems_solved": 55,
+    "success_rate": 85.94,
+    "current_streak": 2
+  }
+}

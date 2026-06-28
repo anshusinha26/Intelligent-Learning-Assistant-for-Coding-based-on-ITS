@@ -10,6 +10,8 @@ import unicodedata
 from pathlib import Path
 
 from src.database import Database
+from src.config import settings
+from src.premium_bank_loader import sync_premium_problem_bank
 
 
 DIFFICULTIES = {"Easy", "Medium", "Hard"}
@@ -98,6 +100,8 @@ def _candidate_dsa_paths():
     if env_path:
         paths.append(Path(env_path))
     paths.extend([
+        Path(settings.legacy_problem_bank_path),
+        Path("data/archive/legacy_problem_bank/dsa_problems.md"),
         Path("data/dsa_problems.md"),
         Path.home() / "Desktop" / "DSA Problems.md",
     ])
@@ -387,7 +391,7 @@ def _generate_question_bank(count: int = 420):
     return generated
 
 def load_sample_problems(db: Database):
-    """Load curated DSA problems; fallback to generated scaffold if markdown is absent."""
+    """Load premium problem bank by default; optionally load archived legacy data."""
     conn = db.get_connection()
     cursor = conn.cursor()
     
@@ -471,14 +475,17 @@ def load_sample_problems(db: Database):
          "graph,dfs,bfs,hash-table", "Deep copy of graph"),
     ]
     
-    curated_problems = _load_curated_problem_bank()
-    if curated_problems:
-        problems = curated_problems
-        for table in ("recommendations", "revision_schedule", "submissions", "attempts"):
-            cursor.execute(f"DELETE FROM {table} WHERE problem_id LIKE ?", ("%-drill-%",))
-        cursor.execute("DELETE FROM problems WHERE problem_id LIKE ?", ("%-drill-%",))
+    if settings.load_legacy_problem_bank:
+        curated_problems = _load_curated_problem_bank()
+        if curated_problems:
+            problems = curated_problems
+            for table in ("recommendations", "revision_schedule", "submissions", "attempts"):
+                cursor.execute(f"DELETE FROM {table} WHERE problem_id LIKE ?", ("%-drill-%",))
+            cursor.execute("DELETE FROM problems WHERE problem_id LIKE ?", ("%-drill-%",))
+        else:
+            problems = []
     else:
-        problems.extend(_generate_question_bank())
+        problems = []
 
     for problem in (_with_judge_fields(problem) for problem in problems):
         try:
@@ -486,15 +493,17 @@ def load_sample_problems(db: Database):
                 INSERT OR IGNORE INTO problems 
                 (
                     problem_id, title, topic, pattern, difficulty, tags, description,
-                    constraints, examples, source_url, function_name, starter_code, test_cases
+                    constraints, examples, source_url, function_name, starter_code, test_cases,
+                    dataset_tier, is_active
                 )
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'legacy', 0)
             """, problem)
             cursor.execute("""
                 UPDATE problems
                 SET title = ?, topic = ?, pattern = ?, difficulty = ?, tags = ?,
                     description = ?, constraints = ?, examples = ?, source_url = ?,
-                    function_name = ?, starter_code = ?, test_cases = ?
+                    function_name = ?, starter_code = ?, test_cases = ?,
+                    dataset_tier = 'legacy', is_active = 0
                 WHERE problem_id = ?
             """, (
                 problem[1], problem[2], problem[3], problem[4], problem[5],
@@ -506,7 +515,16 @@ def load_sample_problems(db: Database):
     
     conn.commit()
     conn.close()
-    print(f"Loaded {len(problems)} sample problems")
+    if settings.load_legacy_problem_bank:
+        print(f"Loaded {len(problems)} legacy sample problems")
+    else:
+        result = sync_premium_problem_bank(db, Path(settings.premium_problem_bank_path))
+        print(
+            "Loaded premium problem bank:",
+            f"problems={result.loaded_count},",
+            f"relationships={result.relationship_count},",
+            f"rag_chunks={result.rag_chunk_count}",
+        )
 
 def create_demo_user(db: Database):
     """Create a demo user with some practice history"""
@@ -581,7 +599,7 @@ def create_demo_user(db: Database):
         return None
 
 if __name__ == "__main__":
-    db = Database()
+    db = Database(settings.db_path)
     print("Loading sample data...")
     load_sample_problems(db)
     user_id = create_demo_user(db)

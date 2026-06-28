@@ -1,164 +1,53 @@
-# 🚀 Quick Start Guide
+# Quick Start (Current)
 
-## Installation (5 minutes)
+This file tracks the current Phase 1–6 runtime flow.
 
-### Step 1: Install Dependencies
+For full documentation, use `README.md`.
+
+## 1) Backend
+
 ```bash
-python3 -m pip install -r requirements.txt
-```
-
-### Step 2: Load Sample Data
-```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python3 scripts/manage_migrations.py upgrade --db-path data/coding_assistant.db
 python3 load_sample_data.py
+PORT=8020 python3 -m src.main
 ```
 
-This creates:
-- ✅ Database with schema
-- ✅ 30 sample coding problems
-- ✅ Demo user account
-- ✅ Sample practice history
+Backend:
 
-### Step 3: Start the Server
+- `http://localhost:8020/api/health`
+- `http://localhost:8020/docs`
 
-**Option A - Using the startup script:**
-```bash
-# Linux/Mac
-./run.sh
-
-# Windows
-run.bat
-```
-
-**Option B - Manual start:**
-```bash
-python3 -m src.main
-```
-
-The API will start at `http://localhost:8000` (default).  
-If port 8000 is busy:
-```bash
-PORT=8001 python3 -m src.main
-# or
-PORT=8001 ./run.sh
-```
-
-### Step 4: Open the Frontend
-
-Open `frontend/index.html` in your web browser, or:
+## 2) Frontend
 
 ```bash
 cd frontend
-python3 -m http.server 8080
+npm install
+VITE_API_URL=http://localhost:8020/api npm run dev -- --host 0.0.0.0 --port 5173
 ```
 
-Then visit `http://localhost:8080`
+Frontend:
 
-## 🔐 Demo Login
+- `http://localhost:5173`
 
-Use these credentials to login:
-- **Email:** `demo@example.com`
-- **Password:** `demo123`
+## 3) Demo Login
 
-## ✅ Verify Installation
+- Email: `demo@example.com`
+- Password: `demo123`
 
-Run the test script to verify everything is working:
-```bash
-python3 test_installation.py
-```
+## 4) Quick Verification
 
-## 📖 What You'll See
-
-After logging in, you'll see:
-
-1. **Dashboard Stats**
-   - Problems solved
-   - Success rate
-   - Current streak
-   - Due revisions
-
-2. **Personalized Recommendations**
-   - Top 5 problems recommended for you
-   - Explanations for why each problem is suggested
-   - Based on your weaknesses and error patterns
-
-3. **Your Weaknesses**
-   - Topics/patterns where you need improvement
-   - Mastery scores
-   - Success rates
-
-4. **Revision Queue**
-   - Problems due for spaced repetition review
-   - Based on forgetting curve
-
-## 🎯 Try These Actions
-
-### 1. Generate New Recommendations
-Click "Generate New" button to get fresh recommendations based on current progress.
-
-### 2. Record Practice Attempts
-Use the API to log practice:
+Premium active count should be 75:
 
 ```bash
-curl -X POST http://localhost:8000/api/attempts \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "problem_id": "two-sum",
-    "verdict": "Accepted",
-    "time_taken": 300,
-    "error_type": null
-  }'
+python3 - <<'PY'
+import sqlite3
+conn = sqlite3.connect("data/coding_assistant.db")
+cur = conn.cursor()
+cur.execute("SELECT COUNT(*) FROM problems WHERE dataset_tier='premium' AND is_active=1")
+print(cur.fetchone()[0])
+conn.close()
+PY
 ```
-
-### 3. View API Documentation
-Visit `http://localhost:8000/docs` for interactive API docs (Swagger UI).  
-If you changed backend port, use that port in the URL.
-
-## 🐛 Troubleshooting
-
-### Error: "Module not found"
-```bash
-python3 -m pip install -r requirements.txt
-```
-
-### Error: "Database not found"
-```bash
-python3 load_sample_data.py
-```
-
-### Error: "Port 8000 already in use"
-Run the backend on a different port:
-```bash
-PORT=8001 python3 -m src.main
-# or
-PORT=8001 ./run.sh
-```
-
-### Frontend can't connect to API
-Make sure:
-1. Backend is running and open frontend with `?api=http://localhost:PORT/api` when using a custom backend port
-2. Open browser console (F12) to see errors
-3. Check CORS origins in `src/config.py` include your frontend URL
-
-## 📚 Next Steps
-
-1. **Explore the Code**
-   - Start with `src/main.py` for API endpoints
-   - Check `src/recommender.py` for recommendation algorithm
-   - Review `src/learner_model.py` for metrics calculation
-
-2. **Customize**
-   - Add your own problems to the database
-   - Modify recommendation scoring weights
-   - Adjust spaced repetition intervals
-
-3. **Test Different Scenarios**
-   - Create a new user account
-   - Log attempts with different error types
-   - Observe how recommendations change
-
-## 📞 Need Help?
-
-- Check `README.md` for detailed documentation
-- Review Phase 1 and Phase 2 PDFs for design specs
-- Contact: Anshu Sinha (anshujuly2@gmail.com)

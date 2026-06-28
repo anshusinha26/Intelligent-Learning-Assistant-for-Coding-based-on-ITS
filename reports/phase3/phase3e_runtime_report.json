@@ -1,0 +1,9 @@
+{
+  "problems_status": 200,
+  "problems_count": 25,
+  "search_status": 200,
+  "detail_status": 200,
+  "dashboard_status": 200,
+  "rag_status": 200,
+  "rag_source": "local-rag"
+}

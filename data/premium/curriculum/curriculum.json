@@ -1,0 +1,1688 @@
+{
+  "version": "1.0",
+  "target_problem_count": 75,
+  "generated_on": "2026-06-26",
+  "notes": "Design specification only. No problem statements, hints, or editorials included in this phase.",
+  "problems": [
+    {
+      "order": 1,
+      "title": "Two Sum",
+      "slug": "two-sum",
+      "topic": "Arrays & Hashing",
+      "subtopic": "Hash Table Basics",
+      "pattern": "Complement Lookup",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 20,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Use a hash map for O(1) complement lookup",
+        "Track index-value mapping safely in one pass"
+      ],
+      "recommendation_prerequisites": [],
+      "review_prerequisites": []
+    },
+    {
+      "order": 2,
+      "title": "Contains Duplicate",
+      "slug": "contains-duplicate",
+      "topic": "Arrays & Hashing",
+      "subtopic": "Set Fundamentals",
+      "pattern": "Membership Test",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 15,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Use set cardinality to detect duplicates",
+        "Choose data structures from required operations"
+      ],
+      "recommendation_prerequisites": [],
+      "review_prerequisites": []
+    },
+    {
+      "order": 3,
+      "title": "Valid Anagram",
+      "slug": "valid-anagram",
+      "topic": "Arrays & Hashing",
+      "subtopic": "Frequency Counting",
+      "pattern": "Character Histogram",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 20,
+      "prerequisites": [
+        "contains-duplicate"
+      ],
+      "learning_objectives": [
+        "Build and compare frequency maps correctly",
+        "Handle edge cases with unequal lengths"
+      ],
+      "recommendation_prerequisites": [
+        "contains-duplicate"
+      ],
+      "review_prerequisites": [
+        "contains-duplicate"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "Group Anagrams",
+      "slug": "group-anagrams",
+      "topic": "Arrays & Hashing",
+      "subtopic": "Hashing Composite Keys",
+      "pattern": "Canonical Representation",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "valid-anagram"
+      ],
+      "learning_objectives": [
+        "Design stable grouping keys from strings",
+        "Trade off sorted-key vs count-key approaches"
+      ],
+      "recommendation_prerequisites": [
+        "valid-anagram"
+      ],
+      "review_prerequisites": [
+        "valid-anagram"
+      ]
+    },
+    {
+      "order": 5,
+      "title": "Product of Array Except Self",
+      "slug": "product-of-array-except-self",
+      "topic": "Arrays & Hashing",
+      "subtopic": "Prefix/Suffix Accumulation",
+      "pattern": "Two Pass Prefix-Suffix",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "two-sum"
+      ],
+      "learning_objectives": [
+        "Compute left/right aggregates without division",
+        "Optimize auxiliary space to O(1) output-excluded"
+      ],
+      "recommendation_prerequisites": [
+        "two-sum"
+      ],
+      "review_prerequisites": [
+        "two-sum"
+      ]
+    },
+    {
+      "order": 6,
+      "title": "Top K Frequent Elements",
+      "slug": "top-k-frequent-elements",
+      "topic": "Arrays & Hashing",
+      "subtopic": "Frequency Ranking",
+      "pattern": "Bucket / Heap Hybrid",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 40,
+      "prerequisites": [
+        "group-anagrams"
+      ],
+      "learning_objectives": [
+        "Convert frequency maps into ranked outputs",
+        "Pick bucket sort when key range is bounded"
+      ],
+      "recommendation_prerequisites": [
+        "group-anagrams"
+      ],
+      "review_prerequisites": [
+        "valid-anagram"
+      ]
+    },
+    {
+      "order": 7,
+      "title": "Longest Consecutive Sequence",
+      "slug": "longest-consecutive-sequence",
+      "topic": "Arrays & Hashing",
+      "subtopic": "Set-Based Sequence Expansion",
+      "pattern": "Start-of-Run Detection",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 40,
+      "prerequisites": [
+        "contains-duplicate"
+      ],
+      "learning_objectives": [
+        "Avoid redundant scans using run-start criteria",
+        "Prove expected O(n) complexity with hashing"
+      ],
+      "recommendation_prerequisites": [
+        "contains-duplicate"
+      ],
+      "review_prerequisites": [
+        "contains-duplicate"
+      ]
+    },
+    {
+      "order": 8,
+      "title": "Valid Palindrome",
+      "slug": "valid-palindrome",
+      "topic": "Two Pointers",
+      "subtopic": "Converging Pointers",
+      "pattern": "Bidirectional Scan",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 20,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Design symmetric scans with skip conditions",
+        "Normalize and compare characters safely"
+      ],
+      "recommendation_prerequisites": [],
+      "review_prerequisites": []
+    },
+    {
+      "order": 9,
+      "title": "Two Sum II - Input Array Is Sorted",
+      "slug": "two-sum-ii-input-array-is-sorted",
+      "topic": "Two Pointers",
+      "subtopic": "Monotonic Arrays",
+      "pattern": "Opposite-End Pointer Movement",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 20,
+      "prerequisites": [
+        "two-sum",
+        "valid-palindrome"
+      ],
+      "learning_objectives": [
+        "Use sorted order to eliminate search branches",
+        "Maintain invariant for pointer movement"
+      ],
+      "recommendation_prerequisites": [
+        "two-sum",
+        "valid-palindrome"
+      ],
+      "review_prerequisites": [
+        "two-sum"
+      ]
+    },
+    {
+      "order": 10,
+      "title": "3Sum",
+      "slug": "3sum",
+      "topic": "Two Pointers",
+      "subtopic": "Sorting + Deduplication",
+      "pattern": "Fixed Index + Two Pointers",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 45,
+      "prerequisites": [
+        "two-sum-ii-input-array-is-sorted"
+      ],
+      "learning_objectives": [
+        "Handle duplicates without missing valid triplets",
+        "Control nested pointer complexity with sorting"
+      ],
+      "recommendation_prerequisites": [
+        "two-sum-ii-input-array-is-sorted"
+      ],
+      "review_prerequisites": [
+        "two-sum"
+      ]
+    },
+    {
+      "order": 11,
+      "title": "Container With Most Water",
+      "slug": "container-with-most-water",
+      "topic": "Two Pointers",
+      "subtopic": "Greedy Pointer Choice",
+      "pattern": "Shrink from Boundaries",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "two-sum-ii-input-array-is-sorted"
+      ],
+      "learning_objectives": [
+        "Use area bounds to justify pointer moves",
+        "Reason about greedy correctness"
+      ],
+      "recommendation_prerequisites": [
+        "two-sum-ii-input-array-is-sorted"
+      ],
+      "review_prerequisites": [
+        "valid-palindrome"
+      ]
+    },
+    {
+      "order": 12,
+      "title": "Trapping Rain Water",
+      "slug": "trapping-rain-water",
+      "topic": "Two Pointers",
+      "subtopic": "Prefix Boundary Reasoning",
+      "pattern": "Two Pointer with Running Max",
+      "difficulty": "Hard",
+      "estimated_solving_time_minutes": 60,
+      "prerequisites": [
+        "container-with-most-water"
+      ],
+      "learning_objectives": [
+        "Maintain left/right max invariants",
+        "Translate geometric intuition into pointer logic"
+      ],
+      "recommendation_prerequisites": [
+        "container-with-most-water"
+      ],
+      "review_prerequisites": [
+        "container-with-most-water",
+        "two-sum-ii-input-array-is-sorted"
+      ]
+    },
+    {
+      "order": 13,
+      "title": "Longest Substring Without Repeating Characters",
+      "slug": "longest-substring-without-repeating-characters",
+      "topic": "Sliding Window",
+      "subtopic": "Dynamic Window Size",
+      "pattern": "Expand-Contract Window",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "contains-duplicate"
+      ],
+      "learning_objectives": [
+        "Track last-seen positions for window validity",
+        "Update window start without rollback bugs"
+      ],
+      "recommendation_prerequisites": [
+        "contains-duplicate"
+      ],
+      "review_prerequisites": [
+        "contains-duplicate"
+      ]
+    },
+    {
+      "order": 14,
+      "title": "Longest Repeating Character Replacement",
+      "slug": "longest-repeating-character-replacement",
+      "topic": "Sliding Window",
+      "subtopic": "Window Feasibility",
+      "pattern": "Max Frequency Window",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 40,
+      "prerequisites": [
+        "longest-substring-without-repeating-characters"
+      ],
+      "learning_objectives": [
+        "Use dominant frequency to evaluate replacements",
+        "Preserve linear-time window updates"
+      ],
+      "recommendation_prerequisites": [
+        "longest-substring-without-repeating-characters"
+      ],
+      "review_prerequisites": [
+        "longest-substring-without-repeating-characters"
+      ]
+    },
+    {
+      "order": 15,
+      "title": "Permutation in String",
+      "slug": "permutation-in-string",
+      "topic": "Sliding Window",
+      "subtopic": "Fixed-Length Window",
+      "pattern": "Frequency Delta Tracking",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "valid-anagram",
+        "longest-substring-without-repeating-characters"
+      ],
+      "learning_objectives": [
+        "Maintain rolling frequency diff vectors",
+        "Detect exact anagram matches in O(n)"
+      ],
+      "recommendation_prerequisites": [
+        "valid-anagram",
+        "longest-substring-without-repeating-characters"
+      ],
+      "review_prerequisites": [
+        "valid-anagram"
+      ]
+    },
+    {
+      "order": 16,
+      "title": "Minimum Window Substring",
+      "slug": "minimum-window-substring",
+      "topic": "Sliding Window",
+      "subtopic": "Cover Constraints",
+      "pattern": "Need/Have Counter",
+      "difficulty": "Hard",
+      "estimated_solving_time_minutes": 65,
+      "prerequisites": [
+        "permutation-in-string"
+      ],
+      "learning_objectives": [
+        "Encode exact coverage criteria with counters",
+        "Minimize window while preserving feasibility"
+      ],
+      "recommendation_prerequisites": [
+        "permutation-in-string"
+      ],
+      "review_prerequisites": [
+        "longest-substring-without-repeating-characters",
+        "permutation-in-string"
+      ]
+    },
+    {
+      "order": 17,
+      "title": "Sliding Window Maximum",
+      "slug": "sliding-window-maximum",
+      "topic": "Sliding Window",
+      "subtopic": "Monotonic Deque",
+      "pattern": "Deque Optimization",
+      "difficulty": "Hard",
+      "estimated_solving_time_minutes": 60,
+      "prerequisites": [
+        "minimum-window-substring"
+      ],
+      "learning_objectives": [
+        "Use monotonic structures inside sliding windows",
+        "Prove amortized O(n) deque operations"
+      ],
+      "recommendation_prerequisites": [
+        "minimum-window-substring"
+      ],
+      "review_prerequisites": [
+        "longest-repeating-character-replacement"
+      ]
+    },
+    {
+      "order": 18,
+      "title": "Valid Parentheses",
+      "slug": "valid-parentheses",
+      "topic": "Stack",
+      "subtopic": "Delimiter Matching",
+      "pattern": "Push-Pop Validation",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 20,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Use stack LIFO property for nested structure checks",
+        "Reject mismatched close tokens early"
+      ],
+      "recommendation_prerequisites": [],
+      "review_prerequisites": []
+    },
+    {
+      "order": 19,
+      "title": "Min Stack",
+      "slug": "min-stack",
+      "topic": "Stack",
+      "subtopic": "Augmented Data Structures",
+      "pattern": "State Coupling",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 30,
+      "prerequisites": [
+        "valid-parentheses"
+      ],
+      "learning_objectives": [
+        "Store auxiliary state per operation",
+        "Maintain O(1) min retrieval"
+      ],
+      "recommendation_prerequisites": [
+        "valid-parentheses"
+      ],
+      "review_prerequisites": [
+        "valid-parentheses"
+      ]
+    },
+    {
+      "order": 20,
+      "title": "Evaluate Reverse Polish Notation",
+      "slug": "evaluate-reverse-polish-notation",
+      "topic": "Stack",
+      "subtopic": "Expression Evaluation",
+      "pattern": "Operator Reduction",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 30,
+      "prerequisites": [
+        "valid-parentheses"
+      ],
+      "learning_objectives": [
+        "Apply postfix execution rules with stack",
+        "Handle integer division semantics carefully"
+      ],
+      "recommendation_prerequisites": [
+        "valid-parentheses"
+      ],
+      "review_prerequisites": [
+        "valid-parentheses"
+      ]
+    },
+    {
+      "order": 21,
+      "title": "Daily Temperatures",
+      "slug": "daily-temperatures",
+      "topic": "Stack",
+      "subtopic": "Monotonic Stack",
+      "pattern": "Next Greater Element",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "min-stack"
+      ],
+      "learning_objectives": [
+        "Use monotonic decreasing stack of indices",
+        "Compute next greater distances in one pass"
+      ],
+      "recommendation_prerequisites": [
+        "min-stack"
+      ],
+      "review_prerequisites": [
+        "min-stack"
+      ]
+    },
+    {
+      "order": 22,
+      "title": "Car Fleet",
+      "slug": "car-fleet",
+      "topic": "Stack",
+      "subtopic": "Sorted Processing",
+      "pattern": "Monotonic Times",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "daily-temperatures"
+      ],
+      "learning_objectives": [
+        "Sort by position and merge by arrival time",
+        "Recognize implicit monotonic stack behavior"
+      ],
+      "recommendation_prerequisites": [
+        "daily-temperatures"
+      ],
+      "review_prerequisites": [
+        "daily-temperatures"
+      ]
+    },
+    {
+      "order": 23,
+      "title": "Binary Search",
+      "slug": "binary-search",
+      "topic": "Binary Search",
+      "subtopic": "Search Invariants",
+      "pattern": "Classic Midpoint Partition",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 20,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Maintain valid low/high invariant boundaries",
+        "Prevent infinite loops and off-by-one errors"
+      ],
+      "recommendation_prerequisites": [],
+      "review_prerequisites": []
+    },
+    {
+      "order": 24,
+      "title": "Search a 2D Matrix",
+      "slug": "search-a-2d-matrix",
+      "topic": "Binary Search",
+      "subtopic": "Index Mapping",
+      "pattern": "Flattened Binary Search",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 30,
+      "prerequisites": [
+        "binary-search"
+      ],
+      "learning_objectives": [
+        "Map 1D indices to 2D coordinates correctly",
+        "Preserve logarithmic runtime guarantees"
+      ],
+      "recommendation_prerequisites": [
+        "binary-search"
+      ],
+      "review_prerequisites": [
+        "binary-search"
+      ]
+    },
+    {
+      "order": 25,
+      "title": "Koko Eating Bananas",
+      "slug": "koko-eating-bananas",
+      "topic": "Binary Search",
+      "subtopic": "Answer Space Search",
+      "pattern": "Binary Search on Feasibility",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 40,
+      "prerequisites": [
+        "binary-search"
+      ],
+      "learning_objectives": [
+        "Define monotonic feasibility function",
+        "Binary search minimal valid speed"
+      ],
+      "recommendation_prerequisites": [
+        "binary-search"
+      ],
+      "review_prerequisites": [
+        "binary-search"
+      ]
+    },
+    {
+      "order": 26,
+      "title": "Find Minimum in Rotated Sorted Array",
+      "slug": "find-minimum-in-rotated-sorted-array",
+      "topic": "Binary Search",
+      "subtopic": "Rotated Arrays",
+      "pattern": "Pivot Side Detection",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "binary-search"
+      ],
+      "learning_objectives": [
+        "Use sorted-half checks to localize pivot",
+        "Return extremum with narrowed interval"
+      ],
+      "recommendation_prerequisites": [
+        "binary-search"
+      ],
+      "review_prerequisites": [
+        "binary-search"
+      ]
+    },
+    {
+      "order": 27,
+      "title": "Search in Rotated Sorted Array",
+      "slug": "search-in-rotated-sorted-array",
+      "topic": "Binary Search",
+      "subtopic": "Conditional Half Selection",
+      "pattern": "Rotated Binary Search",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 40,
+      "prerequisites": [
+        "find-minimum-in-rotated-sorted-array"
+      ],
+      "learning_objectives": [
+        "Choose search half using sorted-bound logic",
+        "Integrate pivot reasoning with target checks"
+      ],
+      "recommendation_prerequisites": [
+        "find-minimum-in-rotated-sorted-array"
+      ],
+      "review_prerequisites": [
+        "binary-search"
+      ]
+    },
+    {
+      "order": 28,
+      "title": "Reverse Linked List",
+      "slug": "reverse-linked-list",
+      "topic": "Linked List",
+      "subtopic": "Pointer Rewiring",
+      "pattern": "Iterative Reversal",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 20,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Perform safe in-place pointer reversal",
+        "Track prev/curr/next states correctly"
+      ],
+      "recommendation_prerequisites": [],
+      "review_prerequisites": []
+    },
+    {
+      "order": 29,
+      "title": "Merge Two Sorted Lists",
+      "slug": "merge-two-sorted-lists",
+      "topic": "Linked List",
+      "subtopic": "List Stitching",
+      "pattern": "Dummy Head Merge",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 20,
+      "prerequisites": [
+        "reverse-linked-list"
+      ],
+      "learning_objectives": [
+        "Use dummy node to simplify edge handling",
+        "Preserve sorted invariant during merge"
+      ],
+      "recommendation_prerequisites": [
+        "reverse-linked-list"
+      ],
+      "review_prerequisites": [
+        "reverse-linked-list"
+      ]
+    },
+    {
+      "order": 30,
+      "title": "Reorder List",
+      "slug": "reorder-list",
+      "topic": "Linked List",
+      "subtopic": "Split + Reverse + Merge",
+      "pattern": "Fast-Slow + Interleave",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 45,
+      "prerequisites": [
+        "reverse-linked-list",
+        "merge-two-sorted-lists"
+      ],
+      "learning_objectives": [
+        "Compose multi-step linked-list transformations",
+        "Avoid cycle creation in pointer rewires"
+      ],
+      "recommendation_prerequisites": [
+        "reverse-linked-list",
+        "merge-two-sorted-lists"
+      ],
+      "review_prerequisites": [
+        "reverse-linked-list"
+      ]
+    },
+    {
+      "order": 31,
+      "title": "Remove Nth Node From End of List",
+      "slug": "remove-nth-node-from-end-of-list",
+      "topic": "Linked List",
+      "subtopic": "Gap Pointers",
+      "pattern": "Two Pointer Offset",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 30,
+      "prerequisites": [
+        "reverse-linked-list"
+      ],
+      "learning_objectives": [
+        "Maintain fixed-gap pointer distance",
+        "Handle deletion including head node case"
+      ],
+      "recommendation_prerequisites": [
+        "reverse-linked-list"
+      ],
+      "review_prerequisites": [
+        "reverse-linked-list"
+      ]
+    },
+    {
+      "order": 32,
+      "title": "Linked List Cycle",
+      "slug": "linked-list-cycle",
+      "topic": "Linked List",
+      "subtopic": "Cycle Detection",
+      "pattern": "Floyd Fast-Slow",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 25,
+      "prerequisites": [
+        "reverse-linked-list"
+      ],
+      "learning_objectives": [
+        "Apply tortoise-hare reasoning for cycle checks",
+        "Distinguish null-termination from cycles"
+      ],
+      "recommendation_prerequisites": [
+        "reverse-linked-list"
+      ],
+      "review_prerequisites": [
+        "reverse-linked-list"
+      ]
+    },
+    {
+      "order": 33,
+      "title": "Invert Binary Tree",
+      "slug": "invert-binary-tree",
+      "topic": "Trees",
+      "subtopic": "Recursive Traversal",
+      "pattern": "DFS Swap",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 20,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Traverse tree recursively with post-order updates",
+        "Swap child pointers safely"
+      ],
+      "recommendation_prerequisites": [],
+      "review_prerequisites": []
+    },
+    {
+      "order": 34,
+      "title": "Maximum Depth of Binary Tree",
+      "slug": "maximum-depth-of-binary-tree",
+      "topic": "Trees",
+      "subtopic": "Height Computation",
+      "pattern": "DFS Height",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 20,
+      "prerequisites": [
+        "invert-binary-tree"
+      ],
+      "learning_objectives": [
+        "Define recursive base and combine steps",
+        "Compute structural metrics from subtrees"
+      ],
+      "recommendation_prerequisites": [
+        "invert-binary-tree"
+      ],
+      "review_prerequisites": [
+        "invert-binary-tree"
+      ]
+    },
+    {
+      "order": 35,
+      "title": "Diameter of Binary Tree",
+      "slug": "diameter-of-binary-tree",
+      "topic": "Trees",
+      "subtopic": "Global + Local State",
+      "pattern": "DFS with Global Best",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "maximum-depth-of-binary-tree"
+      ],
+      "learning_objectives": [
+        "Return local heights while updating global optimum",
+        "Separate path-through-node vs subtree-only cases"
+      ],
+      "recommendation_prerequisites": [
+        "maximum-depth-of-binary-tree"
+      ],
+      "review_prerequisites": [
+        "maximum-depth-of-binary-tree"
+      ]
+    },
+    {
+      "order": 36,
+      "title": "Balanced Binary Tree",
+      "slug": "balanced-binary-tree",
+      "topic": "Trees",
+      "subtopic": "Constraint Checking",
+      "pattern": "Bottom-Up Validation",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 30,
+      "prerequisites": [
+        "maximum-depth-of-binary-tree"
+      ],
+      "learning_objectives": [
+        "Combine height computation and balance checks",
+        "Short-circuit recursion on invalid subtrees"
+      ],
+      "recommendation_prerequisites": [
+        "maximum-depth-of-binary-tree"
+      ],
+      "review_prerequisites": [
+        "maximum-depth-of-binary-tree"
+      ]
+    },
+    {
+      "order": 37,
+      "title": "Same Tree",
+      "slug": "same-tree",
+      "topic": "Trees",
+      "subtopic": "Structural Equality",
+      "pattern": "Paired DFS",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 20,
+      "prerequisites": [
+        "invert-binary-tree"
+      ],
+      "learning_objectives": [
+        "Compare node values and structures recursively",
+        "Handle null-node combinations correctly"
+      ],
+      "recommendation_prerequisites": [
+        "invert-binary-tree"
+      ],
+      "review_prerequisites": [
+        "invert-binary-tree"
+      ]
+    },
+    {
+      "order": 38,
+      "title": "Subtree of Another Tree",
+      "slug": "subtree-of-another-tree",
+      "topic": "Trees",
+      "subtopic": "Tree Matching",
+      "pattern": "DFS + Equality Check",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 40,
+      "prerequisites": [
+        "same-tree"
+      ],
+      "learning_objectives": [
+        "Trigger structural matching at candidate roots",
+        "Analyze worst-case matching complexity"
+      ],
+      "recommendation_prerequisites": [
+        "same-tree"
+      ],
+      "review_prerequisites": [
+        "same-tree"
+      ]
+    },
+    {
+      "order": 39,
+      "title": "Binary Tree Level Order Traversal",
+      "slug": "binary-tree-level-order-traversal",
+      "topic": "Trees",
+      "subtopic": "Breadth-First Traversal",
+      "pattern": "Queue by Level",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 30,
+      "prerequisites": [
+        "maximum-depth-of-binary-tree"
+      ],
+      "learning_objectives": [
+        "Use queue boundaries to segment levels",
+        "Produce layered output structures"
+      ],
+      "recommendation_prerequisites": [
+        "maximum-depth-of-binary-tree"
+      ],
+      "review_prerequisites": [
+        "maximum-depth-of-binary-tree"
+      ]
+    },
+    {
+      "order": 40,
+      "title": "Kth Largest Element in an Array",
+      "slug": "kth-largest-element-in-an-array",
+      "topic": "Heap",
+      "subtopic": "Priority Queues",
+      "pattern": "Fixed-Size Heap",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "top-k-frequent-elements"
+      ],
+      "learning_objectives": [
+        "Maintain heap of k candidates efficiently",
+        "Compare heap and quickselect tradeoffs"
+      ],
+      "recommendation_prerequisites": [
+        "top-k-frequent-elements"
+      ],
+      "review_prerequisites": [
+        "top-k-frequent-elements"
+      ]
+    },
+    {
+      "order": 41,
+      "title": "Task Scheduler",
+      "slug": "task-scheduler",
+      "topic": "Heap",
+      "subtopic": "Greedy Scheduling",
+      "pattern": "Frequency Max-Heap",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 40,
+      "prerequisites": [
+        "top-k-frequent-elements"
+      ],
+      "learning_objectives": [
+        "Convert cooldown constraints into scheduling blocks",
+        "Use frequency distribution to minimize idle slots"
+      ],
+      "recommendation_prerequisites": [
+        "top-k-frequent-elements"
+      ],
+      "review_prerequisites": [
+        "top-k-frequent-elements"
+      ]
+    },
+    {
+      "order": 42,
+      "title": "Find Median from Data Stream",
+      "slug": "find-median-from-data-stream",
+      "topic": "Heap",
+      "subtopic": "Dual Heap Balancing",
+      "pattern": "Two Heaps",
+      "difficulty": "Hard",
+      "estimated_solving_time_minutes": 65,
+      "prerequisites": [
+        "kth-largest-element-in-an-array"
+      ],
+      "learning_objectives": [
+        "Balance max-heap/min-heap partitions",
+        "Maintain median in amortized logarithmic updates"
+      ],
+      "recommendation_prerequisites": [
+        "kth-largest-element-in-an-array"
+      ],
+      "review_prerequisites": [
+        "kth-largest-element-in-an-array"
+      ]
+    },
+    {
+      "order": 43,
+      "title": "Merge K Sorted Lists",
+      "slug": "merge-k-sorted-lists",
+      "topic": "Heap",
+      "subtopic": "K-Way Merge",
+      "pattern": "Min-Heap Frontier",
+      "difficulty": "Hard",
+      "estimated_solving_time_minutes": 60,
+      "prerequisites": [
+        "merge-two-sorted-lists",
+        "kth-largest-element-in-an-array"
+      ],
+      "learning_objectives": [
+        "Generalize 2-way merge to k-way frontier",
+        "Manage heap keys over linked-list nodes"
+      ],
+      "recommendation_prerequisites": [
+        "merge-two-sorted-lists",
+        "kth-largest-element-in-an-array"
+      ],
+      "review_prerequisites": [
+        "merge-two-sorted-lists"
+      ]
+    },
+    {
+      "order": 44,
+      "title": "Subsets",
+      "slug": "subsets",
+      "topic": "Backtracking",
+      "subtopic": "Decision Trees",
+      "pattern": "Include/Exclude DFS",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 30,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Model combinatorial generation as recursion tree",
+        "Backtrack state correctly after recursion calls"
+      ],
+      "recommendation_prerequisites": [],
+      "review_prerequisites": []
+    },
+    {
+      "order": 45,
+      "title": "Combination Sum",
+      "slug": "combination-sum",
+      "topic": "Backtracking",
+      "subtopic": "Constrained Search",
+      "pattern": "Bounded DFS with Pruning",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 40,
+      "prerequisites": [
+        "subsets"
+      ],
+      "learning_objectives": [
+        "Apply pruning with sorted candidates and residual target",
+        "Allow reuse while preventing duplicate combinations"
+      ],
+      "recommendation_prerequisites": [
+        "subsets"
+      ],
+      "review_prerequisites": [
+        "subsets"
+      ]
+    },
+    {
+      "order": 46,
+      "title": "Permutations",
+      "slug": "permutations",
+      "topic": "Backtracking",
+      "subtopic": "Ordering Search",
+      "pattern": "Visited Set DFS",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "subsets"
+      ],
+      "learning_objectives": [
+        "Generate ordered arrangements via state tracking",
+        "Use swap or visited patterns safely"
+      ],
+      "recommendation_prerequisites": [
+        "subsets"
+      ],
+      "review_prerequisites": [
+        "subsets"
+      ]
+    },
+    {
+      "order": 47,
+      "title": "Word Search",
+      "slug": "word-search",
+      "topic": "Backtracking",
+      "subtopic": "Grid DFS",
+      "pattern": "Path Constraint Backtracking",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 45,
+      "prerequisites": [
+        "subsets",
+        "permutations"
+      ],
+      "learning_objectives": [
+        "Backtrack on grids with visited constraints",
+        "Bound branching with character mismatch pruning"
+      ],
+      "recommendation_prerequisites": [
+        "subsets",
+        "permutations"
+      ],
+      "review_prerequisites": [
+        "permutations"
+      ]
+    },
+    {
+      "order": 48,
+      "title": "Number of Islands",
+      "slug": "number-of-islands",
+      "topic": "Graphs",
+      "subtopic": "Grid Connectivity",
+      "pattern": "Flood Fill DFS/BFS",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "word-search"
+      ],
+      "learning_objectives": [
+        "Model 2D grid as implicit graph",
+        "Count connected components with traversal"
+      ],
+      "recommendation_prerequisites": [
+        "word-search"
+      ],
+      "review_prerequisites": [
+        "word-search"
+      ]
+    },
+    {
+      "order": 49,
+      "title": "Clone Graph",
+      "slug": "clone-graph",
+      "topic": "Graphs",
+      "subtopic": "Graph Copying",
+      "pattern": "DFS/BFS + Hash Map",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "number-of-islands"
+      ],
+      "learning_objectives": [
+        "Avoid infinite loops using visited mapping",
+        "Create deep copy preserving adjacency"
+      ],
+      "recommendation_prerequisites": [
+        "number-of-islands"
+      ],
+      "review_prerequisites": [
+        "number-of-islands"
+      ]
+    },
+    {
+      "order": 50,
+      "title": "Pacific Atlantic Water Flow",
+      "slug": "pacific-atlantic-water-flow",
+      "topic": "Graphs",
+      "subtopic": "Reverse Reachability",
+      "pattern": "Multi-Source DFS/BFS",
+      "difficulty": "Hard",
+      "estimated_solving_time_minutes": 60,
+      "prerequisites": [
+        "number-of-islands"
+      ],
+      "learning_objectives": [
+        "Use reverse traversal from boundaries",
+        "Combine reachability sets via intersection"
+      ],
+      "recommendation_prerequisites": [
+        "number-of-islands"
+      ],
+      "review_prerequisites": [
+        "number-of-islands"
+      ]
+    },
+    {
+      "order": 51,
+      "title": "Course Schedule",
+      "slug": "course-schedule",
+      "topic": "Graphs",
+      "subtopic": "Directed Graph Cycles",
+      "pattern": "Topological Feasibility",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 40,
+      "prerequisites": [
+        "clone-graph"
+      ],
+      "learning_objectives": [
+        "Detect cycles in directed dependency graphs",
+        "Use indegree or DFS state-color methods"
+      ],
+      "recommendation_prerequisites": [
+        "clone-graph"
+      ],
+      "review_prerequisites": [
+        "clone-graph"
+      ]
+    },
+    {
+      "order": 52,
+      "title": "Course Schedule II",
+      "slug": "course-schedule-ii",
+      "topic": "Graphs",
+      "subtopic": "Topological Ordering",
+      "pattern": "Kahn / DFS Postorder",
+      "difficulty": "Hard",
+      "estimated_solving_time_minutes": 55,
+      "prerequisites": [
+        "course-schedule"
+      ],
+      "learning_objectives": [
+        "Produce valid topological order when possible",
+        "Handle disconnected DAG components"
+      ],
+      "recommendation_prerequisites": [
+        "course-schedule"
+      ],
+      "review_prerequisites": [
+        "course-schedule"
+      ]
+    },
+    {
+      "order": 53,
+      "title": "Graph Valid Tree",
+      "slug": "graph-valid-tree",
+      "topic": "Graphs",
+      "subtopic": "Undirected Graph Properties",
+      "pattern": "Union Find / DFS Cycle Check",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "number-of-islands"
+      ],
+      "learning_objectives": [
+        "Verify connectivity and acyclicity jointly",
+        "Apply union-find for component tracking"
+      ],
+      "recommendation_prerequisites": [
+        "number-of-islands"
+      ],
+      "review_prerequisites": [
+        "number-of-islands"
+      ]
+    },
+    {
+      "order": 54,
+      "title": "Network Delay Time",
+      "slug": "network-delay-time",
+      "topic": "Graphs",
+      "subtopic": "Shortest Paths",
+      "pattern": "Dijkstra with Min Heap",
+      "difficulty": "Hard",
+      "estimated_solving_time_minutes": 60,
+      "prerequisites": [
+        "course-schedule-ii",
+        "kth-largest-element-in-an-array"
+      ],
+      "learning_objectives": [
+        "Implement single-source shortest path with nonnegative weights",
+        "Use visited/finalized sets correctly in Dijkstra"
+      ],
+      "recommendation_prerequisites": [
+        "course-schedule-ii",
+        "kth-largest-element-in-an-array"
+      ],
+      "review_prerequisites": [
+        "course-schedule"
+      ]
+    },
+    {
+      "order": 55,
+      "title": "Climbing Stairs",
+      "slug": "climbing-stairs",
+      "topic": "Dynamic Programming",
+      "subtopic": "1D Recurrence",
+      "pattern": "Fibonacci DP",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 20,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Derive recurrence from local choices",
+        "Implement tabulation with constant-space optimization"
+      ],
+      "recommendation_prerequisites": [],
+      "review_prerequisites": []
+    },
+    {
+      "order": 56,
+      "title": "House Robber",
+      "slug": "house-robber",
+      "topic": "Dynamic Programming",
+      "subtopic": "Choice DP",
+      "pattern": "Take/Skip State",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "climbing-stairs"
+      ],
+      "learning_objectives": [
+        "Define mutually exclusive DP transitions",
+        "Track rolling states without full array"
+      ],
+      "recommendation_prerequisites": [
+        "climbing-stairs"
+      ],
+      "review_prerequisites": [
+        "climbing-stairs"
+      ]
+    },
+    {
+      "order": 57,
+      "title": "House Robber II",
+      "slug": "house-robber-ii",
+      "topic": "Dynamic Programming",
+      "subtopic": "Circular Constraints",
+      "pattern": "Case Split DP",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 40,
+      "prerequisites": [
+        "house-robber"
+      ],
+      "learning_objectives": [
+        "Transform circular dependency into linear subproblems",
+        "Combine scenario results safely"
+      ],
+      "recommendation_prerequisites": [
+        "house-robber"
+      ],
+      "review_prerequisites": [
+        "house-robber"
+      ]
+    },
+    {
+      "order": 58,
+      "title": "Coin Change",
+      "slug": "coin-change",
+      "topic": "Dynamic Programming",
+      "subtopic": "Unbounded Knapsack",
+      "pattern": "Minimization DP",
+      "difficulty": "Hard",
+      "estimated_solving_time_minutes": 55,
+      "prerequisites": [
+        "climbing-stairs"
+      ],
+      "learning_objectives": [
+        "Model min-coin objective with sentinel states",
+        "Avoid greedy traps via exhaustive DP transitions"
+      ],
+      "recommendation_prerequisites": [
+        "climbing-stairs"
+      ],
+      "review_prerequisites": [
+        "house-robber"
+      ]
+    },
+    {
+      "order": 59,
+      "title": "Longest Increasing Subsequence",
+      "slug": "longest-increasing-subsequence",
+      "topic": "Dynamic Programming",
+      "subtopic": "Subsequence DP",
+      "pattern": "Quadratic DP / Patience Sorting",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 50,
+      "prerequisites": [
+        "climbing-stairs",
+        "binary-search"
+      ],
+      "learning_objectives": [
+        "Compute LIS length with DP transition graph",
+        "Understand O(n log n) optimization with tails array"
+      ],
+      "recommendation_prerequisites": [
+        "climbing-stairs",
+        "binary-search"
+      ],
+      "review_prerequisites": [
+        "binary-search"
+      ]
+    },
+    {
+      "order": 60,
+      "title": "Partition Equal Subset Sum",
+      "slug": "partition-equal-subset-sum",
+      "topic": "Dynamic Programming",
+      "subtopic": "Subset Sum",
+      "pattern": "Boolean Knapsack DP",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 45,
+      "prerequisites": [
+        "coin-change"
+      ],
+      "learning_objectives": [
+        "Transform partition objective into target-sum feasibility",
+        "Optimize to 1D reverse-iteration DP safely"
+      ],
+      "recommendation_prerequisites": [
+        "coin-change"
+      ],
+      "review_prerequisites": [
+        "coin-change"
+      ]
+    },
+    {
+      "order": 61,
+      "title": "Unique Paths",
+      "slug": "unique-paths",
+      "topic": "Dynamic Programming",
+      "subtopic": "Grid DP",
+      "pattern": "2D Tabulation",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 30,
+      "prerequisites": [
+        "climbing-stairs"
+      ],
+      "learning_objectives": [
+        "Model path counting with local recurrence",
+        "Implement memory-optimized row DP"
+      ],
+      "recommendation_prerequisites": [
+        "climbing-stairs"
+      ],
+      "review_prerequisites": [
+        "climbing-stairs"
+      ]
+    },
+    {
+      "order": 62,
+      "title": "Longest Common Subsequence",
+      "slug": "longest-common-subsequence",
+      "topic": "Dynamic Programming",
+      "subtopic": "String DP",
+      "pattern": "2D Match/Skip Recurrence",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 50,
+      "prerequisites": [
+        "unique-paths",
+        "valid-anagram"
+      ],
+      "learning_objectives": [
+        "Build 2D DP for paired-sequence alignment",
+        "Reason about overlap and optimal substructure"
+      ],
+      "recommendation_prerequisites": [
+        "unique-paths",
+        "valid-anagram"
+      ],
+      "review_prerequisites": [
+        "unique-paths"
+      ]
+    },
+    {
+      "order": 63,
+      "title": "Jump Game",
+      "slug": "jump-game",
+      "topic": "Greedy",
+      "subtopic": "Reachability",
+      "pattern": "Farthest Reach Tracking",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 30,
+      "prerequisites": [
+        "house-robber"
+      ],
+      "learning_objectives": [
+        "Prove greedy frontier expansion correctness",
+        "Detect dead zones early"
+      ],
+      "recommendation_prerequisites": [
+        "house-robber"
+      ],
+      "review_prerequisites": [
+        "house-robber"
+      ]
+    },
+    {
+      "order": 64,
+      "title": "Jump Game II",
+      "slug": "jump-game-ii",
+      "topic": "Greedy",
+      "subtopic": "Layered Reach",
+      "pattern": "BFS-Level Greedy",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "jump-game"
+      ],
+      "learning_objectives": [
+        "Convert reachability to minimum-step layering",
+        "Update range boundaries without nested BFS"
+      ],
+      "recommendation_prerequisites": [
+        "jump-game"
+      ],
+      "review_prerequisites": [
+        "jump-game"
+      ]
+    },
+    {
+      "order": 65,
+      "title": "Gas Station",
+      "slug": "gas-station",
+      "topic": "Greedy",
+      "subtopic": "Cycle Feasibility",
+      "pattern": "Reset on Deficit",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 40,
+      "prerequisites": [
+        "jump-game"
+      ],
+      "learning_objectives": [
+        "Use total feasibility plus local restart proof",
+        "Identify unique valid start index logic"
+      ],
+      "recommendation_prerequisites": [
+        "jump-game"
+      ],
+      "review_prerequisites": [
+        "jump-game"
+      ]
+    },
+    {
+      "order": 66,
+      "title": "Merge Intervals",
+      "slug": "merge-intervals",
+      "topic": "Intervals",
+      "subtopic": "Sorting + Sweep",
+      "pattern": "Interval Coalescing",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 30,
+      "prerequisites": [
+        "container-with-most-water"
+      ],
+      "learning_objectives": [
+        "Sort by start to enable one-pass merge",
+        "Track overlap boundaries robustly"
+      ],
+      "recommendation_prerequisites": [
+        "container-with-most-water"
+      ],
+      "review_prerequisites": [
+        "container-with-most-water"
+      ]
+    },
+    {
+      "order": 67,
+      "title": "Insert Interval",
+      "slug": "insert-interval",
+      "topic": "Intervals",
+      "subtopic": "Insertion + Merge",
+      "pattern": "Three-Region Scan",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "merge-intervals"
+      ],
+      "learning_objectives": [
+        "Partition intervals into before/overlap/after",
+        "Merge only where overlap exists"
+      ],
+      "recommendation_prerequisites": [
+        "merge-intervals"
+      ],
+      "review_prerequisites": [
+        "merge-intervals"
+      ]
+    },
+    {
+      "order": 68,
+      "title": "Non-overlapping Intervals",
+      "slug": "non-overlapping-intervals",
+      "topic": "Intervals",
+      "subtopic": "Greedy Selection",
+      "pattern": "Earliest End Time",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "merge-intervals"
+      ],
+      "learning_objectives": [
+        "Minimize removals with interval scheduling greedy",
+        "Choose stable tie-break strategy"
+      ],
+      "recommendation_prerequisites": [
+        "merge-intervals"
+      ],
+      "review_prerequisites": [
+        "merge-intervals"
+      ]
+    },
+    {
+      "order": 69,
+      "title": "Single Number",
+      "slug": "single-number",
+      "topic": "Bit Manipulation",
+      "subtopic": "XOR Properties",
+      "pattern": "Pair Cancellation",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 20,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Use XOR algebra to cancel duplicate pairs",
+        "Recognize bitwise invariants in arrays"
+      ],
+      "recommendation_prerequisites": [],
+      "review_prerequisites": []
+    },
+    {
+      "order": 70,
+      "title": "Number of 1 Bits",
+      "slug": "number-of-1-bits",
+      "topic": "Bit Manipulation",
+      "subtopic": "Bit Counting",
+      "pattern": "Brian Kernighan",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 20,
+      "prerequisites": [
+        "single-number"
+      ],
+      "learning_objectives": [
+        "Count set bits using n&(n-1) trick",
+        "Reason about signed/unsigned representation concerns"
+      ],
+      "recommendation_prerequisites": [
+        "single-number"
+      ],
+      "review_prerequisites": [
+        "single-number"
+      ]
+    },
+    {
+      "order": 71,
+      "title": "Counting Bits",
+      "slug": "counting-bits",
+      "topic": "Bit Manipulation",
+      "subtopic": "Bit DP",
+      "pattern": "Lowbit Recurrence",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 25,
+      "prerequisites": [
+        "number-of-1-bits",
+        "climbing-stairs"
+      ],
+      "learning_objectives": [
+        "Build dp[i] from previously solved states",
+        "Use bit decomposition recurrences efficiently"
+      ],
+      "recommendation_prerequisites": [
+        "number-of-1-bits",
+        "climbing-stairs"
+      ],
+      "review_prerequisites": [
+        "number-of-1-bits"
+      ]
+    },
+    {
+      "order": 72,
+      "title": "Pow(x, n)",
+      "slug": "powx-n",
+      "topic": "Math",
+      "subtopic": "Exponentiation",
+      "pattern": "Fast Power",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "binary-search"
+      ],
+      "learning_objectives": [
+        "Apply divide-and-conquer exponentiation",
+        "Handle negative exponents and overflow boundaries"
+      ],
+      "recommendation_prerequisites": [
+        "binary-search"
+      ],
+      "review_prerequisites": [
+        "binary-search"
+      ]
+    },
+    {
+      "order": 73,
+      "title": "Happy Number",
+      "slug": "happy-number",
+      "topic": "Math",
+      "subtopic": "Cycle Processes",
+      "pattern": "Fast-Slow on Function Iterates",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 20,
+      "prerequisites": [
+        "linked-list-cycle"
+      ],
+      "learning_objectives": [
+        "Detect cycles over iterative state transitions",
+        "Map number transformations to graph walk"
+      ],
+      "recommendation_prerequisites": [
+        "linked-list-cycle"
+      ],
+      "review_prerequisites": [
+        "linked-list-cycle"
+      ]
+    },
+    {
+      "order": 74,
+      "title": "Plus One",
+      "slug": "plus-one",
+      "topic": "Math",
+      "subtopic": "Digit Arithmetic",
+      "pattern": "Carry Propagation",
+      "difficulty": "Easy",
+      "estimated_solving_time_minutes": 15,
+      "prerequisites": [],
+      "learning_objectives": [
+        "Implement right-to-left carry updates",
+        "Handle all-9s expansion case"
+      ],
+      "recommendation_prerequisites": [],
+      "review_prerequisites": []
+    },
+    {
+      "order": 75,
+      "title": "Rotate Image",
+      "slug": "rotate-image",
+      "topic": "Math",
+      "subtopic": "Matrix Transformations",
+      "pattern": "Transpose + Reverse",
+      "difficulty": "Medium",
+      "estimated_solving_time_minutes": 35,
+      "prerequisites": [
+        "plus-one",
+        "invert-binary-tree"
+      ],
+      "learning_objectives": [
+        "Perform in-place matrix transforms safely",
+        "Derive equivalent transformation decompositions"
+      ],
+      "recommendation_prerequisites": [
+        "plus-one"
+      ],
+      "review_prerequisites": [
+        "plus-one"
+      ]
+    }
+  ]
+}

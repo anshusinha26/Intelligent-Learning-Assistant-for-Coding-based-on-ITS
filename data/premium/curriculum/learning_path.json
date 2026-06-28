@@ -1,0 +1,262 @@
+{
+  "version": "1.0",
+  "target_problem_count": 75,
+  "difficulty_progression_policy": {
+    "phase_1_to_2": "Mostly Easy with first Medium introductions",
+    "phase_3_to_7": "Medium-dominant progression with controlled Hard exposure",
+    "phase_8_to_10": "Advanced integration, Hard-heavy reinforcement, mixed-topic synthesis"
+  },
+  "topic_progression_policy": [
+    "Start with data-structure primitives and local reasoning",
+    "Move to window/stack/search state management",
+    "Add linked list + tree recursive composition",
+    "Introduce heap and graph traversal systems",
+    "Transition into DP optimization and greedy proofs",
+    "Finish with interval/bit/math synthesis and hard capstones"
+  ],
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Core Foundations",
+      "focus": "Hashing, pointers, stack, binary search, linked list/tree/DP/bit/math basics",
+      "expected_problems": 10,
+      "problems": [
+        "two-sum",
+        "contains-duplicate",
+        "valid-palindrome",
+        "valid-parentheses",
+        "binary-search",
+        "reverse-linked-list",
+        "invert-binary-tree",
+        "climbing-stairs",
+        "single-number",
+        "plus-one"
+      ],
+      "exit_gate": ">=80% first-attempt AC on Easy set and clean invariant explanations"
+    },
+    {
+      "phase": 2,
+      "name": "Hashing and Two-Pointer Expansion",
+      "focus": "Frequency maps, sorted two-pointer scans, first combinatorial mediums",
+      "expected_problems": 9,
+      "problems": [
+        "valid-anagram",
+        "group-anagrams",
+        "product-of-array-except-self",
+        "top-k-frequent-elements",
+        "longest-consecutive-sequence",
+        "two-sum-ii-input-array-is-sorted",
+        "3sum",
+        "container-with-most-water",
+        "merge-two-sorted-lists"
+      ],
+      "exit_gate": "Can choose hashing vs sorting vs two-pointers with complexity justification"
+    },
+    {
+      "phase": 3,
+      "name": "Sliding Window and Stack Fluency",
+      "focus": "Dynamic/fixed windows, monotonic stacks, expression/state stacks",
+      "expected_problems": 9,
+      "problems": [
+        "longest-substring-without-repeating-characters",
+        "longest-repeating-character-replacement",
+        "permutation-in-string",
+        "min-stack",
+        "evaluate-reverse-polish-notation",
+        "daily-temperatures",
+        "car-fleet",
+        "search-a-2d-matrix",
+        "koko-eating-bananas"
+      ],
+      "exit_gate": "Can derive valid window condition and monotonic stack invariant from problem text"
+    },
+    {
+      "phase": 4,
+      "name": "Rotations, Linked Lists, and Tree Core",
+      "focus": "Conditional binary search, pointer choreography, DFS/BFS tree structure",
+      "expected_problems": 9,
+      "problems": [
+        "find-minimum-in-rotated-sorted-array",
+        "search-in-rotated-sorted-array",
+        "remove-nth-node-from-end-of-list",
+        "linked-list-cycle",
+        "maximum-depth-of-binary-tree",
+        "balanced-binary-tree",
+        "same-tree",
+        "binary-tree-level-order-traversal",
+        "reorder-list"
+      ],
+      "exit_gate": "Can implement medium linked-list/tree tasks without template dependency"
+    },
+    {
+      "phase": 5,
+      "name": "Tree Depth and Heap Basics",
+      "focus": "Composite DFS objectives and priority-queue strategies",
+      "expected_problems": 8,
+      "problems": [
+        "diameter-of-binary-tree",
+        "subtree-of-another-tree",
+        "kth-largest-element-in-an-array",
+        "task-scheduler",
+        "subsets",
+        "permutations",
+        "combination-sum",
+        "word-search"
+      ],
+      "exit_gate": "Can combine traversal with global state and prune backtracking search trees"
+    },
+    {
+      "phase": 6,
+      "name": "Graph and DP Intermediate",
+      "focus": "Connectivity, cloning, feasibility graphs, and 1D/2D DP",
+      "expected_problems": 10,
+      "problems": [
+        "number-of-islands",
+        "clone-graph",
+        "graph-valid-tree",
+        "course-schedule",
+        "house-robber",
+        "house-robber-ii",
+        "unique-paths",
+        "counting-bits",
+        "happy-number",
+        "powx-n"
+      ],
+      "exit_gate": "Can model state graphs explicitly and map recurrence relations correctly"
+    },
+    {
+      "phase": 7,
+      "name": "Advanced Windows, Heaps, and Graphs",
+      "focus": "Hard pattern composition and cross-topic algorithm selection",
+      "expected_problems": 8,
+      "problems": [
+        "minimum-window-substring",
+        "sliding-window-maximum",
+        "find-median-from-data-stream",
+        "merge-k-sorted-lists",
+        "pacific-atlantic-water-flow",
+        "course-schedule-ii",
+        "network-delay-time",
+        "trapping-rain-water"
+      ],
+      "exit_gate": "Can solve Hard tasks with explicit invariant and complexity proof"
+    },
+    {
+      "phase": 8,
+      "name": "Dynamic Programming Deepening",
+      "focus": "Knapsack variants, subsequence DP, optimization alternatives",
+      "expected_problems": 5,
+      "problems": [
+        "coin-change",
+        "longest-increasing-subsequence",
+        "partition-equal-subset-sum",
+        "longest-common-subsequence",
+        "rotate-image"
+      ],
+      "exit_gate": "Can derive transitions from objective and convert memoization <-> tabulation"
+    },
+    {
+      "phase": 9,
+      "name": "Greedy and Interval Systems",
+      "focus": "Proof-oriented greedy decisions and interval scheduling/merging",
+      "expected_problems": 6,
+      "problems": [
+        "jump-game",
+        "jump-game-ii",
+        "gas-station",
+        "merge-intervals",
+        "insert-interval",
+        "non-overlapping-intervals"
+      ],
+      "exit_gate": "Can justify greedy optimality or identify when DP is required"
+    },
+    {
+      "phase": 10,
+      "name": "Final Math/Bit Consolidation",
+      "focus": "Fast arithmetic techniques and low-level representation confidence",
+      "expected_problems": 1,
+      "problems": [
+        "number-of-1-bits"
+      ],
+      "exit_gate": "Interview-ready mixed-topic performance under timed constraints"
+    }
+  ],
+  "linear_path": [
+    "two-sum",
+    "contains-duplicate",
+    "valid-anagram",
+    "group-anagrams",
+    "product-of-array-except-self",
+    "top-k-frequent-elements",
+    "longest-consecutive-sequence",
+    "valid-palindrome",
+    "two-sum-ii-input-array-is-sorted",
+    "3sum",
+    "container-with-most-water",
+    "trapping-rain-water",
+    "longest-substring-without-repeating-characters",
+    "longest-repeating-character-replacement",
+    "permutation-in-string",
+    "minimum-window-substring",
+    "sliding-window-maximum",
+    "valid-parentheses",
+    "min-stack",
+    "evaluate-reverse-polish-notation",
+    "daily-temperatures",
+    "car-fleet",
+    "binary-search",
+    "search-a-2d-matrix",
+    "koko-eating-bananas",
+    "find-minimum-in-rotated-sorted-array",
+    "search-in-rotated-sorted-array",
+    "reverse-linked-list",
+    "merge-two-sorted-lists",
+    "reorder-list",
+    "remove-nth-node-from-end-of-list",
+    "linked-list-cycle",
+    "invert-binary-tree",
+    "maximum-depth-of-binary-tree",
+    "diameter-of-binary-tree",
+    "balanced-binary-tree",
+    "same-tree",
+    "subtree-of-another-tree",
+    "binary-tree-level-order-traversal",
+    "kth-largest-element-in-an-array",
+    "task-scheduler",
+    "find-median-from-data-stream",
+    "merge-k-sorted-lists",
+    "subsets",
+    "combination-sum",
+    "permutations",
+    "word-search",
+    "number-of-islands",
+    "clone-graph",
+    "pacific-atlantic-water-flow",
+    "course-schedule",
+    "course-schedule-ii",
+    "graph-valid-tree",
+    "network-delay-time",
+    "climbing-stairs",
+    "house-robber",
+    "house-robber-ii",
+    "coin-change",
+    "longest-increasing-subsequence",
+    "partition-equal-subset-sum",
+    "unique-paths",
+    "longest-common-subsequence",
+    "jump-game",
+    "jump-game-ii",
+    "gas-station",
+    "merge-intervals",
+    "insert-interval",
+    "non-overlapping-intervals",
+    "single-number",
+    "number-of-1-bits",
+    "counting-bits",
+    "powx-n",
+    "happy-number",
+    "plus-one",
+    "rotate-image"
+  ],
+  "dependency_graph_source": "recommendation_graph.json.prerequisite_edges"
+}

@@ -103,6 +103,9 @@ function Login() {
                             <Button variant="link" asChild className="px-0">
                                 <Link to="/register">Create new account</Link>
                             </Button>
+                            <Button variant="link" asChild className="px-0 w-max">
+                                <Link to="/forgot-password">Forgot password?</Link>
+                            </Button>
                         </div>
                     </CardContent>
                     <CardFooter className="flex justify-end">

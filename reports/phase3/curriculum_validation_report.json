@@ -1,0 +1,42 @@
+{
+  "summary": {
+    "total_problems": 75,
+    "critical_issues": 0,
+    "high_issues": 0,
+    "medium_issues": 0,
+    "low_issues": 0
+  },
+  "curriculum_meta": {
+    "known_topics": [
+      "Arrays & Hashing",
+      "Backtracking",
+      "Binary Search",
+      "Bit Manipulation",
+      "Dynamic Programming",
+      "Graphs",
+      "Greedy",
+      "Heap",
+      "Intervals",
+      "Linked List",
+      "Math",
+      "Sliding Window",
+      "Stack",
+      "Trees",
+      "Two Pointers"
+    ],
+    "known_patterns_count": 75
+  },
+  "recommendation_meta": {
+    "cold_start_count": 20,
+    "advanced_count": 9,
+    "weak_count": 15,
+    "cold_after_accept_count": 20,
+    "weak_topic": "Arrays & Hashing"
+  },
+  "issues": {
+    "critical": [],
+    "high": [],
+    "medium": [],
+    "low": []
+  }
+}

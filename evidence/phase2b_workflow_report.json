@@ -1,0 +1,1300 @@
+{
+  "meta": {
+    "started_at": "2026-06-26T16:47:01.381929",
+    "base_url": "http://127.0.0.1:8060",
+    "db_path": "data/coding_assistant.db",
+    "finished_at": "2026-06-26T16:47:07.001012"
+  },
+  "workflows": {
+    "workflow_1_new_user_core_loop": {
+      "api_sequence": [
+        {
+          "ok": false,
+          "status": 500,
+          "body": "Internal Server Error",
+          "ms": 5506.79,
+          "path": "/api/auth/register",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Invalid email or password"
+          },
+          "ms": 2.51,
+          "path": "/api/auth/login",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.94,
+          "path": "/api/problems?limit=30",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.59,
+          "path": "/api/problems/two-sum",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.64,
+          "path": "/api/submissions",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.53,
+          "path": "/api/analytics/dashboard",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.54,
+          "path": "/api/analytics/weaknesses?limit=10",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.53,
+          "path": "/api/recommendations/generate?top_k=5",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.47,
+          "path": "/api/recommendations?status=pending&limit=20",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.47,
+          "path": "/api/auth/me",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Invalid email or password"
+          },
+          "ms": 0.98,
+          "path": "/api/auth/login",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.66,
+          "path": "/api/submissions?problem_id=two-sum&limit=20",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.65,
+          "path": "/api/analytics/dashboard",
+          "method": "GET"
+        }
+      ],
+      "db": {
+        "after_register": {},
+        "after_workflow": {
+          "attempts": 0,
+          "submissions": 0,
+          "metrics": 0,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "revisions_total": 0,
+          "revisions_pending": 0,
+          "revisions_completed": 0
+        }
+      },
+      "runtime": {
+        "problem_id": "two-sum",
+        "dashboard_after_first_submit": {
+          "detail": "Not authenticated"
+        },
+        "dashboard_after_relogin": {
+          "detail": "Not authenticated"
+        }
+      },
+      "edge_cases": [
+        "Logout is client-side only; server token remains valid until expiry.",
+        "Re-login issues a new token but prior token still valid."
+      ],
+      "missing_validations": [
+        "No email verification",
+        "No password strength checks"
+      ],
+      "status": "FAIL",
+      "files_involved": [
+        "src/main.py",
+        "src/auth.py",
+        "src/learner_model.py",
+        "src/recommender.py",
+        "src/revision_scheduler.py",
+        "src/judge.py",
+        "src/database.py",
+        "data/coding_assistant.db"
+      ],
+      "suggested_e2e_test": "Playwright: register->login->solve first problem->verify dashboard/recommendations->logout->login->assert persisted stats and history."
+    },
+    "workflow_2_returning_user_resume": {
+      "api_sequence": [
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.95,
+          "path": "/api/submissions?limit=1",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.62,
+          "path": "/api/problems/two-sum",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.61,
+          "path": "/api/submissions",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.7,
+          "path": "/api/analytics/dashboard",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.65,
+          "path": "/api/recommendations?status=pending&limit=30",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.59,
+          "path": "/api/recommendations/generate?top_k=5",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 1.47,
+          "path": "/api/recommendations?status=pending&limit=30",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.74,
+          "path": "/api/analytics/dashboard",
+          "method": "GET"
+        }
+      ],
+      "db": {
+        "before": {
+          "attempts": 0,
+          "submissions": 0,
+          "metrics": 0,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "revisions_total": 0,
+          "revisions_pending": 0,
+          "revisions_completed": 0
+        },
+        "after": {
+          "attempts": 0,
+          "submissions": 0,
+          "metrics": 0,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "revisions_total": 0,
+          "revisions_pending": 0,
+          "revisions_completed": 0
+        }
+      },
+      "runtime": {
+        "resume_problem": "two-sum",
+        "dashboard_before": {
+          "detail": "Not authenticated"
+        },
+        "dashboard_after": {
+          "detail": "Not authenticated"
+        },
+        "rec_count_before": null,
+        "rec_count_after": null
+      },
+      "edge_cases": [
+        "Resubmitting same solved problem increases solved-attempt count, not unique solved problems only."
+      ],
+      "missing_validations": [
+        "No explicit resume marker/last-opened problem state in backend."
+      ],
+      "status": "FAIL",
+      "files_involved": [
+        "src/main.py",
+        "src/learner_model.py",
+        "src/recommender.py",
+        "data/coding_assistant.db"
+      ],
+      "suggested_e2e_test": "E2E: returning user opens latest problem, submits new attempt, verifies dashboard deltas and refreshed recommendations."
+    },
+    "workflow_3_incorrect_submissions": {
+      "api_sequence": [
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.76,
+          "path": "/api/submissions",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.54,
+          "path": "/api/submissions",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.52,
+          "path": "/api/submissions",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.56,
+          "path": "/api/submissions",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.57,
+          "path": "/api/analytics/errors",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.55,
+          "path": "/api/attempts?limit=20",
+          "method": "GET"
+        }
+      ],
+      "db": {
+        "before": {
+          "attempts": 0,
+          "submissions": 0,
+          "metrics": 0,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "revisions_total": 0,
+          "revisions_pending": 0,
+          "revisions_completed": 0
+        },
+        "after": {
+          "attempts": 0,
+          "submissions": 0,
+          "metrics": 0,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "revisions_total": 0,
+          "revisions_pending": 0,
+          "revisions_completed": 0
+        }
+      },
+      "runtime": {
+        "verdicts": {
+          "wa": null,
+          "re": null,
+          "tle": null,
+          "ce_like": null
+        },
+        "error_patterns": {
+          "detail": "Not authenticated"
+        },
+        "recent_attempt_error_types": []
+      },
+      "edge_cases": [
+        "Syntax errors are classified as Runtime Error; no separate Compilation Error verdict exists.",
+        "Only Python accepted; non-Python gets HTTP 400 before judge."
+      ],
+      "missing_validations": [
+        "No strict verdict enum in AttemptCreate model path for /api/attempts.",
+        "No compile-error-specific taxonomy."
+      ],
+      "status": "FAIL",
+      "files_involved": [
+        "src/main.py",
+        "src/judge.py",
+        "src/learner_model.py",
+        "data/coding_assistant.db"
+      ],
+      "suggested_e2e_test": "Parametrized submission tests asserting verdict/error_type mapping for WA/RE/TLE/syntax-error and analytics error counters."
+    },
+    "workflow_4_recommendation_loop": {
+      "api_sequence": [
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.89,
+          "path": "/api/recommendations/generate?top_k=8",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.62,
+          "path": "/api/recommendations?status=pending&limit=50",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.5,
+          "path": "/api/recommendations/generate?top_k=8",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.48,
+          "path": "/api/recommendations?status=pending&limit=100",
+          "method": "GET"
+        }
+      ],
+      "db": {
+        "before": {
+          "attempts": 0,
+          "submissions": 0,
+          "metrics": 0,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "revisions_total": 0,
+          "revisions_pending": 0,
+          "revisions_completed": 0
+        },
+        "after": {
+          "attempts": 0,
+          "submissions": 0,
+          "metrics": 0,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "revisions_total": 0,
+          "revisions_pending": 0,
+          "revisions_completed": 0
+        }
+      },
+      "runtime": {
+        "solved_recommended_problem_ids": [],
+        "completed_rec_ids": [],
+        "pending_count_before": 0,
+        "pending_count_after": 0,
+        "solved_still_in_pending": [],
+        "pending_duplicates": [],
+        "pending_duplicate_detail": []
+      },
+      "edge_cases": [
+        "Repeated generate calls create duplicate pending recommendations.",
+        "Completing one rec_id does not remove duplicates for same problem_id."
+      ],
+      "missing_validations": [
+        "No uniqueness constraint on (user_id, problem_id, status=pending).",
+        "No dedupe/upsert on generation."
+      ],
+      "status": "PARTIAL",
+      "files_involved": [
+        "src/recommender.py",
+        "src/main.py",
+        "data/coding_assistant.db"
+      ],
+      "suggested_e2e_test": "Generate recommendations twice; assert unique pending problem_ids and solved/completed items no longer appear in pending list."
+    },
+    "workflow_5_weak_topic_recovery": {
+      "api_sequence": [
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.71,
+          "path": "/api/problems?limit=250",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.59,
+          "path": "/api/recommendations/generate?top_k=10",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.61,
+          "path": "/api/analytics/weaknesses?limit=20",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.54,
+          "path": "/api/analytics/weaknesses?limit=20",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.49,
+          "path": "/api/recommendations/generate?top_k=10",
+          "method": "POST"
+        }
+      ],
+      "db": {
+        "before": {
+          "attempts": 0,
+          "submissions": 0,
+          "metrics": 0,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "revisions_total": 0,
+          "revisions_pending": 0,
+          "revisions_completed": 0
+        },
+        "after": {
+          "attempts": 0,
+          "submissions": 0,
+          "metrics": 0,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "revisions_total": 0,
+          "revisions_pending": 0,
+          "revisions_completed": 0
+        }
+      },
+      "runtime": {
+        "selected_topic": null,
+        "selected_problem_ids": [],
+        "weakness_after_bad": null,
+        "weakness_after_improve": null,
+        "rec_before_topic_count": 0,
+        "rec_after_topic_count": 0
+      },
+      "edge_cases": [
+        "Weakness list intermixes topic and pattern under same field name `topic`.",
+        "Recommendation adaptation can lag due existing duplicate pending rows."
+      ],
+      "missing_validations": [
+        "No smoothing/windowing on weakness score; noisy with few attempts."
+      ],
+      "status": "FAIL",
+      "files_involved": [
+        "src/learner_model.py",
+        "src/recommender.py",
+        "src/main.py",
+        "data/coding_assistant.db"
+      ],
+      "suggested_e2e_test": "Scripted poor-performance then improved-performance on same topic; assert mastery increases and recommendation focus shifts away from recovered topic."
+    },
+    "workflow_6_revision_flow": {
+      "api_sequence": [
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.69,
+          "path": "/api/revisions/due?limit=10",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.71,
+          "path": "/api/revisions/due?limit=10",
+          "method": "GET"
+        }
+      ],
+      "db": {
+        "before": {
+          "attempts": 0,
+          "submissions": 0,
+          "metrics": 0,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "revisions_total": 0,
+          "revisions_pending": 0,
+          "revisions_completed": 0
+        },
+        "after": {
+          "attempts": 0,
+          "submissions": 0,
+          "metrics": 0,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "revisions_total": 0,
+          "revisions_pending": 0,
+          "revisions_completed": 0
+        }
+      },
+      "runtime": {
+        "due_before_complete": 0,
+        "completed_schedule_id": null,
+        "due_after_complete": 0
+      },
+      "edge_cases": [
+        "Due revisions depend on local system date.",
+        "Schedule progression tested by forcing next_review_date to past date."
+      ],
+      "missing_validations": [
+        "No explicit guard against completing already-completed schedule_id."
+      ],
+      "status": "PARTIAL",
+      "files_involved": [
+        "src/revision_scheduler.py",
+        "src/main.py",
+        "data/coding_assistant.db"
+      ],
+      "suggested_e2e_test": "Create accepted attempt -> force due date -> complete revision -> assert old row completed and new pending row with next interval."
+    },
+    "workflow_7_rag": {
+      "api_sequence": [
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.54,
+          "path": "/api/rag/health",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.89,
+          "path": "/api/rag/query",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.94,
+          "path": "/api/rag/query",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.67,
+          "path": "/api/rag/query",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.69,
+          "path": "/api/rag/query",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.61,
+          "path": "/api/rag/query",
+          "method": "POST"
+        }
+      ],
+      "db": {},
+      "runtime": {
+        "health": {
+          "detail": "Not authenticated"
+        },
+        "answers": {
+          "hint": {
+            "detail": "Not authenticated"
+          },
+          "second_hint": {
+            "detail": "Not authenticated"
+          },
+          "complexity": {
+            "detail": "Not authenticated"
+          },
+          "edge_cases": {
+            "detail": "Not authenticated"
+          },
+          "full_solution": {
+            "detail": "Not authenticated"
+          }
+        },
+        "context_matches_problem": false,
+        "full_solution_given": false
+      },
+      "edge_cases": [
+        "Prompt explicitly asking for full solution bypasses hint-only educational behavior."
+      ],
+      "missing_validations": [
+        "No policy mode toggle to enforce hint-only responses.",
+        "No profanity/prompt-injection guardrails."
+      ],
+      "status": "FAIL",
+      "files_involved": [
+        "src/main.py",
+        "src/rag_service.py",
+        "src/rag/minimal_engine.py"
+      ],
+      "suggested_e2e_test": "RAG policy test matrix: hint/complexity/edge-case/full-solution prompts; assert response style constraints per configured policy mode."
+    },
+    "workflow_8_search_filters_navigation": {
+      "api_sequence": [
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.6,
+          "path": "/api/problems?q=two%20sum&limit=20",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.67,
+          "path": "/api/problems?topic=Dynamic%20Programming&difficulty=Medium&limit=20",
+          "method": "GET"
+        }
+      ],
+      "db": {},
+      "runtime": {
+        "search_count": null,
+        "filter_count": null,
+        "opened_problem_id": null,
+        "state_preservation_back_navigation": "MANUAL_VERIFICATION_REQUIRED"
+      },
+      "edge_cases": [
+        "Search+filter combination works at API level; browser back-state persistence not verifiable via API."
+      ],
+      "missing_validations": [
+        "Need UI route/query-param persistence checks for back navigation."
+      ],
+      "status": "FAIL",
+      "files_involved": [
+        "src/main.py",
+        "frontend/src/pages/Problems.jsx",
+        "frontend/src/App.jsx"
+      ],
+      "suggested_e2e_test": "Playwright: apply search/filter, open problem, navigate back, assert query/filter state remains unchanged."
+    },
+    "workflow_9_large_history": {
+      "api_sequence": [
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 5.01,
+          "path": "/api/problems/two-sum",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.92,
+          "path": "/api/submissions",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.69,
+          "path": "/api/submissions",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.58,
+          "path": "/api/submissions",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.61,
+          "path": "/api/submissions",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.7,
+          "path": "/api/submissions",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.58,
+          "path": "/api/submissions?limit=20",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.49,
+          "path": "/api/submissions?limit=100",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.48,
+          "path": "/api/analytics/dashboard",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.63,
+          "path": "/api/analytics/errors",
+          "method": "GET"
+        }
+      ],
+      "db": {
+        "before": {
+          "attempts": 0,
+          "submissions": 0,
+          "metrics": 0,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "revisions_total": 0,
+          "revisions_pending": 0,
+          "revisions_completed": 0
+        },
+        "after": {
+          "attempts": 0,
+          "submissions": 0,
+          "metrics": 0,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "revisions_total": 0,
+          "revisions_pending": 0,
+          "revisions_completed": 0
+        }
+      },
+      "runtime": {
+        "generated_submissions": 35,
+        "mean_submit_ms": 0.73,
+        "p95_submit_ms": 1.05,
+        "history_count_limit20": null,
+        "history_count_limit100": null,
+        "dashboard_ms": 0.48,
+        "analytics_ms": 0.63,
+        "pagination_support": "No explicit offset/page param found; only limit."
+      },
+      "edge_cases": [
+        "History endpoint supports limit but no page/offset cursor.",
+        "High-frequency writes may grow DB quickly."
+      ],
+      "missing_validations": [
+        "No rate limiting or idempotency key for repeated submits."
+      ],
+      "status": "FAIL",
+      "files_involved": [
+        "src/main.py",
+        "frontend/src/pages/Submissions.jsx",
+        "src/learner_model.py"
+      ],
+      "suggested_e2e_test": "Load test + UI test: create 100 submissions, verify history pagination/virtualization and dashboard response time budget."
+    },
+    "workflow_10_session_lifecycle": {
+      "api_sequence": [
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Invalid email or password"
+          },
+          "ms": 1.59,
+          "path": "/api/auth/login",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.94,
+          "path": "/api/auth/me",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.57,
+          "path": "/api/auth/me",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Invalid or expired token"
+          },
+          "ms": 0.6,
+          "path": "/api/auth/me",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Invalid or expired token"
+          },
+          "ms": 0.82,
+          "path": "/api/auth/me",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 404,
+          "body": {
+            "detail": "Not Found"
+          },
+          "ms": 0.57,
+          "path": "/api/auth/logout",
+          "method": "POST"
+        }
+      ],
+      "db": {},
+      "runtime": {
+        "concurrent_tab_statuses": [
+          401,
+          401,
+          401,
+          401,
+          401,
+          401
+        ],
+        "logout_endpoint_status": 404,
+        "invalid_token_status": 401,
+        "expired_token_status": 401,
+        "refresh_me_status": 401
+      },
+      "edge_cases": [
+        "No server logout endpoint; session invalidation is client-side only.",
+        "Concurrent requests with same token are accepted."
+      ],
+      "missing_validations": [
+        "No token revocation list",
+        "No refresh-token rotation"
+      ],
+      "status": "FAIL",
+      "files_involved": [
+        "src/auth.py",
+        "src/main.py",
+        "frontend/src/lib/api.js"
+      ],
+      "suggested_e2e_test": "Session lifecycle E2E: login->refresh/new tab->logout->assert protected routes blocked and stale token rejected."
+    },
+    "workflow_11_negative_testing": {
+      "api_sequence": [
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 1.09,
+          "path": "/api/problems/does-not-exist",
+          "method": "GET"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.63,
+          "path": "/api/submissions",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 422,
+          "body": {
+            "detail": [
+              {
+                "type": "json_invalid",
+                "loc": [
+                  "body",
+                  9
+                ],
+                "msg": "JSON decode error",
+                "input": {},
+                "ctx": {
+                  "error": "Expecting value"
+                }
+              }
+            ]
+          },
+          "ms": 0.76,
+          "path": "/api/auth/login",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 422,
+          "body": {
+            "detail": [
+              {
+                "type": "missing",
+                "loc": [
+                  "body",
+                  "name"
+                ],
+                "msg": "Field required",
+                "input": {
+                  "email": "x@example.com"
+                },
+                "url": "https://errors.pydantic.dev/2.12/v/missing"
+              },
+              {
+                "type": "missing",
+                "loc": [
+                  "body",
+                  "password"
+                ],
+                "msg": "Field required",
+                "input": {
+                  "email": "x@example.com"
+                },
+                "url": "https://errors.pydantic.dev/2.12/v/missing"
+              }
+            ]
+          },
+          "ms": 2.3,
+          "path": "/api/auth/register",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.59,
+          "path": "/api/submissions",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 2.9,
+          "path": "/api/submissions",
+          "method": "POST"
+        },
+        {
+          "ok": false,
+          "status": 401,
+          "body": {
+            "detail": "Not authenticated"
+          },
+          "ms": 0.65,
+          "path": "/api/rag/query",
+          "method": "POST"
+        }
+      ],
+      "db": {
+        "before": {
+          "attempts": 0,
+          "submissions": 0,
+          "metrics": 0,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "revisions_total": 0,
+          "revisions_pending": 0,
+          "revisions_completed": 0
+        },
+        "after": {
+          "attempts": 0,
+          "submissions": 0,
+          "metrics": 0,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "revisions_total": 0,
+          "revisions_pending": 0,
+          "revisions_completed": 0
+        }
+      },
+      "runtime": {
+        "rapid_submit_statuses": [
+          401,
+          401,
+          401,
+          401,
+          401,
+          401,
+          401,
+          401,
+          401,
+          401
+        ],
+        "rapid_submit_verdicts": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "invalid_problem_statuses": [
+          401,
+          401
+        ],
+        "malformed_payload_status": 422,
+        "missing_fields_status": 422,
+        "empty_code_status_verdict": {
+          "status": 401,
+          "verdict": null
+        },
+        "huge_code_status_verdict": {
+          "status": 401,
+          "verdict": null
+        },
+        "unicode_rag_status": 401
+      },
+      "edge_cases": [
+        "Double-click/rapid submits create multiple records (no idempotency).",
+        "Huge code payload accepted and processed without size limits."
+      ],
+      "missing_validations": [
+        "No payload size limits",
+        "No per-user rate limiting",
+        "No duplicate-submit guard"
+      ],
+      "status": "FAIL",
+      "files_involved": [
+        "src/main.py",
+        "src/models.py",
+        "src/judge.py",
+        "src/rag_service.py"
+      ],
+      "suggested_e2e_test": "Fuzz/negative suite: malformed JSON, missing fields, giant payloads, unicode, rapid repeated submissions with idempotency assertions."
+    },
+    "workflow_12_data_consistency": {
+      "api_sequence": [],
+      "db": {},
+      "runtime": {
+        "orphan_checks": {
+          "attempts_user_orphans": 0,
+          "attempts_problem_orphans": 0,
+          "submissions_user_orphans": 0,
+          "submissions_problem_orphans": 0,
+          "recs_user_orphans": 0,
+          "recs_problem_orphans": 0,
+          "revision_user_orphans": 0,
+          "revision_problem_orphans": 0
+        },
+        "pending_rec_duplicates_for_user": [],
+        "pending_rec_duplicate_groups_global": 10,
+        "learner_metric_mismatch_rows_for_user": [],
+        "foreign_key_check_rows": []
+      },
+      "edge_cases": [
+        "Duplicate pending recommendations exist despite valid foreign keys."
+      ],
+      "missing_validations": [
+        "No DB-level unique index for pending recommendations."
+      ],
+      "status": "PASS",
+      "files_involved": [
+        "src/database.py",
+        "src/learner_model.py",
+        "src/recommender.py",
+        "data/coding_assistant.db"
+      ],
+      "suggested_e2e_test": "Post-workflow integrity suite: orphan checks, fk_check, learner_metrics consistency, recommendation uniqueness constraints."
+    }
+  }
+}

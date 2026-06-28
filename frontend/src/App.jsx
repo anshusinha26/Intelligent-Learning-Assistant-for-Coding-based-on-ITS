@@ -1,8 +1,10 @@
 import { ThemeProvider } from "@/components/theme-provider.jsx";
 import {
     createBrowserRouter,
+    isRouteErrorResponse,
     redirect,
     RouterProvider,
+    useRouteError,
 } from "react-router-dom";
 import Home from "@/pages/Home.jsx";
 import Layout from "@/pages/Layout.jsx";
@@ -10,12 +12,18 @@ import Login from "@/pages/Login.jsx";
 import Register from "@/pages/Register.jsx";
 import Code from "@/pages/Code.jsx";
 import Problems from "@/pages/Problems.jsx";
+import ForgotPassword from "@/pages/ForgotPassword.jsx";
+import VerifyOtp from "@/pages/VerifyOtp.jsx";
+import ResetPassword from "@/pages/ResetPassword.jsx";
 import AuthContext from "@/context/auth-provider.jsx";
 import { useEffect, useMemo, useState } from "react";
 import "@fontsource/bricolage-grotesque";
 import "@fontsource/cascadia-code";
 import Submissions from "@/pages/Submissions.jsx";
 import Dashboard from "@/pages/Dashboard.jsx";
+import Notes from "@/pages/Notes.jsx";
+import Bookmarks from "@/pages/Bookmarks.jsx";
+import Settings from "@/pages/Settings.jsx";
 import NoPageFound from "@/pages/404.jsx";
 import { apiRequest, normalizeProblem } from "@/lib/api.js";
 
@@ -55,6 +63,37 @@ function parseTestCases(problem) {
     }
 }
 
+function RouteErrorBoundary() {
+    const error = useRouteError();
+
+    if (!import.meta.env.DEV) {
+        return (
+            <p className="w-screen h-full-w-nav flex justify-center align-middle items-center">
+                Something went wrong
+            </p>
+        );
+    }
+
+    const status = isRouteErrorResponse(error)
+        ? error.status
+        : error?.status || "unknown";
+    const endpoint = error?.endpoint || error?.url || "unknown";
+    const message = isRouteErrorResponse(error)
+        ? error.data?.detail || error.statusText || "Loader failed"
+        : error?.message || "Loader failed";
+
+    return (
+        <div className="w-screen h-full-w-nav flex items-center justify-center px-6">
+            <pre className="max-w-4xl w-full overflow-x-auto rounded-md border border-border bg-muted/40 p-4 text-left text-sm">
+                {`Loader failed
+Status: ${status}
+Endpoint: ${endpoint}
+Message: ${message}`}
+            </pre>
+        </div>
+    );
+}
+
 function App() {
     const [user, setUserState] = useState(() => {
         try {
@@ -90,13 +129,26 @@ function App() {
             createBrowserRouter([
                 {
                     element: <Layout />,
-                    errorElement: (
-                        <p className="w-screen h-full-w-nav flex justify-center align-middle items-center">
-                            Something went wrong
-                        </p>
-                    ),
+                    errorElement: <RouteErrorBoundary />,
                     children: [
-                        { path: "/", element: <Home /> },
+                        {
+                            path: "/",
+                            loader: async () => {
+                                if (!user.isAuthenticated) {
+                                    return { problemCount: null };
+                                }
+                                const problems = await apiRequest(
+                                    "/problems?limit=700",
+                                    { token: user.token },
+                                );
+                                return {
+                                    problemCount: Array.isArray(problems)
+                                        ? problems.length
+                                        : null,
+                                };
+                            },
+                            element: <Home />,
+                        },
                         {
                             path: "/login",
                             loader: ({ request }) => {
@@ -117,6 +169,30 @@ function App() {
                             loader: () =>
                                 user.isAuthenticated ? redirect("/") : null,
                             element: <Register />,
+                        },
+                        {
+                            path: "/forgot-password",
+                            loader: () =>
+                                user.isAuthenticated
+                                    ? redirect("/settings?tab=security")
+                                    : null,
+                            element: <ForgotPassword />,
+                        },
+                        {
+                            path: "/verify-otp",
+                            loader: () =>
+                                user.isAuthenticated
+                                    ? redirect("/settings?tab=security")
+                                    : null,
+                            element: <VerifyOtp />,
+                        },
+                        {
+                            path: "/reset-password",
+                            loader: () =>
+                                user.isAuthenticated
+                                    ? redirect("/settings?tab=security")
+                                    : null,
+                            element: <ResetPassword />,
                         },
                         {
                             path: "/problems",
@@ -193,6 +269,45 @@ function App() {
                                 return { submissions: data.submissions, page: 1 };
                             },
                             element: <Submissions />,
+                        },
+                        {
+                            path: "/notes",
+                            loader: async () => {
+                                if (!user.isAuthenticated) {
+                                    return redirect("/login?next=/notes");
+                                }
+                                const data = await apiRequest("/notes?limit=200", {
+                                    token: user.token,
+                                });
+                                return data;
+                            },
+                            element: <Notes />,
+                        },
+                        {
+                            path: "/bookmarks",
+                            loader: async () => {
+                                if (!user.isAuthenticated) {
+                                    return redirect("/login?next=/bookmarks");
+                                }
+                                const data = await apiRequest("/bookmarks?limit=200", {
+                                    token: user.token,
+                                });
+                                return data;
+                            },
+                            element: <Bookmarks />,
+                        },
+                        {
+                            path: "/settings",
+                            loader: async () => {
+                                if (!user.isAuthenticated) {
+                                    return redirect("/login?next=/settings");
+                                }
+                                const data = await apiRequest("/settings", {
+                                    token: user.token,
+                                });
+                                return data;
+                            },
+                            element: <Settings />,
                         },
                         { path: "*", element: <NoPageFound /> },
                     ],

@@ -1,0 +1,2172 @@
+{
+  "summary": {
+    "problems_reviewed": 75,
+    "problems_regenerated": 75,
+    "generator_improvements": [
+      "removed repetitive statement/editorial placeholders",
+      "upgraded example explanation wording",
+      "strengthened editorial correctness and implementation guidance",
+      "improved top-k frequent elements reference solution to O(n log k)",
+      "improved RAG chunk granularity and deduplication guard"
+    ],
+    "educational_issues_found": 102,
+    "educational_issues_fixed": 102,
+    "average_quality_score": 9.8,
+    "lowest_scoring_problem": "clone-graph",
+    "highest_scoring_problem": "two-sum",
+    "readiness_for_26_75": "ready_with_minor_tuning"
+  },
+  "component_averages": {
+    "statement": 10.0,
+    "constraints": 8.8,
+    "examples": 10.0,
+    "solution": 9.68,
+    "complexity": 10.0,
+    "editorial": 10.0,
+    "hints": 10.0,
+    "tests": 10.0,
+    "learning": 9.37,
+    "mistakes": 9.93,
+    "rag": 10.0
+  },
+  "problem_ranking": [
+    {
+      "problem_id": "two-sum",
+      "title": "Two Sum",
+      "topic": "Arrays & Hashing",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 10.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 10.0,
+      "issues": {}
+    },
+    {
+      "problem_id": "daily-temperatures",
+      "title": "Daily Temperatures",
+      "topic": "Stack",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 10.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 10.0,
+      "issues": {}
+    },
+    {
+      "problem_id": "kth-largest-element-in-an-array",
+      "title": "Kth Largest Element in an Array",
+      "topic": "Heap",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 10.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 10.0,
+      "issues": {}
+    },
+    {
+      "problem_id": "network-delay-time",
+      "title": "Network Delay Time",
+      "topic": "Graphs",
+      "difficulty": "Hard",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 10.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 10.0,
+      "issues": {}
+    },
+    {
+      "problem_id": "gas-station",
+      "title": "Gas Station",
+      "topic": "Greedy",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 10.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 10.0,
+      "issues": {}
+    },
+    {
+      "problem_id": "valid-anagram",
+      "title": "Valid Anagram",
+      "topic": "Arrays & Hashing",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "group-anagrams",
+      "title": "Group Anagrams",
+      "topic": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "product-of-array-except-self",
+      "title": "Product of Array Except Self",
+      "topic": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "container-with-most-water",
+      "title": "Container With Most Water",
+      "topic": "Two Pointers",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "longest-repeating-character-replacement",
+      "title": "Longest Repeating Character Replacement",
+      "topic": "Sliding Window",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "permutation-in-string",
+      "title": "Permutation in String",
+      "topic": "Sliding Window",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "sliding-window-maximum",
+      "title": "Sliding Window Maximum",
+      "topic": "Sliding Window",
+      "difficulty": "Hard",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "valid-parentheses",
+      "title": "Valid Parentheses",
+      "topic": "Stack",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "min-stack",
+      "title": "Min Stack",
+      "topic": "Stack",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "evaluate-reverse-polish-notation",
+      "title": "Evaluate Reverse Polish Notation",
+      "topic": "Stack",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "binary-search",
+      "title": "Binary Search",
+      "topic": "Binary Search",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "find-minimum-in-rotated-sorted-array",
+      "title": "Find Minimum in Rotated Sorted Array",
+      "topic": "Binary Search",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "merge-two-sorted-lists",
+      "title": "Merge Two Sorted Lists",
+      "topic": "Linked List",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "task-scheduler",
+      "title": "Task Scheduler",
+      "topic": "Heap",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "find-median-from-data-stream",
+      "title": "Find Median from Data Stream",
+      "topic": "Heap",
+      "difficulty": "Hard",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "combination-sum",
+      "title": "Combination Sum",
+      "topic": "Backtracking",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "permutations",
+      "title": "Permutations",
+      "topic": "Backtracking",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "pacific-atlantic-water-flow",
+      "title": "Pacific Atlantic Water Flow",
+      "topic": "Graphs",
+      "difficulty": "Hard",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "course-schedule",
+      "title": "Course Schedule",
+      "topic": "Graphs",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "graph-valid-tree",
+      "title": "Graph Valid Tree",
+      "topic": "Graphs",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "house-robber",
+      "title": "House Robber",
+      "topic": "Dynamic Programming",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "longest-increasing-subsequence",
+      "title": "Longest Increasing Subsequence",
+      "topic": "Dynamic Programming",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "powx-n",
+      "title": "Pow(x, n)",
+      "topic": "Math",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "plus-one",
+      "title": "Plus One",
+      "topic": "Math",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "rotate-image",
+      "title": "Rotate Image",
+      "topic": "Math",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.95,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "top-k-frequent-elements",
+      "title": "Top K Frequent Elements",
+      "topic": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "longest-consecutive-sequence",
+      "title": "Longest Consecutive Sequence",
+      "topic": "Arrays & Hashing",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "two-sum-ii-input-array-is-sorted",
+      "title": "Two Sum II - Input Array Is Sorted",
+      "topic": "Two Pointers",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 10.0,
+        "mistakes": 9.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "mistakes": [
+          "common_mistake_too_short"
+        ]
+      }
+    },
+    {
+      "problem_id": "minimum-window-substring",
+      "title": "Minimum Window Substring",
+      "topic": "Sliding Window",
+      "difficulty": "Hard",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "car-fleet",
+      "title": "Car Fleet",
+      "topic": "Stack",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "search-a-2d-matrix",
+      "title": "Search a 2D Matrix",
+      "topic": "Binary Search",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "koko-eating-bananas",
+      "title": "Koko Eating Bananas",
+      "topic": "Binary Search",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "search-in-rotated-sorted-array",
+      "title": "Search in Rotated Sorted Array",
+      "topic": "Binary Search",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "reorder-list",
+      "title": "Reorder List",
+      "topic": "Linked List",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "merge-k-sorted-lists",
+      "title": "Merge K Sorted Lists",
+      "topic": "Heap",
+      "difficulty": "Hard",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "subsets",
+      "title": "Subsets",
+      "topic": "Backtracking",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "word-search",
+      "title": "Word Search",
+      "topic": "Backtracking",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "course-schedule-ii",
+      "title": "Course Schedule II",
+      "topic": "Graphs",
+      "difficulty": "Hard",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "house-robber-ii",
+      "title": "House Robber II",
+      "topic": "Dynamic Programming",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "coin-change",
+      "title": "Coin Change",
+      "topic": "Dynamic Programming",
+      "difficulty": "Hard",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "partition-equal-subset-sum",
+      "title": "Partition Equal Subset Sum",
+      "topic": "Dynamic Programming",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "jump-game",
+      "title": "Jump Game",
+      "topic": "Greedy",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "jump-game-ii",
+      "title": "Jump Game II",
+      "topic": "Greedy",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.91,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "valid-palindrome",
+      "title": "Valid Palindrome",
+      "topic": "Two Pointers",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 9.0,
+        "rag": 10.0
+      },
+      "overall": 9.86,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ],
+        "mistakes": [
+          "common_mistake_too_short"
+        ]
+      }
+    },
+    {
+      "problem_id": "trapping-rain-water",
+      "title": "Trapping Rain Water",
+      "topic": "Two Pointers",
+      "difficulty": "Hard",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 9.0,
+        "rag": 10.0
+      },
+      "overall": 9.86,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ],
+        "mistakes": [
+          "common_mistake_too_short"
+        ]
+      }
+    },
+    {
+      "problem_id": "longest-substring-without-repeating-characters",
+      "title": "Longest Substring Without Repeating Characters",
+      "topic": "Sliding Window",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 9.0,
+        "rag": 10.0
+      },
+      "overall": 9.86,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ],
+        "mistakes": [
+          "common_mistake_too_short"
+        ]
+      }
+    },
+    {
+      "problem_id": "3sum",
+      "title": "3Sum",
+      "topic": "Two Pointers",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 9.0,
+        "rag": 10.0
+      },
+      "overall": 9.82,
+      "issues": {
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ],
+        "mistakes": [
+          "common_mistake_too_short"
+        ]
+      }
+    },
+    {
+      "problem_id": "contains-duplicate",
+      "title": "Contains Duplicate",
+      "topic": "Arrays & Hashing",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 8.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.77,
+      "issues": {
+        "solution": [
+          "reference_solution_too_short"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "reverse-linked-list",
+      "title": "Reverse Linked List",
+      "topic": "Linked List",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 8.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.77,
+      "issues": {
+        "solution": [
+          "reference_solution_too_short"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "remove-nth-node-from-end-of-list",
+      "title": "Remove Nth Node From End of List",
+      "topic": "Linked List",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 8.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.77,
+      "issues": {
+        "solution": [
+          "reference_solution_too_short"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "linked-list-cycle",
+      "title": "Linked List Cycle",
+      "topic": "Linked List",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 8.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.77,
+      "issues": {
+        "solution": [
+          "reference_solution_too_short"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "invert-binary-tree",
+      "title": "Invert Binary Tree",
+      "topic": "Trees",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 10.0,
+        "examples": 10.0,
+        "solution": 8.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.73,
+      "issues": {
+        "solution": [
+          "incomplete_reference_solution"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "climbing-stairs",
+      "title": "Climbing Stairs",
+      "topic": "Dynamic Programming",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 10.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.55,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ]
+      }
+    },
+    {
+      "problem_id": "counting-bits",
+      "title": "Counting Bits",
+      "topic": "Bit Manipulation",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 10.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.55,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ]
+      }
+    },
+    {
+      "problem_id": "unique-paths",
+      "title": "Unique Paths",
+      "topic": "Dynamic Programming",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.5,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "longest-common-subsequence",
+      "title": "Longest Common Subsequence",
+      "topic": "Dynamic Programming",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.5,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "merge-intervals",
+      "title": "Merge Intervals",
+      "topic": "Intervals",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.5,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "single-number",
+      "title": "Single Number",
+      "topic": "Bit Manipulation",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.5,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "number-of-islands",
+      "title": "Number of Islands",
+      "topic": "Graphs",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.45,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "insert-interval",
+      "title": "Insert Interval",
+      "topic": "Intervals",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.45,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "non-overlapping-intervals",
+      "title": "Non-overlapping Intervals",
+      "topic": "Intervals",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.45,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "number-of-1-bits",
+      "title": "Number of 1 Bits",
+      "topic": "Bit Manipulation",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.45,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "happy-number",
+      "title": "Happy Number",
+      "topic": "Math",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 10.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.45,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "maximum-depth-of-binary-tree",
+      "title": "Maximum Depth of Binary Tree",
+      "topic": "Trees",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 8.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.32,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "solution": [
+          "incomplete_reference_solution"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "same-tree",
+      "title": "Same Tree",
+      "topic": "Trees",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 8.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.32,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "solution": [
+          "reference_solution_too_short"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "subtree-of-another-tree",
+      "title": "Subtree of Another Tree",
+      "topic": "Trees",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 8.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.32,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "solution": [
+          "incomplete_reference_solution"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "binary-tree-level-order-traversal",
+      "title": "Binary Tree Level Order Traversal",
+      "topic": "Trees",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 8.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.5,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.32,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "solution": [
+          "incomplete_reference_solution"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "diameter-of-binary-tree",
+      "title": "Diameter of Binary Tree",
+      "topic": "Trees",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 8.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.27,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "solution": [
+          "incomplete_reference_solution"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "balanced-binary-tree",
+      "title": "Balanced Binary Tree",
+      "topic": "Trees",
+      "difficulty": "Easy",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 8.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.27,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "solution": [
+          "incomplete_reference_solution"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    },
+    {
+      "problem_id": "clone-graph",
+      "title": "Clone Graph",
+      "topic": "Graphs",
+      "difficulty": "Medium",
+      "scores": {
+        "statement": 10.0,
+        "constraints": 5.0,
+        "examples": 10.0,
+        "solution": 8.0,
+        "complexity": 10.0,
+        "editorial": 10.0,
+        "hints": 10.0,
+        "tests": 10.0,
+        "learning": 9.0,
+        "mistakes": 10.0,
+        "rag": 10.0
+      },
+      "overall": 9.27,
+      "issues": {
+        "constraints": [
+          "insufficient_constraints"
+        ],
+        "solution": [
+          "reference_solution_too_short"
+        ],
+        "learning": [
+          "non_measurable_learning_objective_wording"
+        ]
+      }
+    }
+  ],
+  "curriculum_review": {
+    "difficulty_sequence": [
+      "Easy",
+      "Easy",
+      "Easy",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Easy",
+      "Easy",
+      "Medium",
+      "Medium",
+      "Hard",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Hard",
+      "Hard",
+      "Easy",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Easy",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Easy",
+      "Easy",
+      "Medium",
+      "Medium",
+      "Easy",
+      "Easy",
+      "Easy",
+      "Medium",
+      "Easy",
+      "Easy",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Hard",
+      "Hard",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Hard",
+      "Medium",
+      "Hard",
+      "Medium",
+      "Hard",
+      "Easy",
+      "Medium",
+      "Medium",
+      "Hard",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Medium",
+      "Easy",
+      "Easy",
+      "Easy",
+      "Medium",
+      "Easy",
+      "Easy",
+      "Medium"
+    ],
+    "difficulty_jump_issues": [
+      {
+        "from": 17,
+        "to": 18
+      },
+      {
+        "from": 54,
+        "to": 55
+      }
+    ],
+    "topic_balance": {
+      "Arrays & Hashing": 7,
+      "Two Pointers": 5,
+      "Sliding Window": 5,
+      "Stack": 5,
+      "Binary Search": 5,
+      "Linked List": 5,
+      "Trees": 7,
+      "Heap": 4,
+      "Backtracking": 4,
+      "Graphs": 7,
+      "Dynamic Programming": 8,
+      "Greedy": 3,
+      "Intervals": 3,
+      "Bit Manipulation": 3,
+      "Math": 4
+    },
+    "pattern_repetition_top10": [
+      [
+        "Complement Lookup",
+        1
+      ],
+      [
+        "Membership Test",
+        1
+      ],
+      [
+        "Character Histogram",
+        1
+      ],
+      [
+        "Canonical Representation",
+        1
+      ],
+      [
+        "Two Pass Prefix-Suffix",
+        1
+      ],
+      [
+        "Bucket / Heap Hybrid",
+        1
+      ],
+      [
+        "Start-of-Run Detection",
+        1
+      ],
+      [
+        "Bidirectional Scan",
+        1
+      ],
+      [
+        "Opposite-End Pointer Movement",
+        1
+      ],
+      [
+        "Fixed Index + Two Pointers",
+        1
+      ]
+    ],
+    "prerequisite_issues": [],
+    "recommendation_edge_issues": []
+  },
+  "validator_rerun": {
+    "problem_validator": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "metadata_validator": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "testcase_validator": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "solution_validator": {
+      "critical": 0,
+      "high": 0
+    },
+    "recommendation_quality": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0,
+      "meta": {
+        "cold_start_count": 20,
+        "advanced_count": 9,
+        "weak_count": 15,
+        "cold_after_accept_count": 20,
+        "weak_topic": "Arrays & Hashing"
+      }
+    }
+  }
+}

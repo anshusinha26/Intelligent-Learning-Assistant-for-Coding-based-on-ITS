@@ -1,12 +1,19 @@
-FROM node:lts-alpine AS builder
-WORKDIR /usr/src/app
+FROM node:20-alpine AS dependencies
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+
+FROM dependencies AS development
 COPY . .
-RUN npm install
+EXPOSE 5173
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "5173"]
+
+FROM dependencies AS builder
+COPY . .
 RUN npm run build
 
-FROM node:lts-alpine AS production
-WORKDIR /usr/src/app
-COPY --from=builder /usr/src/app/dist ./dist
+FROM nginx:1.27-alpine AS production
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/dist /usr/share/nginx/html
 EXPOSE 3000
-USER node
-CMD ["npx", "serve", "-d", "dist", "-l", "3000"]
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,0 +1,27 @@
+{
+  "hint": {
+    "status": 200,
+    "source": "local-rag",
+    "answer": "Focused guidance for your question:\n- Context: Two Sum (Arrays & Hashing, pattern: Complement Lookup)\n- Suggested approach:\n  1) Use a hash map for O(1) complement lookup\n  2) For topic Arrays & Hashing and pattern Complement Lookup, define input-output contract and constraints before coding.\n  3) Use queue for BFS-like level/state traversal.\n- Verify with dry-run on sample, then edge cases, then complexity."
+  },
+  "second_hint": {
+    "status": 200,
+    "source": "local-rag",
+    "answer": "Full solution (Python) for Two Sum:\n```python\ndef solve(nums, target):\n    seen = {}\n    for i, num in enumerate(nums):\n        need = target - num\n        if need in seen:\n            return [seen[need], i]\n        seen[num] = i\n    return []\n```\nComplexity: O(n) time, O(n) space."
+  },
+  "complexity": {
+    "status": 200,
+    "source": "local-rag",
+    "answer": "Focused guidance for your question:\n- Context: Two Sum (Arrays & Hashing, pattern: Complement Lookup)\n- Suggested approach:\n  1) Complexity target: time O(n), space O(n).\n  2) Two Sum: Given an integer array and target sum, return indices of the unique pair that adds to target.\n  3) Key constraints: 2 <= len(nums) <= 10^5, -10^9 <= nums[i], target <= 10^9\n- Verify with dry-run on sample, then edge cases, then complexity."
+  },
+  "edge_cases": {
+    "status": 200,
+    "source": "local-rag",
+    "answer": "Focused guidance for your question:\n- Context: Two Sum (Arrays & Hashing, pattern: Complement Lookup)\n- Suggested approach:\n  1) Use two pointers or frequency maps; handle empty and single-char cases.\n  2) Write recurrence and base cases first, then transition order.\n  3) Key constraints: 2 <= len(nums) <= 10^5, -10^9 <= nums[i], target <= 10^9\n- Verify with dry-run on sample, then edge cases, then complexity."
+  },
+  "full_solution": {
+    "status": 200,
+    "source": "local-rag",
+    "answer": "Full solution (Python) for Two Sum:\n```python\ndef solve(nums, target):\n    seen = {}\n    for i, num in enumerate(nums):\n        need = target - num\n        if need in seen:\n            return [seen[need], i]\n        seen[num] = i\n    return []\n```\nComplexity: O(n) time, O(n) space."
+  }
+}

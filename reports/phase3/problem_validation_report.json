@@ -1,0 +1,106 @@
+{
+  "summary": {
+    "total_problems": 75,
+    "critical_issues": 0,
+    "high_issues": 0,
+    "medium_issues": 0,
+    "low_issues": 0
+  },
+  "source_stats": {
+    "premium_active_total": 75,
+    "topics_total": 15,
+    "patterns_total": 75
+  },
+  "inventory_health": {
+    "total_problems": 75,
+    "difficulty_distribution": {
+      "Medium": 46,
+      "Easy": 20,
+      "Hard": 9
+    },
+    "topic_distribution_top15": [
+      [
+        "Dynamic Programming",
+        8
+      ],
+      [
+        "Trees",
+        7
+      ],
+      [
+        "Graphs",
+        7
+      ],
+      [
+        "Arrays & Hashing",
+        7
+      ],
+      [
+        "Two Pointers",
+        5
+      ],
+      [
+        "Binary Search",
+        5
+      ],
+      [
+        "Stack",
+        5
+      ],
+      [
+        "Linked List",
+        5
+      ],
+      [
+        "Sliding Window",
+        5
+      ],
+      [
+        "Backtracking",
+        4
+      ],
+      [
+        "Heap",
+        4
+      ],
+      [
+        "Math",
+        4
+      ],
+      [
+        "Bit Manipulation",
+        3
+      ],
+      [
+        "Greedy",
+        3
+      ],
+      [
+        "Intervals",
+        3
+      ]
+    ],
+    "source_distribution_top10": [
+      [
+        "premium-phase3f-internal",
+        75
+      ]
+    ]
+  },
+  "issues": {
+    "critical": [],
+    "high": [],
+    "medium": [],
+    "low": []
+  },
+  "markdown_scan": {
+    "link_count": 0,
+    "image_count": 0,
+    "broken_url_format_count": 0,
+    "broken_url_format_examples": []
+  },
+  "artifacts": {
+    "inventory_csv": "reports/phase3/problem_inventory.csv",
+    "inventory_json": "reports/phase3/problem_inventory.json"
+  }
+}

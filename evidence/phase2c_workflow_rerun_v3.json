@@ -1,0 +1,200 @@
+{
+  "meta": {
+    "checked_at": "2026-06-26T17:10:12.597178",
+    "user": {
+      "id": 8,
+      "email": "phase2c_final_1782474012_f484b@example.com"
+    }
+  },
+  "workflows": {
+    "W4": {
+      "runtime": {
+        "solved_recommended": [
+          "best-time-stock",
+          "maximum-subarray",
+          "search-rotated"
+        ],
+        "still_pending_after_solve": [],
+        "pending_duplicates": []
+      },
+      "db": {
+        "before": {
+          "attempts": 1,
+          "submissions": 1,
+          "metrics": 1,
+          "recs_total": 0,
+          "recs_pending": 0,
+          "rev_total": 1,
+          "rev_pending": 1,
+          "rev_completed": 0
+        },
+        "after": {
+          "attempts": 4,
+          "submissions": 7,
+          "metrics": 4,
+          "recs_total": 11,
+          "recs_pending": 8,
+          "rev_total": 4,
+          "rev_pending": 4,
+          "rev_completed": 0
+        }
+      },
+      "status": "PASS"
+    },
+    "W5": {
+      "runtime": {
+        "selected_topic": "Arrays and Hashmap",
+        "weak_after_bad": {
+          "topic": "Arrays and Hashmap",
+          "mastery_score": 0.3333333333333333,
+          "error_frequency": 0.6666666666666666,
+          "attempts_count": 4,
+          "success_rate": 25.0
+        },
+        "weak_after_improve": {
+          "topic": "Arrays and Hashmap",
+          "mastery_score": 0.5555555555555556,
+          "error_frequency": 0.4444444444444444,
+          "attempts_count": 7,
+          "success_rate": 57.14
+        },
+        "topic_count_after_bad": 10,
+        "topic_count_after_improve": 3
+      },
+      "db": {
+        "before": {
+          "attempts": 4,
+          "submissions": 7,
+          "metrics": 4,
+          "recs_total": 11,
+          "recs_pending": 8,
+          "rev_total": 4,
+          "rev_pending": 4,
+          "rev_completed": 0
+        },
+        "after": {
+          "attempts": 10,
+          "submissions": 13,
+          "metrics": 4,
+          "recs_total": 13,
+          "recs_pending": 10,
+          "rev_total": 6,
+          "rev_pending": 6,
+          "rev_completed": 0
+        }
+      },
+      "status": "PASS"
+    },
+    "W6": {
+      "runtime": {
+        "due_before": 1,
+        "due_after": 0,
+        "completed_id": 23
+      },
+      "db": {
+        "before": {
+          "attempts": 10,
+          "submissions": 13,
+          "metrics": 4,
+          "recs_total": 13,
+          "recs_pending": 10,
+          "rev_total": 6,
+          "rev_pending": 6,
+          "rev_completed": 0
+        },
+        "after": {
+          "attempts": 10,
+          "submissions": 13,
+          "metrics": 4,
+          "recs_total": 13,
+          "recs_pending": 10,
+          "rev_total": 7,
+          "rev_pending": 6,
+          "rev_completed": 1
+        }
+      },
+      "status": "PASS"
+    },
+    "W10": {
+      "runtime": {
+        "me1": 200,
+        "me2": 200,
+        "concurrent": [
+          200,
+          200,
+          200,
+          200
+        ],
+        "invalid": 401,
+        "expired": 401,
+        "refresh": 200,
+        "logout": 200,
+        "post_logout_access": 401,
+        "post_logout_refresh": 401
+      },
+      "status": "PASS"
+    },
+    "W11": {
+      "runtime": {
+        "invalid_problem": 404,
+        "invalid_submission": 404,
+        "malformed_payload": 422,
+        "missing_fields": 422,
+        "invalid_verdict": 422,
+        "empty_code": 200,
+        "huge_code": 200,
+        "unicode_rag": 200,
+        "rapid": [
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ]
+      },
+      "db": {
+        "before": {
+          "attempts": 10,
+          "submissions": 13,
+          "metrics": 4,
+          "recs_total": 13,
+          "recs_pending": 10,
+          "rev_total": 7,
+          "rev_pending": 6,
+          "rev_completed": 1
+        },
+        "after": {
+          "attempts": 18,
+          "submissions": 21,
+          "metrics": 4,
+          "recs_total": 13,
+          "recs_pending": 10,
+          "rev_total": 7,
+          "rev_pending": 6,
+          "rev_completed": 1
+        }
+      },
+      "status": "PASS"
+    },
+    "W12": {
+      "runtime": {
+        "orphan": {
+          "attempts_user": 0,
+          "attempts_problem": 0,
+          "submissions_user": 0,
+          "submissions_problem": 0,
+          "recs_user": 0,
+          "recs_problem": 0,
+          "revision_user": 0,
+          "revision_problem": 0
+        },
+        "user_pending_duplicates": 0,
+        "global_pending_duplicate_groups": 0,
+        "metric_mismatch": 0,
+        "fk_issues": 0
+      },
+      "status": "PASS"
+    }
+  }
+}

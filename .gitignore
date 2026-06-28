@@ -37,6 +37,9 @@ ENV/
 .env
 .env.*
 *.local
+!.env.example
+!.env.development.example
+!.env.production.example
 
 # Runtime/log artifacts
 *.log

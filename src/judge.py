@@ -7,17 +7,34 @@ import tempfile
 import textwrap
 import time
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict
+
+from src.config import settings
 
 
 class JudgeService:
-    """Runs function-style Python submissions against stored test cases."""
-
-    def __init__(self, timeout_seconds: int = 3):
+    def __init__(self, timeout_seconds: int = settings.judge_timeout_seconds):
         self.timeout_seconds = timeout_seconds
+        self.max_code_size_bytes = settings.max_code_size_bytes
+        self.max_test_cases = settings.judge_max_test_cases
+        self.max_output_chars = settings.judge_max_output_chars
+        self.memory_limit_mb = settings.judge_memory_limit_mb
+        self.recursion_limit = settings.judge_recursion_limit
 
     def run_python(self, code: str, function_name: str, test_cases_json: str) -> Dict:
-        """Execute submitted Python code against JSON test cases."""
+        if not code or not code.strip():
+            return {
+                "verdict": "Compilation Error",
+                "runtime_ms": 0,
+                "output": {"error": "Code cannot be empty"},
+            }
+        if len(code.encode("utf-8")) > self.max_code_size_bytes:
+            return {
+                "verdict": "Runtime Error",
+                "runtime_ms": 0,
+                "output": {"error": f"Code exceeds max size ({self.max_code_size_bytes} bytes)"},
+            }
+
         try:
             test_cases = json.loads(test_cases_json or "[]")
         except json.JSONDecodeError:
@@ -33,11 +50,20 @@ class JudgeService:
                 "runtime_ms": 0,
                 "output": {"error": "No executable test cases configured"},
             }
+        if len(test_cases) > self.max_test_cases:
+            return {
+                "verdict": "Runtime Error",
+                "runtime_ms": 0,
+                "output": {"error": f"Too many test cases (max {self.max_test_cases})"},
+            }
 
         payload = {
             "code": code,
             "function_name": function_name or "solve",
             "test_cases": test_cases,
+            "max_output_chars": self.max_output_chars,
+            "memory_limit_mb": self.memory_limit_mb,
+            "recursion_limit": self.recursion_limit,
         }
 
         runner = textwrap.dedent(
@@ -45,12 +71,14 @@ class JudgeService:
             import contextlib
             import io
             import json
+            import resource
             import traceback
             import collections
             import heapq
             import bisect
             import itertools
             import math
+            import sys
             import typing
 
             ALLOWED_IMPORTS = {"typing", "collections", "heapq", "bisect", "itertools", "math"}
@@ -60,6 +88,37 @@ class JudgeService:
                 if root in ALLOWED_IMPORTS:
                     return __import__(name, globals, locals, fromlist, level)
                 raise ImportError(f"Import '{name}' is not allowed in demo judge")
+
+            payload = json.loads(open("payload.json", encoding="utf-8").read())
+            max_output_chars = int(payload.get("max_output_chars", 12000))
+            memory_limit_mb = int(payload.get("memory_limit_mb", 128))
+            recursion_limit = int(payload.get("recursion_limit", 2000))
+
+            try:
+                bytes_limit = memory_limit_mb * 1024 * 1024
+                resource.setrlimit(resource.RLIMIT_AS, (bytes_limit, bytes_limit))
+                resource.setrlimit(resource.RLIMIT_DATA, (bytes_limit, bytes_limit))
+                resource.setrlimit(resource.RLIMIT_CPU, (2, 2))
+            except Exception:
+                pass
+
+            sys.setrecursionlimit(recursion_limit)
+            budget = {"remaining": max_output_chars}
+
+            def _truncate(value, limit=400):
+                text = str(value)
+                if len(text) <= limit:
+                    return text
+                return text[:limit] + "...<truncated>"
+
+            def limited_print(*args, **kwargs):
+                text = " ".join(str(arg) for arg in args)
+                end = kwargs.get("end", "\\n")
+                chunk = text + end
+                if len(chunk) > budget["remaining"]:
+                    raise RuntimeError("Output limit exceeded")
+                budget["remaining"] -= len(chunk)
+                sys.stdout.write(chunk)
 
             SAFE_BUILTINS = {
                 "__import__": safe_import,
@@ -82,7 +141,7 @@ class JudgeService:
                 "min": min,
                 "ord": ord,
                 "pow": pow,
-                "print": print,
+                "print": limited_print,
                 "range": range,
                 "reversed": reversed,
                 "round": round,
@@ -92,9 +151,11 @@ class JudgeService:
                 "sum": sum,
                 "tuple": tuple,
                 "zip": zip,
+                "Exception": Exception,
+                "ValueError": ValueError,
+                "TypeError": TypeError,
             }
 
-            payload = json.loads(open("payload.json", encoding="utf-8").read())
             namespace = {
                 "__name__": "__submission__",
                 "__builtins__": SAFE_BUILTINS,
@@ -121,7 +182,6 @@ class JudgeService:
                     args = case.get("input", [])
                     if not isinstance(args, list):
                         args = [args]
-
                     stdout = io.StringIO()
                     with contextlib.redirect_stdout(stdout):
                         actual = fn(*args)
@@ -131,16 +191,21 @@ class JudgeService:
                     results.append({
                         "case": index,
                         "passed": passed,
-                        "input": args,
-                        "expected": expected,
-                        "actual": actual,
-                        "stdout": stdout.getvalue(),
+                        "input": _truncate(args, 600),
+                        "expected": _truncate(expected, 600),
+                        "actual": _truncate(actual, 600),
+                        "stdout": _truncate(stdout.getvalue(), 1200),
                     })
                     if not passed:
                         break
 
                 verdict = "Accepted" if all(result["passed"] for result in results) else "Wrong Answer"
                 print(json.dumps({"verdict": verdict, "results": results}))
+            except SyntaxError:
+                print(json.dumps({
+                    "verdict": "Compilation Error",
+                    "error": traceback.format_exc(limit=3),
+                }))
             except Exception:
                 print(json.dumps({
                     "verdict": "Runtime Error",
@@ -157,12 +222,12 @@ class JudgeService:
 
             try:
                 completed = subprocess.run(
-                    [sys.executable, "runner.py"],
+                    [sys.executable, "-I", "runner.py"],
                     cwd=tmp_path,
                     capture_output=True,
                     text=True,
                     timeout=self.timeout_seconds,
-                    env={"PYTHONIOENCODING": "utf-8"},
+                    env={"PYTHONIOENCODING": "utf-8", "PYTHONHASHSEED": "0"},
                 )
             except subprocess.TimeoutExpired:
                 return {
@@ -173,12 +238,14 @@ class JudgeService:
 
         runtime_ms = int((time.perf_counter() - started_at) * 1000)
         raw_output = completed.stdout.strip()
+        if len(raw_output) > self.max_output_chars * 2:
+            raw_output = raw_output[: self.max_output_chars * 2] + "...<truncated>"
         try:
             output = json.loads(raw_output.splitlines()[-1])
         except (IndexError, json.JSONDecodeError):
             output = {
                 "verdict": "Runtime Error",
-                "error": completed.stderr or raw_output or "Judge produced no output",
+                "error": (completed.stderr or raw_output or "Judge produced no output")[: self.max_output_chars],
             }
 
         return {
@@ -197,4 +264,6 @@ class JudgeService:
             return "runtime-error"
         if verdict == "Wrong Answer":
             return "wrong-answer"
+        if verdict == "Compilation Error":
+            return "compilation-error"
         return "manual-review"

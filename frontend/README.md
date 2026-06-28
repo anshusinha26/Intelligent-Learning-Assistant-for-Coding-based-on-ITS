@@ -30,3 +30,12 @@ Local API default:
 ```text
 http://localhost:8001/api
 ```
+
+## New Functional Screens
+
+- `/forgot-password` -> OTP request for password recovery
+- `/verify-otp` -> OTP verification
+- `/reset-password` -> set new password
+- `/settings` -> preferences, email verification, change password
+- `/notes` -> notes CRUD
+- `/bookmarks` -> bookmarks CRUD

@@ -50,6 +50,9 @@ export default function NavBar() {
         { to: "/problems", label: "Problems" },
         { to: "/dashboard", label: "Dashboard", auth: true },
         { to: "/submissions", label: "Submissions", auth: true },
+        { to: "/notes", label: "Notes", auth: true },
+        { to: "/bookmarks", label: "Bookmarks", auth: true },
+        { to: "/settings", label: "Settings", auth: true },
     ].filter((link) => !link.auth || user.isAuthenticated);
 
     return (

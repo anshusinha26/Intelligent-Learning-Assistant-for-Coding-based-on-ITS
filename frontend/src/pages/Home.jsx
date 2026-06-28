@@ -8,15 +8,24 @@ import {
     Target,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 
 function Home() {
+    const loaderData = useLoaderData();
+    const problemCount = Number.isFinite(loaderData?.problemCount)
+        ? loaderData.problemCount
+        : null;
+    const problemCountLabel = problemCount === null
+        ? "sync after login"
+        : `${problemCount} problems`;
+    const scannedLabel = problemCount === null ? "..." : String(problemCount);
+
     const learnerTrace1 = `> learner_model.recompute(user)
 attempt recorded: Wrong Answer
 weak topic: Dynamic Programming`;
     const learnerTrace2 = `> recommender.score(unseen)
-630 curated problems scanned
+${scannedLabel} curated problems scanned
 weakness weight applied
 next: Longest Substring
 review plan refreshed`;
@@ -24,7 +33,7 @@ review plan refreshed`;
         {
             icon: Target,
             label: "Curated DSA bank",
-            value: "630 problems",
+            value: problemCountLabel,
         },
         {
             icon: BrainCircuit,

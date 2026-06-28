@@ -1,0 +1,63 @@
+{
+  "beginner": {
+    "recommendation_count": 12,
+    "difficulties": {
+      "Easy": 4,
+      "Medium": 8,
+      "Hard": 0
+    },
+    "pass": true
+  },
+  "intermediate": {
+    "recommendation_count": 12,
+    "difficulties": {
+      "Easy": 4,
+      "Medium": 8,
+      "Hard": 0
+    },
+    "pass": true
+  },
+  "advanced": {
+    "recommendation_count": 12,
+    "difficulties": {
+      "Easy": 0,
+      "Medium": 9,
+      "Hard": 3
+    },
+    "solved_overlap_count": 0,
+    "pass": true
+  },
+  "returning": {
+    "initial_count": 10,
+    "after_resume_count": 10,
+    "accepted_problem_removed": true,
+    "pass": true
+  },
+  "weak_topic": {
+    "weak_topic": "Dynamic Programming",
+    "topic_total": 8,
+    "attempted_for_signal": 4,
+    "top5_topics": [
+      "Dynamic Programming",
+      "Dynamic Programming",
+      "Dynamic Programming",
+      "Dynamic Programming",
+      "Arrays & Hashing"
+    ],
+    "prioritized": true,
+    "pass": true
+  },
+  "spaced_repetition": {
+    "due_count": 1,
+    "completion_recorded": true,
+    "pass": true
+  },
+  "progress_dashboard": {
+    "before_attempted": 0,
+    "after_attempted": 1,
+    "before_solved": 0,
+    "after_solved": 1,
+    "pass": true
+  },
+  "overall_pass": true
+}

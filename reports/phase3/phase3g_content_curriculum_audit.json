@@ -1,0 +1,343 @@
+{
+  "summary": {
+    "total_problems": 75,
+    "findings_count": 30,
+    "severity_counts": {
+      "Medium": 29,
+      "Low": 1
+    }
+  },
+  "metrics": {
+    "total_problems": 75,
+    "topic_coverage": 15,
+    "pattern_coverage": 75,
+    "difficulty_distribution": {
+      "Easy": 20,
+      "Medium": 46,
+      "Hard": 9
+    },
+    "avg_visible_tests": 5.33,
+    "avg_hidden_tests": 20.0,
+    "avg_tests_total": 25.33,
+    "avg_hints": 3.0,
+    "avg_editorial_words": 96.8,
+    "avg_statement_words": 57.59,
+    "recommendation_graph_stats": {
+      "total_edges": 224,
+      "by_type": {
+        "prerequisite": 74,
+        "alternative": 40,
+        "follow_up": 67,
+        "review": 23,
+        "recovery": 20
+      },
+      "avg_out_degree": 2.99,
+      "avg_in_degree": 2.99,
+      "review_coverage": 0.16,
+      "recovery_coverage": 0.133
+    }
+  },
+  "findings": [
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "maximum-depth-of-binary-tree has weak constraints block",
+      "evidence": {
+        "problem_id": "maximum-depth-of-binary-tree"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "diameter-of-binary-tree has weak constraints block",
+      "evidence": {
+        "problem_id": "diameter-of-binary-tree"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "balanced-binary-tree has weak constraints block",
+      "evidence": {
+        "problem_id": "balanced-binary-tree"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "same-tree has weak constraints block",
+      "evidence": {
+        "problem_id": "same-tree"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "subtree-of-another-tree has weak constraints block",
+      "evidence": {
+        "problem_id": "subtree-of-another-tree"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "binary-tree-level-order-traversal has weak constraints block",
+      "evidence": {
+        "problem_id": "binary-tree-level-order-traversal"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "number-of-islands has weak constraints block",
+      "evidence": {
+        "problem_id": "number-of-islands"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "clone-graph has weak constraints block",
+      "evidence": {
+        "problem_id": "clone-graph"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "climbing-stairs has weak constraints block",
+      "evidence": {
+        "problem_id": "climbing-stairs"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "unique-paths has weak constraints block",
+      "evidence": {
+        "problem_id": "unique-paths"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "longest-common-subsequence has weak constraints block",
+      "evidence": {
+        "problem_id": "longest-common-subsequence"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "merge-intervals has weak constraints block",
+      "evidence": {
+        "problem_id": "merge-intervals"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "insert-interval has weak constraints block",
+      "evidence": {
+        "problem_id": "insert-interval"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "non-overlapping-intervals has weak constraints block",
+      "evidence": {
+        "problem_id": "non-overlapping-intervals"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "single-number has weak constraints block",
+      "evidence": {
+        "problem_id": "single-number"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "number-of-1-bits has weak constraints block",
+      "evidence": {
+        "problem_id": "number-of-1-bits"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "counting-bits has weak constraints block",
+      "evidence": {
+        "problem_id": "counting-bits"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "constraints_depth",
+      "message": "happy-number has weak constraints block",
+      "evidence": {
+        "problem_id": "happy-number"
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "duplicate_hints_exact",
+      "message": "Exact duplicate hint triplet across problems",
+      "evidence": {
+        "problem_ids": [
+          "find-minimum-in-rotated-sorted-array",
+          "search-in-rotated-sorted-array"
+        ]
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "duplicate_hints_exact",
+      "message": "Exact duplicate hint triplet across problems",
+      "evidence": {
+        "problem_ids": [
+          "reverse-linked-list",
+          "merge-two-sorted-lists",
+          "reorder-list",
+          "remove-nth-node-from-end-of-list",
+          "linked-list-cycle"
+        ]
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "duplicate_hints_exact",
+      "message": "Exact duplicate hint triplet across problems",
+      "evidence": {
+        "problem_ids": [
+          "invert-binary-tree",
+          "maximum-depth-of-binary-tree",
+          "diameter-of-binary-tree",
+          "balanced-binary-tree",
+          "same-tree",
+          "subtree-of-another-tree",
+          "binary-tree-level-order-traversal"
+        ]
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "duplicate_hints_exact",
+      "message": "Exact duplicate hint triplet across problems",
+      "evidence": {
+        "problem_ids": [
+          "kth-largest-element-in-an-array",
+          "task-scheduler",
+          "find-median-from-data-stream",
+          "merge-k-sorted-lists"
+        ]
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "duplicate_hints_exact",
+      "message": "Exact duplicate hint triplet across problems",
+      "evidence": {
+        "problem_ids": [
+          "subsets",
+          "combination-sum",
+          "permutations",
+          "word-search"
+        ]
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "duplicate_hints_exact",
+      "message": "Exact duplicate hint triplet across problems",
+      "evidence": {
+        "problem_ids": [
+          "number-of-islands",
+          "clone-graph",
+          "pacific-atlantic-water-flow",
+          "course-schedule",
+          "course-schedule-ii",
+          "graph-valid-tree",
+          "network-delay-time"
+        ]
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "duplicate_hints_exact",
+      "message": "Exact duplicate hint triplet across problems",
+      "evidence": {
+        "problem_ids": [
+          "climbing-stairs",
+          "house-robber",
+          "house-robber-ii",
+          "coin-change",
+          "longest-increasing-subsequence",
+          "partition-equal-subset-sum",
+          "unique-paths",
+          "longest-common-subsequence"
+        ]
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "duplicate_hints_exact",
+      "message": "Exact duplicate hint triplet across problems",
+      "evidence": {
+        "problem_ids": [
+          "jump-game",
+          "jump-game-ii",
+          "gas-station"
+        ]
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "duplicate_hints_exact",
+      "message": "Exact duplicate hint triplet across problems",
+      "evidence": {
+        "problem_ids": [
+          "merge-intervals",
+          "insert-interval",
+          "non-overlapping-intervals"
+        ]
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "duplicate_hints_exact",
+      "message": "Exact duplicate hint triplet across problems",
+      "evidence": {
+        "problem_ids": [
+          "single-number",
+          "number-of-1-bits",
+          "counting-bits"
+        ]
+      }
+    },
+    {
+      "severity": "Medium",
+      "code": "duplicate_hints_exact",
+      "message": "Exact duplicate hint triplet across problems",
+      "evidence": {
+        "problem_ids": [
+          "powx-n",
+          "happy-number",
+          "plus-one",
+          "rotate-image"
+        ]
+      }
+    },
+    {
+      "severity": "Low",
+      "code": "learning_objective_wording",
+      "message": "Some learning objectives are not action-measurable",
+      "evidence": {
+        "count": 94
+      }
+    }
+  ]
+}

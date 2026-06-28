@@ -1,0 +1,363 @@
+{
+  "summary": {
+    "problems_generated": 25,
+    "problems_validated": 25,
+    "visible_tests_generated": 150,
+    "hidden_tests_generated": 500
+  },
+  "verification": {
+    "problems_checked": 25,
+    "results": [
+      {
+        "problem_id": "two-sum",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "contains-duplicate",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "valid-anagram",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "group-anagrams",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "product-of-array-except-self",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "top-k-frequent-elements",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "longest-consecutive-sequence",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "valid-palindrome",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "two-sum-ii-input-array-is-sorted",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "3sum",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "container-with-most-water",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "trapping-rain-water",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "longest-substring-without-repeating-characters",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "longest-repeating-character-replacement",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "permutation-in-string",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "minimum-window-substring",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "sliding-window-maximum",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "valid-parentheses",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "min-stack",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "evaluate-reverse-polish-notation",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "daily-temperatures",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "car-fleet",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "binary-search",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "search-a-2d-matrix",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      },
+      {
+        "problem_id": "koko-eating-bananas",
+        "visible_cases": 6,
+        "hidden_cases": 20,
+        "visible_verdict": "Accepted",
+        "hidden_verdict": "Accepted",
+        "negative_verdicts": {
+          "wrong_answer": "Wrong Answer",
+          "runtime_error": "Runtime Error",
+          "time_limit": "Time Limit Exceeded",
+          "compilation_error": "Compilation Error",
+          "memory_limit": "Runtime Error"
+        }
+      }
+    ]
+  }
+}
