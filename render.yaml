@@ -9,10 +9,6 @@ services:
     startCommand: python -m src.main
     healthCheckPath: /api/health
     autoDeploy: true
-    disk:
-      name: ila-coding-data
-      mountPath: /var/data
-      sizeGB: 1
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
@@ -23,7 +19,7 @@ services:
       - key: ALLOW_PUBLIC_BIND
         value: "true"
       - key: DB_PATH
-        value: /var/data/coding_assistant.db
+        value: data/coding_assistant.db
       - key: PREMIUM_PROBLEM_BANK_PATH
         value: data/premium/problem_bank.json
       - key: LOAD_LEGACY_PROBLEM_BANK
