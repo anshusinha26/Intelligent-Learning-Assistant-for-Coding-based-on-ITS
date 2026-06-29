@@ -532,6 +532,7 @@ Recommended capstone deployment:
 
 - Frontend on Vercel.
 - Backend on Render, Railway, Fly.io, or another Python-capable host.
+- Render backend blueprint is provided in `render.yaml` (persistent SQLite disk + `/api/health` check).
 - Database upgrade from SQLite to Postgres/Supabase before multi-user public deployment.
 - Judge moved to a Dockerized runner service before allowing untrusted public code execution.
 - GitHub Pages alone is suitable only for a static frontend; the authenticated backend, database, recommendations, and judge require a separate backend service.

@@ -1,0 +1,58 @@
+services:
+  - type: web
+    name: ila-coding-backend
+    runtime: python
+    region: singapore
+    plan: free
+    rootDir: .
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: python -m src.main
+    healthCheckPath: /api/health
+    autoDeploy: true
+    disk:
+      name: ila-coding-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: APP_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: ALLOW_PUBLIC_BIND
+        value: "true"
+      - key: DB_PATH
+        value: /var/data/coding_assistant.db
+      - key: PREMIUM_PROBLEM_BANK_PATH
+        value: data/premium/problem_bank.json
+      - key: LOAD_LEGACY_PROBLEM_BANK
+        value: "false"
+      - key: DEV_EXPOSE_OTP
+        value: "false"
+      - key: PASSWORD_MIN_LENGTH
+        value: "8"
+      - key: PASSWORD_REQUIRE_UPPER
+        value: "true"
+      - key: PASSWORD_REQUIRE_LOWER
+        value: "true"
+      - key: PASSWORD_REQUIRE_DIGIT
+        value: "true"
+      - key: PASSWORD_REQUIRE_SYMBOL
+        value: "true"
+      - key: HSTS_ENABLED
+        value: "true"
+      - key: CORS_ALLOW_ORIGINS
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_ISSUER
+        value: ila-coding-api
+      - key: JWT_AUDIENCE
+        value: ila-coding-clients
+      - key: METRICS_ENABLED
+        value: "true"
+      - key: RAG_ENABLED
+        value: "true"
+      - key: RAG_MODE
+        value: local
